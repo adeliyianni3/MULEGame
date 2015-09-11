@@ -11,9 +11,12 @@ import java.io.IOException;
  */
 public class Main extends Application {
 
+    protected static int numOfPlayers = 1;
+    protected static int playerConfiguration = 1;
+
     @Override
     public void start(Stage stage) throws Exception{
-        stage.setTitle("Vista Viewer");
+        stage.setTitle("M.U.L.E.");
 
         stage.setScene(
             createScene(
@@ -67,6 +70,7 @@ public class Main extends Application {
 
         return scene;
     }
+
 
     public static void main(String[] args) {
         launch(args);

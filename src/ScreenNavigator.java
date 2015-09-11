@@ -15,7 +15,10 @@ public class ScreenNavigator {
      * Convenience constants for fxml layouts managed by the navigator.
      */
     public static final String MAIN_SCREEN = "mainScreen.fxml";
-    public static final String PLAYER = "configurePlayer.fxml";
+    public static final String PLAYER = "player.fxml";
+    public static final String PLAYER2 = "player2.fxml";
+    public static final String PLAYER3 = "player3.fxml";
+    public static final String PLAYER4 = "player4.fxml";
     public static final String CONGRATULATIONS = "congratulations.fxml";
     public static final String MAIN = "main.fxml";
 
@@ -59,6 +62,7 @@ public class ScreenNavigator {
                     )
             );
         } catch (IOException e) {
+            System.out.println("Could not find file");
             //e.printStackTrace();
         }
     }

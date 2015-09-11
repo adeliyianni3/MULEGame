@@ -8,19 +8,20 @@ import javafx.scene.control.ChoiceBox;
 public class MainScreenController {
 
 
-    @FXML
-    private ChoiceBox difficultyChoiceBox;
-    @FXML
-    private ChoiceBox mapChoiceBox;
+//    @FXML
+//    private ChoiceBox difficultyChoiceBox;
+//    @FXML
+//    private ChoiceBox mapChoiceBox;
     @FXML
     private ChoiceBox playerChoiceBox;
+//
+//    @FXML
+//    void setUpChoiceBoxes() {
+//        difficultyChoiceBox.setValue("Easy");
+//        mapChoiceBox.setValue("Map 1");
+//        playerChoiceBox.setValue("1");
+//    }
 
-    @FXML
-    void setUpChoiceBoxes() {
-        difficultyChoiceBox.setValue("Easy");
-        mapChoiceBox.setValue("Map 1");
-        playerChoiceBox.setValue("1");
-    }
 
     /**
      * Event handler fired when the user requests a new vista.
@@ -30,6 +31,8 @@ public class MainScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
+        Main.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue());
+
         ScreenNavigator.loadScreen(ScreenNavigator.PLAYER);
     }
 
