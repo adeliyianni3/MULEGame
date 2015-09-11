@@ -13,10 +13,10 @@ public class PlayerController {
      */
 
     @FXML
-    void toMain(ActionEvent event) {
+    public void toMain(ActionEvent event) {
         ScreenNavigator.loadScreen(ScreenNavigator.MAIN_SCREEN);
     }
 
     @FXML
-    void toCongratulations(ActionEvent event) { ScreenNavigator.loadScreen(ScreenNavigator.CONGRATULATIONS); }
+    public void toCongratulations(ActionEvent event) { ScreenNavigator.loadScreen(ScreenNavigator.CONGRATULATIONS); }
 }
