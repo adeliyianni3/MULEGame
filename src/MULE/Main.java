@@ -72,7 +72,7 @@ public class Main extends Application {
         );
 
         scene.getStylesheets().setAll(
-            getClass().getResource("vista.css").toExternalForm()
+            getClass().getResource("/vista.css").toExternalForm()
         );
 
         return scene;
