@@ -9,4 +9,10 @@ public class Mule {
     public Mule() {
         this.resourceIs = null;
     }
+    public String getResource(){
+        return resourceIs;
+    }
+    public boolean hasResource() {
+        return resourceIs != null;
+    }
 }
