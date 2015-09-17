@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.ScreenController">
    <children>
       <Rectangle fx:id="00" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
       <Rectangle fx:id="01" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>

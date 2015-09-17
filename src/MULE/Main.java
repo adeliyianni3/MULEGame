@@ -1,3 +1,6 @@
+package MULE;
+
+import MULE.controllers.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +14,8 @@ import java.io.IOException;
  */
 public class Main extends Application {
 
-    protected static int numOfPlayers = 1;
-    protected static int playerConfiguration = 0;
+    public static int numOfPlayers = 1;
+    public static int playerConfiguration = 0;
 
     @Override
     public void start(Stage stage) throws Exception{

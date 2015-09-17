@@ -1,3 +1,5 @@
+package MULE.models;
+
 /**
  * Created by Ethan on 9/17/2015.
  */

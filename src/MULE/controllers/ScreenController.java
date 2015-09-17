@@ -1,11 +1,12 @@
+package MULE.controllers;
+
+
+import MULE.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-
-import java.io.IOException;
 
 /**
  * Utility class for controlling navigation between vistas.
@@ -20,7 +21,7 @@ public class ScreenController {
 
 
 
-    //Player
+    //MULE.models.Player
 
     @FXML
     private Label playerNumber;

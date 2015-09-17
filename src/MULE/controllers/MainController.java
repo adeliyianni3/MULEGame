@@ -1,3 +1,5 @@
+package MULE.controllers;
+
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;

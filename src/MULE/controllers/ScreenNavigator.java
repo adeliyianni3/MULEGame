@@ -1,10 +1,9 @@
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+package MULE.controllers;
+
+
+import MULE.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-
 import java.io.IOException;
 
 /**
@@ -18,14 +17,13 @@ public class ScreenNavigator {
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN_SCREEN = "mainScreen.fxml";
-    public static final String PLAYER = "player.fxml";
-    public static final String PLAYER2 = "player2.fxml";
-    public static final String PLAYER3 = "player3.fxml";
-    public static final String PLAYER4 = "player4.fxml";
-    public static final String CONGRATULATIONS = "congratulations.fxml";
-    public static final String MAIN = "main.fxml";
-    public static final String MAP = "map.fxml";
+    public static final String MAIN_SCREEN = "views/mainScreen.fxml";
+    public static final String PLAYER = "/views/player.fxml";
+    public static final String PLAYER2 = "/views/player2.fxml";
+    public static final String PLAYER3 = "/views/player3.fxml";
+    public static final String PLAYER4 = "/views/player4.fxml";
+    public static final String CONGRATULATIONS = "/views/congratulations.fxml";
+    public static final String MAIN = "/views/main.fxml";
 
     public static String currentState;
 
@@ -78,10 +76,6 @@ public class ScreenNavigator {
 
 
 
-    public static void loadMap() {
-        loadScreen(MAP);
-    }
-
     public static void loadMain() {
 
     }
@@ -111,8 +105,8 @@ public class ScreenNavigator {
         if (Main.numOfPlayers > Main.playerConfiguration) {
             Main.playerConfiguration++;
             //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
-//            playerNumber.setText("Player " + Main.playerConfiguration);
-//            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
+//            playerNumber.setText("MULE.models.Player " + Main.playerConfiguration);
+//            playerNumber.textProperty().set("MULE.models.Player " + Main.playerConfiguration);
             switch (Main.playerConfiguration) {
                 case 1:
                     loadScreen(PLAYER);
