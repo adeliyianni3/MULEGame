@@ -15,7 +15,8 @@ import java.io.IOException;
  */
 public class ScreenController {
 
-
+    //Handling events
+    //http://stackoverflow.com/questions/29532247/javafx-pass-parameter-to-the-eventhandler-function-in-fxml-file
 
 
 
@@ -71,8 +72,19 @@ public class ScreenController {
         ScreenNavigator.loadPlayerConfiguration();
     }
 
+    @FXML
+    void landClick(ActionEvent event) {
+        String landName = ((Node)event.getSource()).getId();
+        //add in interaction with main here
+        //landName will contain a string "RC" containing land's row and column in the set 5x5 array
+    }
 
-
+    @FXML
+    void storeClick(ActionEvent event) {
+        String storeName = ((Node)event.getSource()).getId();
+        //add in interaction with main here
+        //landName will contain a string "RC" containing store's row and column in the set 2x2 array
+    }
 
     //Map
     public void showMap() {
