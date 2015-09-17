@@ -2,6 +2,7 @@ package MULE.controllers;
 
 
 import MULE.Main;
+import MULE.models.Game;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class ScreenNavigator {
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN_SCREEN = "/views/mainScreen.fxml";
+    public static final String MAIN_SCREEN = "/views/configScreen.fxml";
     public static final String PLAYER = "/views/player.fxml";
     public static final String PLAYER2 = "/views/player2.fxml";
     public static final String PLAYER3 = "/views/player3.fxml";
@@ -102,12 +103,12 @@ public class ScreenNavigator {
     }
 
     public static void loadPlayerConfiguration() {
-        if (Main.numOfPlayers > Main.playerConfiguration) {
-            Main.playerConfiguration++;
+        if (Game.numOfPlayers > Game.playerConfiguration) {
+            Game.playerConfiguration++;
             //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
-//            playerNumber.setText("MULE.models.Player " + Main.playerConfiguration);
-//            playerNumber.textProperty().set("MULE.models.Player " + Main.playerConfiguration);
-            switch (Main.playerConfiguration) {
+//            playerNumber.setText("MULE.models.Player " + Game.playerConfiguration);
+//            playerNumber.textProperty().set("MULE.models.Player " + Game.playerConfiguration);
+            switch (Game.playerConfiguration) {
                 case 1:
                     loadScreen(PLAYER);
                     break;

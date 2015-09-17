@@ -1,7 +1,9 @@
 package MULE.controllers;
 
 
-import MULE.Main;
+import MULE.models.Game;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -14,7 +16,7 @@ import javafx.scene.control.Label;
  * All methods on the navigator are static to facilitate
  * simple access from anywhere in the application.
  */
-public class ScreenController {
+public class ConfigScreenController {
 
     //Handling events
     //http://stackoverflow.com/questions/29532247/javafx-pass-parameter-to-the-eventhandler-function-in-fxml-file
@@ -22,7 +24,7 @@ public class ScreenController {
 
 
     //MULE.models.Player
-
+    private StringProperty playerName = new SimpleStringProperty();
     @FXML
     private Label playerNumber;
 
@@ -68,7 +70,7 @@ public class ScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        Main.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue()); //want this to go through navigator, not directly to main
+        Game.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue()); //want this to go through navigator, not directly to main
 
         ScreenNavigator.loadPlayerConfiguration();
     }

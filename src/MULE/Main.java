@@ -14,9 +14,6 @@ import java.io.IOException;
  */
 public class Main extends Application {
 
-    public static int numOfPlayers = 1;
-    public static int playerConfiguration = 0;
-
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("M.U.L.E.");
@@ -72,7 +69,7 @@ public class Main extends Application {
         );
 
         scene.getStylesheets().setAll(
-            getClass().getResource("/vista.css").toExternalForm()
+            getClass().getResource("/views/css/vista.css").toExternalForm()
         );
 
         return scene;
