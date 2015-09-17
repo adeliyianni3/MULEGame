@@ -1,5 +1,8 @@
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
@@ -64,6 +67,46 @@ public class ScreenNavigator {
         } catch (IOException e) {
             System.out.println("Could not find file");
             //e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Label playerNumber;
+
+    /**
+     * Event handler fired when the user requests a new vista.
+     *
+     * @param event the event that triggered the handler.
+     */
+
+    @FXML
+    void toMain(ActionEvent event) {
+        ScreenNavigator.loadScreen(ScreenNavigator.MAIN_SCREEN);
+    }
+
+    @FXML
+    void toNext(ActionEvent event) {
+        if (Main.numOfPlayers > Main.playerConfiguration) {
+            //System.out.println(Main.playerConfiguration + "of" + Main.numOfPlayers);
+            Main.playerConfiguration++;
+            //playerNumber.setText("Player " + Main.playerConfiguration);
+            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
+            switch (Main.playerConfiguration) {
+                case 2:
+                    loadScreen(ScreenNavigator.PLAYER2);
+                    break;
+                case 3:
+                    loadScreen(ScreenNavigator.PLAYER3);
+                    break;
+                case 4:
+                    loadScreen(ScreenNavigator.PLAYER4);
+                    break;
+                default:
+                    loadScreen(ScreenNavigator.CONGRATULATIONS);
+                    break;
+            }
+        } else {
+            loadScreen(ScreenNavigator.CONGRATULATIONS);
         }
     }
 

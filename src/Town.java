@@ -3,7 +3,7 @@
  */
 public class Town {
 
-    private Store[][] stores = new Store[][];
+    private Store[][] stores = new Store[2][2];
 
     public Town(){
         stores[0][0]= new Store("store");
