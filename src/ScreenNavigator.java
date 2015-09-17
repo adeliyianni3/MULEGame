@@ -2,6 +2,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -70,6 +71,9 @@ public class ScreenNavigator {
         }
     }
 
+
+    //Player
+
     @FXML
     private Label playerNumber;
 
@@ -108,6 +112,35 @@ public class ScreenNavigator {
         } else {
             loadScreen(ScreenNavigator.CONGRATULATIONS);
         }
+    }
+
+    //Main Screen
+    //    @FXML
+//    private ChoiceBox difficultyChoiceBox;
+//    @FXML
+//    private ChoiceBox mapChoiceBox;
+    @FXML
+    private ChoiceBox playerChoiceBox;
+//
+//    @FXML
+//    void setUpChoiceBoxes() {
+//        difficultyChoiceBox.setValue("Easy");
+//        mapChoiceBox.setValue("Map 1");
+//        playerChoiceBox.setValue("1");
+//    }
+
+
+    /**
+     * Event handler fired when the user requests a new vista.
+     *
+     * @param event the event that triggered the handler.
+     */
+
+    @FXML
+    void playerConfiguration(ActionEvent event) {
+        Main.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue());
+
+        ScreenNavigator.loadScreen(ScreenNavigator.PLAYER);
     }
 
 }
