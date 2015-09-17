@@ -25,6 +25,11 @@ public class ScreenNavigator {
     public static final String PLAYER4 = "player4.fxml";
     public static final String CONGRATULATIONS = "congratulations.fxml";
     public static final String MAIN = "main.fxml";
+    public static final String MAP = "map.fxml";
+
+    public static String currentState;
+
+
 
 
     /** The main application layout controller. */
@@ -58,7 +63,7 @@ public class ScreenNavigator {
      */
     public static void loadScreen(String fxml) {
         try {
-            mainController.setVista(
+            mainController.setVista( //this clears the pane and fills it with the fxml
                     (Node) FXMLLoader.load(
                             ScreenNavigator.class.getResource(
                                     fxml
@@ -72,75 +77,64 @@ public class ScreenNavigator {
     }
 
 
-    //Player
 
-    @FXML
-    private Label playerNumber;
-
-    /**
-     * Event handler fired when the user requests a new vista.
-     *
-     * @param event the event that triggered the handler.
-     */
-
-    @FXML
-    void toMain(ActionEvent event) {
-        ScreenNavigator.loadScreen(ScreenNavigator.MAIN_SCREEN);
+    public static void loadMap() {
+        loadScreen(MAP);
     }
 
-    @FXML
-    void toNext(ActionEvent event) {
-        if (Main.numOfPlayers > Main.playerConfiguration) {
-            //System.out.println(Main.playerConfiguration + "of" + Main.numOfPlayers);
-            Main.playerConfiguration++;
-            //playerNumber.setText("Player " + Main.playerConfiguration);
-            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
-            switch (Main.playerConfiguration) {
-                case 2:
-                    loadScreen(ScreenNavigator.PLAYER2);
-                    break;
-                case 3:
-                    loadScreen(ScreenNavigator.PLAYER3);
-                    break;
-                case 4:
-                    loadScreen(ScreenNavigator.PLAYER4);
-                    break;
-                default:
-                    loadScreen(ScreenNavigator.CONGRATULATIONS);
-                    break;
-            }
-        } else {
-            loadScreen(ScreenNavigator.CONGRATULATIONS);
+    public static void loadMain() {
+
+    }
+
+    public static void loadCongratulations() {
+
+    }
+
+    public static void loadPlayerConfiguration(int i) {
+        switch (i) {
+            case 2:
+                loadScreen(PLAYER2);
+                break;
+            case 3:
+                loadScreen(PLAYER3);
+                break;
+            case 4:
+                loadScreen(PLAYER4);
+                break;
+            default:
+                loadScreen(CONGRATULATIONS);
+                break;
         }
     }
 
-    //Main Screen
-    //    @FXML
-//    private ChoiceBox difficultyChoiceBox;
-//    @FXML
-//    private ChoiceBox mapChoiceBox;
-    @FXML
-    private ChoiceBox playerChoiceBox;
-//
-//    @FXML
-//    void setUpChoiceBoxes() {
-//        difficultyChoiceBox.setValue("Easy");
-//        mapChoiceBox.setValue("Map 1");
-//        playerChoiceBox.setValue("1");
-//    }
-
-
-    /**
-     * Event handler fired when the user requests a new vista.
-     *
-     * @param event the event that triggered the handler.
-     */
-
-    @FXML
-    void playerConfiguration(ActionEvent event) {
-        Main.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue());
-
-        ScreenNavigator.loadScreen(ScreenNavigator.PLAYER);
+    public static void loadPlayerConfiguration() {
+        if (Main.numOfPlayers > Main.playerConfiguration) {
+            Main.playerConfiguration++;
+            //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
+//            playerNumber.setText("Player " + Main.playerConfiguration);
+//            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
+            switch (Main.playerConfiguration) {
+                case 1:
+                    loadScreen(PLAYER);
+                    break;
+                case 2:
+                    loadScreen(PLAYER2);
+                    break;
+                case 3:
+                    loadScreen(PLAYER3);
+                    break;
+                case 4:
+                    loadScreen(PLAYER4);
+                    break;
+                default:
+                    loadScreen(CONGRATULATIONS);
+                    break;
+            }
+        } else {
+            loadScreen(CONGRATULATIONS);
+        }
     }
+
+
 
 }

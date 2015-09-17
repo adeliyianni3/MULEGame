@@ -12,11 +12,15 @@ import java.io.IOException;
 public class Main extends Application {
 
     protected static int numOfPlayers = 1;
-    protected static int playerConfiguration = 1;
+    protected static int playerConfiguration = 0;
 
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("M.U.L.E.");
+
+        //MouseEvent stuff
+        //http://stackoverflow.com/questions/16635514/how-to-get-location-of-mouse-in-javafx
+        //https://blog.idrsolutions.com/2013/01/mouseevents-in-javafx/
 
         stage.setScene(
             createScene(
