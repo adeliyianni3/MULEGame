@@ -1,9 +1,11 @@
+package Mule.Controllers;
+
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
 /**
- * Main controller class for the entire layout.
+ * Mule.Controllers.Main controller class for the entire layout.
  */
 public class MainController {
 

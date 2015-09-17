@@ -1,3 +1,6 @@
+package Mule.Controllers;
+
+import Mule.Models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -14,13 +17,14 @@ public class MainScreenController {
     private ChoiceBox mapChoiceBox;
     @FXML
     private ChoiceBox playerChoiceBox;
+//
+//    @FXML
+//    void setUpChoiceBoxes() {
+//        difficultyChoiceBox.setValue("Easy");
+//        mapChoiceBox.setValue("Map 1");
+//        playerChoiceBox.setValue("1");
+//    }
 
-    @FXML
-    void setUpChoiceBoxes() {
-        difficultyChoiceBox.setValue("Easy");
-        mapChoiceBox.setValue("Map 1");
-        playerChoiceBox.setValue("1");
-    }
 
     /**
      * Event handler fired when the user requests a new vista.
@@ -29,7 +33,9 @@ public class MainScreenController {
      */
 
     @FXML
-    void playerConfiguration(ActionEvent event) {
+    void submit(ActionEvent event) {
+        Main.numOfPlayers = Integer.parseInt((String)playerChoiceBox.getValue());
+        Main.players = new Player[Main.numOfPlayers];
         ScreenNavigator.loadScreen(ScreenNavigator.PLAYER);
     }
 

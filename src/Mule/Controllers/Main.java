@@ -1,5 +1,10 @@
+package Mule.Controllers;
+
+import Mule.Controllers.MainController;
+import Mule.Models.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -7,21 +12,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Main application class.
+ * Mule.Controllers.Main application class.
  */
 public class Main extends Application {
 
+    protected static int numOfPlayers = 1;
+    protected static int playerConfiguration = 0;
+    public static Player[] players = new Player[4];
+
     @Override
     public void start(Stage stage) throws Exception{
-        stage.setTitle("Vista Viewer");
-
-        stage.setScene(
-            createScene(
-                loadMainPane()
-            )
-        );
-
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/mainScreen.fxml"));
+        stage.setTitle("M.U.L.E.");
+        stage.setScene(new Scene(root));
         stage.show();
+
     }
 
     /**
@@ -67,6 +72,7 @@ public class Main extends Application {
 
         return scene;
     }
+
 
     public static void main(String[] args) {
         launch(args);

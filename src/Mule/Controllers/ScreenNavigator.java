@@ -1,3 +1,5 @@
+package Mule.Controllers;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 
@@ -14,10 +16,10 @@ public class ScreenNavigator {
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN_SCREEN = "mainScreen.fxml";
-    public static final String PLAYER = "configurePlayer.fxml";
-    public static final String CONGRATULATIONS = "congratulations.fxml";
-    public static final String MAIN = "main.fxml";
+    public static final String MAIN_SCREEN = "Views/mainScreen.fxml";
+    public static final String PLAYER = "Views/player.fxml";
+    public static final String CONGRATULATIONS = "Views/congratulations.fxml";
+    public static final String MAIN = "Views/main.fxml";
 
 
     /** The main application layout controller. */
@@ -59,6 +61,7 @@ public class ScreenNavigator {
                     )
             );
         } catch (IOException e) {
+            System.out.println("Could not find file");
             //e.printStackTrace();
         }
     }
