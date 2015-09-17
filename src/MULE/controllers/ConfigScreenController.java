@@ -1,9 +1,8 @@
 package MULE.controllers;
 
 
+import MULE.Main;
 import MULE.models.Game;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -24,7 +23,7 @@ public class ConfigScreenController {
 
 
     //MULE.models.Player
-    private StringProperty playerName = new SimpleStringProperty();
+
     @FXML
     private Label playerNumber;
 

@@ -18,7 +18,7 @@ public class ScreenNavigator {
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN_SCREEN = "/views/configScreen.fxml";
+    public static final String MAIN_SCREEN = "/views/mainScreen.fxml";
     public static final String PLAYER = "/views/player.fxml";
     public static final String PLAYER2 = "/views/player2.fxml";
     public static final String PLAYER3 = "/views/player3.fxml";
