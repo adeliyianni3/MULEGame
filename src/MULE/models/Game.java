@@ -1,5 +1,7 @@
 package MULE.models;
 
+import MULE.controllers.ScreenNavigator;
+
 /**
  * Created by Aaron on 9/17/2015.
  */
@@ -15,6 +17,8 @@ public class Game {
     private static int totalTurns = 1;
     private static int turn = 1;
     public static State currentState = State.MAIN;
+
+    private static GameMap theMap = new GameMap();
 
     public enum Resource {
         FOOD, ORE, CRYSTALITE, ENERGY;
@@ -50,7 +54,21 @@ public class Game {
     }
 
     public static void landClicked(String landLoc) {
-
+        int i = Integer.parseInt(landLoc)/10;
+        int j = Integer.parseInt(landLoc)%10;
+        Land plot = theMap.whatLand(i, j);
+        if (!plot.isOwned()) {
+            int round = (totalTurns-1)/numOfPlayers;
+            Player p = players[turn - 1];
+            if (round == 1 || round == 2) {
+                plot.setOwner(p);
+            } else {
+                if (p.getMoney() > 300) {
+                    plot.setOwner(p);
+                    ScreenNavigator.setLandColor(landLoc, p.getColor());
+                }
+            }
+        }
     }
 
     public static int endTurn() {
