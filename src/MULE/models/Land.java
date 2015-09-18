@@ -8,6 +8,8 @@ public class Land {
     private Player owner = null;
     private String type;
     private String resource;
+    private int price;
+
     public Land(String type) {
         this.type = type;
     }
@@ -22,6 +24,9 @@ public class Land {
     }
     public void setResource(String res) {
         this.resource = res;
+    }
+    public void setLandType(String type) {
+        this.type = type;
     }
     public String getResource() {
     return this.resource;
