@@ -25,7 +25,7 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, MAP, TOWN, AUCTION;
+        MAIN, CONFIG, MAP, TOWN, AUCTION, BUYPHASE;
     }
 
     public static int getDifficulty() {
