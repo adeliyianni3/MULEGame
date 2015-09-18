@@ -2,7 +2,7 @@ package MULE.models;
 
 import MULE.controllers.ScreenNavigator;
 import javafx.scene.paint.Color;
-
+import javafx.scene.shape.Rectangle;
 
 /**
  * Created by Aaron on 9/17/2015.
@@ -28,12 +28,12 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, INTOWN, AUCTION, BUYPHASE;
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE;
     }
 
-    public enum ScreenState{
-        MAIN, CONFIG, MAP, TOWN;
-    }
+//    public enum ScreenState{
+//        MAIN, CONFIG, MAP, TOWN;
+//    }
 
     public static void changeState(State s) {
         currentState = s;
@@ -84,8 +84,32 @@ public class Game {
         }
     }
 
+    public static void landClicked(String landLoc, Rectangle rec) {
+        System.out.println(playersToString());
+        int i = Integer.parseInt(landLoc)/10;
+        int j = Integer.parseInt(landLoc)%10;
+        Land plot = theMap.whatLand(i, j);
+        if (!plot.isOwned()) {
+            int round = (totalTurns-1)/numOfPlayers;
+            Player p = players[turn - 1];
+            if (round == 1 || round == 2) {
+                plot.setOwner(p);
+                rec.setFill(p.getColor());
+                endTurn();
+            } else {
+                if (p.getMoney() >= LAND_PRICE) {
+                    plot.setOwner(p);
+                    rec.setFill(p.getColor());
+                    p.subtractMoney(LAND_PRICE);
+                    ScreenNavigator.setLandColor(landLoc, p.getColor());
+                    endTurn();
+                }
+            }
+        }
+    }
+
     public static int endTurn() {
-        turn = turn + 1 % numOfPlayers + 1;
+        turn = turn % numOfPlayers + 1;
         totalTurns++;
         return turn;
     }
@@ -126,7 +150,19 @@ public class Game {
 //    }
 
     public static void addPlayer(String race, Color c, String name) {
-        players[(turn+3)%4+1] = new Player(name, race, c);
+        players[turn-1] = new Player(name, race, c);
+    }
+
+    public static String playersToString() {
+        String returnString = "";
+        for(Player p : players) {
+            if (p != null) {
+                returnString = p.toString() + "\n";
+            } else {
+                returnString = "null\n";
+            }
+        }
+        return returnString;
     }
 
 }

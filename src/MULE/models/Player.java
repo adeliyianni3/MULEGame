@@ -57,4 +57,8 @@ public class Player {
     public int getMoney() {
         return money;
     }
+
+    public String toString() {
+        return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
+    }
 }

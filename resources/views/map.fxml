@@ -20,7 +20,7 @@
       <Rectangle fx:id="14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
       <Rectangle fx:id="20" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
       <Rectangle fx:id="21" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="22" arcHeight="5.0" arcWidth="5.0" fill="#1fff5b" height="50.0" layoutX="275.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
+      <Rectangle fx:id="22" arcHeight="5.0" arcWidth="5.0" fill="#1fff5b" height="50.0" layoutX="275.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#townClick"/>
       <Rectangle fx:id="23" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
       <Rectangle fx:id="24" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
       <Rectangle fx:id="30" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
