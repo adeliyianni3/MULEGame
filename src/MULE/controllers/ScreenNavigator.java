@@ -77,10 +77,6 @@ public class ScreenNavigator {
 
 
 
-    public static void loadMap() {
-        loadScreen(MAP);
-    }
-
     public static void loadMain() {
 
     }

@@ -9,21 +9,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 /**
  * Main application class.
  */
 public class Main extends Application {
 
-    private static int totalTurns = 1;
-    private static int numOfPlayers = 1;
-    protected static int playerConfiguration = 0; //delete this and shove responsibilities into turn
-    private static int turn = 1;
-    public static State currentState = State.MAIN;
-
-    public enum State{
-        MAIN, CONFIG, MAP, TOWN, AUCTION;
-    }
+    public static int numOfPlayers = 1;
+    public static int playerConfiguration = 0;
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -34,9 +26,9 @@ public class Main extends Application {
         //https://blog.idrsolutions.com/2013/01/mouseevents-in-javafx/
 
         stage.setScene(
-                createScene(
-                        loadMainPane()
-                )
+            createScene(
+                loadMainPane()
+            )
         );
 
         stage.show();
@@ -54,9 +46,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         Pane mainPane = (Pane) loader.load(
-                getClass().getResourceAsStream(
-                        ScreenNavigator.MAIN
-                )
+            getClass().getResourceAsStream(
+                ScreenNavigator.MAIN
+            )
         );
 
         MainController mainController = loader.getController();
@@ -76,11 +68,11 @@ public class Main extends Application {
      */
     private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
-                mainPane
+            mainPane
         );
 
         scene.getStylesheets().setAll(
-                getClass().getResource("/vista.css").toExternalForm()
+            getClass().getResource("/vista.css").toExternalForm()
         );
 
         return scene;
@@ -90,60 +82,4 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
-    public static void actionRelay(String message) {
-        //For now we will awkwardly parse messages from the ScreenNavigator here, we'll look into listeners later
-        switch(currentState) {
-            case MAIN:
-                break;
-            case CONFIG:
-                break;
-            case MAP:
-                break;
-            case TOWN:
-                break;
-            case AUCTION:
-                break;
-            default:
-                System.out.println("This shouldn't have been possible. Main.actionRelay() error.");
-        }
-    }
-
-    public static void storeClicked(String storeLoc) {
-
-    }
-
-    public static void landClicked(String landLoc) {
-
-    }
-
-    public static int endTurn() {
-        turn = turn + 1 % numOfPlayers + 1;
-        totalTurns++;
-        return turn;
-    }
-
-    public static void incrementTurn() {
-        turn = turn % numOfPlayers + 1;
-        totalTurns++;
-    }
-
-    public static int getTotalTurns() {
-        return totalTurns;
-    }
-
-    public static int getTurn() {
-        return turn;
-    }
-
-    public static int getNumOfPlayers() {
-        return numOfPlayers;
-    }
-
-    public static void setNumOfPlayers(int num) {
-        numOfPlayers = num;
-    }
-
-
 }
-
