@@ -5,6 +5,7 @@ import MULE.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import java.io.IOException;
+import javafx.scene.paint.Color;
 
 /**
  * Utility class for controlling navigation between vistas.
@@ -139,5 +140,12 @@ public class ScreenNavigator {
         Game.setNumOfPlayers(num);
     }
 
+    public static void setLandColor(String loc, Color c) {
+
+    }
+
+    public static void landClicked(String landLoc) {
+        Game.landClicked(landLoc);
+    }
 
 }
