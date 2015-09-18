@@ -69,8 +69,7 @@ public class ConfigScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        Main.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue())); //want this to go through navigator, not directly to main
-
+        ScreenNavigator.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue()));
         ScreenNavigator.loadPlayerConfiguration();
     }
 

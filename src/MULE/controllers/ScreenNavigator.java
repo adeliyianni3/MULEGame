@@ -78,11 +78,11 @@ public class ScreenNavigator {
 
 
     public static void loadMain() {
-
+        loadScreen(MAIN);
     }
 
     public static void loadCongratulations() {
-
+        loadScreen(CONGRATULATIONS);
     }
 
     public static void loadPlayerConfiguration(int i) {
@@ -103,13 +103,13 @@ public class ScreenNavigator {
     }
 
     public static void loadPlayerConfiguration() {
-        //System.out.println(Main.getNumOfPlayers() + ": " + Main.getTurn() + ": " + Main.getTotalTurns());
-        if (Main.getNumOfPlayers() >= Main.getTurn() && Main.getTotalTurns() == Main.getTurn()) {
+        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
+        if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
 
             //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
 //            playerNumber.setText("Player " + Main.playerConfiguration);
 //            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
-            switch (Main.getTurn()) {
+            switch (Game.getTurn()) {
                 case 1:
                     loadScreen(PLAYER);
                     break;
@@ -132,9 +132,12 @@ public class ScreenNavigator {
             loadScreen(MAP);
         }
 
-        Main.incrementTurn();
+        Game.incrementTurn();
     }
 
+    public static void setNumOfPlayers(int num) {
+        Game.setNumOfPlayers(num);
+    }
 
 
 }
