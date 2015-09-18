@@ -1,11 +1,13 @@
+package MULE.controllers;
+
+
+import MULE.Main;
+import MULE.models.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-
-import java.io.IOException;
 
 /**
  * Utility class for controlling navigation between vistas.
@@ -13,14 +15,14 @@ import java.io.IOException;
  * All methods on the navigator are static to facilitate
  * simple access from anywhere in the application.
  */
-public class ScreenController {
+public class ConfigScreenController {
 
     //Handling events
     //http://stackoverflow.com/questions/29532247/javafx-pass-parameter-to-the-eventhandler-function-in-fxml-file
 
 
 
-    //Player
+    //MULE.models.Player
 
     @FXML
     private Label playerNumber;
@@ -72,19 +74,7 @@ public class ScreenController {
         ScreenNavigator.loadPlayerConfiguration();
     }
 
-    @FXML
-    void landClick(ActionEvent event) {
-        String landName = ((Node)event.getSource()).getId();
-        //add in interaction with main here
-        //landName will contain a string "RC" containing land's row and column in the set 5x5 array
-    }
 
-    @FXML
-    void storeClick(ActionEvent event) {
-        String storeName = ((Node)event.getSource()).getId();
-        //add in interaction with main here
-        //landName will contain a string "RC" containing store's row and column in the set 2x2 array
-    }
 
     //Map
     public void showMap() {

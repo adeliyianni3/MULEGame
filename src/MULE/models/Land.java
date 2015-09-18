@@ -1,8 +1,10 @@
+package MULE.models;
+
 /**
  * Created by Antonia on 9/16/2015.
  */
 public class Land {
-    //Just starting Land with basic info
+    //Just starting MULE.models.Land with basic info
     private Player owner = null;
     private String type;
     private String resource;

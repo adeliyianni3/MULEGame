@@ -1,3 +1,6 @@
+package MULE;
+
+import MULE.controllers.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -5,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 
 /**
  * Main application class.
@@ -30,9 +34,9 @@ public class Main extends Application {
         //https://blog.idrsolutions.com/2013/01/mouseevents-in-javafx/
 
         stage.setScene(
-            createScene(
-                loadMainPane()
-            )
+                createScene(
+                        loadMainPane()
+                )
         );
 
         stage.show();
@@ -50,9 +54,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         Pane mainPane = (Pane) loader.load(
-            getClass().getResourceAsStream(
-                ScreenNavigator.MAIN
-            )
+                getClass().getResourceAsStream(
+                        ScreenNavigator.MAIN
+                )
         );
 
         MainController mainController = loader.getController();
@@ -72,11 +76,11 @@ public class Main extends Application {
      */
     private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
-            mainPane
+                mainPane
         );
 
         scene.getStylesheets().setAll(
-            getClass().getResource("vista.css").toExternalForm()
+                getClass().getResource("/vista.css").toExternalForm()
         );
 
         return scene;
@@ -142,3 +146,4 @@ public class Main extends Application {
 
 
 }
+
