@@ -28,7 +28,15 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, MAP, TOWN, AUCTION, BUYPHASE;
+        MAIN, CONFIG, INTOWN, AUCTION, BUYPHASE;
+    }
+
+    public enum ScreenState{
+        MAIN, CONFIG, MAP, TOWN;
+    }
+
+    public static void changeState(State s) {
+        currentState = s;
     }
 
     public static int getDifficulty() {
@@ -99,23 +107,23 @@ public class Game {
         return numOfPlayers;
     }
 
-    public static void actionRelay(String message) {
-        //For now we will awkwardly parse messages from the ScreenNavigator here, we'll look into listeners later
-        switch(currentState) {
-            case MAIN:
-                break;
-            case CONFIG:
-                break;
-            case MAP:
-                break;
-            case TOWN:
-                break;
-            case AUCTION:
-                break;
-            default:
-                System.out.println("This shouldn't have been possible. Main.actionRelay() error.");
-        }
-    }
+//    public static void actionRelay(String message) {
+//        //For now we will awkwardly parse messages from the ScreenNavigator here, we'll look into listeners later
+//        switch(currentState) {
+//            case MAIN:
+//                break;
+//            case CONFIG:
+//                break;
+//            case MAP:
+//                break;
+//            case TOWN:
+//                break;
+//            case AUCTION:
+//                break;
+//            default:
+//                System.out.println("This shouldn't have been possible. Main.actionRelay() error.");
+//        }
+//    }
 
     public static void addPlayer(String race, Color c, String name) {
         players[(turn+3)%4+1] = new Player(name, race, c);
