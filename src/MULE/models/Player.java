@@ -10,8 +10,21 @@ public class Player {
     private String name;
     private Race race;
     private Color color;
+
     public Player() {
 
+    }
+    // Possible method to solve no color/race issues
+    public Player(String name) {
+        this(name, null, null);
+    }
+
+    public Player(String name, Race race) {
+        this(name, race, null);
+    }
+
+    public Player(String name, Color color) {
+        this(name, null, color);
     }
 
     public Player(String name, Race race, Color color) {
