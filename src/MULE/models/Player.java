@@ -23,7 +23,7 @@ public class Player {
         this(name, race, null);
     }
 
-    public Player(String name, Color color,) {
+    public Player(String name, Color color) {
         this(name, null, color);
     }
 
