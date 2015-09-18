@@ -8,7 +8,7 @@ public class Land {
     //Just starting MULE.models.Land with basic info
     private Player owner = null;
     private String type;
-    private String resource;
+    private Mule mule;
 
     public Land(String type) {
         this.type = type;
@@ -19,17 +19,17 @@ public class Land {
     public void setOwner(Player p) {
         this.owner = p;
     }
-    public boolean hasResource() {
-        return this.resource != null;
+    public boolean hasMule() {
+        return this.mule != null;
     }
-    public void setResource(String res) {
-        this.resource = res;
+    public void setMule(Mule newMule) {
+        this.mule = newMule;
     }
     public void setLandType(String type) {
         this.type = type;
     }
-    public String getResource() {
-    return this.resource;
+    public Mule getMule() {
+    return this.mule;
     }
     public Player getOwner() {
         return this.owner;
