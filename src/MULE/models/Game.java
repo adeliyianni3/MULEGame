@@ -16,6 +16,10 @@ public class Game {
     private static int turn = 1;
     public static State currentState = State.MAIN;
 
+    public enum Resource {
+        FOOD, ORE, CRYSTALITE, ENERGY;
+    }
+
     public enum State{
         MAIN, CONFIG, MAP, TOWN, AUCTION;
     }
