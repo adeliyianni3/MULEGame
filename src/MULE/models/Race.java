@@ -15,7 +15,7 @@ public enum Race {
     private Race(int startmoney) {
         this.startmoney = startmoney;
     }
-    public int startmoney() {
+    public int startMoney() {
         return startmoney;
     }
 }

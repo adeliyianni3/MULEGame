@@ -32,6 +32,7 @@ public class Player {
         this.name = name;
         this.race = race;
         this.color = color;
+        this.money = race.startMoney();
 
     }
 
@@ -45,5 +46,17 @@ public class Player {
 
     public Color getColor() {
         return color;
+    }
+
+    public void addMoney(int amount) {
+        money = money + amount;
+    }
+
+    public void subtractMoney(int amount) {
+        money = money - amount;
+    }
+
+    public int getMoney() {
+        return money;
     }
 }
