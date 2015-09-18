@@ -136,6 +136,40 @@ public class ScreenNavigator {
         Game.incrementTurn();
     }
 
+    public static void loadPlayerConfiguration(String race, Color c, String name) {
+
+        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
+        if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
+
+            //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
+//            playerNumber.setText("Player " + Main.playerConfiguration);
+//            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
+            switch (Game.getTurn()) {
+                case 1:
+                    loadScreen(PLAYER);
+                    break;
+                case 2:
+                    loadScreen(PLAYER2);
+                    break;
+                case 3:
+                    loadScreen(PLAYER3);
+                    break;
+                case 4:
+                    loadScreen(PLAYER4);
+                    break;
+                default:
+                    loadScreen(CONGRATULATIONS); //replace with something meaningful later
+                    break;
+            }
+
+
+        } else {
+            loadScreen(MAP);
+        }
+
+        Game.incrementTurn();
+    }
+
     public static void setNumOfPlayers(int num) {
         Game.setNumOfPlayers(num);
     }

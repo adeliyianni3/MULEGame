@@ -1,6 +1,8 @@
 package MULE.models;
 
 import MULE.controllers.ScreenNavigator;
+import javafx.scene.paint.Color;
+
 
 /**
  * Created by Aaron on 9/17/2015.
@@ -64,11 +66,13 @@ public class Game {
             if (round == 1 || round == 2) {
                 plot.setOwner(p);
                 p.subtractMoney(LAND_PRICE);
+                System.out.println("Player " + p.getName() + " bought land and now has " + p.getMoney() + " dollars");
             } else {
                 if (p.getMoney() > LAND_PRICE) {
                     plot.setOwner(p);
                     p.subtractMoney(LAND_PRICE);
                     ScreenNavigator.setLandColor(landLoc, p.getColor());
+                    System.out.println("Player " + p.getName() + " bought land and now has " + p.getMoney() + " dollars");
                 }
             }
         }
@@ -113,6 +117,11 @@ public class Game {
             default:
                 System.out.println("This shouldn't have been possible. Main.actionRelay() error.");
         }
+    }
+
+    public static void addPlayer(String race, Color c, String name) {
+        Race actualRace = Race.valueOf(name.toUpperCase());
+        players[turn-1] = new Player(name, actualRace, c);
     }
 
 }
