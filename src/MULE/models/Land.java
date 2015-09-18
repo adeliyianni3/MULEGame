@@ -25,8 +25,8 @@ public class Land {
     public void setResource(String res) {
         this.resource = res;
     }
-    public void setLandType(String type) {
-        this.type = type;
+    public void setLandType(String res) {
+        this.resource = res;
     }
     public String getResource() {
     return this.resource;
