@@ -137,7 +137,7 @@ public class ScreenNavigator {
     }
 
     public static void loadPlayerConfiguration(String race, Color c, String name) {
-
+        Game.addPlayer(race, c, name);
         //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
 

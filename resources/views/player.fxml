@@ -22,7 +22,7 @@
          </items>
       </ChoiceBox>
       <!--<Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="MULE.models.Player 1"> -->
-      <Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="MULE.models.Player 1">
+      <Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="Player 1">
          <font>
             <Font name="System Bold" size="52.0" />
          </font>

@@ -25,7 +25,8 @@ public class PlayerController {
     void toNext(ActionEvent event) {
         String race = (String)raceBox.getValue();
         Color c = (Color)colorBox.getValue();
-        String name = nameBox.getCharacters().toString();
+        //System.out.println(nameBox.getCharacters().toString());
+        String name = nameBox.getText();
         ScreenNavigator.loadPlayerConfiguration(race, c, name);
     }
     @FXML

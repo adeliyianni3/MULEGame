@@ -118,8 +118,7 @@ public class Game {
     }
 
     public static void addPlayer(String race, Color c, String name) {
-        Race actualRace = Race.valueOf(name.toUpperCase());
-        players[turn-1] = new Player(name, actualRace, c);
+        players[(turn+3)%4+1] = new Player(name, race, c);
     }
 
 }
