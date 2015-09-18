@@ -19,6 +19,7 @@ public class Game {
     public static State currentState = State.MAIN;
 
     private static GameMap theMap = new GameMap();
+    public static int LAND_PRICE = 300;
 
     public enum Resource {
         FOOD, ORE, CRYSTALITE, ENERGY;
@@ -62,9 +63,11 @@ public class Game {
             Player p = players[turn - 1];
             if (round == 1 || round == 2) {
                 plot.setOwner(p);
+                p.subtractMoney(LAND_PRICE);
             } else {
-                if (p.getMoney() > 300) {
+                if (p.getMoney() > LAND_PRICE) {
                     plot.setOwner(p);
+                    p.subtractMoney(LAND_PRICE);
                     ScreenNavigator.setLandColor(landLoc, p.getColor());
                 }
             }

@@ -28,9 +28,7 @@ public class Land {
     public void setLandType(String type) {
         this.type = type;
     }
-    public Mule getMule() {
-    return this.mule;
-    }
+    public Mule getMule() { return this.mule; }
     public Player getOwner() {
         return this.owner;
     }
