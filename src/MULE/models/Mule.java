@@ -15,4 +15,7 @@ public class Mule {
     public boolean hasResource() {
         return resourceIs != null;
     }
+    public void setResource(String newOne){
+        this.resourceIs = newOne;
+    }
 }
