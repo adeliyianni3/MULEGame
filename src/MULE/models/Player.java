@@ -10,6 +10,7 @@ public class Player {
     private String name;
     private Race race;
     private Color color;
+    private int money;
 
     public Player() {
 
@@ -31,6 +32,7 @@ public class Player {
         this.name = name;
         this.race = race;
         this.color = color;
+
     }
 
     public String getName() {

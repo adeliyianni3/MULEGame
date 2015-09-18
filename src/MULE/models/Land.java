@@ -1,4 +1,5 @@
 package MULE.models;
+import java.util.Random;
 
 /**
  * Created by Antonia on 9/16/2015.
@@ -8,7 +9,6 @@ public class Land {
     private Player owner = null;
     private String type;
     private String resource;
-    private int price;
 
     public Land(String type) {
         this.type = type;
