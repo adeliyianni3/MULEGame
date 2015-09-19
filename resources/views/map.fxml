@@ -5,33 +5,52 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.MapController">
    <children>
-      <Rectangle fx:id="00" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="01" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="02" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="03" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="04" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="20" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="21" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="22" arcHeight="5.0" arcWidth="5.0" fill="#1fff5b" height="50.0" layoutX="275.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#townClick"/>
-      <Rectangle fx:id="23" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="24" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="30" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="31" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="32" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="33" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="34" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="40" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="41" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="42" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="43" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
-      <Rectangle fx:id="44" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#landClick"/>
+      <Rectangle fx:id="00" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="75.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="01" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="02" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="125.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="03" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="04" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="75.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="125.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="20" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="75.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="21" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="125.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="22" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="23" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="24" arcHeight="5.0" arcWidth="5.0" fill="#1fff5b" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="30" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="75.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="31" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="125.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="32" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="33" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="34" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="40" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="75.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="41" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="125.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="42" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="175.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="43" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="225.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="44" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="275.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="05" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="06" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="07" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="08" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="75.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="15" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="17" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="18" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="125.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="25" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="26" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="27" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="28" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="35" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="36" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="37" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="38" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="45" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="325.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="46" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="47" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="48" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
    </children>
 </Pane>
