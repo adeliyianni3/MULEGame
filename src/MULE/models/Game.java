@@ -11,7 +11,7 @@ public class Game {
     public static int numOfPlayers = 1;
     public static int playerConfiguration = 0;
     public static final int DEFAULT_PLAYER_AMOUNT = 0;
-
+    public static int round = 0;
     public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private static int difficulty;
     private static int mapType;
@@ -69,9 +69,8 @@ public class Game {
         int j = Integer.parseInt(landLoc)%10;
         Land plot = theMap.whatLand(i, j);
         if (!plot.isOwned()) {
-            int round = (totalTurns-1)/numOfPlayers;
             Player p = players[turn - 1];
-            if (round == 1 || round == 2) {
+            if (round < 3) {
                 plot.setOwner(p);
                 endTurn();
             } else {
@@ -85,14 +84,13 @@ public class Game {
     }
 
     public static void landClicked(String landLoc, Rectangle rec) {
-        System.out.println(playersToString());
+        System.out.println("Round:" + round);
         int i = Integer.parseInt(landLoc)/10;
         int j = Integer.parseInt(landLoc)%10;
         Land plot = theMap.whatLand(i, j);
         if (!plot.isOwned()) {
-            int round = (totalTurns-1)/numOfPlayers;
             Player p = players[turn - 1];
-            if (round == 1 || round == 2) {
+            if (round < 3) {
                 plot.setOwner(p);
                 rec.setFill(p.getColor());
                 endTurn();
@@ -106,17 +104,20 @@ public class Game {
                 }
             }
         }
+        System.out.println(playersToString());
     }
 
     public static int endTurn() {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
+        round = (totalTurns-2) / numOfPlayers;
         return turn;
     }
 
     public static void incrementTurn() {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
+        round = (totalTurns-2) / numOfPlayers;
     }
 
     public static int getTotalTurns() {
@@ -157,9 +158,9 @@ public class Game {
         String returnString = "";
         for(Player p : players) {
             if (p != null) {
-                returnString = p.toString() + "\n";
+                returnString = returnString + p.toString() + "\n";
             } else {
-                returnString = "null\n";
+                returnString = returnString +  "null\n";
             }
         }
         return returnString;
