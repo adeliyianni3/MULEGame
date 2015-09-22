@@ -21,9 +21,6 @@ public class ScreenNavigator {
      */
     public static final String MAIN_SCREEN = "/views/mainScreen.fxml";
     public static final String PLAYER = "/views/player.fxml";
-    public static final String PLAYER2 = "/views/player2.fxml";
-    public static final String PLAYER3 = "/views/player3.fxml";
-    public static final String PLAYER4 = "/views/player4.fxml";
     public static final String CONGRATULATIONS = "/views/congratulations.fxml";
     public static final String MAIN = "/views/main.fxml";
     public static final String MAP = "/views/map.fxml";
@@ -81,7 +78,7 @@ public class ScreenNavigator {
 
 
     public static void loadMain() {
-        loadScreen(MAIN);
+        loadScreen(MAIN_SCREEN);
         Game.changeState(Game.State.MAIN);
     }
 
@@ -92,13 +89,13 @@ public class ScreenNavigator {
     public static void loadPlayerConfiguration(int i) {
         switch (i) {
             case 2:
-                loadScreen(PLAYER2);
+                loadScreen(PLAYER);
                 break;
             case 3:
-                loadScreen(PLAYER3);
+                loadScreen(PLAYER);
                 break;
             case 4:
-                loadScreen(PLAYER4);
+                loadScreen(PLAYER);
                 break;
             default:
                 loadScreen(CONGRATULATIONS);
@@ -114,7 +111,6 @@ public class ScreenNavigator {
     }
 
     public static void loadPlayerConfiguration(String race, Color c, String name) {
-        Game.addPlayer(race, c, name);
         System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
 
@@ -126,13 +122,13 @@ public class ScreenNavigator {
                     loadScreen(PLAYER);
                     break;
                 case 2:
-                    loadScreen(PLAYER2);
+                    loadScreen(PLAYER);
                     break;
                 case 3:
-                    loadScreen(PLAYER3);
+                    loadScreen(PLAYER);
                     break;
                 case 4:
-                    loadScreen(PLAYER4);
+                    loadScreen(PLAYER);
                     break;
                 default:
                     loadScreen(CONGRATULATIONS); //replace with something meaningful later

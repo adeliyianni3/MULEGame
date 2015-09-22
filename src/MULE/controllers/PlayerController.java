@@ -1,18 +1,40 @@
 package MULE.controllers;
 
+import MULE.models.Game;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * Created by Aaron on 9/17/2015.
  */
-public class PlayerController {
+public class PlayerController implements Initializable{
+
+    private StringProperty name = new SimpleStringProperty();
+
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
 
     @FXML
+
     private ChoiceBox raceBox;
 
     @FXML
@@ -27,6 +49,7 @@ public class PlayerController {
         Color c = (Color)colorBox.getValue();
         //System.out.println(nameBox.getCharacters().toString());
         String name = nameBox.getText();
+        Game.addPlayer(race, c, name);
         ScreenNavigator.loadPlayerConfiguration(race, c, name);
     }
     @FXML
@@ -34,4 +57,8 @@ public class PlayerController {
         ScreenNavigator.loadMain();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setName("Player " + Game.getTurn());
+    }
 }

@@ -87,6 +87,7 @@ public class Game {
         System.out.println("Round:" + round);
         int i = Integer.parseInt(landLoc)/10;
         int j = Integer.parseInt(landLoc)%10;
+        System.out.println(i + ", " + j);
         Land plot = theMap.whatLand(i, j);
         if (!plot.isOwned()) {
             Player p = players[turn - 1];

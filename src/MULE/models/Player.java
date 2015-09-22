@@ -7,13 +7,14 @@ import javafx.scene.paint.Color;
  */
 //Just using this as a placeholder so other things compile
 public class Player {
+    private static int playerNumber = 1;
     private String name;
     private Race race;
     private Color color;
+    private int id;
     private int money;
 
     // Possible method to solve no color/race issues
-
     public Player(String name, String sRace, Color color) {
         this.name = name;
 //        Race race = null;

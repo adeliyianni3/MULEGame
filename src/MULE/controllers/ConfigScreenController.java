@@ -3,6 +3,7 @@ package MULE.controllers;
 
 import MULE.Main;
 import MULE.models.Game;
+import MULE.models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -69,10 +70,27 @@ public class ConfigScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        ScreenNavigator.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue()));
+        Game.setDifficulty(difficulty());
+        System.out.println(Game.getDifficulty());
+        Game.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue()));
         ScreenNavigator.loadPlayerConfiguration();
     }
 
+    private int difficulty() {
+        int difficulty = 0;
+        switch ((String) difficultyChoiceBox.getValue()) {
+            case "Easy": difficulty = 0;
+                break;
+            case "Medium": difficulty = 1;
+                break;
+            case "Hard": difficulty = 2;
+                break;
+            default: difficulty = 0;
+                break;
+
+        }
+        return difficulty;
+    }
 
 
     //Map

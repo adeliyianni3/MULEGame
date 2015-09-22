@@ -8,7 +8,8 @@
 <?import javafx.collections.FXCollections?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.PlayerController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.PlayerController">
    <children>
       <ChoiceBox fx:id="raceBox" layoutX="374.0" layoutY="185.0" prefWidth="150.0" value="Humanoid">
          <items>
@@ -22,7 +23,7 @@
          </items>
       </ChoiceBox>
       <!--<Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="MULE.models.Player 1"> -->
-      <Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="Player 1">
+      <Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="${controller.name}">
          <font>
             <Font name="System Bold" size="52.0" />
          </font>
@@ -41,7 +42,7 @@
       </Button>
       <Label layoutX="430.0" layoutY="234.0" text="Color" />
       <Label layoutX="429.0" layoutY="81.0" text="Name" />
-      <TextField fx:id="nameBox" layoutX="356.0" layoutY="110.0" />
+      <TextField fx:id="nameBox" layoutX="356.0" layoutY="110.0"/>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="61.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@M.U.L.E..png" />
