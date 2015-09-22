@@ -7,10 +7,10 @@ import java.util.Random;
 public class Land {
     //Just starting MULE.models.Land with basic info
     private Player owner = null;
-    private String type;
+    private LandType type;
     private Mule mule;
 
-    public Land(String type) {
+    public Land(LandType type) {
         this.type = type;
     }
     public boolean isOwned() {
@@ -25,7 +25,7 @@ public class Land {
     public void setMule(Mule newMule) {
         this.mule = newMule;
     }
-    public void setLandType(String type) {
+    public void setLandType(LandType type) {
         this.type = type;
     }
     public Mule getMule() { return this.mule; }

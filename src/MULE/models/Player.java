@@ -43,6 +43,8 @@ public class Player {
         this.race = Race.valueOf(sRace.toUpperCase());
         this.color = color;
         this.money = race.startMoney();
+        this.id = playerNumber;
+        playerNumber++;
 
     }
 
@@ -72,5 +74,15 @@ public class Player {
 
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
+    }
+
+    public void outfitMule(Resource resource) {
+        if (hasMule()) {
+            this.mule.setResource(resource);
+        }
+    }
+
+    private boolean hasMule() {
+        return this.mule != null;
     }
 }

@@ -155,10 +155,6 @@ public class ScreenNavigator {
         Game.landClicked(landLoc);
     }
 
-    public static void landClicked(String landLoc, Rectangle rec) {
-        Game.landClicked(landLoc, rec);
-    }
-
     public static void townClicked() {
         loadScreen(TOWN);
         Game.changeState(Game.State.IN_TOWN);

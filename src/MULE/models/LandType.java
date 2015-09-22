@@ -4,7 +4,7 @@ package MULE.models;
  * Created by Antonia on 9/17/2015.
  */
 public enum LandType {
-    FLAT(0.5, 1.0, 0.5),
+    PLAIN(0.5, 1.0, 0.5),
     RIVER(1.0, 0.5, 0.0),
     MOUNTAIN(0.5, 0.5, 1.0),
     D_MOUNTAIN(0.25, 0.25, 1.5),

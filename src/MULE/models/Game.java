@@ -15,12 +15,12 @@ public class Game {
     public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private static int difficulty;
     private static int mapType;
-
+    private static int[] playerTurn;
     private static int totalTurns = 1;
     private static int turn = 1;
     public static State currentState = State.MAIN;
 
-    private static GameMap theMap = new GameMap();
+    private static Map theMap = new Map();
     public static int LAND_PRICE = 300;
 
     public static void leaveTown(String side) {
@@ -59,6 +59,10 @@ public class Game {
     public static void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
+        playerTurn = new int[num];
+        for (int i = 0; i < num; i++) {
+            playerTurn[i] = i + 1;
+        }
     }
 
     public static void storeClicked(String storeLoc) {
@@ -71,22 +75,13 @@ public class Game {
                 players[Game.getTurn() - 1].buyMule();
                 break;
             case "food":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.FOOD);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
                 break;
             case "smithOre":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.SMITH_ORE);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.SMITH_ORE);
                 break;
             case "energy":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.ENERGY);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.ENERGY);
                 break;
             case "land":
                 players[Game.getTurn() - 1].sellLand();
@@ -96,15 +91,12 @@ public class Game {
 
     }
 
-    private static void buyMule() {
-    }
-
     private static void gamble() {
     }
 
     public static void landClicked(String landLoc) {
-        int i = Integer.parseInt(landLoc)/10;
-        int j = Integer.parseInt(landLoc)%10;
+        int i = Integer.parseInt(landLoc.substring(3, 5))/10;
+        int j = Integer.parseInt(landLoc.substring(3, 5))%10;
         Land plot = theMap.whatLand(i, j);
         if (!plot.isOwned()) {
             Player p = players[turn - 1];
@@ -123,8 +115,8 @@ public class Game {
 
     public static void landClicked(String landLoc, Rectangle rec) {
         System.out.println("Round:" + round);
-        int i = Integer.parseInt(landLoc)/10;
-        int j = Integer.parseInt(landLoc)%10;
+        int i = Integer.parseInt(landLoc.substring(3, 5))/10;
+        int j = Integer.parseInt(landLoc.substring(3, 5))%10;
         System.out.println(i + ", " + j);
         Land plot = theMap.whatLand(i, j);
         if (!plot.isOwned()) {
@@ -193,6 +185,20 @@ public class Game {
         players[turn-1] = new Player(name, race, c);
     }
 
+    public static void getTurnOrder() {
+        int temp = 0;
+        for(int i = 0; i < players.length; i++) {
+            temp = i;
+            for (int j = i; j < players.length; j++) {
+                if (players[j].getMoney() > players[i].getMoney()) {
+                    temp = playerTurn[i];
+                    playerTurn[i] = j;
+                    playerTurn[j] = temp;
+                }
+            }
+
+        }
+    }
     public static String playersToString() {
         String returnString = "";
         for(Player p : players) {
