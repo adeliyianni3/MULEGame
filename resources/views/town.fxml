@@ -4,13 +4,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.TownController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.TownController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff52" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
-      <Rectangle fx:id="00" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="100.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="100.0" onMouseClicked="#storeClick"/>
-      <Rectangle fx:id="01" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="400.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="100.0" onMouseClicked="#storeClick"/>
-      <Rectangle fx:id="10" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="100.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" width="100.0" onMouseClicked="#storeClick"/>
-      <Rectangle fx:id="11" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="400.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" width="100.0" onMouseClicked="#storeClick"/>
+      <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#1fff52" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
+      <Rectangle fx:id="smithore" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="92.0" layoutY="39.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="400.0" layoutY="39.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="250.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="mulePen" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="400.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="250.0" layoutY="39.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="92.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" fill="#1fff32" height="322.0" layoutX="24.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
+      <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="#1fff32" height="322.0" layoutX="500.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="76.0" />
    </children>
 </Pane>

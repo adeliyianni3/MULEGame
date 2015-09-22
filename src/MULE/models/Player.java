@@ -12,7 +12,18 @@ public class Player {
     private Race race;
     private Color color;
     private int id;
+    private Mule mule;
     private int money;
+
+    public Mule getMule() {
+        return mule;
+    }
+    public void sellLand() {
+        //TODO
+    }
+    public void buyMule() {
+        this.mule = new Mule();
+    }
 
     // Possible method to solve no color/race issues
     public Player(String name, String sRace, Color color) {

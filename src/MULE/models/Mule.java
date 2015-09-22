@@ -5,17 +5,17 @@ package MULE.models;
  */
 public class Mule {
     //Started Mule class
-    private String resourceIs;
+    private Resource resource;
     public Mule() {
-        this.resourceIs = null;
+        this.resource = null;
     }
-    public String getResource(){
-        return resourceIs;
+    public Resource getResource(){
+        return resource;
     }
     public boolean hasResource() {
-        return resourceIs != null;
+        return resource != null;
     }
-    public void setResource(String newOne){
-        this.resourceIs = newOne;
+    public void setResource(Resource resource){
+        this.resource = resource;
     }
 }

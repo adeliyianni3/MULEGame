@@ -143,11 +143,10 @@ public class ScreenNavigator {
 
         Game.incrementTurn();
     }
+    public static void loadMap() {
+        loadScreen(MAP);
 
-    public static void setNumOfPlayers(int num) {
-        Game.setNumOfPlayers(num);
     }
-
     public static void setLandColor(String loc, Color c) {
 
     }

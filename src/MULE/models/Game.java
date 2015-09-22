@@ -23,9 +23,10 @@ public class Game {
     private static GameMap theMap = new GameMap();
     public static int LAND_PRICE = 300;
 
-    public enum Resource {
-        FOOD, ORE, CRYSTALITE, ENERGY;
+    public static void leaveTown(String side) {
+        //TODO
     }
+
 
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE;
@@ -61,7 +62,44 @@ public class Game {
     }
 
     public static void storeClicked(String storeLoc) {
+        switch(storeLoc) {
+            case "Pub":
+                gamble();
+                endTurn();
+                break;
+            case "mulePen":
+                players[Game.getTurn() - 1].buyMule();
+                break;
+            case "food":
+                if (players[Game.getTurn() - 1].getMule() != null)
+                    players[Game.getTurn() - 1].getMule().setResource(Resource.FOOD);
+                else
+                    //TODO
+                break;
+            case "smithOre":
+                if (players[Game.getTurn() - 1].getMule() != null)
+                    players[Game.getTurn() - 1].getMule().setResource(Resource.SMITH_ORE);
+                else
+                    //TODO
+                break;
+            case "energy":
+                if (players[Game.getTurn() - 1].getMule() != null)
+                    players[Game.getTurn() - 1].getMule().setResource(Resource.ENERGY);
+                else
+                    //TODO
+                break;
+            case "land":
+                players[Game.getTurn() - 1].sellLand();
+                break;
 
+        }
+
+    }
+
+    private static void buyMule() {
+    }
+
+    private static void gamble() {
     }
 
     public static void landClicked(String landLoc) {
