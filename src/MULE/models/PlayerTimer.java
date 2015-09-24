@@ -9,6 +9,8 @@ package MULE.models;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static MULE.models.Game.endTurn;
+
 public class PlayerTimer {
     static int secs;
     static Timer timer;
@@ -28,6 +30,7 @@ public class PlayerTimer {
         }, delay, period);
     }
     public void stopTime() {
+        endTurn();
         timer.cancel();
     }
     public int getTime() {
@@ -36,6 +39,7 @@ public class PlayerTimer {
     private int setInterval() {
         if (secs == 1) {
             timer.cancel();
+            endTurn();
             System.out.println("TurnEnds");
         }
         return --secs;
