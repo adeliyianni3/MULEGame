@@ -23,6 +23,8 @@ public class Game {
     private static Map theMap = new Map();
     public static int LAND_PRICE = 300;
 
+    public static int numLand = 1;
+
     public static void leaveTown(String side) {
         //TODO
     }

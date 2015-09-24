@@ -14,6 +14,8 @@ public class Player {
     private int id;
     private Mule mule;
     private int money;
+    private int score;
+    private int[] arr;
 
     public Mule getMule() {
         return mule;
@@ -71,6 +73,17 @@ public class Player {
     public int getMoney() {
         return money;
     }
+
+    public int getScore() {
+        arr = new int[2];
+        arr[0] = getMoney();
+        arr[1] = 1; //getSumLand() * getLandPrice()
+        arr[2] = 1; // amountEnergy() + amountFood(); + amountOre();
+        int totalScore = 0;
+        for (int i : arr) {
+            totalScore += i + totalScore;
+        }
+        return totalScore; }
 
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
