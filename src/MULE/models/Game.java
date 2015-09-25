@@ -154,6 +154,10 @@ public class Game {
             int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
             System.out.println(i + ", " + j);
             Land plot = theMap.whatLand(i, j);
+            System.out.println("Turn: " + turn + ", Total Turns: " + totalTurns);
+            if (round == 2 && turn == 1) {
+                ScreenNavigator.instance.togglePassButton();
+            }
             if (!plot.isOwned()) {
                 Player p = players[turn - 1];
                 if (round < 3) {
@@ -172,9 +176,8 @@ public class Game {
                     }
                 }
             }
-            if (round == 3 && turn == numOfPlayers - 1) {
-                ScreenNavigator.instance.togglePassButton();
-            }
+
+
             System.out.println(playersToString()); //debug statement
         }
     }
