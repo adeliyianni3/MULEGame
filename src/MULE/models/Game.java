@@ -21,6 +21,7 @@ public class Game {
     private static int totalTurns = 1;
     private static int turn = 1;
     public static State currentState = State.MAIN;
+    public static PlayerTimer timer = new PlayerTimer();
 
     private static Map theMap = new Map();
     private static int buyPhaseSkipped = 0;
@@ -74,7 +75,8 @@ public class Game {
     public static void storeClicked(String storeLoc) {
         switch(storeLoc) {
             case "Pub":
-                //gamble();
+                System.out.println("Here");
+                gamble(timer);
                 endTurn();
                 break;
             case "mulePen":
@@ -103,6 +105,7 @@ public class Game {
         int bonus;
         Random rand = new Random();
         int time = timer.getTime();
+        System.out.println(time);
         if (time<=12){
             timeBonus=50;
         } else if (time<=25){
@@ -117,6 +120,7 @@ public class Game {
             bonus=250;
         }
         players[turn-1].addMoney(bonus);
+        timer.stopTime();
     }
     
 //    public static void landClicked(String landLoc) {
@@ -198,16 +202,16 @@ public class Game {
         if (buyPhaseSkipped >= numOfPlayers) {
             currentState = State.MAP;
             ScreenNavigator.instance.togglePassButton();
+            timer.startTime();
         }
-
         return turn;
     }
-
     public static int endTurn() {
 
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
+        timer.startTime();
         return turn;
     }
 

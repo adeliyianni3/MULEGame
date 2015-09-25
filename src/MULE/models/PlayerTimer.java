@@ -10,6 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static MULE.models.Game.endTurn;
+import static MULE.models.Game.players;
 
 public class PlayerTimer {
     static int secs;
@@ -20,6 +21,7 @@ public class PlayerTimer {
         int delay = 1000;
         int period = 1000;
         timer = new Timer();
+        //Player p = Game.players[Game.getTurn()];
         System.out.println("Turn Starts");
         timer.scheduleAtFixedRate(new TimerTask() {
 
@@ -30,8 +32,10 @@ public class PlayerTimer {
         }, delay, period);
     }
     public void stopTime() {
-        endTurn();
         timer.cancel();
+        System.out.println("TurnEnds");
+        endTurn();
+        Game.setMapType(0);
     }
     public int getTime() {
         return secs;
@@ -39,8 +43,8 @@ public class PlayerTimer {
     private int setInterval() {
         if (secs == 1) {
             timer.cancel();
-            endTurn();
             System.out.println("TurnEnds");
+            endTurn();
         }
         return --secs;
     }
