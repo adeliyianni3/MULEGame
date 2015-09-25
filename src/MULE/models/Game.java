@@ -4,6 +4,8 @@ import MULE.controllers.ScreenNavigator;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.util.Random;
+
 /**
  * Created by Aaron on 9/17/2015.
  */
@@ -15,15 +17,17 @@ public class Game {
     public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private static int difficulty;
     private static int mapType;
-
+    private static int[] playerTurn;
     private static int totalTurns = 1;
     private static int turn = 1;
     public static State currentState = State.MAIN;
 
+    private static Map theMap = new Map();
     private static int buyPhaseSkipped = 0;
-
-    private static GameMap theMap = new GameMap();
+    
     public static int LAND_PRICE = 300;
+
+    public static int numLand = 1;
 
     public static void leaveTown(String side) {
         currentState = State.MAP;
@@ -61,34 +65,29 @@ public class Game {
     public static void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
+        playerTurn = new int[num];
+        for (int i = 0; i < num; i++) {
+            playerTurn[i] = i + 1;
+        }
     }
 
     public static void storeClicked(String storeLoc) {
         switch(storeLoc) {
             case "Pub":
-                gamble();
+                //gamble();
                 endTurn();
                 break;
             case "mulePen":
                 players[Game.getTurn() - 1].buyMule();
                 break;
             case "food":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.FOOD);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
                 break;
             case "smithOre":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.SMITH_ORE);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.SMITH_ORE);
                 break;
             case "energy":
-                if (players[Game.getTurn() - 1].getMule() != null)
-                    players[Game.getTurn() - 1].getMule().setResource(Resource.ENERGY);
-                else
-                    //TODO
+                players[Game.getTurn() - 1].outfitMule(Resource.ENERGY);
                 break;
             case "land":
                 players[Game.getTurn() - 1].sellLand();
@@ -98,12 +97,28 @@ public class Game {
 
     }
 
-    private static void buyMule() {
+    private static void gamble(PlayerTimer timer) {
+        int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+        int timeBonus;
+        int bonus;
+        Random rand = new Random();
+        int time = timer.getTime();
+        if (time<=12){
+            timeBonus=50;
+        } else if (time<=25){
+            timeBonus=100;
+        } else if (time<=37){
+            timeBonus=150;
+        } else{
+            timeBonus=200;
+        }
+        bonus = roundBonus[round-1]+rand.nextInt(timeBonus + 1);
+        if (bonus>250){
+            bonus=250;
+        }
+        players[turn-1].addMoney(bonus);
     }
-
-    private static void gamble() {
-    }
-
+    
 //    public static void landClicked(String landLoc) {
 //        int i = Integer.parseInt(landLoc)/10;
 //        int j = Integer.parseInt(landLoc)%10;
@@ -135,8 +150,8 @@ public class Game {
     public static void landClicked(String landLoc, Rectangle rec) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
-            int i = Integer.parseInt(landLoc) / 10;
-            int j = Integer.parseInt(landLoc) % 10;
+            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
             System.out.println(i + ", " + j);
             Land plot = theMap.whatLand(i, j);
             if (!plot.isOwned()) {
@@ -144,6 +159,7 @@ public class Game {
                 if (round < 3) {
                     plot.setOwner(p);
                     rec.setFill(p.getColor());
+                    buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
@@ -151,11 +167,12 @@ public class Game {
                         rec.setFill(p.getColor());
                         p.subtractMoney(LAND_PRICE);
                         ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
+                        buyPhaseSkipped = 0;
                         buyPhaseEndTurn();
                     }
                 }
             }
-            if (round == 3 && turn == numOfPlayers) {
+            if (round == 3 && turn == numOfPlayers - 1) {
                 ScreenNavigator.instance.togglePassButton();
             }
             System.out.println(playersToString()); //debug statement
@@ -231,6 +248,20 @@ public class Game {
         players[turn-1] = new Player(name, race, c);
     }
 
+    public static void getTurnOrder() {
+        int temp = 0;
+        for(int i = 0; i < players.length; i++) {
+            temp = i;
+            for (int j = i; j < players.length; j++) {
+                if (players[j].getMoney() > players[i].getMoney()) {
+                    temp = playerTurn[i];
+                    playerTurn[i] = j;
+                    playerTurn[j] = temp;
+                }
+            }
+
+        }
+    }
     public static String playersToString() {
         String returnString = "";
         for(Player p : players) {
