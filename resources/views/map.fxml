@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -52,5 +53,11 @@
       <Rectangle fx:id="46" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="47" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="48" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#ffff1f" height="41.0" layoutX="456.0" layoutY="336.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
+      <Label fx:id="continueLabel" layoutX="471.0" layoutY="341.0" onMouseClicked="#passClick" text="Pass">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

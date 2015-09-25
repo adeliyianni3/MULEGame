@@ -49,12 +49,12 @@ public class PlayerController implements Initializable{
         Color c = (Color)colorBox.getValue();
         //System.out.println(nameBox.getCharacters().toString());
         String name = nameBox.getText();
-        Game.addPlayer(race, c, name);
-        ScreenNavigator.loadPlayerConfiguration(race, c, name);
+        Game.addPlayer(race, c, name); //why
+        ScreenNavigator.instance.loadPlayerConfiguration(race, c, name);
     }
     @FXML
     void toMain(ActionEvent event) {
-        ScreenNavigator.loadMain();
+        ScreenNavigator.instance.loadMain();
     }
 
     @Override

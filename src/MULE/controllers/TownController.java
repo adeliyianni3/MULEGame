@@ -22,12 +22,12 @@ public class TownController {
 
 
     public void showMap() {
-        ScreenNavigator.loadMain();
+        ScreenNavigator.instance.loadMain();
     }
 
     public void leaveTown(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
         Game.leaveTown(side);
-        ScreenNavigator.loadMap();
+        ScreenNavigator.instance.loadMap();
     }
 }

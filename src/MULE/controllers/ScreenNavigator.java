@@ -2,11 +2,18 @@ package MULE.controllers;
 
 import MULE.models.Game;
 import MULE.Main;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import java.io.IOException;
+
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 /**
  * Utility class for controlling navigation between vistas.
@@ -16,30 +23,61 @@ import javafx.scene.shape.Rectangle;
  */
 public class ScreenNavigator {
 
+    public BooleanProperty showPass = new SimpleBooleanProperty(false);
+
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN_SCREEN = "/views/mainScreen.fxml";
-    public static final String PLAYER = "/views/player.fxml";
-    public static final String CONGRATULATIONS = "/views/congratulations.fxml";
-    public static final String MAIN = "/views/main.fxml";
-    public static final String MAP = "/views/map.fxml";
-    public static final String TOWN = "/views/town.fxml";
+    public final String MAIN_SCREEN = "/views/mainScreen.fxml";
+    public final String PLAYER = "/views/player.fxml";
+    public final String CONGRATULATIONS = "/views/congratulations.fxml";
+    public final String MAIN = "/views/main.fxml";
+    public final String MAP = "/views/map.fxml";
+    public final String TOWN = "/views/town.fxml";
 
-    public static String currentState;
+    public Scene mainScreen;
+    public Scene playerScreen;
+    public Scene congratulations;
+    public Scene main;
+    public Scene map;
+    public Scene town;
+
+    public String currentState;
 
 
 
+    public static ScreenNavigator instance = new ScreenNavigator();
+    private Stage stage;
 
     /** The main application layout controller. */
     private static MainController mainController;
+
+    private ScreenNavigator() {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource(MAIN_SCREEN));
+            mainScreen = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(PLAYER));
+            playerScreen = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(CONGRATULATIONS));
+            congratulations = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(MAIN));
+            main = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(MAP));
+            map = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(TOWN));
+            town = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Stores the main controller for later use in navigation tasks.
      *
      * @param mainController the main application layout controller.
      */
-    public static void setMainController(MainController mainController) {
+    public void setMainController(MainController mainController) {
         ScreenNavigator.mainController = mainController;
     }
 
@@ -60,81 +98,78 @@ public class ScreenNavigator {
      *
      * @param fxml the fxml file to be loaded.
      */
-    public static void loadScreen(String fxml) {
-        try {
-            mainController.setVista( //this clears the pane and fills it with the fxml
-                    (Node) FXMLLoader.load(
-                            ScreenNavigator.class.getResource(
-                                    fxml
-                            )
-                    )
-            );
-        } catch (IOException e) {
-            System.out.println("Could not find file");
-            //e.printStackTrace();
+    public void loadScreen(String fxml) {
+//        try {
+//            mainController.setVista( //this clears the pane and fills it with the fxml
+//                    (Node) FXMLLoader.load(
+//                            ScreenNavigator.class.getResource(
+//                                    fxml
+//                            )
+//                    )
+//            );
+//        } catch (IOException e) {
+//            System.out.println("Could not find file");
+//            //e.printStackTrace();
+//        }
+        //out with the old and in with the new
+        switch (fxml) {
+            case MAIN_SCREEN: loadScreen(mainScreen);
+                break;
+            case PLAYER: loadScreen(playerScreen);
+                break;
+            case CONGRATULATIONS: loadScreen(main);
+                break;
+            case MAIN: loadScreen(main);
+                break;
+            case MAP: loadScreen(map);
+                break;
+            case TOWN: loadScreen(town);
+                break;
+            default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
+                break;
         }
     }
 
+    public void loadScreen(Scene scene) {
+        stage.setScene(scene);
+    }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
-    public static void loadMain() {
+    public void loadMain() {
         loadScreen(MAIN_SCREEN);
         Game.changeState(Game.State.MAIN);
     }
 
-    public static void loadCongratulations() {
+    public void loadCongratulations() {
         loadScreen(CONGRATULATIONS);
     }
 
-    public static void loadPlayerConfiguration(int i) {
-        switch (i) {
-            case 2:
-                loadScreen(PLAYER);
-                break;
-            case 3:
-                loadScreen(PLAYER);
-                break;
-            case 4:
-                loadScreen(PLAYER);
-                break;
-            default:
-                loadScreen(CONGRATULATIONS);
-                break;
-        }
-    }
 
-    public static void loadPlayerConfiguration() {
+    public void loadPlayerConfiguration() {
         Game.changeState(Game.State.CONFIG);
         //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         loadScreen(PLAYER);
         Game.incrementTurn();
     }
 
-    public static void loadPlayerConfiguration(String race, Color c, String name) {
+    public void loadPlayerConfiguration(String race, Color c, String name) { //parameters have been made obsolete, change name later or redo
         System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
 
             //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
 //            playerNumber.setText("Player " + Main.playerConfiguration);
 //            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
-            switch (Game.getTurn()) {
-                case 1:
-                    loadScreen(PLAYER);
-                    break;
-                case 2:
-                    loadScreen(PLAYER);
-                    break;
-                case 3:
-                    loadScreen(PLAYER);
-                    break;
-                case 4:
-                    loadScreen(PLAYER);
-                    break;
-                default:
-                    loadScreen(CONGRATULATIONS); //replace with something meaningful later
-                    break;
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
+                playerScreen = new Scene(root);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
+            loadScreen(PLAYER);
 
         } else {
             loadScreen(MAP);
@@ -143,25 +178,35 @@ public class ScreenNavigator {
 
         Game.incrementTurn();
     }
-    public static void loadMap() {
+    public void loadMap() {
         loadScreen(MAP);
 
     }
-    public static void setLandColor(String loc, Color c) {
+    public void setLandColor(String loc, Color c) {
 
     }
 
-    public static void landClicked(String landLoc) {
-        Game.landClicked(landLoc);
+//    public void landClicked(String landLoc) {
+//        Game.landClicked(landLoc);
+//    }
+
+    public void passClick() {
+        Game.buyPhaseSkip();
     }
 
-    public static void landClicked(String landLoc, Rectangle rec) {
+    public void landClicked(String landLoc, Rectangle rec) {
         Game.landClicked(landLoc, rec);
     }
 
-    public static void townClicked() {
-        loadScreen(TOWN);
-        Game.changeState(Game.State.IN_TOWN);
+    public void townClicked() {
+        if (Game.currentState == Game.State.MAP) {
+            loadScreen(TOWN);
+            Game.changeState(Game.State.IN_TOWN);
+        }
+    }
+
+    public void togglePassButton() {
+        showPass.setValue(!showPass.getValue());
     }
 
 }

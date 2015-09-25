@@ -20,16 +20,18 @@ public class Game {
     private static int turn = 1;
     public static State currentState = State.MAIN;
 
+    private static int buyPhaseSkipped = 0;
+
     private static GameMap theMap = new GameMap();
     public static int LAND_PRICE = 300;
 
     public static void leaveTown(String side) {
-        //TODO
+        currentState = State.MAP;
     }
 
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE;
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP;
     }
 
 //    public enum ScreenState{
@@ -102,51 +104,87 @@ public class Game {
     private static void gamble() {
     }
 
-    public static void landClicked(String landLoc) {
-        int i = Integer.parseInt(landLoc)/10;
-        int j = Integer.parseInt(landLoc)%10;
-        Land plot = theMap.whatLand(i, j);
-        if (!plot.isOwned()) {
-            Player p = players[turn - 1];
-            if (round < 3) {
-                plot.setOwner(p);
-                endTurn();
-            } else {
-                if (p.getMoney() > LAND_PRICE) {
-                    plot.setOwner(p);
-                    p.subtractMoney(LAND_PRICE);
-                    ScreenNavigator.setLandColor(landLoc, p.getColor());
-                }
-            }
+//    public static void landClicked(String landLoc) {
+//        int i = Integer.parseInt(landLoc)/10;
+//        int j = Integer.parseInt(landLoc)%10;
+//        Land plot = theMap.whatLand(i, j);
+//        if (!plot.isOwned()) {
+//            Player p = players[turn - 1];
+//            if (round < 3) {
+//                plot.setOwner(p);
+//                endTurn();
+//            } else {
+//                if (p.getMoney() > LAND_PRICE) {
+//                    plot.setOwner(p);
+//                    p.subtractMoney(LAND_PRICE);
+//                    ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
+//                }
+//            }
+//        }
+//    }
+
+    public static void buyPhaseSkip() {
+        System.out.println("buyPhaseSkip() called.");
+        if (currentState.equals(State.BUYPHASE)) {
+            System.out.println("buyPhaseSkip() executed.");
+            buyPhaseSkipped++;
+            buyPhaseEndTurn();
         }
     }
 
     public static void landClicked(String landLoc, Rectangle rec) {
-        System.out.println("Round:" + round);
-        int i = Integer.parseInt(landLoc)/10;
-        int j = Integer.parseInt(landLoc)%10;
-        System.out.println(i + ", " + j);
-        Land plot = theMap.whatLand(i, j);
-        if (!plot.isOwned()) {
-            Player p = players[turn - 1];
-            if (round < 3) {
-                plot.setOwner(p);
-                rec.setFill(p.getColor());
-                endTurn();
-            } else {
-                if (p.getMoney() >= LAND_PRICE) {
+        if (currentState.equals(State.BUYPHASE)) {
+            System.out.println("Round:" + round);
+            int i = Integer.parseInt(landLoc) / 10;
+            int j = Integer.parseInt(landLoc) % 10;
+            System.out.println(i + ", " + j);
+            Land plot = theMap.whatLand(i, j);
+            if (!plot.isOwned()) {
+                Player p = players[turn - 1];
+                if (round < 3) {
                     plot.setOwner(p);
                     rec.setFill(p.getColor());
-                    p.subtractMoney(LAND_PRICE);
-                    ScreenNavigator.setLandColor(landLoc, p.getColor());
-                    endTurn();
+                    buyPhaseEndTurn();
+                } else {
+                    if (p.getMoney() >= LAND_PRICE) {
+                        plot.setOwner(p);
+                        rec.setFill(p.getColor());
+                        p.subtractMoney(LAND_PRICE);
+                        ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
+                        buyPhaseEndTurn();
+                    }
                 }
             }
+            if (round == 3 && turn == numOfPlayers) {
+                ScreenNavigator.instance.togglePassButton();
+            }
+            System.out.println(playersToString()); //debug statement
         }
-        System.out.println(playersToString());
+    }
+
+    public static int buyPhaseEndTurn() {
+        boolean noMoney = true; //make prettier later
+        while (noMoney && buyPhaseSkipped < numOfPlayers) {
+            turn = turn % numOfPlayers + 1;
+            totalTurns++;
+            round = (totalTurns-2) / numOfPlayers;
+            if (players[turn - 1].getMoney() < LAND_PRICE) {
+                buyPhaseSkipped++;
+            } else {
+                noMoney = false;
+            }
+        }
+
+        if (buyPhaseSkipped >= numOfPlayers) {
+            currentState = State.MAP;
+            ScreenNavigator.instance.togglePassButton();
+        }
+
+        return turn;
     }
 
     public static int endTurn() {
+
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;

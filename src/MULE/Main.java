@@ -18,16 +18,17 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("M.U.L.E.");
-
+        ScreenNavigator.instance.setStage(stage);
+        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.mainScreen);
         //MouseEvent stuff
         //http://stackoverflow.com/questions/16635514/how-to-get-location-of-mouse-in-javafx
         //https://blog.idrsolutions.com/2013/01/mouseevents-in-javafx/
 
-        stage.setScene(
-                createScene(
-                        loadMainPane()
-                )
-        );
+//        stage.setScene(
+//                createScene(
+//                        loadMainPane()
+//                )
+//        );
 
         stage.show();
     }
@@ -45,14 +46,14 @@ public class Main extends Application {
 
         Pane mainPane = (Pane) loader.load(
                 getClass().getResourceAsStream(
-                        ScreenNavigator.MAIN
+                        ScreenNavigator.instance.MAIN
                 )
         );
 
         MainController mainController = loader.getController();
 
-        ScreenNavigator.setMainController(mainController);
-        ScreenNavigator.loadScreen(ScreenNavigator.MAIN_SCREEN);
+        ScreenNavigator.instance.setMainController(mainController);
+        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.main);
 
         return mainPane;
     }

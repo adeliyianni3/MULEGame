@@ -36,12 +36,12 @@ public class ConfigScreenController {
 
     @FXML
     void toMain(ActionEvent event) {
-        ScreenNavigator.loadMain();
+        ScreenNavigator.instance.loadMain();
     }
 
     @FXML
     void toNext(ActionEvent event) {
-        ScreenNavigator.loadPlayerConfiguration();
+        ScreenNavigator.instance.loadPlayerConfiguration();
     }
 
     //Main Screen
@@ -73,7 +73,7 @@ public class ConfigScreenController {
         Game.setDifficulty(difficulty());
         System.out.println(Game.getDifficulty());
         Game.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue()));
-        ScreenNavigator.loadPlayerConfiguration();
+        ScreenNavigator.instance.loadPlayerConfiguration();
     }
 
     private int difficulty() {
@@ -95,7 +95,7 @@ public class ConfigScreenController {
 
     //Map
     public void showMap() {
-        ScreenNavigator.loadMain();
+        ScreenNavigator.instance.loadMain();
     }
 
 }
