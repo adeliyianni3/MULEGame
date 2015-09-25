@@ -4,6 +4,8 @@ import MULE.controllers.ScreenNavigator;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.util.Random;
+
 /**
  * Created by Aaron on 9/17/2015.
  */
@@ -93,7 +95,26 @@ public class Game {
 
     }
 
-    private static void gamble() {
+    private static void gamble(PlayerTimer timer) {
+        int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+        int timeBonus;
+        int bonus;
+        Random rand = new Random();
+        int time = timer.getTime();
+        if (time<=12){
+            timeBonus=50;
+        } else if (time<=25){
+            timeBonus=100;
+        } else if (time<=37){
+            timeBonus=150;
+        } else{
+            timeBonus=200;
+        }
+        bonus = roundBonus[round-1]+rand.nextInt(timeBonus + 1);
+        if (bonus>250){
+            bonus=250;
+        }
+        players[turn-1].addMoney(bonus);
     }
 
     public static void landClicked(String landLoc) {
