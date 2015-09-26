@@ -32,5 +32,4 @@ public class Land {
     public Player getOwner() {
         return this.owner;
     }
-    //not sure what to do about values yet also gonna look into making land type an enum
 }

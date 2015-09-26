@@ -39,10 +39,6 @@ public class Game {
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP;
     }
 
-//    public enum ScreenState{
-//        MAIN, CONFIG, MAP, TOWN;
-//    }
-
     public static void changeState(State s) {
         currentState = s;
     }
@@ -74,23 +70,21 @@ public class Game {
 
     public static void storeClicked(String storeLoc) {
         switch(storeLoc) {
-            case "Pub":
-                System.out.println("Here");
+            case "pub":
                 gamble(timer);
-                endTurn();
                 break;
             case "mulePen":
                 players[Game.getTurn() - 1].buyMule();
                 break;
-            case "food":
+            case "resourceStore":
                 players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
                 break;
-            case "smithOre":
-                players[Game.getTurn() - 1].outfitMule(Resource.SMITH_ORE);
-                break;
-            case "energy":
-                players[Game.getTurn() - 1].outfitMule(Resource.ENERGY);
-                break;
+            //case "smithOre":
+                //players[Game.getTurn() - 1].outfitMule(Resource.SMITH_ORE);
+                //break;
+            //case "energy":
+                //players[Game.getTurn() - 1].outfitMule(Resource.ENERGY);
+                //break;
             case "land":
                 players[Game.getTurn() - 1].sellLand();
                 break;
@@ -120,27 +114,9 @@ public class Game {
             bonus=250;
         }
         players[turn-1].addMoney(bonus);
+        System.out.println(bonus);
         timer.stopTime();
     }
-    
-//    public static void landClicked(String landLoc) {
-//        int i = Integer.parseInt(landLoc)/10;
-//        int j = Integer.parseInt(landLoc)%10;
-//        Land plot = theMap.whatLand(i, j);
-//        if (!plot.isOwned()) {
-//            Player p = players[turn - 1];
-//            if (round < 3) {
-//                plot.setOwner(p);
-//                endTurn();
-//            } else {
-//                if (p.getMoney() > LAND_PRICE) {
-//                    plot.setOwner(p);
-//                    p.subtractMoney(LAND_PRICE);
-//                    ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
-//                }
-//            }
-//        }
-//    }
 
     public static void buyPhaseSkip() {
         System.out.println("buyPhaseSkip() called.");
@@ -232,24 +208,6 @@ public class Game {
     public static int getNumOfPlayers() {
         return numOfPlayers;
     }
-
-//    public static void actionRelay(String message) {
-//        //For now we will awkwardly parse messages from the ScreenNavigator here, we'll look into listeners later
-//        switch(currentState) {
-//            case MAIN:
-//                break;
-//            case CONFIG:
-//                break;
-//            case MAP:
-//                break;
-//            case TOWN:
-//                break;
-//            case AUCTION:
-//                break;
-//            default:
-//                System.out.println("This shouldn't have been possible. Main.actionRelay() error.");
-//        }
-//    }
 
     public static void addPlayer(String race, Color c, String name) {
         players[turn-1] = new Player(name, race, c);

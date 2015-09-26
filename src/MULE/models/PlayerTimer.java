@@ -35,7 +35,7 @@ public class PlayerTimer {
         timer.cancel();
         System.out.println("TurnEnds");
         endTurn();
-        Game.setMapType(0);
+        //Game.setMapType(0);
     }
     public int getTime() {
         return secs;
