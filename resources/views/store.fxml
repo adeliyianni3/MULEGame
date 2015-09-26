@@ -20,7 +20,7 @@
     </Rectangle>
     <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="301.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="114.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="smithore" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="175.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="175.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="236.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="321.9999084472656" layoutX="508.0" layoutY="39.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
     <Button fx:id="purchaseCart" layoutX="40.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#purchaseCart" text="Purchase" />
