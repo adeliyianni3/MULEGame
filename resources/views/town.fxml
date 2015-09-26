@@ -9,7 +9,7 @@
       <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#1fff52" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
 
       <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="92.0" layoutY="39.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle fx:id="mulePen" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="350.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="350.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
       <Rectangle fx:id="resoucreStore" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="350.0" layoutY="39.0" onMouseClicked="#enterStore" stroke="BLACK" strokeType="INSIDE" width="150.0" />
       <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="92.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
       <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" fill="#1fff32" height="322.0" layoutX="24.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />

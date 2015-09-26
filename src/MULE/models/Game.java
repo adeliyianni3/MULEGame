@@ -76,8 +76,8 @@ public class Game {
             case "pub":
                 gamble(timer);
                 break;
-            case "mulePen":
-                players[Game.getTurn() - 1].buyMule();
+            case "assay":
+                //players[Game.getTurn() - 1].buyMule();
                 break;
             case "resourceStore":
                 players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
