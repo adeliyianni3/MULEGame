@@ -31,6 +31,15 @@ public class StoreController implements Initializable {
         items.add(side);
 
     }
+    @FXML
+    public void purchaseCart() {
+        Object[] cart = items.toArray();
+        Boolean check = Game.purchaseCart(cart);
+        if (check) {
+            cartList.getItems().clear();
+        }
+    }
+
     public void showMap() {
         ScreenNavigator.instance.loadMain();
     }

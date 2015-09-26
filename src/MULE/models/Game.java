@@ -216,6 +216,23 @@ public class Game {
         players[turn-1] = new Player(name, race, c);
     }
 
+    public static Boolean purchaseCart(Object[] stuff) {
+        Player p = players[turn - 1];
+        int totalCost = 0;
+        for (Object thing: stuff) {
+            String item = thing.toString();
+            //Make enums later for price
+            totalCost = totalCost + 100;
+        }
+        if (p.getMoney() < totalCost) {
+            return false;
+        }
+        else {
+            p.subtractMoney(totalCost);
+            return true;
+        }
+    }
+
     public static void getTurnOrder() {
         int temp = 0;
         for(int i = 0; i < players.length; i++) {
