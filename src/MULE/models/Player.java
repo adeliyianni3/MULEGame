@@ -30,18 +30,6 @@ public class Player {
     // Possible method to solve no color/race issues
     public Player(String name, String sRace, Color color) {
         this.name = name;
-//        Race race = null;
-//        if (name.equals("Humanoid")) {
-//            race = Race.HUMANOID;
-//        } else if (name.equals("Flapper")) {
-//            race = Race.FLAPPER;
-//        } else if (name.equals("Bonzoid")) {
-//            race = Race.BONZOID;
-//        } else if (name.equals("Ugaite")) {
-//            race = Race.UGAITE;
-//        } else if (name.equals("Buzzite")) {
-//            race = Race.BUZZITE;
-//        }
         this.race = Race.valueOf(sRace.toUpperCase());
         this.color = color;
         this.money = race.startMoney();

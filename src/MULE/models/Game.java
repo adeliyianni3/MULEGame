@@ -22,6 +22,7 @@ public class Game {
     private static int turn = 1;
     public static State currentState = State.MAIN;
     public static PlayerTimer timer = new PlayerTimer();
+    public static ResourceStore store = new ResourceStore();
 
     private static Map theMap = new Map();
     private static int buyPhaseSkipped = 0;
@@ -218,19 +219,18 @@ public class Game {
 
     public static Boolean purchaseCart(Object[] stuff) {
         Player p = players[turn - 1];
-        int totalCost = 0;
         for (Object thing: stuff) {
-            String item = thing.toString();
+            Resource item = Resource.valueOf(thing.toString().toUpperCase());
             //Make enums later for price
-            totalCost = totalCost + 100;
+            int price = item.getPrice();
+            if (p.getMoney() < price){
+                return false;
+            }else {
+                p.subtractMoney(price);
+                System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
+            }
         }
-        if (p.getMoney() < totalCost) {
-            return false;
-        }
-        else {
-            p.subtractMoney(totalCost);
-            return true;
-        }
+        return true;
     }
 
     public static void getTurnOrder() {
