@@ -33,10 +33,13 @@ public class Game {
     public static void leaveTown(String side) {
         currentState = State.MAP;
     }
+    public static void leaveStore(String side) {
+        currentState = State.IN_TOWN;
+    }
 
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP;
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE;
     }
 
     public static void changeState(State s) {

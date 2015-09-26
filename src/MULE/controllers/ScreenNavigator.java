@@ -34,6 +34,7 @@ public class ScreenNavigator {
     public final String MAIN = "/views/main.fxml";
     public final String MAP = "/views/map.fxml";
     public final String TOWN = "/views/town.fxml";
+    public final String STORE = "/views/store.fxml";
 
     public Scene mainScreen;
     public Scene playerScreen;
@@ -41,6 +42,7 @@ public class ScreenNavigator {
     public Scene main;
     public Scene map;
     public Scene town;
+    public Scene store;
 
     public String currentState;
 
@@ -67,6 +69,8 @@ public class ScreenNavigator {
             map = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(TOWN));
             town = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(STORE));
+            store = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -125,6 +129,8 @@ public class ScreenNavigator {
                 break;
             case TOWN: loadScreen(town);
                 break;
+            case STORE: loadScreen(store);
+                break;
             default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
                 break;
         }
@@ -141,6 +147,10 @@ public class ScreenNavigator {
     public void loadMain() {
         loadScreen(MAIN_SCREEN);
         Game.changeState(Game.State.MAIN);
+    }
+    public void loadTown() {
+        loadScreen(TOWN);
+        Game.changeState(Game.State.IN_TOWN);
     }
 
     public void loadCongratulations() {
@@ -202,6 +212,12 @@ public class ScreenNavigator {
         if (Game.currentState == Game.State.MAP) {
             loadScreen(TOWN);
             Game.changeState(Game.State.IN_TOWN);
+        }
+    }
+    public void enterStore() {
+        if (Game.currentState == Game.State.IN_TOWN) {
+            loadScreen(STORE);
+            Game.changeState(Game.State.STORE);
         }
     }
 

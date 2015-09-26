@@ -30,9 +30,9 @@ public class TownController {
         Game.leaveTown(side);
         ScreenNavigator.instance.loadMap();
     }
+
     @FXML
-    void enterPub(MouseEvent event) {
-        //Game.gamble();
-        Game.endTurn();
+    void enterStore(MouseEvent event) {
+        ScreenNavigator.instance.enterStore();
     }
 }
