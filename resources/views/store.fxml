@@ -3,19 +3,29 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.StoreController">
   <children>
-    <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" fill="#ffb0c1" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
-    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#65ffaa" height="50.0" layoutX="441.0" layoutY="47.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="#65ffaa" height="50.0" layoutX="441.0" layoutY="301.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="#65ffaa" height="50.0" layoutX="441.0" layoutY="114.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="smithore" arcHeight="5.0" arcWidth="5.0" fill="#65ffaa" height="50.0" layoutX="441.0" layoutY="175.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" fill="#65ffaa" height="50.0" layoutX="441.0" layoutY="236.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="#ffb0c1" height="321.9999084472656" layoutX="508.0" layoutY="39.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
-    <Button fx:id= "purchaseCart" layoutX="40.0" layoutY="327.0" onMouseClicked="#purchaseCart" mnemonicParsing="false" text="Purchase" />
-    <ListView fx:id= "cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="377.0" />
-    <Button layoutX="354.0" layoutY="326.0" mnemonicParsing="false" text="Remove" />
+    <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0">
+      <fill>
+        <Color blue="0.757" green="0.690" red="1.000" fx:id="x2" />
+      </fill>
+    </Rectangle>
+    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" height="50.0" layoutX="441.0" layoutY="47.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0">
+      <fill>
+        <Color blue="0.667" green="1.000" red="0.396" fx:id="x1" />
+      </fill>
+    </Rectangle>
+    <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="301.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="114.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="smithore" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="175.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="50.0" layoutX="441.0" layoutY="236.0" onMouseClicked="#addCart" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="321.9999084472656" layoutX="508.0" layoutY="39.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
+    <Button fx:id="purchaseCart" layoutX="40.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#purchaseCart" text="Purchase" />
+    <ListView fx:id="cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="377.0" />
+    <Button layoutX="354.0" layoutY="327.0" mnemonicParsing="false" text="Remove" />
+    <Button layoutX="209.0" layoutY="327.0" mnemonicParsing="false" text="Sell" />
   </children>
 </Pane>
