@@ -4,7 +4,7 @@ package MULE.models;
  * Created by Aaron on 9/22/2015.
  */
 public enum Resource {
-    //Just put values for beginner lvl not tournamet
+    //Just put values for beginner lvl not tournament
     ENERGY(25),
     FOOD(30),
     SMITH_ORE(50),

@@ -1,6 +1,9 @@
 package MULE.models;
 
 import MULE.controllers.ScreenNavigator;
+import MULE.controllers.StoreController;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -217,8 +220,9 @@ public class Game {
         players[turn-1] = new Player(name, race, c);
     }
 
-    public static Boolean purchaseCart(Object[] stuff) {
+    public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
         Player p = players[turn - 1];
+        Object[] stuff = cart.toArray();
         for (Object thing: stuff) {
             Resource item = Resource.valueOf(thing.toString().toUpperCase());
             //Make enums later for price
@@ -228,6 +232,7 @@ public class Game {
             }else {
                 p.subtractMoney(price);
                 System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
+                listView.getItems().remove(thing.toString());
             }
         }
         return true;

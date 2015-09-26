@@ -33,11 +33,7 @@ public class StoreController implements Initializable {
     }
     @FXML
     public void purchaseCart() {
-        Object[] cart = items.toArray();
-        Boolean check = Game.purchaseCart(cart);
-        if (check) {
-            cartList.getItems().clear();
-        }
+        Game.purchaseCart(items, cartList);
     }
 
     public void showMap() {
