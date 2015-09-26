@@ -28,7 +28,6 @@ public class PlayerTimer {
 
             public void run() {
                 setInterval();
-
             }
         }, delay, period);
     }
