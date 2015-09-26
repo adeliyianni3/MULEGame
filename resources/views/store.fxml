@@ -25,7 +25,7 @@
     <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="321.9999084472656" layoutX="508.0" layoutY="39.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
     <Button fx:id="purchaseCart" layoutX="40.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#purchaseCart" text="Purchase" />
     <ListView fx:id="cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="377.0" />
-    <Button layoutX="354.0" layoutY="327.0" mnemonicParsing="false" text="Remove" />
+    <Button fx:id= "removeItem" layoutX="354.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#removeItem" text="Remove" />
     <Button layoutX="209.0" layoutY="327.0" mnemonicParsing="false" text="Sell" />
   </children>
 </Pane>
