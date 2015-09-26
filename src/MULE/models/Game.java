@@ -7,11 +7,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by Aaron on 9/17/2015.
- */
+//Created by Aaron on 9/17/2015.
 public class Game {
     public static int numOfPlayers = 1;
     public static int playerConfiguration = 0;
@@ -43,7 +42,7 @@ public class Game {
 
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE;
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE
     }
 
     public static void changeState(State s) {
@@ -231,6 +230,7 @@ public class Game {
                 return false;
             }else {
                 p.subtractMoney(price);
+                p.addResource(item);
                 System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
                 listView.getItems().remove(thing.toString());
             }
@@ -238,8 +238,27 @@ public class Game {
         return true;
     }
 
+    public static void sellItems(ObservableList<String> cart, ListView<String> listView) {
+        Player p = players[turn - 1];
+        ArrayList<Resource> playerStuff = p.getResources();
+        Object[] cartStuff = cart.toArray();
+        for (Object item: cartStuff) {
+            Resource item2 = Resource.valueOf(item.toString().toUpperCase());
+            //Make enums later for price
+            if (p.contains(item2)){
+                p.removeResource(item2);
+                item2.sellInventory(store);
+                p.addMoney(item2.getPrice());
+                listView.getItems().remove(item);
+                System.out.println("Congratz Y'all! Just sold " + item);
+            }else {
+                System.out.println("Sold Nothing");
+            }
+        }
+    }
+
     public static void getTurnOrder() {
-        int temp = 0;
+        int temp;
         for(int i = 0; i < players.length; i++) {
             temp = i;
             for (int j = i; j < players.length; j++) {

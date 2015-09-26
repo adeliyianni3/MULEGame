@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Aaron on 9/22/2015.
- */
+//Created by Aaron on 9/22/2015.
 public enum Resource {
     //Just put values for beginner lvl not tournament
     ENERGY(25),
@@ -12,7 +10,7 @@ public enum Resource {
     CRYSTITE(100);
     private int price;
 
-    private Resource(int price) {
+    Resource(int price) {
         this.price = price;
     }
     public int getPrice() {
@@ -37,6 +35,25 @@ public enum Resource {
         }
         if (equals(CRYSTITE)) {
             store.buyCrystite();
+            return store.getCrystiteInventory();
+        }
+        return 0;
+    }
+    public int sellInventory(ResourceStore store) {
+        if (equals(ENERGY)) {
+            store.addEnergy();
+            return store.getEnergyInventory();
+        }
+        if (equals(FOOD)) {
+            store.addFood();
+            return store.getFoodInventory();
+        }
+        if (equals(SMITH_ORE)) {
+            store.addSmithOre();
+            return store.getSmithOreInventory();
+        }
+        if (equals(CRYSTITE)) {
+            store.addCrystite();
             return store.getCrystiteInventory();
         }
         return 0;

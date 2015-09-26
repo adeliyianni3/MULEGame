@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 9/26/2015.
- */
+//Created by Antonia on 9/26/2015.
 public class ResourceStore {
     private int energyInventory = 16;
     private int crystiteInventory = 0;
@@ -19,6 +17,9 @@ public class ResourceStore {
             energyInventory = total - 1;
         }
     }
+    public void addEnergy() {
+        energyInventory = energyInventory + 1;
+    }
 
     public int getFoodInventory() {
         return foodInventory;
@@ -28,6 +29,9 @@ public class ResourceStore {
         if (total > 0) {
             foodInventory = total - 1;
         }
+    }
+    public void addFood() {
+        foodInventory = foodInventory + 1;
     }
 
     public int getCrystiteInventory() {
@@ -39,6 +43,9 @@ public class ResourceStore {
             crystiteInventory = total - 1;
         }
     }
+    public void addCrystite() {
+        crystiteInventory = crystiteInventory + 1;
+    }
 
     public int getMuleInventory() {
         return muleInventory;
@@ -49,6 +56,9 @@ public class ResourceStore {
             muleInventory = total - 1;
         }
     }
+   // public void addMule() {
+     //   muleInventory = muleInventory + 1;
+    //} not sure if one can sell mules
 
     public int getSmithOreInventory() {
         return smithoreInventory;
@@ -58,5 +68,8 @@ public class ResourceStore {
         if (total > 0) {
             smithoreInventory = total - 1;
         }
+    }
+    public void addSmithOre() {
+        smithoreInventory = smithoreInventory + 1;
     }
 }

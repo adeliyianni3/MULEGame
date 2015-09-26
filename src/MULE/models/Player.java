@@ -2,9 +2,9 @@ package MULE.models;
 
 import javafx.scene.paint.Color;
 
-/**
- * Created by Ethan on 9/17/2015.
- */
+import java.util.ArrayList;
+
+// Created by Ethan on 9/17/2015.
 //Just using this as a placeholder so other things compile
 public class Player {
     private static int playerNumber = 1;
@@ -16,15 +16,13 @@ public class Player {
     private int money;
     private int score;
     private int[] arr;
+    private ArrayList<Resource> resources = new ArrayList<>();
 
     public Mule getMule() {
         return mule;
     }
     public void sellLand() {
         //TODO
-    }
-    public void buyMule() {
-        this.mule = new Mule();
     }
 
     // Possible method to solve no color/race issues
@@ -40,6 +38,24 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public void addResource(Resource source) {
+        resources.add(source);
+    }
+
+    public ArrayList<Resource> getResources() {
+        return resources;
+    }
+
+    public boolean contains(Resource source) {
+        return resources.contains(source);
+    }
+
+    public void removeResource(Resource source) {
+        if (resources.contains(source)) {
+            resources.remove(source);
+        }
     }
 
     public Race getRace() {

@@ -36,6 +36,11 @@ public class StoreController implements Initializable {
     public void purchaseCart() {
         Game.purchaseCart(items, cartList);
     }
+
+    @FXML
+    public void sellItems() {
+        Game.sellItems(items, cartList);
+    }
     @FXML
     public void removeItem() {
         selected = cartList.getSelectionModel().getSelectedIndex();

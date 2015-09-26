@@ -26,6 +26,6 @@
     <Button fx:id="purchaseCart" layoutX="40.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#purchaseCart" text="Purchase" />
     <ListView fx:id="cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="377.0" />
     <Button fx:id= "removeItem" layoutX="354.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#removeItem" text="Remove" />
-    <Button layoutX="209.0" layoutY="327.0" mnemonicParsing="false" text="Sell" />
+    <Button fx:id= "sellItems" layoutX="209.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#sellItems" text="Sell" />
   </children>
 </Pane>
