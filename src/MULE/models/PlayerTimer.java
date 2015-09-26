@@ -6,6 +6,8 @@ package MULE.models;
 
 //This is what I got so far. It should work but I can only check
 // at 5 pm. Anyone else who sees this, try it out :)
+import MULE.controllers.ScreenNavigator;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,7 +23,6 @@ public class PlayerTimer {
         int delay = 1000;
         int period = 1000;
         timer = new Timer();
-        //Player p = Game.players[Game.getTurn()];
         System.out.println("Turn Starts");
         timer.scheduleAtFixedRate(new TimerTask() {
 
@@ -35,7 +36,10 @@ public class PlayerTimer {
         timer.cancel();
         System.out.println("TurnEnds");
         endTurn();
-        //Game.setMapType(0);
+        if (Game.currentState != Game.State.MAP) {
+            Game.changeState(Game.State.MAP);
+            ScreenNavigator.instance.loadMap();
+        }
     }
     public int getTime() {
         return secs;
