@@ -21,6 +21,7 @@ public class Player {
     public Mule getMule() {
         return mule;
     }
+
     public void sellLand() {
         //TODO
     }
@@ -41,7 +42,11 @@ public class Player {
     }
 
     public void addResource(Resource source) {
-        resources.add(source);
+        if (source.equals(Resource.MULE)){
+            mule = new Mule();
+        } else {
+            resources.add(source);
+        }
     }
 
     public ArrayList<Resource> getResources() {
@@ -53,7 +58,9 @@ public class Player {
     }
 
     public void removeResource(Resource source) {
-        if (resources.contains(source)) {
+        if (source.equals(Resource.MULE)){
+            mule = null;
+        } else if (resources.contains(source)) {
             resources.remove(source);
         }
     }
@@ -99,7 +106,7 @@ public class Player {
         }
     }
 
-    private boolean hasMule() {
+    public boolean hasMule() {
         return this.mule != null;
     }
 }

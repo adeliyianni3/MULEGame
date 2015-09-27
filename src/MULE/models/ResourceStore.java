@@ -56,9 +56,9 @@ public class ResourceStore {
             muleInventory = total - 1;
         }
     }
-   // public void addMule() {
-     //   muleInventory = muleInventory + 1;
-    //} not sure if one can sell mules
+   public void addMule() {
+       muleInventory = muleInventory + 1;
+   }
 
     public int getSmithOreInventory() {
         return smithoreInventory;

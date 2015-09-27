@@ -7,6 +7,7 @@ package MULE.models;
 //This is what I got so far. It should work but I can only check
 // at 5 pm. Anyone else who sees this, try it out :)
 import MULE.controllers.ScreenNavigator;
+import javafx.application.Platform;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,6 +18,7 @@ import static MULE.models.Game.players;
 public class PlayerTimer {
     static int secs;
     static Timer timer;
+    static MyTask runner;
 
     public void startTime() {
         secs = 50;
@@ -29,7 +31,7 @@ public class PlayerTimer {
             public void run() {
                 setInterval();
             }
-        }, delay, period);
+            }, delay, period);
     }
     public void stopTime() {
         timer.cancel();
@@ -45,6 +47,7 @@ public class PlayerTimer {
     }
     private int setInterval() {
         if (secs == 1) {
+            //Platform.runLater(runner);
             timer.cancel();
             System.out.println("TurnEnds");
             endTurn();

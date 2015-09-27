@@ -1,5 +1,6 @@
 package MULE.models;
 
+import MULE.Main;
 import MULE.controllers.ScreenNavigator;
 import MULE.controllers.StoreController;
 import javafx.collections.ObservableList;
@@ -228,11 +229,20 @@ public class Game {
             int price = item.getPrice();
             if (p.getMoney() < price){
                 return false;
-            }else {
-                p.subtractMoney(price);
-                p.addResource(item);
-                System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
-                listView.getItems().remove(thing.toString());
+            } else {
+                if (item.getInventory(store) > 0) {
+                    if (item.equals(Resource.MULE)) {
+                        System.out.println(p.hasMule());
+                        if (p.hasMule()) {
+                            System.out.println("You have a mule already");
+                            return false;
+                        }
+                    }
+                    p.subtractMoney(price);
+                    p.addResource(item);
+                    System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
+                    listView.getItems().remove(thing.toString());
+                }
             }
         }
         return true;
@@ -245,13 +255,18 @@ public class Game {
         for (Object item: cartStuff) {
             Resource item2 = Resource.valueOf(item.toString().toUpperCase());
             //Make enums later for price
-            if (p.contains(item2)){
+            if (item2.equals(Resource.MULE) && p.hasMule()) {
+                p.removeResource(item2);
+                item2.sellInventory(store);
+                System.out.println("Congratz Y'all! Just sold " + item);
+                System.out.println(p.hasMule());
+            } else if (p.contains(item2)){
                 p.removeResource(item2);
                 item2.sellInventory(store);
                 p.addMoney(item2.getPrice());
                 listView.getItems().remove(item);
                 System.out.println("Congratz Y'all! Just sold " + item);
-            }else {
+            } else {
                 System.out.println("Sold Nothing");
             }
         }

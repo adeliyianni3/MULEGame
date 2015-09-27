@@ -16,6 +16,25 @@ public enum Resource {
     public int getPrice() {
         return price;
     }
+
+    public int getInventory(ResourceStore store) {
+        if (equals(ENERGY)) {
+            return store.getEnergyInventory();
+        }
+        if (equals(FOOD)) {
+            return store.getFoodInventory();
+        }
+        if (equals(MULE)) {
+            return store.getMuleInventory();
+        }
+        if (equals(SMITH_ORE)) {
+            return store.getSmithOreInventory();
+        }
+        if (equals(CRYSTITE)) {
+            return store.getCrystiteInventory();
+        }
+        return 0;
+    }
     public int buyInventory(ResourceStore store) {
         if (equals(ENERGY)) {
             store.buyEnergy();
@@ -55,6 +74,10 @@ public enum Resource {
         if (equals(CRYSTITE)) {
             store.addCrystite();
             return store.getCrystiteInventory();
+        }
+        if (equals(MULE)) {
+            store.addMule();
+            return store.getMuleInventory();
         }
         return 0;
     }
