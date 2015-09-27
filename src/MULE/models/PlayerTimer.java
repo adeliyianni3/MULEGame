@@ -12,13 +12,13 @@ import javafx.application.Platform;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static MULE.models.Game.currentState;
 import static MULE.models.Game.endTurn;
 import static MULE.models.Game.players;
 
 public class PlayerTimer {
     static int secs;
     static Timer timer;
-    static MyTask runner;
 
     public void startTime() {
         secs = 50;
@@ -47,7 +47,15 @@ public class PlayerTimer {
     }
     private int setInterval() {
         if (secs == 1) {
-            //Platform.runLater(runner);
+            if (currentState != Game.State.MAP) {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        ScreenNavigator.instance.loadMap();
+                    }
+                });
+                Game.changeState(Game.State.MAP);
+            }
             timer.cancel();
             System.out.println("TurnEnds");
             endTurn();

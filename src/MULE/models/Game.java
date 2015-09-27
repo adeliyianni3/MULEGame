@@ -259,6 +259,7 @@ public class Game {
                 p.removeResource(item2);
                 item2.sellInventory(store);
                 System.out.println("Congratz Y'all! Just sold " + item);
+                listView.getItems().remove(item);
                 System.out.println(p.hasMule());
             } else if (p.contains(item2)){
                 p.removeResource(item2);
