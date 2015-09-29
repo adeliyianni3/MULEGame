@@ -15,7 +15,7 @@ public class Player {
     private Mule mule;
     private int money;
     private int score;
-    private int[] arr;
+    private int[] numOfResources; //energy, smithore, and food
     private int numOfLands;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
 
@@ -35,6 +35,7 @@ public class Player {
         this.money = race.startMoney();
         this.id = playerNumber;
         numOfLands = 0;
+        numOfResources = new int[3];
         playerNumber++;
 
     }
@@ -92,14 +93,14 @@ public class Player {
     }
 
     public int getScore() {
-        arr = new int[3];
-        arr[0] = getMoney();
-        arr[1] = 1; //getSumLand() * getLandPrice()
-        arr[2] = 1; // amountEnergy() + amountFood(); + amountOre();
         int totalScore = 0;
-        for (int i : arr) {
-            totalScore += i + totalScore;
-        }
+
+        totalScore += Game.moneyValue() * getMoney();
+        totalScore += numOfLands * Game.landValue(); //getSumLand() * getLandPrice()
+        totalScore += numOfResources[0] * Game.energyValue(); //energy
+        totalScore += numOfResources[1] * Game.foodValue();//food
+        totalScore += numOfResources[2] * Game.smithoreValue();//smithore
+
         return totalScore; }
 
     public String toString() {
