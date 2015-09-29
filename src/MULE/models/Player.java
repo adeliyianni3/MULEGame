@@ -86,7 +86,7 @@ public class Player {
     }
 
     public int getScore() {
-        arr = new int[2];
+        arr = new int[3];
         arr[0] = getMoney();
         arr[1] = 1; //getSumLand() * getLandPrice()
         arr[2] = 1; // amountEnergy() + amountFood(); + amountOre();
