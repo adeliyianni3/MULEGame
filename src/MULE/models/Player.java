@@ -94,14 +94,13 @@ public class Player {
 
     public int getScore() {
         int totalScore = 0;
-
         totalScore += Game.moneyValue() * getMoney();
         totalScore += numOfLands * Game.landValue(); //getSumLand() * getLandPrice()
         totalScore += numOfResources[0] * Game.energyValue(); //energy
         totalScore += numOfResources[1] * Game.foodValue();//food
         totalScore += numOfResources[2] * Game.smithoreValue();//smithore
-
-        return totalScore; }
+        return totalScore;
+    }
 
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
