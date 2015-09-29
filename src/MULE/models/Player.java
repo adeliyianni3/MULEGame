@@ -16,7 +16,7 @@ public class Player {
     private int money;
     private int score;
     private int[] arr;
-    private ArrayList<Resource> resources = new ArrayList<>();
+    private ArrayList<Resource> resources = new ArrayList<Resource>();
 
     public Mule getMule() {
         return mule;
