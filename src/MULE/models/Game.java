@@ -26,6 +26,7 @@ public class Game {
     public static State currentState = State.MAIN;
     public static PlayerTimer timer = new PlayerTimer();
     public static ResourceStore store = new ResourceStore();
+    public static int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
 
     private static Map theMap = new Map();
     private static int buyPhaseSkipped = 0;
@@ -150,6 +151,7 @@ public class Game {
                 if (round < 3) {
                     plot.setOwner(p);
                     rec.setFill(p.getColor());
+                    p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
                 } else {
@@ -157,6 +159,7 @@ public class Game {
                         plot.setOwner(p);
                         rec.setFill(p.getColor());
                         p.subtractMoney(LAND_PRICE);
+                        p.incrementLand();
                         ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
                         buyPhaseSkipped = 0;
                         buyPhaseEndTurn();
@@ -297,6 +300,26 @@ public class Game {
             }
         }
         return returnString;
+    }
+
+    public static int moneyValue() {
+        return resourcePoints[0];
+    }
+
+    public static int landValue() {
+        return resourcePoints[1];
+    }
+
+    public static int foodValue() {
+        return resourcePoints[2];
+    }
+
+    public static int smithoreValue() {
+        return resourcePoints[3];
+    }
+
+    public static int energyValue() {
+        return resourcePoints[4];
     }
 
 }

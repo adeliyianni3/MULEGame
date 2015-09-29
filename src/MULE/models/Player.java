@@ -16,6 +16,7 @@ public class Player {
     private int money;
     private int score;
     private int[] arr;
+    private int numOfLands;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
 
     public Mule getMule() {
@@ -33,8 +34,13 @@ public class Player {
         this.color = color;
         this.money = race.startMoney();
         this.id = playerNumber;
+        numOfLands = 0;
         playerNumber++;
 
+    }
+
+    public void incrementLand() {
+        numOfLands++;
     }
 
     public String getName() {
