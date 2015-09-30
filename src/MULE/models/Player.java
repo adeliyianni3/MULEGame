@@ -36,6 +36,12 @@ public class Player {
         this.id = playerNumber;
         numOfLands = 0;
         numOfResources = new int[3];
+        for (int i = 0; i < 4; i = i + 1) {
+            addResource(Resource.ENERGY);
+        }
+        for (int i = 0; i < 8; i = i + 1) {
+            addResource(Resource.FOOD);
+        }
         playerNumber++;
 
     }
@@ -53,7 +59,19 @@ public class Player {
             mule = new Mule();
         } else {
             resources.add(source);
+            if (source.equals(Resource.FOOD)) {
+                numOfResources[2] = numOfResources[2] + 1;
+            }
+            if (source.equals(Resource.ENERGY)) {
+                numOfResources[0] = numOfResources[0] + 1;
+            }
+            if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[3] = numOfResources[3] + 1;
+            }
         }
+    }
+    public int foodCounter() {
+        return numOfResources[2];
     }
 
     public ArrayList<Resource> getResources() {
@@ -69,6 +87,15 @@ public class Player {
             mule = null;
         } else if (resources.contains(source)) {
             resources.remove(source);
+            if (source.equals(Resource.FOOD)) {
+                numOfResources[2] = numOfResources[2] - 1;
+            }
+            if (source.equals(Resource.ENERGY)) {
+                numOfResources[0] = numOfResources[0] - 1;
+            }
+            if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[3] = numOfResources[3] - 1;
+            }
         }
     }
 
