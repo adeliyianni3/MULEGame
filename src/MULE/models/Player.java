@@ -36,12 +36,6 @@ public class Player {
         this.id = playerNumber;
         numOfLands = 0;
         numOfResources = new int[3];
-        for (int i = 0; i < 4; i = i + 1) {
-            addResource(Resource.ENERGY);
-        }
-        for (int i = 0; i < 8; i = i + 1) {
-            addResource(Resource.FOOD);
-        }
         playerNumber++;
 
     }
@@ -58,15 +52,6 @@ public class Player {
         if (source.equals(Resource.MULE)){
             mule = new Mule();
         } else {
-            if (source.equals(Resource.FOOD)) {
-                numOfResources[2] = numOfResources[2] + 1;
-            }
-            if (source.equals(Resource.ENERGY)) {
-                numOfResources[0] = numOfResources[0] + 1;
-            }
-            if (source.equals(Resource.SMITH_ORE)) {
-                numOfResources[3] = numOfResources[3] + 1;
-            }
             resources.add(source);
         }
     }
@@ -83,15 +68,6 @@ public class Player {
         if (source.equals(Resource.MULE)){
             mule = null;
         } else if (resources.contains(source)) {
-            if (source.equals(Resource.FOOD)) {
-                numOfResources[2] = numOfResources[2] - 1;
-            }
-            if (source.equals(Resource.ENERGY)) {
-                numOfResources[0] = numOfResources[0] - 1;
-            }
-            if (source.equals(Resource.SMITH_ORE)) {
-                numOfResources[3] = numOfResources[3] - 1;
-            }
             resources.remove(source);
         }
     }
@@ -122,8 +98,8 @@ public class Player {
         totalScore += Game.moneyValue() * getMoney();
         totalScore += numOfLands * Game.landValue(); //getSumLand() * getLandPrice()
         totalScore += numOfResources[0] * Game.energyValue(); //energy
-        totalScore += numOfResources[2] * Game.foodValue();//food
-        totalScore += numOfResources[1] * Game.smithoreValue();//smithore
+        totalScore += numOfResources[1] * Game.foodValue();//food
+        totalScore += numOfResources[2] * Game.smithoreValue();//smithore
 
         return totalScore; }
 
@@ -131,9 +107,6 @@ public class Player {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
     }
 
-    public int foodCounter() {
-        return numOfResources[2];
-    }
     public void outfitMule(Resource resource) {
         if (hasMule()) {
             this.mule.setResource(resource);
