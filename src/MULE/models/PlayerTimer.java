@@ -19,9 +19,22 @@ import static MULE.models.Game.players;
 public class PlayerTimer {
     static int secs;
     static Timer timer;
+    static int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
 
+    private int computeTime(){
+        Player p = Game.players[Game.getTurn() - 1];
+        int food = p.foodCounter();
+        System.out.println(food);
+        if (food > 0 && food < foodNeeded[Game.round]) {
+            return 30;
+        } else if (food == 0) {
+            return 5;
+        } else {
+            return 50;
+        }
+    }
     public void startTime() {
-        secs = 50;
+        secs = computeTime();
         int delay = 1000;
         int period = 1000;
         timer = new Timer();
