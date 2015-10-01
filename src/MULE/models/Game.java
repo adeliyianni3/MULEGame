@@ -197,6 +197,9 @@ public class Game {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
+        if (turn == 0) {
+            reorderPlayers();
+        }
         timer.startTime();
         return turn;
     }
@@ -205,6 +208,24 @@ public class Game {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
+        if (turn == 0) {
+            reorderPlayers();
+        }
+    }
+
+    public static void reorderPlayers() {
+        Player temp;
+        for(int i = 0; i < players.length; i++) {
+            temp = players[i];
+            for (int j = i; j < players.length; j++) {
+                if (players[j].getMoney() < players[i].getMoney()) {
+                    temp = players[i];
+                    players[i] = players[j];
+                    players[j] = temp;
+                }
+            }
+
+        }
     }
 
     public static int getTotalTurns() {

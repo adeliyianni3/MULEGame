@@ -15,7 +15,7 @@ public class Player {
     private Mule mule;
     private int money;
     private int score;
-    private int[] numOfResources; //energy, smithore, and food
+    private int[] numOfResources; //energy, food, and smithore
     private int numOfLands;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
 
@@ -36,6 +36,8 @@ public class Player {
         this.id = playerNumber;
         numOfLands = 0;
         numOfResources = new int[3];
+        numOfResources[0] = 4;
+        numOfResources[1] = 8;
         playerNumber++;
 
     }
