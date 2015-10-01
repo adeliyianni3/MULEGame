@@ -38,6 +38,12 @@ public class Player {
         numOfResources = new int[3];
         numOfResources[0] = 4;
         numOfResources[1] = 8;
+        for (int i = 0; i < 4; i = i + 1) {
+            addResource(Resource.ENERGY);
+        }
+        for (int i = 0; i < 8; i = i + 1) {
+            addResource(Resource.FOOD);
+        }
         playerNumber++;
 
     }
@@ -55,7 +61,19 @@ public class Player {
             mule = new Mule();
         } else {
             resources.add(source);
+            if (source.equals(Resource.FOOD)) {
+                numOfResources[2] = numOfResources[2] + 1;
+            }
+            if (source.equals(Resource.ENERGY)) {
+                numOfResources[0] = numOfResources[0] + 1;
+            }
+            if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[3] = numOfResources[3] + 1;
+            }
         }
+    }
+    public int foodCounter() {
+        return numOfResources[2];
     }
 
     public ArrayList<Resource> getResources() {
@@ -71,6 +89,15 @@ public class Player {
             mule = null;
         } else if (resources.contains(source)) {
             resources.remove(source);
+            if (source.equals(Resource.FOOD)) {
+                numOfResources[2] = numOfResources[2] - 1;
+            }
+            if (source.equals(Resource.ENERGY)) {
+                numOfResources[0] = numOfResources[0] - 1;
+            }
+            if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[3] = numOfResources[3] - 1;
+            }
         }
     }
 
@@ -96,13 +123,14 @@ public class Player {
 
     public int getScore() {
         int totalScore = 0;
+
         totalScore += Game.moneyValue() * getMoney();
         totalScore += numOfLands * Game.landValue(); //getSumLand() * getLandPrice()
         totalScore += numOfResources[0] * Game.energyValue(); //energy
         totalScore += numOfResources[1] * Game.foodValue();//food
         totalScore += numOfResources[2] * Game.smithoreValue();//smithore
-        return totalScore;
-    }
+
+        return totalScore; }
 
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
