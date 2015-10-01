@@ -9,10 +9,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
+    private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
     public static int playerConfiguration = 0;
     public static final int DEFAULT_PLAYER_AMOUNT = 0;
@@ -76,6 +78,14 @@ public class Game {
         }
     }
 
+    public static ArrayList<Color> getColors() {
+        return notAllowed;
+    }
+
+    public static void addColor(Color c) {
+        notAllowed.add(c);
+    }
+
     public static void storeClicked(String storeLoc) {
         switch(storeLoc) {
             case "pub":
@@ -135,6 +145,9 @@ public class Game {
         }
     }
 
+    public static Player currentPlayer() {
+        return players[getTurn() - 1];
+    }
     public static void landClicked(String landLoc, Rectangle rec) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);

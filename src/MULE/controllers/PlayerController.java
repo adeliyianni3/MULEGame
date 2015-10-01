@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 /**
@@ -45,12 +47,16 @@ public class PlayerController implements Initializable{
 
     @FXML
     void toNext(ActionEvent event) {
-        String race = (String)raceBox.getValue();
-        Color c = (Color)colorBox.getValue();
+        String race = (String) raceBox.getValue();
+        Color c = (Color) colorBox.getValue();
         //System.out.println(nameBox.getCharacters().toString());
         String name = nameBox.getText();
-        Game.addPlayer(race, c, name); //why
-        ScreenNavigator.instance.loadPlayerConfiguration(race, c, name);
+        System.out.println(!Game.getColors().contains(c));
+        if (!nameBox.getText().isEmpty() && !Game.getColors().contains(c)) {
+            Game.addColor(c);
+            Game.addPlayer(race, c, name);
+            ScreenNavigator.instance.loadPlayerConfiguration(race, c, name);
+        }
     }
     @FXML
     void toMain(ActionEvent event) {
