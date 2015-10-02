@@ -21,6 +21,12 @@ public class TownController {
     }
 
 
+    @FXML
+    void storeClickPub(MouseEvent event) {
+        Game.storeClicked("pub");
+
+    }
+
     public void showMap() {
         ScreenNavigator.instance.loadMain();
     }

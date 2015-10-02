@@ -169,7 +169,6 @@ public class Game {
     public static Player currentPlayer() {
         return players[getTurn() - 1];
     }
-    public static void landClicked(String landLoc, Rectangle rec) {
     public static void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
@@ -186,6 +185,7 @@ public class Game {
                 if (round < 3) {
                     plot.setOwner(p);
                     rec.setStroke(p.getColor());
+                    rec.setStrokeWidth(8.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
@@ -193,6 +193,7 @@ public class Game {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner(p);
                         rec.setStroke(p.getColor());
+                        rec.setStrokeWidth(8.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
