@@ -62,8 +62,7 @@ public class Player {
         this.id = playerNumber;
         numOfLands = 0;
         numOfResources = new int[4];
-        numOfResources[0] = 4;
-        numOfResources[1] = 8;
+
         for (int i = 0; i < 4; i = i + 1) {
             addResource(Resource.ENERGY);
         }
