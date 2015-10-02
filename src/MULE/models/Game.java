@@ -261,6 +261,7 @@ public class Game {
                 }
             }
         }
+        System.out.println(p.getMoney());
         return true;
     }
 
