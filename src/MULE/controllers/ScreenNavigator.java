@@ -194,10 +194,6 @@ public class ScreenNavigator {
 
     }
 
-//    public void landClicked(String landLoc) {
-//        Game.landClicked(landLoc);
-//    }
-
     public void passClick() {
         Game.buyPhaseSkip();
     }

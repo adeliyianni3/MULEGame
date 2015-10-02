@@ -163,14 +163,14 @@ public class Game {
                 Player p = players[turn - 1];
                 if (round < 3) {
                     plot.setOwner(p);
-                    rec.setFill(p.getColor());
+                    rec.setStroke(p.getColor());
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner(p);
-                        rec.setFill(p.getColor());
+                        rec.setStroke(p.getColor());
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
