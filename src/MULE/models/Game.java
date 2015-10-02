@@ -1,8 +1,8 @@
 package MULE.models;
 
-import MULE.Main;
+
 import MULE.controllers.ScreenNavigator;
-import MULE.controllers.StoreController;
+
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
