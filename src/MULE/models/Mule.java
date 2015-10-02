@@ -9,6 +9,9 @@ public class Mule {
     public Mule() {
         this.resource = null;
     }
+    public Mule(Resource resource) {
+        this.resource = resource;
+    }
     public Resource getResource(){
         return resource;
     }

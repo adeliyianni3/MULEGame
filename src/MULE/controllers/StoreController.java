@@ -32,6 +32,23 @@ public class StoreController implements Initializable {
         items.add(side);
 
     }
+
+    @FXML
+    public void addCartFood(MouseEvent event) {
+        items.add("food");
+    }
+    @FXML
+    public void addCartEnergy(MouseEvent event) {
+        items.add("energy");
+    }
+    @FXML
+    public void addCartSmithore(MouseEvent event) {
+        items.add("smith_ore");
+    }
+    @FXML
+    public void addCartCrystite(MouseEvent event) {
+        items.add("crystite");
+    }
     @FXML
     public void purchaseCart() {
         Game.purchaseCart(items, cartList);
@@ -51,6 +68,10 @@ public class StoreController implements Initializable {
 
     public void showMap() {
         ScreenNavigator.instance.loadMain();
+    }
+
+    @FXML void toMULEPen() {
+        ScreenNavigator.instance.loadMULEPen();
     }
 
     @Override

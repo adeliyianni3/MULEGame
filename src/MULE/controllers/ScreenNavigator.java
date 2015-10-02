@@ -2,6 +2,7 @@ package MULE.controllers;
 
 import MULE.models.Game;
 import MULE.Main;
+import MULE.models.Resource;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +36,7 @@ public class ScreenNavigator {
     public final String MAP = "/views/map.fxml";
     public final String TOWN = "/views/town.fxml";
     public final String STORE = "/views/store.fxml";
+    public final String MULE_PEN = "/views/mulePen.fxml";
 
     public Scene mainScreen;
     public Scene playerScreen;
@@ -43,6 +45,7 @@ public class ScreenNavigator {
     public Scene map;
     public Scene town;
     public Scene store;
+    public Scene mulePen;
 
     public String currentState;
 
@@ -71,6 +74,8 @@ public class ScreenNavigator {
             town = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(STORE));
             store = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(MULE_PEN));
+            mulePen = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -131,6 +136,8 @@ public class ScreenNavigator {
                 break;
             case STORE: loadScreen(store);
                 break;
+            case MULE_PEN: loadScreen(mulePen);
+                break;
             default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
                 break;
         }
@@ -165,6 +172,13 @@ public class ScreenNavigator {
         Game.incrementTurn();
     }
 
+    //TODO used to fix the turn order issue at the start of the game, fix other code before implementing
+    public void loadPlayerConfigurationFromMain() {
+        Game.changeState(Game.State.CONFIG);
+        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
+        loadScreen(PLAYER);
+    }
+
     public void loadPlayerConfiguration(String race, Color c, String name) { //parameters have been made obsolete, change name later or redo
         System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
@@ -192,8 +206,18 @@ public class ScreenNavigator {
         loadScreen(MAP);
 
     }
+    public void loadMULEPen() {
+        loadScreen(MULE_PEN);
+    }
+    public void loadStore() {
+        loadScreen(STORE);
+    }
     public void setLandColor(String loc, Color c) {
 
+    }
+
+    public void buyMULE(Resource resource) {
+        Game.buyMULE(resource);
     }
 
 //    public void landClicked(String landLoc) {
@@ -204,8 +228,8 @@ public class ScreenNavigator {
         Game.buyPhaseSkip();
     }
 
-    public void landClicked(String landLoc, Rectangle rec) {
-        Game.landClicked(landLoc, rec);
+    public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
+        Game.landClicked(landLoc, rec, mul);
     }
 
     public void townClicked() {
@@ -224,5 +248,6 @@ public class ScreenNavigator {
     public void togglePassButton() {
         showPass.setValue(!showPass.getValue());
     }
+
 
 }

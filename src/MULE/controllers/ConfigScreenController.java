@@ -72,7 +72,8 @@ public class ConfigScreenController {
     void playerConfiguration(ActionEvent event) {
         Game.setDifficulty(difficulty());
         System.out.println(Game.getDifficulty());
-        Game.setNumOfPlayers(Integer.parseInt((String)playerChoiceBox.getValue()));
+        Game.setNumOfPlayers(Integer.parseInt((String) playerChoiceBox.getValue()));
+        //ScreenNavigator.instance.loadPlayerConfigurationFromMain();
         ScreenNavigator.instance.loadPlayerConfiguration();
     }
 

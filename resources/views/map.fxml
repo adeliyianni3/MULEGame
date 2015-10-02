@@ -59,5 +59,49 @@
       <Rectangle fx:id="map46" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="375.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="map47" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="425.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="map48" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="475.0" layoutY="275.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Rectangle fx:id="mul00" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="88.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul10" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="88.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul20" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="88.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul30" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="88.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul40" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="88.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul01" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="138.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul11" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="138.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul21" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="138.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul31" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="138.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul41" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="138.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul02" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="188.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul12" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="188.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul22" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="188.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul32" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="188.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul42" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="188.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul03" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="238.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul13" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="238.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul23" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="238.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul33" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="238.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul43" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="238.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul04" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="288.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul14" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="288.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul34" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="288.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul44" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="288.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul05" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="338.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul15" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="338.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul25" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="338.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul35" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="338.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul45" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="338.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul06" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="388.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul16" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="388.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul26" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="388.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul36" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="388.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul46" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="388.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul07" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="438.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul17" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="438.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul27" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="438.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul37" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="438.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul47" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="438.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul08" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="488.0" layoutY="89.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul18" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="488.0" layoutY="139.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="488.0" layoutY="189.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="488.0" layoutY="239.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
+      <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="22.0" layoutX="488.0" layoutY="289.0" onMouseClicked="#landClick" stroke="#ffffff00" strokeType="INSIDE" width="24.0" />
    </children>
 </Pane>

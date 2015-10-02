@@ -29,6 +29,11 @@ public class Land {
         this.type = type;
     }
     public Mule getMule() { return this.mule; }
+    public Mule removeMule() {
+        Mule temp = mule;
+        mule = null;
+        return temp;
+    }
     public Player getOwner() {
         return this.owner;
     }

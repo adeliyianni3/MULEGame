@@ -5,22 +5,27 @@ import MULE.controllers.ScreenNavigator;
 import MULE.controllers.StoreController;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+
+
 //Created by Aaron on 9/17/2015.
 public class Game {
     public static int numOfPlayers = 1;
     public static int playerConfiguration = 0;
-    public static final int DEFAULT_PLAYER_AMOUNT = 0;
+    public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     public static int round = 0;
     public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
+    public static Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private static int difficulty;
     private static int mapType;
-    private static int[] playerTurn;
+    private static int[] playerTurn; //unused?
     private static int totalTurns = 1;
     private static int turn = 1;
     public static State currentState = State.MAIN;
@@ -44,7 +49,7 @@ public class Game {
 
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }
 
     public static void changeState(State s) {
@@ -70,6 +75,7 @@ public class Game {
     public static void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
+        originalPlayers = new Player[num];
         playerTurn = new int[num];
         for (int i = 0; i < num; i++) {
             playerTurn[i] = i + 1;
@@ -101,6 +107,21 @@ public class Game {
 
     }
 
+    public static int getRound() {
+        return round;
+    }
+
+    public static State getPhase() {
+        return currentState;
+    }
+
+    public static Player[] getPlayers() {
+        return players;
+    }
+    public static Player[] getOriginalPlayers() {
+        return originalPlayers;
+    }
+
     private static void gamble(PlayerTimer timer) {
         int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
         int timeBonus;
@@ -122,7 +143,7 @@ public class Game {
             bonus=250;
         }
         players[turn-1].addMoney(bonus);
-        System.out.println(bonus);
+        System.out.println("Gambled and won " + bonus + ".");
         timer.stopTime();
     }
 
@@ -135,7 +156,7 @@ public class Game {
         }
     }
 
-    public static void landClicked(String landLoc, Rectangle rec) {
+    public static void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
             int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
@@ -169,6 +190,28 @@ public class Game {
 
 
             System.out.println(playersToString()); //debug statement
+        } else if (currentState.equals(State.MULE_PLACING)) {
+            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
+            System.out.println(i + ", " + j);
+            Land plot = theMap.whatLand(i, j);
+            Player p = players[turn - 1];
+            if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
+                plot.setMule(p.getMule());
+
+
+                Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
+                ImagePattern imagePattern = new ImagePattern(muleImage);
+                mul.setFill(imagePattern); //check to make sure this doesn't override color
+
+
+                currentState = State.MAP; //is this where we want the screen to go to?
+            } else {
+                //TODO present proper error message
+                System.out.println("Improper location for your MULE. It has successfully escaped your grasp and ran away.");
+                p.getMule();
+            }
+            currentState = State.MAP;
         }
     }
 
@@ -214,12 +257,10 @@ public class Game {
     }
 
     public static void reorderPlayers() {
-        Player temp;
         for(int i = 0; i < players.length; i++) {
-            temp = players[i];
             for (int j = i; j < players.length; j++) {
-                if (players[j].getMoney() < players[i].getMoney()) {
-                    temp = players[i];
+                if (players[j].getScore() < players[i].getScore()) {
+                    Player temp = players[i];
                     players[i] = players[j];
                     players[j] = temp;
                 }
@@ -242,6 +283,7 @@ public class Game {
 
     public static void addPlayer(String race, Color c, String name) {
         players[turn-1] = new Player(name, race, c);
+        originalPlayers[turn-1] = players[turn-1];
     }
 
     public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
@@ -252,6 +294,8 @@ public class Game {
             //Make enums later for price
             int price = item.getPrice();
             if (p.getMoney() < price){
+                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
+                //consider making it sell only if you can afford all?
                 return false;
             } else {
                 if (item.getInventory(store) > 0) {
@@ -297,6 +341,7 @@ public class Game {
         }
     }
 
+    //replaced
     public static void getTurnOrder() {
         int temp;
         for(int i = 0; i < players.length; i++) {
@@ -311,6 +356,30 @@ public class Game {
 
         }
     }
+
+    public static void buyMULE(Resource resource) {
+        Player p = players[turn - 1];
+        int price = 100;
+        if (resource.equals(Resource.FOOD)) {
+            price += 25;
+        } else if (resource.equals(Resource.ENERGY)) {
+            price += 50;
+        } else if(resource.equals(Resource.SMITH_ORE)) {
+            price += 75;
+        } else if(resource.equals(Resource.CRYSTITE)) {
+            price += 100;
+        }
+        if (p.getMoney() >= price) {
+            Mule newMule = new Mule(resource);
+            p.subtractMoney(price);
+            currentState = State.MULE_PLACING;
+            p.giveMule(newMule); //TODO remove mule when player's turn ends
+            ScreenNavigator.instance.loadMap();
+        } else {
+            System.out.println("Not enough money"); //TODO proper error message
+        }
+    }
+
     public static String playersToString() {
         String returnString = "";
         for(Player p : players) {

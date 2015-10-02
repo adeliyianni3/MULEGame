@@ -15,12 +15,38 @@ public class Player {
     private Mule mule;
     private int money;
     private int score;
-    private int[] numOfResources; //energy, food, and smithore
+    private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
 
     public Mule getMule() {
-        return mule;
+        Mule temp = mule;
+        mule = null;
+        return temp;
+    }
+
+    public int getEnergy() {
+        return numOfResources[0];
+    }
+
+    public int getFood() {
+        return numOfResources[1];
+    }
+
+    public int getNumOfLands() {
+        return numOfLands;
+    }
+
+    public int getSmithore() {
+        return numOfResources[2];
+    }
+
+    public int getCrystite() {
+        return numOfResources[3];
+    }
+
+    public void giveMule(Mule mule) {
+        this.mule = mule;
     }
 
     public void sellLand() {
@@ -35,7 +61,7 @@ public class Player {
         this.money = race.startMoney();
         this.id = playerNumber;
         numOfLands = 0;
-        numOfResources = new int[3];
+        numOfResources = new int[4];
         numOfResources[0] = 4;
         numOfResources[1] = 8;
         for (int i = 0; i < 4; i = i + 1) {
@@ -62,18 +88,21 @@ public class Player {
         } else {
             resources.add(source);
             if (source.equals(Resource.FOOD)) {
-                numOfResources[2] = numOfResources[2] + 1;
+                numOfResources[1] = numOfResources[1] + 1;
             }
             if (source.equals(Resource.ENERGY)) {
                 numOfResources[0] = numOfResources[0] + 1;
             }
             if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[2] = numOfResources[2] + 1;
+            }
+            if (source.equals(Resource.CRYSTITE)) {
                 numOfResources[3] = numOfResources[3] + 1;
             }
         }
     }
     public int foodCounter() {
-        return numOfResources[2];
+        return numOfResources[1];
     }
 
     public ArrayList<Resource> getResources() {
@@ -90,12 +119,15 @@ public class Player {
         } else if (resources.contains(source)) {
             resources.remove(source);
             if (source.equals(Resource.FOOD)) {
-                numOfResources[2] = numOfResources[2] - 1;
+                numOfResources[1] = numOfResources[1] - 1;
             }
             if (source.equals(Resource.ENERGY)) {
                 numOfResources[0] = numOfResources[0] - 1;
             }
             if (source.equals(Resource.SMITH_ORE)) {
+                numOfResources[2] = numOfResources[2] - 1;
+            }
+            if (source.equals(Resource.CRYSTITE)) {
                 numOfResources[3] = numOfResources[3] - 1;
             }
         }
@@ -129,6 +161,7 @@ public class Player {
         totalScore += numOfResources[0] * Game.energyValue(); //energy
         totalScore += numOfResources[1] * Game.foodValue();//food
         totalScore += numOfResources[2] * Game.smithoreValue();//smithore
+
 
         return totalScore; }
 

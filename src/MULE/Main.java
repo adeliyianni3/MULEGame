@@ -4,6 +4,7 @@ import MULE.controllers.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,19 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+//trying to set up debug
+import java.io.IOException;
+import java.net.URL;
+import javafx.animation.*;
+import javafx.event.*;
+import javafx.scene.control.Label;
+import javafx.util.Duration;
+
+import java.util.Calendar;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * Main application class.
@@ -36,20 +50,28 @@ public class Main extends Application {
 
         Stage debugStage = new Stage();
         debugStage.setTitle("Game Information");
-        String OUTSIDE_TEXT = "Outside Label";
-        final Label reporter = new Label(OUTSIDE_TEXT);
-        Label monitored = createMonitoredLabel(reporter);
+//        String OUTSIDE_TEXT = "Outside Label";
+//        final Label reporter = new Label(OUTSIDE_TEXT);
+//        Label monitored = createMonitoredLabel(reporter);
+//
+//        VBox layout = new VBox(10);
+//        layout.setStyle("-fx-background-color: cornsilk; -fx-padding: 10px;");
+//        layout.getChildren().setAll(
+//                monitored,
+//                reporter
+//        );
+//        layout.setPrefWidth(500);
 
-        VBox layout = new VBox(10);
-        layout.setStyle("-fx-background-color: cornsilk; -fx-padding: 10px;");
-        layout.getChildren().setAll(
-                monitored,
-                reporter
-        );
-        layout.setPrefWidth(500);
+        Scene debugScene = null;
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/views/debug.fxml"));
+            debugScene = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         debugStage.setScene(
-                new Scene(layout)
+                debugScene
         );
         debugStage.show();
 
