@@ -11,12 +11,14 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
 
 //Created by Aaron on 9/17/2015.
 public class Game {
+    private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
     public static int playerConfiguration = 0;
     public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
@@ -80,6 +82,14 @@ public class Game {
         for (int i = 0; i < num; i++) {
             playerTurn[i] = i + 1;
         }
+    }
+
+    public static ArrayList<Color> getColors() {
+        return notAllowed;
+    }
+
+    public static void addColor(Color c) {
+        notAllowed.add(c);
     }
 
     public static void storeClicked(String storeLoc) {
@@ -156,6 +166,10 @@ public class Game {
         }
     }
 
+    public static Player currentPlayer() {
+        return players[getTurn() - 1];
+    }
+    public static void landClicked(String landLoc, Rectangle rec) {
     public static void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
@@ -171,14 +185,14 @@ public class Game {
                 Player p = players[turn - 1];
                 if (round < 3) {
                     plot.setOwner(p);
-                    rec.setFill(p.getColor());
+                    rec.setStroke(p.getColor());
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner(p);
-                        rec.setFill(p.getColor());
+                        rec.setStroke(p.getColor());
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
@@ -313,6 +327,7 @@ public class Game {
                 }
             }
         }
+        System.out.println(p.getMoney());
         return true;
     }
 

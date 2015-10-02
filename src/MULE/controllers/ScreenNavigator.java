@@ -11,8 +11,10 @@ import java.io.IOException;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -160,10 +162,6 @@ public class ScreenNavigator {
         Game.changeState(Game.State.IN_TOWN);
     }
 
-    public void loadCongratulations() {
-        loadScreen(CONGRATULATIONS);
-    }
-
 
     public void loadPlayerConfiguration() {
         Game.changeState(Game.State.CONFIG);
@@ -204,7 +202,6 @@ public class ScreenNavigator {
     }
     public void loadMap() {
         loadScreen(MAP);
-
     }
     public void loadMULEPen() {
         loadScreen(MULE_PEN);
