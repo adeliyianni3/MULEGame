@@ -98,17 +98,12 @@ public class Game {
                 gamble(timer);
                 break;
             case "assay":
-                //players[Game.getTurn() - 1].buyMule();
+
                 break;
             case "resourceStore":
                 players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
                 break;
-            //case "smithOre":
-                //players[Game.getTurn() - 1].outfitMule(Resource.SMITH_ORE);
-                //break;
-            //case "energy":
-                //players[Game.getTurn() - 1].outfitMule(Resource.ENERGY);
-                //break;
+
             case "land":
                 players[Game.getTurn() - 1].sellLand();
                 break;
@@ -282,7 +277,7 @@ public class Game {
             for (int j = i + 1; j < numOfPlayers; j++) {
                 System.out.println("j: " + j);
                 System.out.println(players[i].getName() + " checked with " + players[j].getName());
-                if (players[i].getScore() < players[j].getScore()) {
+                if (players[i].getScore() > players[j].getScore()) {
                     System.out.println(players[i].getName() + " switched with " + players[j].getName());
                     Player temp = players[i];
                     players[i] = players[j];
