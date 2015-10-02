@@ -124,21 +124,28 @@ public class DebugController implements Initializable {
                                 Player[] op = Game.getOriginalPlayers();
                                 if (p.length > 0 && p[0] != null) {
                                     firstPlace.setText("" + p[0].getName());
+                                    firstScore.setText("" + p[0].getScore());
+
                                 }
                                 if (p.length > 1 && p[1] != null) {
                                     secondPlace.setText("" + p[1].getName());
+                                    secondScore.setText("" + p[1].getScore());
+
                                 }
                                 if (p.length > 2 && p[2] != null) {
                                     thirdPlace.setText("" + p[2].getName());
+                                    thirdScore.setText("" + p[2].getScore());
+
                                 }
                                 if (p.length > 3 && p[3] != null) {
                                     fourthPlace.setText("" + p[3].getName());
+                                    fourthScore.setText("" + p[3].getScore());
+
                                 }
 
 
                                 if (op.length > 0 && op[0] != null) {
                                     player1.setText("" + op[0].getName());
-                                    firstScore.setText("" + op[0].getScore());
                                     money1.setText("" + op[0].getMoney());
                                     land1.setText("" + op[0].getNumOfLands());
                                     food1.setText("" + op[0].getFood());
@@ -148,7 +155,6 @@ public class DebugController implements Initializable {
                                 }
                                 if (op.length > 1 && op[1] != null) {
                                     player2.setText("" + op[1].getName());
-                                    secondScore.setText("" + op[1].getScore());
                                     money2.setText("" + op[1].getMoney());
                                     land2.setText("" + op[1].getNumOfLands());
                                     food2.setText("" + op[1].getFood());
@@ -158,7 +164,6 @@ public class DebugController implements Initializable {
                                 }
                                 if (op.length > 2 && op[2] != null) {
                                     player3.setText("" + op[2].getName());
-                                    thirdScore.setText("" + op[2].getScore());
                                     money3.setText("" + op[2].getMoney());
                                     land3.setText("" + op[2].getNumOfLands());
                                     food3.setText("" + op[2].getFood());
@@ -168,7 +173,6 @@ public class DebugController implements Initializable {
                                 }
                                 if (op.length > 3 && op[3] != null) {
                                     player4.setText("" + op[3].getName());
-                                    fourthScore.setText("" + op[3].getScore());
                                     money4.setText("" + op[3].getMoney());
                                     land4.setText("" + op[3].getNumOfLands());
                                     food4.setText("" + op[3].getFood());

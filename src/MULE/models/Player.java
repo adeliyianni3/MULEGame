@@ -166,7 +166,7 @@ public class Player {
         return totalScore; }
 
     public String toString() {
-        return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money;
+        return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
     }
 
     public void outfitMule(Resource resource) {

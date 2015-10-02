@@ -246,6 +246,12 @@ public class Game {
         if (buyPhaseSkipped >= numOfPlayers) {
             currentState = State.MAP;
             ScreenNavigator.instance.togglePassButton();
+            if (turn != 1) {
+                totalTurns = totalTurns + numOfPlayers - turn + 1;
+                round++;
+                turn = 1;
+            }
+            reorderPlayers();
             timer.startTime();
         }
         return turn;
@@ -255,7 +261,7 @@ public class Game {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
-        if (turn == 0) {
+        if (turn == 1) {
             reorderPlayers();
         }
         timer.startTime();
@@ -266,15 +272,18 @@ public class Game {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
-        if (turn == 0) {
-            reorderPlayers();
-        }
+        //use this only for player config
     }
 
     public static void reorderPlayers() {
-        for(int i = 0; i < players.length; i++) {
-            for (int j = i; j < players.length; j++) {
-                if (players[j].getScore() < players[i].getScore()) {
+        System.out.println("Reordered");
+        for(int i = 0; i < numOfPlayers - 1; i++) {
+            System.out.println("i: " + i);
+            for (int j = i + 1; j < numOfPlayers; j++) {
+                System.out.println("j: " + j);
+                System.out.println(players[i].getName() + " checked with " + players[j].getName());
+                if (players[i].getScore() < players[j].getScore()) {
+                    System.out.println(players[i].getName() + " switched with " + players[j].getName());
                     Player temp = players[i];
                     players[i] = players[j];
                     players[j] = temp;
@@ -282,6 +291,8 @@ public class Game {
             }
 
         }
+        System.out.println("New player order:\n" + playersToString());
+
     }
 
     public static int getTotalTurns() {
