@@ -251,14 +251,15 @@ public class Game {
         return turn;
     }
     public static int endTurn() {
-
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;
         if (turn == 1) {
             reorderPlayers();
         }
-        timer.startTime();
+        if (round < 14) {
+            timer.startTime();
+        }
         return turn;
     }
 
