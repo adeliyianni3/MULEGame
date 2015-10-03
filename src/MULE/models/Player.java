@@ -19,11 +19,21 @@ public class Player {
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
+    private ArrayList<Land> landOwned = new ArrayList<Land>();
 
     public Mule getMule() {
         Mule temp = mule;
         mule = null;
         return temp;
+    }
+
+    public void addLand(Land land) {
+        System.out.println("HERE");
+        landOwned.add(land);
+    }
+
+    public ArrayList<Land> getLand() {
+        return landOwned;
     }
 
     public int getEnergy() {

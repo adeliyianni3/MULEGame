@@ -22,4 +22,16 @@ public enum LandType {
         this.energyFactor = energyFactor;
         this.crystiteFactor = crystiteFactor;
     }
+    public double getFoodFactor() {
+        return foodFactor;
+    }
+    public double getEnergyFactor() {
+        return energyFactor;
+    }
+    public double getSmithOreFactor() {
+        return smithOreFactor;
+    }
+    public double getCrystiteFactor() {
+        return crystiteFactor;
+    }
 }

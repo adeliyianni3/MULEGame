@@ -175,6 +175,7 @@ public class Game {
                 Player p = players[turn - 1];
                 if (round < 3) {
                     plot.setOwner(p);
+                    p.addLand(plot);
                     rec.setStroke(p.getColor());
                     rec.setStrokeWidth(8.0);
                     p.incrementLand();
@@ -183,6 +184,7 @@ public class Game {
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner(p);
+                        p.addLand(plot);
                         rec.setStroke(p.getColor());
                         rec.setStrokeWidth(8.0);
                         p.subtractMoney(LAND_PRICE);
@@ -251,6 +253,11 @@ public class Game {
         return turn;
     }
     public static int endTurn() {
+        ArrayList<Land> plots = currentPlayer().getLand();
+        for (Land plot: plots) {
+            System.out.println("HERE2");
+            plot.produce();
+        }
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-2) / numOfPlayers;

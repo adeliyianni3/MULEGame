@@ -37,4 +37,40 @@ public class Land {
     public Player getOwner() {
         return this.owner;
     }
+
+    public void produce() {
+        if (hasMule()) {
+            if (getMule().hasResource()) {
+                if (getOwner().contains(Resource.ENERGY)) {
+                    getOwner().removeResource(Resource.ENERGY);
+                    Resource sown = getMule().getResource();
+                    double factor;
+                    if (sown.equals(Resource.ENERGY)) {
+                        factor = type.getEnergyFactor();
+                        for (int i = 0; i < factor; i = i + 1) {
+                            getOwner().addResource(Resource.ENERGY);
+                        }
+                    }
+                    if (sown.equals(Resource.FOOD)) {
+                        factor = type.getFoodFactor();
+                        for (int i = 0; i < factor; i = i + 1) {
+                            getOwner().addResource(Resource.FOOD);
+                        }
+                    }
+                    if (sown.equals(Resource.SMITH_ORE)) {
+                        factor = type.getSmithOreFactor();
+                        for (int i = 0; i < factor; i = i + 1) {
+                            getOwner().addResource(Resource.SMITH_ORE);
+                        }
+                    }
+                    if (sown.equals(Resource.CRYSTITE)) {
+                        factor = type.getCrystiteFactor();
+                        for (int i = 0; i < factor; i = i + 1) {
+                            getOwner().addResource(Resource.CRYSTITE);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
