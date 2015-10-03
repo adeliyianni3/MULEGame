@@ -172,9 +172,6 @@ public class Game {
             System.out.println(i + ", " + j);
             Land plot = theMap.whatLand(i, j);
             System.out.println("Turn: " + turn + ", Total Turns: " + totalTurns);
-            if (round == 2 && turn == 1) {
-                ScreenNavigator.instance.togglePassButton();
-            }
             if (!plot.isOwned()) {
                 Player p = players[turn - 1];
                 if (round < 3) {
@@ -196,6 +193,9 @@ public class Game {
                         buyPhaseEndTurn();
                     }
                 }
+            }
+            if (players[getTurn() - 1].getNumOfLands() == 2) {
+                ScreenNavigator.instance.togglePassButton();
             }
 
 
