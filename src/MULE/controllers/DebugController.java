@@ -1,9 +1,7 @@
 package MULE.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 
-import MULE.models.Game;
 import MULE.models.Player;
 import javafx.animation.*;
 import javafx.event.*;
@@ -12,12 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
-import java.util.Calendar;
 import java.util.ResourceBundle;
-
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  * Created by Ethan on 9/29/2015.

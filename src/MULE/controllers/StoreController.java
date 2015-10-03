@@ -1,6 +1,5 @@
 package MULE.controllers;
 
-import MULE.models.Game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;

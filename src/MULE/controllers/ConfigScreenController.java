@@ -1,12 +1,8 @@
 package MULE.controllers;
 
 
-import MULE.Main;
-import MULE.models.Game;
-import MULE.models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 

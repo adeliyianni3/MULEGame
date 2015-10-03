@@ -1,5 +1,6 @@
 package MULE.models;
 
+import MULE.controllers.Game;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
