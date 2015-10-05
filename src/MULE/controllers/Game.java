@@ -5,6 +5,7 @@ import MULE.models.*;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -34,6 +35,8 @@ public class Game {
     public static ResourceStore store = new ResourceStore();
     public static int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
 
+    private static MediaPlayer mediaPlayer = null;
+
     private static Map theMap = new Map();
     private static int buyPhaseSkipped = 0;
     
@@ -51,6 +54,18 @@ public class Game {
 
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
+    }
+
+    public static void setMediaPlayer(MediaPlayer mp) {
+        mediaPlayer = mp;
+    }
+
+    public static void playMusic() {
+        mediaPlayer.play();
+    }
+
+    public static void pauseMusic() {
+        mediaPlayer.pause();
     }
 
     public static void changeState(State s) {

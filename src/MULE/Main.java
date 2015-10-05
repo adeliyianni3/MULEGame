@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -73,6 +75,13 @@ public class Main extends Application {
         debugStage.setScene(
                 debugScene
         );
+
+        URL resource = getClass().getResource("/audio/English.mp3");
+        Media media = new Media(resource.toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        Game.setMediaPlayer(mediaPlayer);
+        Game.playMusic();
+
         debugStage.show();
 
         stage.show();
