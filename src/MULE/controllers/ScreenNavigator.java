@@ -154,47 +154,8 @@ public class ScreenNavigator {
     }
     public void loadTown() {
         loadScreen(TOWN);
-        Game.changeState(Game.State.IN_TOWN);
     }
 
-
-    public void loadPlayerConfiguration() {
-        Game.changeState(Game.State.CONFIG);
-        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
-        loadScreen(PLAYER);
-        Game.incrementTurn();
-    }
-
-    //TODO used to fix the turn order issue at the start of the game, fix other code before implementing
-    public void loadPlayerConfigurationFromMain() {
-        Game.changeState(Game.State.CONFIG);
-        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
-        loadScreen(PLAYER);
-    }
-
-    public void loadPlayerConfiguration(String race, Color c, String name) { //parameters have been made obsolete, change name later or redo
-        System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
-        if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
-
-            //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
-//            playerNumber.setText("Player " + Main.playerConfiguration);
-//            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
-                playerScreen = new Scene(root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            loadScreen(PLAYER);
-
-        } else {
-            loadScreen(MAP);
-            Game.changeState(Game.State.BUYPHASE);
-        }
-
-        Game.incrementTurn();
-    }
     public void loadMap() {
         loadScreen(MAP);
     }
@@ -204,37 +165,15 @@ public class ScreenNavigator {
     public void loadStore() {
         loadScreen(STORE);
     }
-    public void setLandColor(String loc, Color c) {
 
-    }
-
-    public void buyMULE(Resource resource) {
-        Game.buyMULE(resource);
-    }
-
-//    public void landClicked(String landLoc) {
-//        Game.landClicked(landLoc);
-//    }
-
-    public void passClick() {
-        Game.buyPhaseSkip();
-    }
-
-    public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
-        Game.landClicked(landLoc, rec, mul);
-    }
-
-    public void townClicked() {
-        if (Game.currentState == Game.State.MAP) {
-            loadScreen(TOWN);
-            Game.changeState(Game.State.IN_TOWN);
+    public void loadNewPlayer() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
+            playerScreen = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-    public void enterStore() {
-        if (Game.currentState == Game.State.IN_TOWN) {
-            loadScreen(STORE);
-            Game.changeState(Game.State.STORE);
-        }
+        loadScreen(PLAYER);
     }
 
     public void togglePassButton() {

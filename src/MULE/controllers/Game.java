@@ -3,6 +3,9 @@ package MULE.controllers;
 
 import MULE.models.*;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
@@ -10,6 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -47,8 +51,11 @@ public class Game {
     public static void leaveTown(String side) {
         currentState = State.MAP;
     }
+
+    //TODO for animations later
     public static void leaveStore(String side) {
-        currentState = State.IN_TOWN;
+
+
     }
 
 
@@ -76,9 +83,6 @@ public class Game {
         return difficulty;
     }
 
-    public static void setDifficulty(int difficulty) {
-        Game.difficulty = difficulty;
-    }
 
     public static int getMapType() {
         return mapType;
@@ -102,14 +106,14 @@ public class Game {
         return notAllowed;
     }
 
-    public static void addColor(Color c) {
-        notAllowed.add(c);
+    public static boolean isColorAvailable(Color c) {
+        return !notAllowed.contains(c);
     }
 
     public static void storeClicked(String storeLoc) {
         switch(storeLoc) {
             case "pub":
-                gamble(timer);
+
                 break;
             case "assay":
 
@@ -119,7 +123,7 @@ public class Game {
                 break;
 
             case "land":
-                players[Game.getTurn() - 1].sellLand();
+                players[turn - 1].sellLand();
                 break;
 
         }
@@ -141,7 +145,7 @@ public class Game {
         return originalPlayers;
     }
 
-    private static void gamble(PlayerTimer timer) {
+    public static void gamble() {
         int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
         int timeBonus;
         int bonus;
@@ -204,13 +208,12 @@ public class Game {
                         rec.setStrokeWidth(8.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
-                        ScreenNavigator.instance.setLandColor(landLoc, p.getColor());
                         buyPhaseSkipped = 0;
                         buyPhaseEndTurn();
                     }
                 }
             }
-            if (players[getTurn() - 1].getNumOfLands() == 2) {
+            if (round == 3 && turn == 1) {
                 ScreenNavigator.instance.togglePassButton();
             }
 
@@ -246,7 +249,7 @@ public class Game {
         while (noMoney && buyPhaseSkipped < numOfPlayers) {
             turn = turn % numOfPlayers + 1;
             totalTurns++;
-            round = (totalTurns-2) / numOfPlayers;
+            round = (totalTurns-1) / numOfPlayers;
             if (players[turn - 1].getMoney() < LAND_PRICE) {
                 buyPhaseSkipped++;
             } else {
@@ -275,7 +278,7 @@ public class Game {
         }
         turn = turn % numOfPlayers + 1;
         totalTurns++;
-        round = (totalTurns-2) / numOfPlayers;
+        round = (totalTurns-1) / numOfPlayers;
         if (turn == 1) {
             reorderPlayers();
         }
@@ -288,7 +291,7 @@ public class Game {
     public static void incrementTurn() {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
-        round = (totalTurns-2) / numOfPlayers;
+        round = (totalTurns-1) / numOfPlayers;
         //use this only for player config
     }
 
@@ -312,6 +315,13 @@ public class Game {
 
     }
 
+    public static void townClicked() {
+        if (currentState == State.MAP) {
+            ScreenNavigator.instance.loadTown();
+            currentState = State.IN_TOWN;
+        }
+    }
+
     public static int getTotalTurns() {
         return totalTurns;
     }
@@ -324,9 +334,25 @@ public class Game {
         return numOfPlayers;
     }
 
+    public static void setConfigurationSettings(int difficulty, int numOfPlayers) {
+        Game.difficulty = difficulty;
+        Game.setNumOfPlayers(numOfPlayers);
+        currentState = State.CONFIG;
+        ScreenNavigator.instance.loadNewPlayer();
+    }
+
     public static void addPlayer(String race, Color c, String name) {
+        notAllowed.add(c);
         players[turn-1] = new Player(name, race, c);
         originalPlayers[turn-1] = players[turn-1];
+        //System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
+        incrementTurn();
+        if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
+            ScreenNavigator.instance.loadNewPlayer();
+        } else {
+            ScreenNavigator.instance.loadMap();
+            currentState = State.BUYPHASE;
+        }
     }
 
     public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
@@ -358,6 +384,13 @@ public class Game {
         }
         System.out.println(p.getMoney());
         return true;
+    }
+
+    public static void enterStore() {
+        if (currentState == State.IN_TOWN) {
+            ScreenNavigator.instance.loadStore();
+            currentState = State.STORE;
+        }
     }
 
     public static void sellItems(ObservableList<String> cart, ListView<String> listView) {

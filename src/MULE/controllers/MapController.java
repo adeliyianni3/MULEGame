@@ -227,18 +227,18 @@ public class MapController implements Initializable {
         }
         //add in interaction with main here
         //landName will contain a string "RC" containing land's row and column in the set 5x5 array
-        ScreenNavigator.instance.landClicked(landName, mapArr[i][j], mulArr[i][j]);
+        Game.landClicked(landName, mapArr[i][j], mulArr[i][j]);
         showPass.setValue(ScreenNavigator.instance.showPass.getValue());
     }
 
     @FXML
     void townClick(MouseEvent event) {
-        ScreenNavigator.instance.townClicked();
+        Game.townClicked();
     }
 
     @FXML
     void passClick(MouseEvent event) {
-        ScreenNavigator.instance.passClick();
+        Game.buyPhaseSkip();
         showPass.setValue(ScreenNavigator.instance.showPass.getValue());
     }
 

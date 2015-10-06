@@ -10,16 +10,19 @@ import javafx.scene.input.MouseEvent;
 public class TownController {
 
     @FXML
-    void storeClick(MouseEvent event) {
-        String storeName = ((Node)event.getSource()).getId();
-        Game.storeClicked(storeName);
-        //add in interaction with main here
-        //landName will contain a string "RC" containing store's row and column in the set 2x2 array
+    void usePub(MouseEvent event) {
+        Game.gamble();
+
     }
 
+    @FXML
+    void useAssay(MouseEvent event) {
+        Game.storeClicked("pub");
+
+    }
 
     @FXML
-    void storeClickPub(MouseEvent event) {
+    void useLand(MouseEvent event) {
         Game.storeClicked("pub");
 
     }
@@ -36,6 +39,6 @@ public class TownController {
 
     @FXML
     void enterStore(MouseEvent event) {
-        ScreenNavigator.instance.enterStore();
+        Game.enterStore();
     }
 }

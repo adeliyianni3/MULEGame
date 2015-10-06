@@ -46,13 +46,9 @@ public class PlayerController implements Initializable{
     void toNext(ActionEvent event) {
         String race = (String) raceBox.getValue();
         Color c = (Color) colorBox.getValue();
-        //System.out.println(nameBox.getCharacters().toString());
         String name = nameBox.getText();
-        System.out.println(!Game.getColors().contains(c));
-        if (!nameBox.getText().isEmpty() && !Game.getColors().contains(c)) {
-            Game.addColor(c);
+        if (!nameBox.getText().isEmpty() && Game.isColorAvailable(c)) {
             Game.addPlayer(race, c, name);
-            ScreenNavigator.instance.loadPlayerConfiguration(race, c, name);
         }
     }
     @FXML

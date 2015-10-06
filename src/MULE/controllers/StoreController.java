@@ -22,9 +22,9 @@ public class StoreController implements Initializable {
 
     public void leaveStore(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
-        Game.leaveStore(side);
+        //Game.leaveStore(side);    //for animations later
         cartList.getItems().clear();
-        ScreenNavigator.instance.loadTown();
+        Game.townClicked();
     }
     public void addCart(MouseEvent event) {
         String side = ((Node) event.getSource()).getId();
