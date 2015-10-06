@@ -17,13 +17,13 @@ public class TownController {
 
     @FXML
     void useAssay(MouseEvent event) {
-        Game.storeClicked("pub");
+        Game.useAssay();
 
     }
 
     @FXML
     void useLand(MouseEvent event) {
-        Game.storeClicked("pub");
+        Game.useLandOffice();
 
     }
 

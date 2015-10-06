@@ -24,7 +24,6 @@ import java.util.Random;
 public class Game {
     private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
-    public static int playerConfiguration = 0;
     public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     public static int round = 0;
     public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
@@ -46,7 +45,6 @@ public class Game {
     
     public static int LAND_PRICE = 300;
 
-    public static int numLand = 1;
 
     public static void leaveTown(String side) {
         currentState = State.MAP;
@@ -110,23 +108,11 @@ public class Game {
         return !notAllowed.contains(c);
     }
 
-    public static void storeClicked(String storeLoc) {
-        switch(storeLoc) {
-            case "pub":
+    public static void useAssay() {
 
-                break;
-            case "assay":
+    }
 
-                break;
-            case "resourceStore":
-                players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
-                break;
-
-            case "land":
-                players[turn - 1].sellLand();
-                break;
-
-        }
+    public static void useLandOffice() {
 
     }
 
