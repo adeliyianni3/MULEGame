@@ -52,8 +52,7 @@ public class Game {
 
     //TODO for animations later
     public static void leaveStore(String side) {
-
-
+        currentState = State.IN_TOWN;
     }
 
 

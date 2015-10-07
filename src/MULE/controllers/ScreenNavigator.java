@@ -44,8 +44,6 @@ public class ScreenNavigator {
     public Scene store;
     public Scene mulePen;
 
-    public String currentState;
-
 
 
     public static ScreenNavigator instance = new ScreenNavigator();
@@ -105,19 +103,6 @@ public class ScreenNavigator {
      * @param fxml the fxml file to be loaded.
      */
     public void loadScreen(String fxml) {
-//        try {
-//            mainController.setVista( //this clears the pane and fills it with the fxml
-//                    (Node) FXMLLoader.load(
-//                            ScreenNavigator.class.getResource(
-//                                    fxml
-//                            )
-//                    )
-//            );
-//        } catch (IOException e) {
-//            System.out.println("Could not find file");
-//            //e.printStackTrace();
-//        }
-        //out with the old and in with the new
         switch (fxml) {
             case MAIN_SCREEN: loadScreen(mainScreen);
                 break;
