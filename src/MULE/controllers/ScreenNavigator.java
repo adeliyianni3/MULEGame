@@ -44,10 +44,6 @@ public class ScreenNavigator {
     public Scene store;
     public Scene mulePen;
 
-    public String currentState;
-
-
-
     public static ScreenNavigator instance = new ScreenNavigator();
     private Stage stage;
 
