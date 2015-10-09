@@ -4,8 +4,8 @@ package MULE.models;
 public abstract class Resource {
     private int price;
 
-    public Resource(int price) {
-        this.price = price;
+    public Resource() {
+
     }
 
     public int getPrice() {
