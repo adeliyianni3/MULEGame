@@ -5,10 +5,9 @@ package MULE.models;
  */
 public class Crystite extends Resource {
 
-    private int price;
-
     public Crystite() {
         this.price = 100;
+        this.storePriceExtra = 100;
     }
 
     @Override

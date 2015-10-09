@@ -2,7 +2,8 @@ package MULE.models;
 
 //Created by TEAM on 9/22/2015.
 public abstract class Resource {
-    private int price;
+    int price = 0;
+    int storePriceExtra = 0;
 
     public Resource() {
 
@@ -14,6 +15,10 @@ public abstract class Resource {
 
     public void setPrice(int p) {
         price = p;
+    }
+
+    public int getStorePriceExtra() {
+        return storePriceExtra;
     }
 
     public abstract int getInventory(ResourceStore store);

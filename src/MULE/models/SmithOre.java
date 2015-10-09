@@ -3,13 +3,13 @@ package MULE.models;
 /**
  * Created by Antonia on 10/2/2015.
  */
-public class SmithOre implements Resource {
-
-    private int price;
+public class SmithOre extends Resource {
 
     public SmithOre() {
         this.price = 50;
+        this.storePriceExtra = 75;
     }
+
     @Override
     public int sellInventory(ResourceStore store) {
         store.addSmithOre();

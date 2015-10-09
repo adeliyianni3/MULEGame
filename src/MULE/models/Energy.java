@@ -5,10 +5,10 @@ package MULE.models;
  */
 public class Energy extends Resource {
 
-    private int price;
 
     public Energy() {
         this.price = 25;
+        this.storePriceExtra = 50;
     }
 
     @Override

@@ -423,15 +423,7 @@ public class Game {
     public static void buyMULE(Resource resource) {
         Player p = players[turn - 1];
         int price = 100;
-        if (resource.equals(Resource.FOOD)) {
-            price += 25;
-        } else if (resource.equals(Resource.ENERGY)) {
-            price += 50;
-        } else if(resource.equals(Resource.SMITH_ORE)) {
-            price += 75;
-        } else if(resource.equals(Resource.CRYSTITE)) {
-            price += 100;
-        }
+        price += resource.getStorePriceExtra();
         if (p.getMoney() >= price) {
             Mule newMule = new Mule(resource);
             p.subtractMoney(price);

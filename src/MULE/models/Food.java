@@ -5,10 +5,10 @@ package MULE.models;
  */
 public class Food extends Resource {
 
-    private int price;
 
     public Food() {
         this.price = 30;
+        this.storePriceExtra = 25;
     }
 
     @Override
