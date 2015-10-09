@@ -1,5 +1,6 @@
 package MULE.controllers;
 
+import MULE.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -15,9 +16,9 @@ import java.util.ResourceBundle;
  * Created by Antonia on 9/26/2015.
  */
 public class StoreController implements Initializable {
-    private ObservableList<String> items = FXCollections.observableArrayList();
+    private ObservableList<Resource> items = FXCollections.observableArrayList();
     @FXML
-    private ListView<String> cartList;
+    private ListView<Resource> cartList;
     private int selected;
 
     public void leaveStore(MouseEvent event) {
@@ -26,27 +27,22 @@ public class StoreController implements Initializable {
         cartList.getItems().clear();
         Game.townClicked();
     }
-    public void addCart(MouseEvent event) {
-        String side = ((Node) event.getSource()).getId();
-        items.add(side);
-
-    }
 
     @FXML
     public void addCartFood(MouseEvent event) {
-        items.add("food");
+        items.add(new Food());
     }
     @FXML
     public void addCartEnergy(MouseEvent event) {
-        items.add("energy");
+        items.add(new Energy());
     }
     @FXML
     public void addCartSmithore(MouseEvent event) {
-        items.add("smith_ore");
+        items.add(new SmithOre());
     }
     @FXML
     public void addCartCrystite(MouseEvent event) {
-        items.add("crystite");
+        items.add(new Crystite());
     }
     @FXML
     public void purchaseCart() {

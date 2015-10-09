@@ -341,11 +341,11 @@ public class Game {
         }
     }
 
-    public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
+    public static Boolean purchaseCart(ObservableList<Resource> cart, ListView<Resource> listView) {
         Player p = players[turn - 1];
         Object[] stuff = cart.toArray();
         for (Object thing: stuff) {
-            Resource item = Resource.valueOf(thing.toString().toUpperCase());
+            Resource item = (Resource) thing;
             //Make enums later for price
             int price = item.getPrice();
             if (p.getMoney() < price){
@@ -354,13 +354,6 @@ public class Game {
                 return false;
             } else {
                 if (item.getInventory(store) > 0) {
-                    if (item.equals(Resource.MULE)) {
-                        System.out.println(p.hasMule());
-                        if (p.hasMule()) {
-                            System.out.println("You have a mule already");
-                            return false;
-                        }
-                    }
                     p.subtractMoney(price);
                     p.addResource(item);
                     System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
@@ -379,20 +372,14 @@ public class Game {
         }
     }
 
-    public static void sellItems(ObservableList<String> cart, ListView<String> listView) {
+    public static void sellItems(ObservableList<Resource> cart, ListView<Resource> listView) {
         Player p = players[turn - 1];
         ArrayList<Resource> playerStuff = p.getResources();
         Object[] cartStuff = cart.toArray();
         for (Object item: cartStuff) {
-            Resource item2 = Resource.valueOf(item.toString().toUpperCase());
+            Resource item2 = (Resource) item;
             //Make enums later for price
-            if (item2.equals(Resource.MULE) && p.hasMule()) {
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                System.out.println("Congratz Y'all! Just sold " + item);
-                listView.getItems().remove(item);
-                System.out.println(p.hasMule());
-            } else if (p.contains(item2)){
+            if (p.contains(item2)){
                 p.removeResource(item2);
                 item2.sellInventory(store);
                 p.addMoney(item2.getPrice());
