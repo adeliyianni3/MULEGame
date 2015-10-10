@@ -46,12 +46,41 @@ public class StoreController implements Initializable {
     }
     @FXML
     public void purchaseCart() {
-        Game.purchaseCart(items, cartList);
+        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Object[] stuff = items.toArray();
+        for (Object thing: stuff) {
+            Resource item = (Resource) thing;
+            int price = item.getPrice();
+            if (p.getMoney() < price){
+                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
+            } else {
+                if (item.getInventory(Game.getStore()) > 0) {
+                    p.subtractMoney(price);
+                    p.addResource(item);
+                    System.out.println(item.buyInventory(Game.getStore()) + " " + thing.toString() + " left");
+                    cartList.getItems().remove(thing);
+                }
+            }
+        }
+        System.out.println(p.getMoney());
     }
 
     @FXML
     public void sellItems() {
-        Game.sellItems(items, cartList);
+        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Object[] cartStuff = items.toArray();
+        for (Object item: cartStuff) {
+            Resource item2 = (Resource) item;
+            if (p.contains(item2)){
+                p.removeResource(item2);
+                item2.sellInventory(Game.getStore());
+                p.addMoney(item2.getPrice());
+                cartList.getItems().remove(item);
+                System.out.println("Congratz Y'all! Just sold " + item);
+            } else {
+                System.out.println("Sold Nothing");
+            }
+        }
     }
     @FXML
     public void removeItem() {

@@ -341,28 +341,6 @@ public class Game {
         }
     }
 
-    public static Boolean purchaseCart(ObservableList<Resource> cart, ListView<Resource> listView) {
-        Player p = players[turn - 1];
-        Object[] stuff = cart.toArray();
-        for (Object thing: stuff) {
-            Resource item = (Resource) thing;
-            int price = item.getPrice();
-            if (p.getMoney() < price){
-                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
-                return false;
-            } else {
-                if (item.getInventory(store) > 0) {
-                    p.subtractMoney(price);
-                    p.addResource(item);
-                    System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
-                    listView.getItems().remove(thing);
-                }
-            }
-        }
-        System.out.println(p.getMoney());
-        return true;
-    }
-
     public static void enterStore() {
         if (currentState == State.IN_TOWN) {
             ScreenNavigator.instance.loadStore();
@@ -370,21 +348,8 @@ public class Game {
         }
     }
 
-    public static void sellItems(ObservableList<Resource> cart, ListView<Resource> listView) {
-        Player p = players[turn - 1];
-        Object[] cartStuff = cart.toArray();
-        for (Object item: cartStuff) {
-            Resource item2 = (Resource) item;
-            if (p.contains(item2)){
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                p.addMoney(item2.getPrice());
-                listView.getItems().remove(item);
-                System.out.println("Congratz Y'all! Just sold " + item);
-            } else {
-                System.out.println("Sold Nothing");
-            }
-        }
+    public static ResourceStore getStore() {
+        return store;
     }
 
     //replaced
