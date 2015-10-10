@@ -302,7 +302,7 @@ public class Game {
     }
 
     public static void townClicked() {
-        if (currentState == State.MAP) {
+        if (currentState == State.MAP || currentState == State.STORE) {
             ScreenNavigator.instance.loadTown();
             currentState = State.IN_TOWN;
         }

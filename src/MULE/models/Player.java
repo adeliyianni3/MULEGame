@@ -40,6 +40,10 @@ public class Player {
         return numOfResources[0];
     }
 
+    public boolean hasEnergy() {
+        return numOfResources[0] > 0;
+    }
+
     public int getFood() {
         return numOfResources[1];
     }
@@ -75,10 +79,12 @@ public class Player {
         numOfResources = new int[4];
 
         for (int i = 0; i < 4; i = i + 1) {
-            addResource(Resource.ENERGY);
+            Energy resource = new Energy();
+            addResource(resource);
         }
         for (int i = 0; i < 8; i = i + 1) {
-            addResource(Resource.FOOD);
+            Food resource = new Food();
+            addResource(resource);
         }
         playerNumber++;
 
@@ -93,22 +99,18 @@ public class Player {
     }
 
     public void addResource(Resource source) {
-        if (source.equals(Resource.MULE)){
-            mule = new Mule();
-        } else {
-            resources.add(source);
-            if (source.equals(Resource.FOOD)) {
-                numOfResources[1] = numOfResources[1] + 1;
-            }
-            if (source.equals(Resource.ENERGY)) {
-                numOfResources[0] = numOfResources[0] + 1;
-            }
-            if (source.equals(Resource.SMITH_ORE)) {
-                numOfResources[2] = numOfResources[2] + 1;
-            }
-            if (source.equals(Resource.CRYSTITE)) {
-                numOfResources[3] = numOfResources[3] + 1;
-            }
+        resources.add(source);
+        if (source instanceof Food) {
+            numOfResources[1] = numOfResources[1] + 1;
+        }
+        if (source instanceof Energy) {
+            numOfResources[0] = numOfResources[0] + 1;
+        }
+        if (source instanceof SmithOre) {
+            numOfResources[2] = numOfResources[2] + 1;
+        }
+        if (source instanceof Crystite) {
+            numOfResources[3] = numOfResources[3] + 1;
         }
     }
     public int foodCounter() {
@@ -124,23 +126,19 @@ public class Player {
     }
 
     public void removeResource(Resource source) {
-        if (source.equals(Resource.MULE)){
-            mule = null;
-        } else if (resources.contains(source)) {
-            resources.remove(source);
-            if (source.equals(Resource.FOOD)) {
+        resources.remove(source);
+            if (source instanceof Food) {
                 numOfResources[1] = numOfResources[1] - 1;
             }
-            if (source.equals(Resource.ENERGY)) {
+            if (source instanceof Energy) {
                 numOfResources[0] = numOfResources[0] - 1;
             }
-            if (source.equals(Resource.SMITH_ORE)) {
+            if (source instanceof SmithOre) {
                 numOfResources[2] = numOfResources[2] - 1;
             }
-            if (source.equals(Resource.CRYSTITE)) {
+            if (source instanceof Crystite) {
                 numOfResources[3] = numOfResources[3] - 1;
             }
-        }
     }
 
     public Race getRace() {
