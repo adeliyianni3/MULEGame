@@ -357,7 +357,7 @@ public class Game {
                     p.subtractMoney(price);
                     p.addResource(item);
                     System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
-                    listView.getItems().remove(thing.toString());
+                    listView.getItems().remove(thing);
                 }
             }
         }
@@ -374,7 +374,7 @@ public class Game {
 
     public static void sellItems(ObservableList<Resource> cart, ListView<Resource> listView) {
         Player p = players[turn - 1];
-        ArrayList<Resource> playerStuff = p.getResources();
+       // ArrayList<Resource> playerStuff = p.getResources();
         Object[] cartStuff = cart.toArray();
         for (Object item: cartStuff) {
             Resource item2 = (Resource) item;

@@ -18,7 +18,7 @@ public class Player {
     private int score;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
-    private ArrayList<Resource> resources = new ArrayList<Resource>();
+    //private ArrayList<Resource> resources = new ArrayList<Resource>();
     private ArrayList<Land> landOwned = new ArrayList<Land>();
 
     public Mule getMule() {
@@ -99,7 +99,7 @@ public class Player {
     }
 
     public void addResource(Resource source) {
-        resources.add(source);
+       // resources.add(source);
         if (source instanceof Food) {
             numOfResources[1] = numOfResources[1] + 1;
         }
@@ -117,16 +117,28 @@ public class Player {
         return numOfResources[1];
     }
 
-    public ArrayList<Resource> getResources() {
+/*    public ArrayList<Resource> getResources() {
         return resources;
-    }
+    }*/
 
     public boolean contains(Resource source) {
-        return resources.contains(source);
+        if (source instanceof Food) {
+            return numOfResources[1] > 0;
+        }
+        if (source instanceof Energy) {
+            return numOfResources[0] > 0;
+        }
+        if (source instanceof SmithOre) {
+            return numOfResources[2] > 0;
+        }
+        if (source instanceof Crystite) {
+            return numOfResources[3] > 0;
+        }
+        return false;
     }
 
     public void removeResource(Resource source) {
-        resources.remove(source);
+        //resources.remove(source);
             if (source instanceof Food) {
                 numOfResources[1] = numOfResources[1] - 1;
             }
@@ -177,11 +189,11 @@ public class Player {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
     }
 
-    public void outfitMule(Resource resource) {
-        if (hasMule()) {
-            this.mule.setResource(resource);
-        }
-    }
+ //   public void outfitMule(Resource resource) {
+   //     if (hasMule()) {
+     //       this.mule.setResource(resource);
+       // }
+    //}
 
     public boolean hasMule() {
         return this.mule != null;
