@@ -18,7 +18,6 @@ public class Player {
     private int score;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
-    //private ArrayList<Resource> resources = new ArrayList<Resource>();
     private ArrayList<Land> landOwned = new ArrayList<Land>();
 
     public Mule getMule() {
@@ -68,7 +67,6 @@ public class Player {
         //TODO
     }
 
-    // Possible method to solve no color/race issues
     public Player(String name, String sRace, Color color) {
         this.name = name;
         this.race = Race.valueOf(sRace.toUpperCase());
@@ -99,7 +97,6 @@ public class Player {
     }
 
     public void addResource(Resource source) {
-       // resources.add(source);
         if (source instanceof Food) {
             numOfResources[1] = numOfResources[1] + 1;
         }
@@ -116,10 +113,6 @@ public class Player {
     public int foodCounter() {
         return numOfResources[1];
     }
-
-/*    public ArrayList<Resource> getResources() {
-        return resources;
-    }*/
 
     public boolean contains(Resource source) {
         if (source instanceof Food) {
@@ -138,7 +131,6 @@ public class Player {
     }
 
     public void removeResource(Resource source) {
-        //resources.remove(source);
             if (source instanceof Food) {
                 numOfResources[1] = numOfResources[1] - 1;
             }
@@ -188,12 +180,6 @@ public class Player {
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
     }
-
- //   public void outfitMule(Resource resource) {
-   //     if (hasMule()) {
-     //       this.mule.setResource(resource);
-       // }
-    //}
 
     public boolean hasMule() {
         return this.mule != null;

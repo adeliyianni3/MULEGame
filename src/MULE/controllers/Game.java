@@ -346,11 +346,9 @@ public class Game {
         Object[] stuff = cart.toArray();
         for (Object thing: stuff) {
             Resource item = (Resource) thing;
-            //Make enums later for price
             int price = item.getPrice();
             if (p.getMoney() < price){
                 System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
-                //consider making it sell only if you can afford all?
                 return false;
             } else {
                 if (item.getInventory(store) > 0) {
@@ -374,11 +372,9 @@ public class Game {
 
     public static void sellItems(ObservableList<Resource> cart, ListView<Resource> listView) {
         Player p = players[turn - 1];
-       // ArrayList<Resource> playerStuff = p.getResources();
         Object[] cartStuff = cart.toArray();
         for (Object item: cartStuff) {
             Resource item2 = (Resource) item;
-            //Make enums later for price
             if (p.contains(item2)){
                 p.removeResource(item2);
                 item2.sellInventory(store);
