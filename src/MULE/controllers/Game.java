@@ -182,7 +182,7 @@ public class Game {
                     plot.setOwner(p);
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
-                    rec.setStrokeWidth(8.0);
+                    rec.setStrokeWidth(4.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
@@ -191,7 +191,7 @@ public class Game {
                         plot.setOwner(p);
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
-                        rec.setStrokeWidth(8.0);
+                        rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         buyPhaseSkipped = 0;
