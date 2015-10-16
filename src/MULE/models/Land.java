@@ -40,38 +40,9 @@ public class Land {
 
     public void produce() {
         if (hasMule()) {
-            Energy a = new Energy();
-            if (getOwner().hasEnergy()) {
-                getOwner().removeResource(a);
-                Resource sown = getMule().getResource();
-                double factor;
-                if (sown instanceof Energy) {
-                    factor = type.getEnergyFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(a);
-                    }
-                }
-                if (sown instanceof Food) {
-                    Food b = new Food();
-                    factor = type.getFoodFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(b);
-                    }
-                }
-                if (sown instanceof SmithOre) {
-                    SmithOre c = new SmithOre();
-                    factor = type.getSmithOreFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(c);
-                    }
-                }
-                if (sown instanceof Crystite) {
-                    Crystite d = new Crystite();
-                    factor = type.getCrystiteFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(d);
-                    }
-                }
+            if (owner.hasEnergy()) {
+                owner.removeEnergy();
+                owner.addResource(mule.getResource(), mule.produce(type));
             }
         }
     }

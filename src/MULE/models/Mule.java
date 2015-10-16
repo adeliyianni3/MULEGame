@@ -22,4 +22,7 @@ public class Mule {
         this.resource = resource;
     }
 
+    public int produce(LandType type) {
+        return resource.produce(type);
+    }
 }
