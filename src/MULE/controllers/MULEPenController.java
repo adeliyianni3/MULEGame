@@ -21,12 +21,12 @@ public class MULEPenController {
 
     @FXML
      void crystaliteMULE(MouseEvent event) {
-        Game.buyMULE(Resource.CRYSTITE);
+        Game.buyMULE(new Crystite());
     }
 
     @FXML
     void smithoreMULE(MouseEvent event) {
-        Game.buyMULE(Resource.SMITH_ORE);
+        Game.buyMULE(new SmithOre());
     }
 
     @FXML
