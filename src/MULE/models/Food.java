@@ -32,4 +32,9 @@ public class Food extends Resource {
         store.buyFood();
         return store.getFoodInventory();
     }
+
+    @Override
+    public String toString() {
+        return "Food";
+    }
 }

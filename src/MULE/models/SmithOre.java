@@ -31,4 +31,9 @@ public class SmithOre extends Resource {
         store.buySmithOre();
         return store.getSmithOreInventory();
     }
+
+    @Override
+    public String toString() {
+        return "SmithOre";
+    }
 }

@@ -1,5 +1,6 @@
 package MULE.controllers;
 
+import MULE.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -15,47 +16,71 @@ import java.util.ResourceBundle;
  * Created by Antonia on 9/26/2015.
  */
 public class StoreController implements Initializable {
-    private ObservableList<String> items = FXCollections.observableArrayList();
+    private ObservableList<Resource> items = FXCollections.observableArrayList();
     @FXML
-    private ListView<String> cartList;
+    private ListView<Resource> cartList;
     private int selected;
 
     public void leaveStore(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
-        //Game.leaveStore(side);    //for animations later
+        Game.leaveStore(side);
         cartList.getItems().clear();
         Game.townClicked();
-    }
-    public void addCart(MouseEvent event) {
-        String side = ((Node) event.getSource()).getId();
-        items.add(side);
-
     }
 
     @FXML
     public void addCartFood(MouseEvent event) {
-        items.add("food");
+        items.add(new Food());
     }
     @FXML
     public void addCartEnergy(MouseEvent event) {
-        items.add("energy");
+        items.add(new Energy());
     }
     @FXML
     public void addCartSmithore(MouseEvent event) {
-        items.add("smith_ore");
+        items.add(new SmithOre());
     }
     @FXML
     public void addCartCrystite(MouseEvent event) {
-        items.add("crystite");
+        items.add(new Crystite());
     }
     @FXML
     public void purchaseCart() {
-        Game.purchaseCart(items, cartList);
+        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Object[] stuff = items.toArray();
+        for (Object thing: stuff) {
+            Resource item = (Resource) thing;
+            int price = item.getPrice();
+            if (p.getMoney() < price){
+                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
+            } else {
+                if (item.getInventory(Game.getStore()) > 0) {
+                    p.subtractMoney(price);
+                    p.addResource(item);
+                    System.out.println(item.buyInventory(Game.getStore()) + " " + thing.toString() + " left");
+                    cartList.getItems().remove(thing);
+                }
+            }
+        }
+        System.out.println(p.getMoney());
     }
 
     @FXML
     public void sellItems() {
-        Game.sellItems(items, cartList);
+        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Object[] cartStuff = items.toArray();
+        for (Object item: cartStuff) {
+            Resource item2 = (Resource) item;
+            if (p.contains(item2)){
+                p.removeResource(item2);
+                item2.sellInventory(Game.getStore());
+                p.addMoney(item2.getPrice());
+                cartList.getItems().remove(item);
+                System.out.println("Congratz Y'all! Just sold " + item);
+            } else {
+                System.out.println("Sold Nothing");
+            }
+        }
     }
     @FXML
     public void removeItem() {

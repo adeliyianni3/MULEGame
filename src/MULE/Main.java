@@ -76,7 +76,7 @@ public class Main extends Application {
                 debugScene
         );
 
-        URL resource = getClass().getResource("/audio/English.mp3");
+        URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         Game.setMediaPlayer(mediaPlayer);

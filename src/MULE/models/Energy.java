@@ -32,4 +32,9 @@ public class Energy extends Resource {
         store.buyEnergy();
         return store.getEnergyInventory();
     }
+
+    @Override
+    public String toString() {
+        return "Energy";
+    }
 }

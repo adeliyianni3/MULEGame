@@ -57,6 +57,16 @@ public class Game {
     }
 
 
+    public static void randomEvent(){
+        Random random = new Random();
+        int chance = random.nextInt(101);
+        if (chance <= 27) {
+            RandomEvent event = new RandomEvent();
+            event.apply(chance, currentPlayer());
+        }
+    }
+
+
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }
@@ -182,7 +192,7 @@ public class Game {
                     plot.setOwner(p);
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
-                    rec.setStrokeWidth(8.0);
+                    rec.setStrokeWidth(4.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
@@ -191,7 +201,7 @@ public class Game {
                         plot.setOwner(p);
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
-                        rec.setStrokeWidth(8.0);
+                        rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         buyPhaseSkipped = 0;
@@ -302,7 +312,7 @@ public class Game {
     }
 
     public static void townClicked() {
-        if (currentState == State.MAP) {
+        if (currentState == State.MAP || currentState == State.STORE) {
             ScreenNavigator.instance.loadTown();
             currentState = State.IN_TOWN;
         }
@@ -341,37 +351,6 @@ public class Game {
         }
     }
 
-    public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
-        Player p = players[turn - 1];
-        Object[] stuff = cart.toArray();
-        for (Object thing: stuff) {
-            Resource item = Resource.valueOf(thing.toString().toUpperCase());
-            //Make enums later for price
-            int price = item.getPrice();
-            if (p.getMoney() < price){
-                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
-                //consider making it sell only if you can afford all?
-                return false;
-            } else {
-                if (item.getInventory(store) > 0) {
-                    if (item.equals(Resource.MULE)) {
-                        System.out.println(p.hasMule());
-                        if (p.hasMule()) {
-                            System.out.println("You have a mule already");
-                            return false;
-                        }
-                    }
-                    p.subtractMoney(price);
-                    p.addResource(item);
-                    System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
-                    listView.getItems().remove(thing.toString());
-                }
-            }
-        }
-        System.out.println(p.getMoney());
-        return true;
-    }
-
     public static void enterStore() {
         if (currentState == State.IN_TOWN) {
             ScreenNavigator.instance.loadStore();
@@ -379,29 +358,8 @@ public class Game {
         }
     }
 
-    public static void sellItems(ObservableList<String> cart, ListView<String> listView) {
-        Player p = players[turn - 1];
-        ArrayList<Resource> playerStuff = p.getResources();
-        Object[] cartStuff = cart.toArray();
-        for (Object item: cartStuff) {
-            Resource item2 = Resource.valueOf(item.toString().toUpperCase());
-            //Make enums later for price
-            if (item2.equals(Resource.MULE) && p.hasMule()) {
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                System.out.println("Congratz Y'all! Just sold " + item);
-                listView.getItems().remove(item);
-                System.out.println(p.hasMule());
-            } else if (p.contains(item2)){
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                p.addMoney(item2.getPrice());
-                listView.getItems().remove(item);
-                System.out.println("Congratz Y'all! Just sold " + item);
-            } else {
-                System.out.println("Sold Nothing");
-            }
-        }
+    public static ResourceStore getStore() {
+        return store;
     }
 
     //replaced

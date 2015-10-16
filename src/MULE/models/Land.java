@@ -40,32 +40,36 @@ public class Land {
 
     public void produce() {
         if (hasMule()) {
-            if (getOwner().contains(Resource.ENERGY)) {
-                getOwner().removeResource(Resource.ENERGY);
+            Energy a = new Energy();
+            if (getOwner().hasEnergy()) {
+                getOwner().removeResource(a);
                 Resource sown = getMule().getResource();
                 double factor;
-                if (sown.equals(Resource.ENERGY)) {
+                if (sown instanceof Energy) {
                     factor = type.getEnergyFactor();
                     for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.ENERGY);
+                        getOwner().addResource(a);
                     }
                 }
-                if (sown.equals(Resource.FOOD)) {
+                if (sown instanceof Food) {
+                    Food b = new Food();
                     factor = type.getFoodFactor();
                     for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.FOOD);
+                        getOwner().addResource(b);
                     }
                 }
-                if (sown.equals(Resource.SMITH_ORE)) {
+                if (sown instanceof SmithOre) {
+                    SmithOre c = new SmithOre();
                     factor = type.getSmithOreFactor();
                     for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.SMITH_ORE);
+                        getOwner().addResource(c);
                     }
                 }
-                if (sown.equals(Resource.CRYSTITE)) {
+                if (sown instanceof Crystite) {
+                    Crystite d = new Crystite();
                     factor = type.getCrystiteFactor();
                     for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.CRYSTITE);
+                        getOwner().addResource(d);
                     }
                 }
             }

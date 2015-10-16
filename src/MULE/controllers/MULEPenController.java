@@ -1,9 +1,8 @@
 package MULE.controllers;
 
-import MULE.models.Resource;
+import MULE.models.*;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
-import MULE.models.*;
 
 /**
  * Created by Ethan on 10/1/2015.
@@ -22,12 +21,12 @@ public class MULEPenController {
 
     @FXML
      void crystaliteMULE(MouseEvent event) {
-        Game.buyMULE(new Crystite());
+        Game.buyMULE(Resource.CRYSTITE);
     }
 
     @FXML
     void smithoreMULE(MouseEvent event) {
-        Game.buyMULE(new SmithOre());
+        Game.buyMULE(Resource.SMITH_ORE);
     }
 
     @FXML

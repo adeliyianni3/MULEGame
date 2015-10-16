@@ -18,7 +18,6 @@ public class Player {
     private int score;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
-    private ArrayList<Resource> resources = new ArrayList<Resource>();
     private ArrayList<Land> landOwned = new ArrayList<Land>();
 
     public Mule getMule() {
@@ -38,6 +37,10 @@ public class Player {
 
     public int getEnergy() {
         return numOfResources[0];
+    }
+
+    public boolean hasEnergy() {
+        return numOfResources[0] > 0;
     }
 
     public int getFood() {
@@ -64,7 +67,6 @@ public class Player {
         //TODO
     }
 
-    // Possible method to solve no color/race issues
     public Player(String name, String sRace, Color color) {
         this.name = name;
         this.race = Race.valueOf(sRace.toUpperCase());
@@ -75,10 +77,12 @@ public class Player {
         numOfResources = new int[4];
 
         for (int i = 0; i < 4; i = i + 1) {
-            addResource(Resource.ENERGY);
+            Energy resource = new Energy();
+            addResource(resource);
         }
         for (int i = 0; i < 8; i = i + 1) {
-            addResource(Resource.FOOD);
+            Food resource = new Food();
+            addResource(resource);
         }
         playerNumber++;
 
@@ -93,54 +97,52 @@ public class Player {
     }
 
     public void addResource(Resource source) {
-        if (source.equals(Resource.MULE)){
-            mule = new Mule();
-        } else {
-            resources.add(source);
-            if (source.equals(Resource.FOOD)) {
-                numOfResources[1] = numOfResources[1] + 1;
-            }
-            if (source.equals(Resource.ENERGY)) {
-                numOfResources[0] = numOfResources[0] + 1;
-            }
-            if (source.equals(Resource.SMITH_ORE)) {
-                numOfResources[2] = numOfResources[2] + 1;
-            }
-            if (source.equals(Resource.CRYSTITE)) {
-                numOfResources[3] = numOfResources[3] + 1;
-            }
+        if (source instanceof Food) {
+            numOfResources[1] = numOfResources[1] + 1;
+        }
+        if (source instanceof Energy) {
+            numOfResources[0] = numOfResources[0] + 1;
+        }
+        if (source instanceof SmithOre) {
+            numOfResources[2] = numOfResources[2] + 1;
+        }
+        if (source instanceof Crystite) {
+            numOfResources[3] = numOfResources[3] + 1;
         }
     }
     public int foodCounter() {
         return numOfResources[1];
     }
 
-    public ArrayList<Resource> getResources() {
-        return resources;
-    }
-
     public boolean contains(Resource source) {
-        return resources.contains(source);
+        if (source instanceof Food) {
+            return numOfResources[1] > 0;
+        }
+        if (source instanceof Energy) {
+            return numOfResources[0] > 0;
+        }
+        if (source instanceof SmithOre) {
+            return numOfResources[2] > 0;
+        }
+        if (source instanceof Crystite) {
+            return numOfResources[3] > 0;
+        }
+        return false;
     }
 
     public void removeResource(Resource source) {
-        if (source.equals(Resource.MULE)){
-            mule = null;
-        } else if (resources.contains(source)) {
-            resources.remove(source);
-            if (source.equals(Resource.FOOD)) {
+            if (source instanceof Food) {
                 numOfResources[1] = numOfResources[1] - 1;
             }
-            if (source.equals(Resource.ENERGY)) {
+            if (source instanceof Energy) {
                 numOfResources[0] = numOfResources[0] - 1;
             }
-            if (source.equals(Resource.SMITH_ORE)) {
+            if (source instanceof SmithOre) {
                 numOfResources[2] = numOfResources[2] - 1;
             }
-            if (source.equals(Resource.CRYSTITE)) {
+            if (source instanceof Crystite) {
                 numOfResources[3] = numOfResources[3] - 1;
             }
-        }
     }
 
     public Race getRace() {
@@ -177,12 +179,6 @@ public class Player {
 
     public String toString() {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
-    }
-
-    public void outfitMule(Resource resource) {
-        if (hasMule()) {
-            this.mule.setResource(resource);
-        }
     }
 
     public boolean hasMule() {

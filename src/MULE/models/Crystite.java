@@ -31,4 +31,8 @@ public class Crystite extends Resource {
         store.buyCrystite();
         return store.getCrystiteInventory();
     }
+    @Override
+    public String toString() {
+        return "Crystite";
+    }
 }
