@@ -9,6 +9,6 @@
    <children>
       <HBox layoutX="459.0" layoutY="329.0" prefHeight="57.0" prefWidth="127.0" spacing="10.0" styleClass="-fx-background-color:black" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="459.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="329.0" />
       <TextArea layoutX="87.0" layoutY="48.0" prefHeight="200.0" prefWidth="426.0" text="You have not input a valid Player name. &#10;In order to move on with the game, please check&#10;to make sure the name is not...&#10;1) Blank&#10;2) Already taken&#10;" />
-      <Button layoutX="214.0" layoutY="308.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="157.0" text="Okay" onAction = "#back" />
+      <Button layoutX="214.0" layoutY="308.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="157.0" text="Okay" />
    </children>
 </AnchorPane>
