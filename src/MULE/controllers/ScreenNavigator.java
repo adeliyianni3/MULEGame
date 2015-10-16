@@ -34,6 +34,7 @@ public class ScreenNavigator {
     public final String TOWN = "/views/town.fxml";
     public final String STORE = "/views/store.fxml";
     public final String MULE_PEN = "/views/mulePen.fxml";
+    public final String ERROR = "/views/Error_Screen.fxml";
 
     public Scene mainScreen;
     public Scene playerScreen;
@@ -43,6 +44,7 @@ public class ScreenNavigator {
     public Scene town;
     public Scene store;
     public Scene mulePen;
+    public Scene errorMessage;
 
     public static ScreenNavigator instance = new ScreenNavigator();
     private Stage stage;
@@ -69,6 +71,8 @@ public class ScreenNavigator {
             store = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(MULE_PEN));
             mulePen = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(ERROR));
+            errorMessage = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -131,6 +135,8 @@ public class ScreenNavigator {
                 break;
             case MULE_PEN: loadScreen(mulePen);
                 break;
+            case ERROR: loadScreen(errorMessage);
+                break;
             default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
                 break;
         }
@@ -157,6 +163,14 @@ public class ScreenNavigator {
     }
     public void loadMULEPen() {
         loadScreen(MULE_PEN);
+    }
+
+    public void loadErrorMessage() {
+        loadScreen(ERROR);
+    }
+
+    public void loadPlayer() {
+        loadScreen(PLAYER);
     }
     public void loadStore() {
         loadScreen(STORE);

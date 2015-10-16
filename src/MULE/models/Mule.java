@@ -21,4 +21,5 @@ public class Mule {
     public void setResource(Resource resource){
         this.resource = resource;
     }
+
 }
