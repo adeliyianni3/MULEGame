@@ -8,17 +8,13 @@ public class Crystite extends Resource {
     public Crystite() {
         this.price = 100;
         this.storePriceExtra = 100;
+        this.id = 3;
     }
 
     @Override
     public int sellInventory(ResourceStore store) {
         store.addCrystite();
         return store.getCrystiteInventory();
-    }
-
-    @Override
-    public int getPrice() {
-        return price;
     }
 
     @Override
@@ -34,5 +30,10 @@ public class Crystite extends Resource {
     @Override
     public String toString() {
         return "Crystite";
+    }
+
+    @Override
+    public int produce(LandType type) {
+        return (int)type.getCrystiteFactor();
     }
 }

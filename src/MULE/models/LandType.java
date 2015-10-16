@@ -34,4 +34,5 @@ public enum LandType {
     public double getCrystiteFactor() {
         return crystiteFactor;
     }
+
 }

@@ -8,17 +8,13 @@ public class SmithOre extends Resource {
     public SmithOre() {
         this.price = 50;
         this.storePriceExtra = 75;
+        this.id = 2;
     }
 
     @Override
     public int sellInventory(ResourceStore store) {
         store.addSmithOre();
         return store.getSmithOreInventory();
-    }
-
-    @Override
-    public int getPrice() {
-        return price;
     }
 
     @Override
@@ -35,5 +31,10 @@ public class SmithOre extends Resource {
     @Override
     public String toString() {
         return "SmithOre";
+    }
+
+    @Override
+    public int produce(LandType type) {
+        return (int)type.getSmithOreFactor();
     }
 }
