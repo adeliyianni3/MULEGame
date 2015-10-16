@@ -57,6 +57,16 @@ public class Game {
     }
 
 
+    public static void randomEvent(){
+        Random random = new Random();
+        int chance = random.nextInt(101);
+        if (chance <= 27) {
+            RandomEvent event = new RandomEvent();
+            event.apply(chance, currentPlayer());
+        }
+    }
+
+
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }

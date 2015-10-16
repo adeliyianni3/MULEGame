@@ -39,6 +39,7 @@ public class PlayerTimer {
         int period = 1000;
         timer = new Timer();
         System.out.println("Turn Starts");
+        Game.randomEvent();
         timer.scheduleAtFixedRate(new TimerTask() {
 
             public void run() {
