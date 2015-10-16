@@ -25,7 +25,7 @@ public class StoreController implements Initializable {
         String side = ((Node)event.getSource()).getId();
         Game.leaveStore(side);
         cartList.getItems().clear();
-        Game.townClicked();
+        ScreenNavigator.instance.loadTown();
     }
 
     @FXML
