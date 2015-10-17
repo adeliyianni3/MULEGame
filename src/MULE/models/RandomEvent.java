@@ -30,8 +30,9 @@ public class RandomEvent {
             System.out.println("RANDOM EVENT NOT WORKING3");
         } catch (InvocationTargetException e) {
             System.out.println("RANDOM EVENT NOT WORKING4");
+            e.printStackTrace();
         } catch (Exception e) {
-            System.out.println("RANDOM EVENT NOT WORKING");
+            System.out.println("RANDOM EVENT NOT WORKING " + e);
         }
     }
     public static void event0(Player p) {
@@ -48,19 +49,19 @@ public class RandomEvent {
         p.addResource(new SmithOre());
     }
     public static void event2(Player p) {
-        int m = roundsM[Game.getRound()];
+        int m = roundsM[Game.getRound() - 3];
         int gain = 8*m;
         System.out.println("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER FOR $" + gain);
         p.addMoney(gain);
     }
     public static void event3(Player p) {
-        int m = roundsM[Game.getRound()];
+        int m = roundsM[Game.getRound() - 3];
         int gain = 2*m;
         System.out.println("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE FOR $" + gain);
         p.addMoney(gain);
     }
     public static void event4(Player p) {
-        int m = roundsM[Game.getRound()];
+        int m = roundsM[Game.getRound() - 3];
         int lose = 4*m;
         System.out.println("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE. REPAIRS COST $" + lose);
         p.subtractMoney(lose);
@@ -73,7 +74,7 @@ public class RandomEvent {
         }
     }
     public static void event6(Player p) {
-        int m = roundsM[Game.getRound()];
+        int m = roundsM[Game.getRound() - 3];
         int lose = 6*m;
         System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU " + lose + " TO CLEAN IT UP.");
         p.subtractMoney(lose);

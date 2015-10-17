@@ -156,7 +156,7 @@ public class Game {
         } else{
             timeBonus=200;
         }
-        bonus = roundBonus[round-1]+rand.nextInt(timeBonus + 1);
+        bonus = roundBonus[round - 3]+rand.nextInt(timeBonus + 1);
         if (bonus>250){
             bonus=250;
         }
@@ -268,7 +268,6 @@ public class Game {
     public static int endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
-            System.out.println("HERE2");
             plot.produce();
         }
         turn = turn % numOfPlayers + 1;
@@ -277,7 +276,8 @@ public class Game {
         if (turn == 1) {
             reorderPlayers();
         }
-        if (round < 14) {
+        System.out.println(round + " " + (round > 14));
+        if (round <= 14) {
             timer.startTime();
         }
         return turn;
@@ -340,7 +340,6 @@ public class Game {
         notAllowed.add(c);
         players[turn-1] = new Player(name, race, c);
         originalPlayers[turn-1] = players[turn-1];
-        //System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
             ScreenNavigator.instance.loadNewPlayer();

@@ -119,7 +119,7 @@ public class ScreenNavigator {
                 break;
             case PLAYER: loadScreen(playerScreen);
                 break;
-            case CONGRATULATIONS: loadScreen(main);
+            case CONGRATULATIONS: loadScreen(congratulations);
                 break;
             case MAIN: loadScreen(main);
                 break;
@@ -160,6 +160,9 @@ public class ScreenNavigator {
     }
     public void loadStore() {
         loadScreen(STORE);
+    }
+    public void loadEndGame() {
+        loadScreen(CONGRATULATIONS);
     }
 
     public void loadNewPlayer() {
