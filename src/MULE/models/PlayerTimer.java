@@ -15,7 +15,6 @@ import java.util.TimerTask;
 
 import static MULE.controllers.Game.currentState;
 import static MULE.controllers.Game.endTurn;
-import static MULE.controllers.Game.getRound;
 
 public class PlayerTimer {
     static int secs;
