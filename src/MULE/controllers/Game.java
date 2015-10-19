@@ -2,18 +2,11 @@ package MULE.controllers;
 
 
 import MULE.models.*;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -364,7 +357,6 @@ public class Game {
     public static void getTurnOrder() {
         int temp;
         for(int i = 0; i < players.length; i++) {
-            temp = i;
             for (int j = i; j < players.length; j++) {
                 if (players[j].getMoney() > players[i].getMoney()) {
                     temp = playerTurn[i];

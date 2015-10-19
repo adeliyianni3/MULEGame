@@ -23,7 +23,7 @@ public class ConfigScreenController {
     }
 
     private int difficulty() {
-        int difficulty = 0;
+        int difficulty;
         switch ((String) difficultyChoiceBox.getValue()) {
             case "Beginner": difficulty = 0;
                 break;

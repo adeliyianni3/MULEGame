@@ -12,9 +12,7 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Antonia on 9/26/2015.
- */
+// Created by Antonia on 9/26/2015.
 public class StoreController implements Initializable {
     private ObservableList<Resource> items = FXCollections.observableArrayList();
     @FXML

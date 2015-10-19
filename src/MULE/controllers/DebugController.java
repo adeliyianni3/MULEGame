@@ -12,9 +12,7 @@ import javafx.util.Duration;
 
 import java.util.ResourceBundle;
 
-/**
- * Created by Ethan on 9/29/2015.
- */
+// Created by Ethan on 9/29/2015.
 
 //http://stackoverflow.com/questions/13227809/displaying-changing-values-in-javafx-label
 public class DebugController implements Initializable {

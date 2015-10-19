@@ -5,9 +5,7 @@ import MULE.controllers.Game;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/**
- * Created by Antonia on 10/16/2015.
- */
+// Created by Antonia on 10/16/2015.
 public class RandomEvent {
     private int possibleEvents = 7;
     private static int[] roundsM = {25, 25, 25, 50, 50, 50, 50, 75, 75, 75, 75, 100};

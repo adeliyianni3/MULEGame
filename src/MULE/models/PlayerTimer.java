@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 9/24/2015.
- */
+// Created by Antonia on 9/24/2015.
 
 //This is what I got so far. It should work but I can only check
 // at 5 pm. Anyone else who sees this, try it out :)

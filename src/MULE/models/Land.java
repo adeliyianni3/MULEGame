@@ -1,9 +1,6 @@
 package MULE.models;
-import java.util.Random;
 
-/**
- * Created by Antonia on 9/16/2015.
- */
+//Created by Antonia on 9/16/2015.
 public class Land {
     //Just starting MULE.models.Land with basic info
     private Player owner = null;

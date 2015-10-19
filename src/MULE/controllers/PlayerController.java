@@ -13,9 +13,7 @@ import javafx.scene.paint.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Aaron on 9/17/2015.
- */
+// Created by Aaron on 9/17/2015.
 public class PlayerController implements Initializable{
 
     private StringProperty name = new SimpleStringProperty();
@@ -45,7 +43,7 @@ public class PlayerController implements Initializable{
     @FXML
     void toNext(ActionEvent event) {
         String race = (String) raceBox.getValue();
-        Color c = (Color) colorBox.getValue();
+        Color c = colorBox.getValue();
         String name = nameBox.getText();
         if (!nameBox.getText().isEmpty() && Game.isColorAvailable(c)) {
             Game.addPlayer(race, c, name);
