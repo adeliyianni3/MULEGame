@@ -4,6 +4,7 @@ package MULE.models;
 public abstract class Resource {
     int price = 0;
     int storePriceExtra = 0;
+    int id = 0;
 
     public Resource() {
 
@@ -21,9 +22,15 @@ public abstract class Resource {
         return storePriceExtra;
     }
 
+    public int getID() {
+        return id;
+    }
+
     public abstract int getInventory(ResourceStore store);
 
     public abstract int buyInventory(ResourceStore store);
 
     public abstract int sellInventory(ResourceStore store);
+
+    public abstract int produce(LandType type);
 }
