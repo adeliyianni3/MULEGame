@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 10/2/2015.
- */
+// Created by Antonia on 10/2/2015.
 public class Crystite extends Resource {
 
     public Crystite() {

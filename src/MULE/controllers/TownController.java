@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 
-/**
- * Created by Ethan on 9/18/2015.
- */
+// Created by Ethan on 9/18/2015.
 public class TownController {
 
     @FXML

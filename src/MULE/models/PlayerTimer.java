@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 9/24/2015.
- */
+// Created by Antonia on 9/24/2015.
 
 //This is what I got so far. It should work but I can only check
 // at 5 pm. Anyone else who sees this, try it out :)
@@ -25,7 +23,7 @@ public class PlayerTimer {
         Player p = Game.players[Game.getTurn() - 1];
         int food = p.foodCounter();
         System.out.println(food);
-        if (food > 0 && food < foodNeeded[Game.round]) {
+        if (food > 0 && food < foodNeeded[Game.getRound() - 3]) {
             return 30;
         } else if (food == 0) {
             return 5;
@@ -45,7 +43,7 @@ public class PlayerTimer {
             public void run() {
                 setInterval();
             }
-            }, delay, period);
+        }, delay, period);
     }
     public void stopTime() {
         timer.cancel();
@@ -54,6 +52,9 @@ public class PlayerTimer {
         if (Game.currentState != Game.State.MAP) {
             Game.changeState(Game.State.MAP);
             ScreenNavigator.instance.loadMap();
+        }
+        if (Game.getRound() > 14) {
+            ScreenNavigator.instance.loadEndGame();
         }
     }
     public int getTime() {

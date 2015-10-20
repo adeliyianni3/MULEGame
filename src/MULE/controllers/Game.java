@@ -2,18 +2,11 @@ package MULE.controllers;
 
 
 import MULE.models.*;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -156,7 +149,7 @@ public class Game {
         } else{
             timeBonus=200;
         }
-        bonus = roundBonus[round-1]+rand.nextInt(timeBonus + 1);
+        bonus = roundBonus[round - 3]+rand.nextInt(timeBonus + 1);
         if (bonus>250){
             bonus=250;
         }
@@ -268,7 +261,6 @@ public class Game {
     public static int endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
-            System.out.println("HERE2");
             plot.produce();
         }
         turn = turn % numOfPlayers + 1;
@@ -277,7 +269,8 @@ public class Game {
         if (turn == 1) {
             reorderPlayers();
         }
-        if (round < 14) {
+        System.out.println(round + " " + (round > 14));
+        if (round <= 14) {
             timer.startTime();
         }
         return turn;
@@ -340,7 +333,6 @@ public class Game {
         notAllowed.add(c);
         players[turn-1] = new Player(name, race, c);
         originalPlayers[turn-1] = players[turn-1];
-        //System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
             ScreenNavigator.instance.loadNewPlayer();
@@ -365,7 +357,6 @@ public class Game {
     public static void getTurnOrder() {
         int temp;
         for(int i = 0; i < players.length; i++) {
-            temp = i;
             for (int j = i; j < players.length; j++) {
                 if (players[j].getMoney() > players[i].getMoney()) {
                     temp = playerTurn[i];

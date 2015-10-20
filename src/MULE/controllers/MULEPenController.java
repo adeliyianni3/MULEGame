@@ -4,9 +4,7 @@ import MULE.models.*;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 
-/**
- * Created by Ethan on 10/1/2015.
- */
+// Created by Ethan on 10/1/2015.
 public class MULEPenController {
 
     @FXML

@@ -12,7 +12,6 @@ public class Player {
     private String name;
     private Race race;
     private Color color;
-    private int id;
     private Mule mule;
     private int money;
     private int score;
@@ -72,7 +71,7 @@ public class Player {
         this.race = Race.valueOf(sRace.toUpperCase());
         this.color = color;
         this.money = race.startMoney();
-        this.id = playerNumber;
+        int id = playerNumber;
         numOfLands = 0;
         numOfResources = new int[4];
 
