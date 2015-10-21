@@ -119,5 +119,17 @@
     <Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="189.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="239.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="289.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
+    <MenuBar layoutX="0.0" layoutY="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Load Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Save Game" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
   </children>
 </Pane>

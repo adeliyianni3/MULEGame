@@ -1,59 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.ConfigScreenController">
-   <children>
-      <ChoiceBox fx:id="difficultyChoiceBox" layoutX="387.0" layoutY="91.0" prefWidth="150.0" value="Beginner">
-         <items>
-            <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Beginner" />
-               <String fx:value="Standard" />
-               <String fx:value="Tournament" />
-            </FXCollections>
-         </items>
-      </ChoiceBox>
-      <ChoiceBox fx:id="mapChoiceBox" layoutX="387.0" layoutY="185.0" prefWidth="150.0" value="Map 1">
-         <items>
-            <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Map 1" />
-               <String fx:value="Map 2" />
-               <String fx:value="Map 3" />
-            </FXCollections>
-         </items>
-      </ChoiceBox>
-      <ChoiceBox fx:id="playerChoiceBox" layoutX="387.0" layoutY="278.0" prefWidth="150.0" value="1">
-         <items>
-            <FXCollections fx:factory="observableArrayList">
-               <String fx:value="1" />
-               <String fx:value="2" />
-               <String fx:value="3" />
-               <String fx:value="4" />
-            </FXCollections>
-         </items>
-      </ChoiceBox>
-      <Label layoutX="432.0" layoutY="63.0" text="Difficulty" />
-      <Label layoutX="429.0" layoutY="157.0" text="Map Type" />
-      <Label layoutX="401.0" layoutY="247.0" text="Number of Players" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@M.U.L.E..png" />
-         </image>
-      </ImageView>
-      <Label layoutX="78.0" layoutY="54.0" text="M.U.L.E">
-         <font>
-            <Font name="System Bold" size="52.0" />
-         </font>
-      </Label>
-      <Button fx:id="startButton" layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#playerConfiguration" text="PLAY">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Button>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ConfigScreenController">
+  <children>
+    <ChoiceBox fx:id="difficultyChoiceBox" layoutX="387.0" layoutY="91.0" prefWidth="150.0" value="Beginner">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Beginner" />
+          <String fx:value="Standard" />
+          <String fx:value="Tournament" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <ChoiceBox fx:id="mapChoiceBox" layoutX="387.0" layoutY="185.0" prefWidth="150.0" value="Map 1">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Map 1" />
+          <String fx:value="Map 2" />
+          <String fx:value="Map 3" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <ChoiceBox fx:id="playerChoiceBox" layoutX="387.0" layoutY="278.0" prefWidth="150.0" value="1">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="1" />
+          <String fx:value="2" />
+          <String fx:value="3" />
+          <String fx:value="4" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label layoutX="432.0" layoutY="63.0" text="Difficulty" />
+    <Label layoutX="429.0" layoutY="157.0" text="Map Type" />
+    <Label layoutX="401.0" layoutY="247.0" text="Number of Players" />
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@M.U.L.E..png" />
+      </image>
+    </ImageView>
+    <Label layoutX="78.0" layoutY="54.0" text="M.U.L.E">
+      <font>
+        <Font name="System Bold" size="52.0" />
+      </font>
+    </Label>
+    <Button fx:id="startButton" layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#playerConfiguration" text="PLAY">
+      <font>
+        <Font name="System Bold" size="24.0" />
+      </font>
+    </Button>
+    <MenuBar layoutX="0.0" layoutY="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+           <items>
+              <MenuItem mnemonicParsing="false" text="Load Game" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Save Game" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+           </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </children>
 </Pane>

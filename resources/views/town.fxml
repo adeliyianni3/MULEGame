@@ -32,5 +32,17 @@
       <Label layoutX="30.0" layoutY="175.0" text="Back" onMouseClicked="#leaveTown"/>
       <Label layoutX="43.0" layoutY="195.0" text="To" onMouseClicked="#leaveTown" />
       <Label layoutX="51.0" layoutY="216.0" text="Town" onMouseClicked="#leaveTown"/>
+      <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Load Game" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Save Game" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
    </children>
 </Pane>
