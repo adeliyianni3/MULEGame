@@ -52,7 +52,7 @@ public class Game {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
                 Gson gs = new Gson();
                 String gson = gs.toJson(this);
-                out.println(gson);
+                System.out.println(gson);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,7 +65,7 @@ public class Game {
                 String json = br.readLine();
                 System.out.println(json);
                 Gson gs = new Gson();
-                instance = gs.fromJson(json, Game.class);
+                //instance = gs.fromJson(json, Game.class);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
