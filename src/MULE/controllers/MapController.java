@@ -2,6 +2,7 @@ package MULE.controllers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -209,6 +210,16 @@ public class MapController implements Initializable {
 
     @FXML
     private Label continueLabel;
+
+    @FXML
+    private void handleLoadGame(ActionEvent e) {
+        Game.getInstance().loadGame();
+    }
+    @FXML
+    private void handleSaveGame(ActionEvent e) {
+        Game.getInstance().saveGame();
+    }
+
 
     @FXML
     void landClick(MouseEvent event) {

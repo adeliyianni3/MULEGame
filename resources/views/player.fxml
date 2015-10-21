@@ -52,9 +52,9 @@
          <menus>
             <Menu mnemonicParsing="false" text="Menu">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Load Game" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Save Game" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
                   <MenuItem mnemonicParsing="false" text="Close" />
                </items>
             </Menu>

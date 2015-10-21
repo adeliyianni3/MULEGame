@@ -3,6 +3,7 @@ package MULE.controllers;
 import MULE.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.fxml.FXML;
@@ -25,6 +26,16 @@ public class StoreController implements Initializable {
         cartList.getItems().clear();
         ScreenNavigator.instance.loadTown();
     }
+
+    @FXML
+    private void handleLoadGame(ActionEvent e) {
+        Game.getInstance().loadGame();
+    }
+    @FXML
+    private void handleSaveGame(ActionEvent e) {
+        Game.getInstance().saveGame();
+    }
+
 
     @FXML
     public void addCartFood(MouseEvent event) {

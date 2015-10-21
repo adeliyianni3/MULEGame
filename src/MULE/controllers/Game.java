@@ -7,14 +7,19 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import com.google.gson.Gson;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 //Created by Aaron on 9/17/2015.
 public class Game {
+    private static Game instance = new Game();
     private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
     public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
@@ -37,6 +42,38 @@ public class Game {
     private static int buyPhaseSkipped = 0;
     
     public static int LAND_PRICE = 300;
+
+    public static Game getInstance(){
+        return instance;
+    }
+
+    public void saveGame() {
+        try {
+            try (PrintWriter out = new PrintWriter(new File("data.json"))) {
+                Gson gs = new Gson();
+                String gson = gs.toJson(this);
+                out.println(gson);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void loadGame() {
+        try {
+            try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
+                String json = br.readLine();
+                System.out.println(json);
+                Gson gs = new Gson();
+                instance = gs.fromJson(json, Game.class);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
 
     public static void leaveTown(String side) {
