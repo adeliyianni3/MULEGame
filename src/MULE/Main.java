@@ -80,6 +80,7 @@ public class Main extends Application {
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         Game.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         Game.playMusic();
 
         debugStage.show();

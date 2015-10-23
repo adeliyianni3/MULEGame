@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 //Created by Aaron on 9/17/2015.
 public class Game {
     private static Game instance = new Game();
+    private static String lastEvent = "---"; //ONLY DEBUG
     private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
     public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
@@ -91,11 +92,14 @@ public class Game {
         int chance = random.nextInt(101);
         if (chance <= 27) {
             RandomEvent event = new RandomEvent();
-            event.apply(chance, currentPlayer());
+            lastEvent = event.apply(chance, currentPlayer());
         }
     }
-
-
+    //ONLY FOR DEBUG
+    public static String getLastEvent() {
+        return lastEvent;
+    }
+    
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }
