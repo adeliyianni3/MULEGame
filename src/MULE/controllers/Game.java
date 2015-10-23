@@ -36,6 +36,7 @@ public class Game {
     public static PlayerTimer timer = new PlayerTimer();
     public static ResourceStore store = new ResourceStore();
     public static int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
 
     private static MediaPlayer mediaPlayer = null;
 
@@ -91,8 +92,12 @@ public class Game {
         Random random = new Random();
         int chance = random.nextInt(101);
         if (chance <= 27) {
-            RandomEvent event = new RandomEvent();
-            lastEvent = event.apply(chance, currentPlayer());
+            int x = chance % possibleEvents.length;
+            if (currentPlayer() == getPlayers()[0] && x > 3) {
+                x = chance % 4;
+            }
+            RandomEvent event = possibleEvents[x];
+            lastEvent = event.apply(currentPlayer());
         }
     }
     //ONLY FOR DEBUG
