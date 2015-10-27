@@ -10,19 +10,19 @@ public class TownController {
 
     @FXML
     void usePub(MouseEvent event) {
-        Game.gamble();
+        Game.instance.gamble();
 
     }
 
     @FXML
     void useAssay(MouseEvent event) {
-        Game.useAssay();
+        Game.instance.useAssay();
 
     }
 
     @FXML
     void useLand(MouseEvent event) {
-        Game.useLandOffice();
+        Game.instance.useLandOffice();
 
     }
 
@@ -32,13 +32,13 @@ public class TownController {
 
     public void leaveTown(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
-        Game.leaveTown(side);
+        Game.instance.leaveTown(side);
         ScreenNavigator.instance.loadMap();
     }
 
     @FXML
     void enterStore(MouseEvent event) {
-        Game.enterStore();
+        Game.instance.enterStore();
     }
 
     @FXML
