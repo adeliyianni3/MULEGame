@@ -22,7 +22,7 @@ public class StoreController implements Initializable {
 
     public void leaveStore(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
-        Game.leaveStore(side);
+        Game.instance.leaveStore(side);
         cartList.getItems().clear();
         ScreenNavigator.instance.loadTown();
     }
@@ -55,7 +55,7 @@ public class StoreController implements Initializable {
     }
     @FXML
     public void purchaseCart() {
-        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Player p = Game.instance.getPlayers()[Game.instance.getTurn() - 1];
         Object[] stuff = items.toArray();
         for (Object thing: stuff) {
             Resource item = (Resource) thing;
@@ -63,10 +63,10 @@ public class StoreController implements Initializable {
             if (p.getMoney() < price){
                 System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
             } else {
-                if (item.getInventory(Game.getStore()) > 0) {
+                if (item.getInventory(Game.instance.getStore()) > 0) {
                     p.subtractMoney(price);
                     p.addResource(item);
-                    System.out.println(item.buyInventory(Game.getStore()) + " " + thing.toString() + " left");
+                    System.out.println(item.buyInventory(Game.instance.getStore()) + " " + thing.toString() + " left");
                     cartList.getItems().remove(thing);
                 }
             }
@@ -76,13 +76,13 @@ public class StoreController implements Initializable {
 
     @FXML
     public void sellItems() {
-        Player p = Game.getPlayers()[Game.getTurn() - 1];
+        Player p = Game.instance.getPlayers()[Game.instance.getTurn() - 1];
         Object[] cartStuff = items.toArray();
         for (Object item: cartStuff) {
             Resource item2 = (Resource) item;
             if (p.contains(item2)){
                 p.removeResource(item2);
-                item2.sellInventory(Game.getStore());
+                item2.sellInventory(Game.instance.getStore());
                 p.addMoney(item2.getPrice());
                 cartList.getItems().remove(item);
                 System.out.println("Congratz Y'all! Just sold " + item);
