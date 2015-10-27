@@ -20,10 +20,10 @@ public class PlayerTimer {
     static int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
 
     private int computeTime(){
-        Player p = Game.players[Game.getTurn() - 1];
+        Player p = Game.instance.players[Game.instance.getTurn() - 1];
         int food = p.foodCounter();
         System.out.println(food);
-        if (food > 0 && food < foodNeeded[Game.getRound() - 3]) {
+        if (food > 0 && food < foodNeeded[Game.instance.getRound() - 3]) {
             return 30;
         } else if (food == 0) {
             return 5;
@@ -37,7 +37,7 @@ public class PlayerTimer {
         int period = 1000;
         timer = new Timer();
         System.out.println("Turn Starts");
-        Game.randomEvent();
+        Game.instance.randomEvent();
         timer.scheduleAtFixedRate(new TimerTask() {
 
             public void run() {
@@ -49,11 +49,11 @@ public class PlayerTimer {
         timer.cancel();
         System.out.println("TurnEnds");
         endTurn();
-        if (Game.currentState != Game.State.MAP) {
-            Game.changeState(Game.State.MAP);
+        if (Game.instance.currentState != Game.State.MAP) {
+            Game.instance.changeState(Game.State.MAP);
             ScreenNavigator.instance.loadMap();
         }
-        if (Game.getRound() > 14) {
+        if (Game.instance.getRound() > 14) {
             ScreenNavigator.instance.loadEndGame();
         }
     }
@@ -69,7 +69,7 @@ public class PlayerTimer {
                         ScreenNavigator.instance.loadMap();
                     }
                 });
-                Game.changeState(Game.State.MAP);
+                Game.instance.changeState(Game.State.MAP);
             }
             timer.cancel();
             System.out.println("TurnEnds");
