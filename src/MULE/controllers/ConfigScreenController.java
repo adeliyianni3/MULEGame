@@ -19,11 +19,20 @@ public class ConfigScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        Game.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+        Game.instance.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+    }
+
+    @FXML
+    private void handleLoadGame(ActionEvent e) {
+        Game.instance.loadGame();
+    }
+    @FXML
+    private void handleSaveGame(ActionEvent e) {
+        Game.instance.saveGame();
     }
 
     private int difficulty() {
-        int difficulty = 0;
+        int difficulty;
         switch ((String) difficultyChoiceBox.getValue()) {
             case "Beginner": difficulty = 0;
                 break;

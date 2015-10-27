@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 9/17/2015.
- */
+// Created by Antonia on 9/17/2015.
 public class Mule {
     //Started Mule class
     private Resource resource;
@@ -20,5 +18,9 @@ public class Mule {
     }
     public void setResource(Resource resource){
         this.resource = resource;
+    }
+
+    public int produce(LandType type) {
+        return resource.produce(type);
     }
 }

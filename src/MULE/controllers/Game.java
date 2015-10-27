@@ -2,97 +2,143 @@ package MULE.controllers;
 
 
 import MULE.models.*;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import com.google.gson.Gson;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 //Created by Aaron on 9/17/2015.
 public class Game {
-    private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
-    public static int numOfPlayers = 1;
-    public static int playerConfiguration = 0;
-    public static final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
-    public static int round = 0;
-    public static Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
-    public static Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
-    private static int difficulty;
-    private static int mapType;
-    private static int[] playerTurn; //unused?
-    private static int totalTurns = 1;
-    private static int turn = 1;
-    public static State currentState = State.MAIN;
-    public static PlayerTimer timer = new PlayerTimer();
-    public static ResourceStore store = new ResourceStore();
-    public static int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    public static Game instance = new Game();
+    private String lastEvent = "---"; //ONLY DEBUG
+    private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
+    public int numOfPlayers = 1;
+    public final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
+    public int round = 0;
+    public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
+    public Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
+    private int difficulty;
+    private int mapType;
+    private int[] playerTurn; //unused?
+    private int totalTurns = 1;
+    private int turn = 1;
+    public State currentState = State.MAIN;
+    public PlayerTimer timer = new PlayerTimer();
+    public ResourceStore store = new ResourceStore();
+    public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    private RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
 
-    private static MediaPlayer mediaPlayer = null;
+    private MediaPlayer mediaPlayer = null;
 
-    private static Map theMap = new Map();
-    private static int buyPhaseSkipped = 0;
+    private Map theMap = new Map();
+    private int buyPhaseSkipped = 0;
     
-    public static int LAND_PRICE = 300;
+    public int LAND_PRICE = 300;
 
-    public static int numLand = 1;
+    public Game getInstance(){
+        return instance;
+    }
 
-    public static void leaveTown(String side) {
+    public void saveGame() {
+        try {
+            try (PrintWriter out = new PrintWriter(new File("data.json"))) {
+                Gson gs = new Gson();
+                String gson = gs.toJson(this);
+                System.out.println(gson);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void loadGame() {
+        try {
+            try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
+                String json = br.readLine();
+                System.out.println(json);
+                Gson gs = new Gson();
+                //instance = gs.fromJson(json, Game.class);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+
+    public void leaveTown(String side) {
         currentState = State.MAP;
     }
 
     //TODO for animations later
-    public static void leaveStore(String side) {
-
-
+    public void leaveStore(String side) {
+        currentState = State.IN_TOWN;
     }
 
 
+    public void randomEvent(){
+        Random random = new Random();
+        int chance = random.nextInt(101);
+        if (chance <= 27) {
+            int x = chance % possibleEvents.length;
+            if (currentPlayer() == getPlayers()[0] && x > 3) {
+                x = chance % 4;
+            }
+            RandomEvent event = possibleEvents[x];
+            lastEvent = event.apply(currentPlayer());
+        }
+    }
+    //ONLY FOR DEBUG
+    public String getLastEvent() {
+        return lastEvent;
+    }
+    
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }
 
-    public static void setMediaPlayer(MediaPlayer mp) {
+    public void setMediaPlayer(MediaPlayer mp) {
         mediaPlayer = mp;
     }
 
-    public static void playMusic() {
+    public void playMusic() {
         mediaPlayer.play();
     }
 
-    public static void pauseMusic() {
+    public void pauseMusic() {
         mediaPlayer.pause();
     }
 
-    public static void changeState(State s) {
+    public void changeState(State s) {
         currentState = s;
     }
 
-    public static int getDifficulty() {
+    public int getDifficulty() {
         return difficulty;
     }
 
 
-    public static int getMapType() {
+    public int getMapType() {
         return mapType;
     }
 
-    public static void setMapType(int mapType) {
-        Game.mapType = mapType;
+    public void setMapType(int mapType) {
+        this.mapType = mapType;
     }
 
-    public static void setNumOfPlayers(int num) {
+    public void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
         originalPlayers = new Player[num];
@@ -102,50 +148,38 @@ public class Game {
         }
     }
 
-    public static ArrayList<Color> getColors() {
+    public ArrayList<Color> getColors() {
         return notAllowed;
     }
 
-    public static boolean isColorAvailable(Color c) {
+    public boolean isColorAvailable(Color c) {
         return !notAllowed.contains(c);
     }
 
-    public static void storeClicked(String storeLoc) {
-        switch(storeLoc) {
-            case "pub":
-
-                break;
-            case "assay":
-
-                break;
-            case "resourceStore":
-                players[Game.getTurn() - 1].outfitMule(Resource.FOOD);
-                break;
-
-            case "land":
-                players[turn - 1].sellLand();
-                break;
-
-        }
+    public void useAssay() {
 
     }
 
-    public static int getRound() {
+    public void useLandOffice() {
+
+    }
+
+    public int getRound() {
         return round;
     }
 
-    public static State getPhase() {
+    public State getPhase() {
         return currentState;
     }
 
-    public static Player[] getPlayers() {
+    public Player[] getPlayers() {
         return players;
     }
-    public static Player[] getOriginalPlayers() {
+    public Player[] getOriginalPlayers() {
         return originalPlayers;
     }
 
-    public static void gamble() {
+    public void gamble() {
         int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
         int timeBonus;
         int bonus;
@@ -161,7 +195,7 @@ public class Game {
         } else{
             timeBonus=200;
         }
-        bonus = roundBonus[round-1]+rand.nextInt(timeBonus + 1);
+        bonus = roundBonus[round - 3]+rand.nextInt(timeBonus + 1);
         if (bonus>250){
             bonus=250;
         }
@@ -170,7 +204,7 @@ public class Game {
         timer.stopTime();
     }
 
-    public static void buyPhaseSkip() {
+    public void buyPhaseSkip() {
         System.out.println("buyPhaseSkip() called.");
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("buyPhaseSkip() executed.");
@@ -179,10 +213,10 @@ public class Game {
         }
     }
 
-    public static Player currentPlayer() {
+    public Player currentPlayer() {
         return players[getTurn() - 1];
     }
-    public static void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
+    public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
             int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
@@ -196,7 +230,7 @@ public class Game {
                     plot.setOwner(p);
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
-                    rec.setStrokeWidth(8.0);
+                    rec.setStrokeWidth(4.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
@@ -205,7 +239,7 @@ public class Game {
                         plot.setOwner(p);
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
-                        rec.setStrokeWidth(8.0);
+                        rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         buyPhaseSkipped = 0;
@@ -244,7 +278,7 @@ public class Game {
         }
     }
 
-    public static int buyPhaseEndTurn() {
+    public int buyPhaseEndTurn() {
         boolean noMoney = true; //make prettier later
         while (noMoney && buyPhaseSkipped < numOfPlayers) {
             turn = turn % numOfPlayers + 1;
@@ -270,10 +304,9 @@ public class Game {
         }
         return turn;
     }
-    public static int endTurn() {
+    public int endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
-            System.out.println("HERE2");
             plot.produce();
         }
         turn = turn % numOfPlayers + 1;
@@ -282,20 +315,21 @@ public class Game {
         if (turn == 1) {
             reorderPlayers();
         }
-        if (round < 14) {
+        System.out.println(round + " " + (round > 14));
+        if (round <= 14) {
             timer.startTime();
         }
         return turn;
     }
 
-    public static void incrementTurn() {
+    public void incrementTurn() {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-1) / numOfPlayers;
         //use this only for player config
     }
 
-    public static void reorderPlayers() {
+    public void reorderPlayers() {
         System.out.println("Reordered");
         for(int i = 0; i < numOfPlayers - 1; i++) {
             System.out.println("i: " + i);
@@ -315,37 +349,36 @@ public class Game {
 
     }
 
-    public static void townClicked() {
-        if (currentState == State.MAP) {
+    public void townClicked() {
+        if (currentState == State.MAP || currentState == State.STORE) {
             ScreenNavigator.instance.loadTown();
             currentState = State.IN_TOWN;
         }
     }
 
-    public static int getTotalTurns() {
+    public int getTotalTurns() {
         return totalTurns;
     }
 
-    public static int getTurn() {
+    public int getTurn() {
         return turn;
     }
 
-    public static int getNumOfPlayers() {
+    public int getNumOfPlayers() {
         return numOfPlayers;
     }
 
-    public static void setConfigurationSettings(int difficulty, int numOfPlayers) {
-        Game.difficulty = difficulty;
-        Game.setNumOfPlayers(numOfPlayers);
+    public void setConfigurationSettings(int difficulty, int numOfPlayers) {
+        this.difficulty = difficulty;
+        setNumOfPlayers(numOfPlayers);
         currentState = State.CONFIG;
         ScreenNavigator.instance.loadNewPlayer();
     }
 
-    public static void addPlayer(String race, Color c, String name) {
+    public void addPlayer(String race, Color c, String name) {
         notAllowed.add(c);
         players[turn-1] = new Player(name, race, c);
         originalPlayers[turn-1] = players[turn-1];
-        //System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
             ScreenNavigator.instance.loadNewPlayer();
@@ -355,74 +388,21 @@ public class Game {
         }
     }
 
-    public static Boolean purchaseCart(ObservableList<String> cart, ListView<String> listView) {
-        Player p = players[turn - 1];
-        Object[] stuff = cart.toArray();
-        for (Object thing: stuff) {
-            Resource item = Resource.valueOf(thing.toString().toUpperCase());
-            //Make enums later for price
-            int price = item.getPrice();
-            if (p.getMoney() < price){
-                System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
-                //consider making it sell only if you can afford all?
-                return false;
-            } else {
-                if (item.getInventory(store) > 0) {
-                    if (item.equals(Resource.MULE)) {
-                        System.out.println(p.hasMule());
-                        if (p.hasMule()) {
-                            System.out.println("You have a mule already");
-                            return false;
-                        }
-                    }
-                    p.subtractMoney(price);
-                    p.addResource(item);
-                    System.out.println(item.buyInventory(store) + " " + thing.toString() + " left");
-                    listView.getItems().remove(thing.toString());
-                }
-            }
-        }
-        System.out.println(p.getMoney());
-        return true;
-    }
-
-    public static void enterStore() {
+    public void enterStore() {
         if (currentState == State.IN_TOWN) {
             ScreenNavigator.instance.loadStore();
             currentState = State.STORE;
         }
     }
 
-    public static void sellItems(ObservableList<String> cart, ListView<String> listView) {
-        Player p = players[turn - 1];
-        ArrayList<Resource> playerStuff = p.getResources();
-        Object[] cartStuff = cart.toArray();
-        for (Object item: cartStuff) {
-            Resource item2 = Resource.valueOf(item.toString().toUpperCase());
-            //Make enums later for price
-            if (item2.equals(Resource.MULE) && p.hasMule()) {
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                System.out.println("Congratz Y'all! Just sold " + item);
-                listView.getItems().remove(item);
-                System.out.println(p.hasMule());
-            } else if (p.contains(item2)){
-                p.removeResource(item2);
-                item2.sellInventory(store);
-                p.addMoney(item2.getPrice());
-                listView.getItems().remove(item);
-                System.out.println("Congratz Y'all! Just sold " + item);
-            } else {
-                System.out.println("Sold Nothing");
-            }
-        }
+    public ResourceStore getStore() {
+        return store;
     }
 
     //replaced
-    public static void getTurnOrder() {
+    public void getTurnOrder() {
         int temp;
         for(int i = 0; i < players.length; i++) {
-            temp = i;
             for (int j = i; j < players.length; j++) {
                 if (players[j].getMoney() > players[i].getMoney()) {
                     temp = playerTurn[i];
@@ -434,18 +414,10 @@ public class Game {
         }
     }
 
-    public static void buyMULE(Resource resource) {
+    public void buyMULE(Resource resource) {
         Player p = players[turn - 1];
         int price = 100;
-        if (resource.equals(Resource.FOOD)) {
-            price += 25;
-        } else if (resource.equals(Resource.ENERGY)) {
-            price += 50;
-        } else if(resource.equals(Resource.SMITH_ORE)) {
-            price += 75;
-        } else if(resource.equals(Resource.CRYSTITE)) {
-            price += 100;
-        }
+        price += resource.getStorePriceExtra();
         if (p.getMoney() >= price) {
             Mule newMule = new Mule(resource);
             p.subtractMoney(price);
@@ -457,7 +429,7 @@ public class Game {
         }
     }
 
-    public static String playersToString() {
+    public String playersToString() {
         String returnString = "";
         for(Player p : players) {
             if (p != null) {
@@ -469,23 +441,23 @@ public class Game {
         return returnString;
     }
 
-    public static int moneyValue() {
+    public int moneyValue() {
         return resourcePoints[0];
     }
 
-    public static int landValue() {
+    public int landValue() {
         return resourcePoints[1];
     }
 
-    public static int foodValue() {
+    public int foodValue() {
         return resourcePoints[2];
     }
 
-    public static int smithoreValue() {
+    public int smithoreValue() {
         return resourcePoints[3];
     }
 
-    public static int energyValue() {
+    public int energyValue() {
         return resourcePoints[4];
     }
 

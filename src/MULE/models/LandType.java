@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 9/17/2015.
- */
+// Created by Antonia on 9/17/2015.
 public enum LandType {
     PLAIN(2.0, 3.0, 1.0, 1.0),
     RIVER(4.0, 2.0, 0.0, 0.0),
@@ -34,4 +32,5 @@ public enum LandType {
     public double getCrystiteFactor() {
         return crystiteFactor;
     }
+
 }

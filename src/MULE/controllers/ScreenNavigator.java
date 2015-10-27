@@ -1,6 +1,5 @@
 package MULE.controllers;
 
-import MULE.models.Resource;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +8,6 @@ import java.io.IOException;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -44,10 +41,6 @@ public class ScreenNavigator {
     public Scene store;
     public Scene mulePen;
 
-    public String currentState;
-
-
-
     public static ScreenNavigator instance = new ScreenNavigator();
     private Stage stage;
 
@@ -55,7 +48,7 @@ public class ScreenNavigator {
     private static MainController mainController;
 
     private ScreenNavigator() {
-        Parent root = null;
+        Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource(MAIN_SCREEN));
             mainScreen = new Scene(root);
@@ -123,7 +116,7 @@ public class ScreenNavigator {
                 break;
             case PLAYER: loadScreen(playerScreen);
                 break;
-            case CONGRATULATIONS: loadScreen(main);
+            case CONGRATULATIONS: loadScreen(congratulations);
                 break;
             case MAIN: loadScreen(main);
                 break;
@@ -150,7 +143,7 @@ public class ScreenNavigator {
 
     public void loadMain() {
         loadScreen(MAIN_SCREEN);
-        Game.changeState(Game.State.MAIN);
+        Game.instance.changeState(Game.State.MAIN);
     }
     public void loadTown() {
         loadScreen(TOWN);
@@ -164,6 +157,9 @@ public class ScreenNavigator {
     }
     public void loadStore() {
         loadScreen(STORE);
+    }
+    public void loadEndGame() {
+        loadScreen(CONGRATULATIONS);
     }
 
     public void loadNewPlayer() {

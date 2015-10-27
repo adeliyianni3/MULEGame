@@ -12,9 +12,7 @@ import javafx.util.Duration;
 
 import java.util.ResourceBundle;
 
-/**
- * Created by Ethan on 9/29/2015.
- */
+// Created by Ethan on 9/29/2015.
 
 //http://stackoverflow.com/questions/13227809/displaying-changing-values-in-javafx-label
 public class DebugController implements Initializable {
@@ -95,6 +93,8 @@ public class DebugController implements Initializable {
     private Label timer;
     @FXML
     private Label currentPlayer;
+    @FXML
+    private Label lastEvent;
     private Player[] p;
     private Player[] op;
 
@@ -111,6 +111,7 @@ public class DebugController implements Initializable {
                                     currentPlayer.setText(p[Game.getTurn() - 1].getName());
                                 }
                                 totalTurn.setText("" + Game.getTotalTurns());
+                                lastEvent.setText(Game.getLastEvent());
                                 round.setText("" + Game.getRound());
                                 phase.setText("" + Game.getPhase().name());
                                 Player[] p = Game.getPlayers();

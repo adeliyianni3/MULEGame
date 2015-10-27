@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MapController">
   <children>
-    <ImageView fitHeight="249.0" fitWidth="449.0" layoutX="76.0" layoutY="76.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="249.0" fitWidth="450.0" layoutX="75.0" layoutY="76.0" pickOnBounds="true" preserveRatio="false">
       <image>
-        <Image url="@M.A.P..png" />
+        <Image url="@M.A.P.2..png" />
       </image>
     </ImageView>
     <ImageView fitHeight="249.0" fitWidth="50.0" layoutX="275.0" layoutY="76.0" pickOnBounds="true" preserveRatio="false">
@@ -119,5 +119,17 @@
     <Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="189.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="239.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="289.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
+    <MenuBar layoutX="0.0" layoutY="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
   </children>
 </Pane>

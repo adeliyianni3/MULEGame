@@ -1,9 +1,6 @@
 package MULE.models;
-import java.util.Random;
 
-/**
- * Created by Antonia on 9/16/2015.
- */
+//Created by Antonia on 9/16/2015.
 public class Land {
     //Just starting MULE.models.Land with basic info
     private Player owner = null;
@@ -40,34 +37,9 @@ public class Land {
 
     public void produce() {
         if (hasMule()) {
-            if (getOwner().contains(Resource.ENERGY)) {
-                getOwner().removeResource(Resource.ENERGY);
-                Resource sown = getMule().getResource();
-                double factor;
-                if (sown.equals(Resource.ENERGY)) {
-                    factor = type.getEnergyFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.ENERGY);
-                    }
-                }
-                if (sown.equals(Resource.FOOD)) {
-                    factor = type.getFoodFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.FOOD);
-                    }
-                }
-                if (sown.equals(Resource.SMITH_ORE)) {
-                    factor = type.getSmithOreFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.SMITH_ORE);
-                    }
-                }
-                if (sown.equals(Resource.CRYSTITE)) {
-                    factor = type.getCrystiteFactor();
-                    for (int i = 0; i < factor; i = i + 1) {
-                        getOwner().addResource(Resource.CRYSTITE);
-                    }
-                }
+            if (owner.hasEnergy()) {
+                owner.removeEnergy();
+                owner.addResource(mule.getResource(), mule.produce(type));
             }
         }
     }

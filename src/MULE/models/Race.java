@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Aaron on 9/17/2015.
- */
+// Created by Aaron on 9/17/2015.
 public enum Race {
     UGAITE(1000),
     BUZZITE(1000),
@@ -11,8 +9,7 @@ public enum Race {
     BONZOID(1000);
 
     private int startmoney;
-//have a get money method
-    private Race(int startmoney) {
+    Race(int startmoney) {
         this.startmoney = startmoney;
     }
     public int startMoney() {

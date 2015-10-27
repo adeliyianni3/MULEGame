@@ -76,10 +76,11 @@ public class Main extends Application {
                 debugScene
         );
 
-        URL resource = getClass().getResource("/audio/English.mp3");
+        URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         Game.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         Game.playMusic();
 
         debugStage.show();
@@ -98,7 +99,7 @@ public class Main extends Application {
     private Pane loadMainPane() throws IOException {
         FXMLLoader loader = new FXMLLoader();
 
-        Pane mainPane = (Pane) loader.load(
+        Pane mainPane = loader.load(
                 getClass().getResourceAsStream(
                         ScreenNavigator.instance.MAIN
                 )

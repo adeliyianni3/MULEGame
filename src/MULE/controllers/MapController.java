@@ -2,6 +2,7 @@ package MULE.controllers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -12,9 +13,7 @@ import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Ethan on 9/18/2015.
- */
+// Created by Ethan on 9/18/2015.
 public class MapController implements Initializable {
     //http://stackoverflow.com/questions/27031365/how-to-bind-visibility-to-controller-in-javafx
     BooleanProperty showPass = new SimpleBooleanProperty(false);
@@ -213,6 +212,16 @@ public class MapController implements Initializable {
     private Label continueLabel;
 
     @FXML
+    private void handleLoadGame(ActionEvent e) {
+        Game.getInstance().loadGame();
+    }
+    @FXML
+    private void handleSaveGame(ActionEvent e) {
+        Game.getInstance().saveGame();
+    }
+
+
+    @FXML
     void landClick(MouseEvent event) {
         //System.out.println("Ran the landClick method");
         String landName = ((Node)event.getSource()).getId();
@@ -227,26 +236,24 @@ public class MapController implements Initializable {
         }
         //add in interaction with main here
         //landName will contain a string "RC" containing land's row and column in the set 5x5 array
-        Game.landClicked(landName, mapArr[i][j], mulArr[i][j]);
+        Game.instance.landClicked(landName, mapArr[i][j], mulArr[i][j]);
         showPass.setValue(ScreenNavigator.instance.showPass.getValue());
     }
 
     @FXML
     void townClick(MouseEvent event) {
-        Game.townClicked();
+        Game.instance.townClicked();
     }
 
     @FXML
     void passClick(MouseEvent event) {
-        Game.buyPhaseSkip();
+        Game.instance.buyPhaseSkip();
         showPass.setValue(ScreenNavigator.instance.showPass.getValue());
     }
 
     public void setArrs() {
-        Rectangle[][] tempArr = {{map00, map01, map02, map03, map04, map05, map06, map07, map08}, {map10, map11, map12, map13, map14, map15, map16, map17, map18}, {map20, map21, map22, map23, map24, map25, map26, map27, map28}, {map30, map31, map32, map33, map34, map35, map36, map37, map38}, {map40, map41, map42, map43, map44, map45, map46, map47, map48}};
-        mapArr = tempArr;
-        Rectangle[][] tempArr2 = {{mul00, mul01, mul02, mul03, mul04, mul05, mul06, mul07, mul08}, {mul10, mul11, mul12, mul13, mul14, mul15, mul16, mul17, mul18}, {mul20, mul21, mul22, mul23, mul24, mul25, mul26, mul27, mul28}, {mul30, mul31, mul32, mul33, mul34, mul35, mul36, mul37, mul38}, {mul40, mul41, mul42, mul43, mul44, mul45, mul46, mul47, mul48} };
-        mulArr = tempArr2;
+        mapArr = new Rectangle[][]{{map00, map01, map02, map03, map04, map05, map06, map07, map08}, {map10, map11, map12, map13, map14, map15, map16, map17, map18}, {map20, map21, map22, map23, map24, map25, map26, map27, map28}, {map30, map31, map32, map33, map34, map35, map36, map37, map38}, {map40, map41, map42, map43, map44, map45, map46, map47, map48}};
+        mulArr = new Rectangle[][]{{mul00, mul01, mul02, mul03, mul04, mul05, mul06, mul07, mul08}, {mul10, mul11, mul12, mul13, mul14, mul15, mul16, mul17, mul18}, {mul20, mul21, mul22, mul23, mul24, mul25, mul26, mul27, mul28}, {mul30, mul31, mul32, mul33, mul34, mul35, mul36, mul37, mul38}, {mul40, mul41, mul42, mul43, mul44, mul45, mul46, mul47, mul48}};
     }
 
 

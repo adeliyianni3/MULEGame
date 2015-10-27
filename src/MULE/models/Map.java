@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Lauren on 9/16/2015.
- */
+// Created by Lauren on 9/16/2015.
 
 public class Map {
 
@@ -34,7 +32,7 @@ public class Map {
     }
 
     public boolean isTown(int row, int col){
-        if (row==2 && col==4){
+        if (row == 2 && col == 4){
             return true;
         }
         return false;
