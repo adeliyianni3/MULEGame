@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
-    private static Game instance = new Game();
+    public static Game instance = new Game();
     private static String lastEvent = "---"; //ONLY DEBUG
     private static ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public static int numOfPlayers = 1;
