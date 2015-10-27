@@ -29,11 +29,11 @@ public class StoreController implements Initializable {
 
     @FXML
     private void handleLoadGame(ActionEvent e) {
-        Game.getInstance().loadGame();
+        Game.instance.loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
-        Game.getInstance().saveGame();
+        Game.instance.saveGame();
     }
 
 

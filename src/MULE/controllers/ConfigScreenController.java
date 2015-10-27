@@ -19,16 +19,16 @@ public class ConfigScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        Game.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+        Game.instance.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
     }
 
     @FXML
     private void handleLoadGame(ActionEvent e) {
-        Game.getInstance().loadGame();
+        Game.instance.loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
-        Game.getInstance().saveGame();
+        Game.instance.saveGame();
     }
 
     private int difficulty() {
