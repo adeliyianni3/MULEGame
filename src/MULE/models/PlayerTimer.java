@@ -11,8 +11,6 @@ import javafx.application.Platform;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static MULE.controllers.Game.currentState;
-import static MULE.controllers.Game.endTurn;
 
 public class PlayerTimer {
     static int secs;
@@ -48,7 +46,7 @@ public class PlayerTimer {
     public void stopTime() {
         timer.cancel();
         System.out.println("TurnEnds");
-        endTurn();
+        Game.instance.endTurn();
         if (Game.instance.currentState != Game.State.MAP) {
             Game.instance.changeState(Game.State.MAP);
             ScreenNavigator.instance.loadMap();
@@ -62,7 +60,7 @@ public class PlayerTimer {
     }
     private int setInterval() {
         if (secs == 1) {
-            if (currentState != Game.State.MAP) {
+            if (Game.instance.currentState != Game.State.MAP) {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
@@ -73,7 +71,7 @@ public class PlayerTimer {
             }
             timer.cancel();
             System.out.println("TurnEnds");
-            endTurn();
+            Game.instance.endTurn();
         }
         return --secs;
     }
