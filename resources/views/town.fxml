@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.TownController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.TownController">
    <children>
       <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#1fff52" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
 
-      <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="92.0" layoutY="39.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="350.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle fx:id="resoucreStore" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="350.0" layoutY="39.0" onMouseClicked="#enterStore" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="92.0" layoutY="243.0" onMouseClicked="#storeClick" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" fill="#1fff32" height="322.0" layoutX="24.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
-      <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="#1fff32" height="322.0" layoutX="500.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="76.0" />
+      <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="92.0" layoutY="39.0" onMouseClicked="#usePub" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="350.0" layoutY="243.0" onMouseClicked="#useAssay" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle fx:id="resourceStore" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="350.0" layoutY="39.0" onMouseClicked="#enterStore" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="92.0" layoutY="243.0" onMouseClicked="#useLand" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" fill="#dee42d" height="322.0" layoutX="24.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
+      <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="#dee42d" height="322.0" layoutX="500.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="76.0" />
+      <Label layoutX="128.0" layoutY="79.0" text="PUB" onMouseClicked="#usePub">
+         <font>
+            <Font name="System Bold" size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="79.0" text="STORE" onMouseClicked="#enterStore">
+         <font>
+            <Font name="System Bold" size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="508.0" layoutY="175.0" text="Back" onMouseClicked="#leaveTown"/>
+      <Label layoutX="521.0" layoutY="195.0" text="To" onMouseClicked="#leaveTown"/>
+      <Label layoutX="529.0" layoutY="216.0" text="Town" onMouseClicked="#leaveTown"/>
+      <Label layoutX="30.0" layoutY="175.0" text="Back" onMouseClicked="#leaveTown"/>
+      <Label layoutX="43.0" layoutY="195.0" text="To" onMouseClicked="#leaveTown" />
+      <Label layoutX="51.0" layoutY="216.0" text="Town" onMouseClicked="#leaveTown"/>
    </children>
 </Pane>

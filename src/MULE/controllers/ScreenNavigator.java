@@ -1,18 +1,16 @@
 package MULE.controllers;
 
-import MULE.models.Game;
-import MULE.Main;
+import MULE.models.Resource;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 import java.io.IOException;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -35,6 +33,7 @@ public class ScreenNavigator {
     public final String MAP = "/views/map.fxml";
     public final String TOWN = "/views/town.fxml";
     public final String STORE = "/views/store.fxml";
+    public final String MULE_PEN = "/views/mulePen.fxml";
 
     public Scene mainScreen;
     public Scene playerScreen;
@@ -43,6 +42,7 @@ public class ScreenNavigator {
     public Scene map;
     public Scene town;
     public Scene store;
+    public Scene mulePen;
 
     public String currentState;
 
@@ -71,6 +71,8 @@ public class ScreenNavigator {
             town = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(STORE));
             store = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(MULE_PEN));
+            mulePen = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -131,6 +133,8 @@ public class ScreenNavigator {
                 break;
             case STORE: loadScreen(store);
                 break;
+            case MULE_PEN: loadScreen(mulePen);
+                break;
             default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
                 break;
         }
@@ -150,79 +154,31 @@ public class ScreenNavigator {
     }
     public void loadTown() {
         loadScreen(TOWN);
-        Game.changeState(Game.State.IN_TOWN);
     }
 
-    public void loadCongratulations() {
-        loadScreen(CONGRATULATIONS);
-    }
-
-
-    public void loadPlayerConfiguration() {
-        Game.changeState(Game.State.CONFIG);
-        //System.out.println(Main.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
-        loadScreen(PLAYER);
-        Game.incrementTurn();
-    }
-
-    public void loadPlayerConfiguration(String race, Color c, String name) { //parameters have been made obsolete, change name later or redo
-        System.out.println(Game.getNumOfPlayers() + ": " + Game.getTurn() + ": " + Game.getTotalTurns());
-        if (Game.getNumOfPlayers() >= Game.getTurn() && Game.getTotalTurns() == Game.getTurn()) {
-
-            //http://stackoverflow.com/questions/26899197/how-can-a-textfield-from-fxml-file-be-updated-by-settext-in-java-file
-//            playerNumber.setText("Player " + Main.playerConfiguration);
-//            playerNumber.textProperty().set("Player " + Main.playerConfiguration);
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
-                playerScreen = new Scene(root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            loadScreen(PLAYER);
-
-        } else {
-            loadScreen(MAP);
-            Game.changeState(Game.State.BUYPHASE);
-        }
-
-        Game.incrementTurn();
-    }
     public void loadMap() {
         loadScreen(MAP);
-
     }
-    public void setLandColor(String loc, Color c) {
-
+    public void loadMULEPen() {
+        loadScreen(MULE_PEN);
     }
-
-//    public void landClicked(String landLoc) {
-//        Game.landClicked(landLoc);
-//    }
-
-    public void passClick() {
-        Game.buyPhaseSkip();
+    public void loadStore() {
+        loadScreen(STORE);
     }
 
-    public void landClicked(String landLoc, Rectangle rec) {
-        Game.landClicked(landLoc, rec);
-    }
-
-    public void townClicked() {
-        if (Game.currentState == Game.State.MAP) {
-            loadScreen(TOWN);
-            Game.changeState(Game.State.IN_TOWN);
+    public void loadNewPlayer() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
+            playerScreen = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-    public void enterStore() {
-        if (Game.currentState == Game.State.IN_TOWN) {
-            loadScreen(STORE);
-            Game.changeState(Game.State.STORE);
-        }
+        loadScreen(PLAYER);
     }
 
     public void togglePassButton() {
         showPass.setValue(!showPass.getValue());
     }
+
 
 }

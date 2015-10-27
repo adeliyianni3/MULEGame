@@ -1,6 +1,5 @@
 package MULE.controllers;
 
-import MULE.models.Game;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -45,12 +44,12 @@ public class PlayerController implements Initializable{
 
     @FXML
     void toNext(ActionEvent event) {
-        String race = (String)raceBox.getValue();
-        Color c = (Color)colorBox.getValue();
-        //System.out.println(nameBox.getCharacters().toString());
+        String race = (String) raceBox.getValue();
+        Color c = (Color) colorBox.getValue();
         String name = nameBox.getText();
-        Game.addPlayer(race, c, name); //why
-        ScreenNavigator.instance.loadPlayerConfiguration(race, c, name);
+        if (!nameBox.getText().isEmpty() && Game.isColorAvailable(c)) {
+            Game.addPlayer(race, c, name);
+        }
     }
     @FXML
     void toMain(ActionEvent event) {

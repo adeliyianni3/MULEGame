@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.ScoreController">
+   <children>
+      <Label layoutX="237.0" layoutY="9.0" text="SCORE">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="first" layoutX="14.0" layoutY="72.0" text="Player ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="463.0" layoutY="77.0" text="Money">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="90.0" text="Food">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="103.0" text="Smithore">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="116.0" text="Energy">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="second" layoutX="14.0" layoutY="150.0" text="Player ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutY="143.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="463.0" layoutY="155.0" text="Money">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="168.0" text="Food">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="181.0" text="Smithore">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="194.0" text="Energy">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="third" layoutX="14.0" layoutY="228.0" text="Player ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutY="221.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="463.0" layoutY="233.0" text="Money">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="246.0" text="Food">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="259.0" text="Smithore">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="272.0" text="Energy">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourth" layoutX="14.0" layoutY="302.0" text="Player ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutY="295.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="463.0" layoutY="307.0" text="Money">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="320.0" text="Food">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="333.0" text="Smithore">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="346.0" text="Energy">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="340.0" text="Press Space">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="254.0" layoutY="364.0" text="To Continue">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstMoney" layoutX="533.0" layoutY="77.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstFood" layoutX="533.0" layoutY="90.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstSmithore" layoutX="533.0" layoutY="103.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstEnergy" layoutX="533.0" layoutY="116.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondMoney" layoutX="533.0" layoutY="156.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondFood" layoutX="533.0" layoutY="169.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondSmithore" layoutX="533.0" layoutY="182.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondEnergy" layoutX="533.0" layoutY="195.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdMoney" layoutX="533.0" layoutY="234.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdFood" layoutX="533.0" layoutY="247.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdSmithore" layoutX="533.0" layoutY="260.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdEnergy" layoutX="533.0" layoutY="273.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthMoney" layoutX="533.0" layoutY="308.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthFood" layoutX="533.0" layoutY="321.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthSmithore" layoutX="533.0" layoutY="334.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthEnergy" layoutX="533.0" layoutY="347.0" text="1">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

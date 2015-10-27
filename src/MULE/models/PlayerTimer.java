@@ -6,15 +6,15 @@ package MULE.models;
 
 //This is what I got so far. It should work but I can only check
 // at 5 pm. Anyone else who sees this, try it out :)
+import MULE.controllers.Game;
 import MULE.controllers.ScreenNavigator;
 import javafx.application.Platform;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static MULE.models.Game.currentState;
-import static MULE.models.Game.endTurn;
-import static MULE.models.Game.players;
+import static MULE.controllers.Game.currentState;
+import static MULE.controllers.Game.endTurn;
 
 public class PlayerTimer {
     static int secs;

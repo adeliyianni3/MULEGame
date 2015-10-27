@@ -1,6 +1,5 @@
 package MULE.controllers;
 
-import MULE.models.Game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -23,14 +22,31 @@ public class StoreController implements Initializable {
 
     public void leaveStore(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
-        Game.leaveStore(side);
+        //Game.leaveStore(side);    //for animations later
         cartList.getItems().clear();
-        ScreenNavigator.instance.loadTown();
+        Game.townClicked();
     }
     public void addCart(MouseEvent event) {
         String side = ((Node) event.getSource()).getId();
         items.add(side);
 
+    }
+
+    @FXML
+    public void addCartFood(MouseEvent event) {
+        items.add("food");
+    }
+    @FXML
+    public void addCartEnergy(MouseEvent event) {
+        items.add("energy");
+    }
+    @FXML
+    public void addCartSmithore(MouseEvent event) {
+        items.add("smith_ore");
+    }
+    @FXML
+    public void addCartCrystite(MouseEvent event) {
+        items.add("crystite");
     }
     @FXML
     public void purchaseCart() {
@@ -51,6 +67,10 @@ public class StoreController implements Initializable {
 
     public void showMap() {
         ScreenNavigator.instance.loadMain();
+    }
+
+    @FXML void toMULEPen() {
+        ScreenNavigator.instance.loadMULEPen();
     }
 
     @Override

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.MULEPenController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="MULE Pen">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe81f" height="29.0" layoutX="484.0" layoutY="98.0" onMouseClicked="#foodMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Label layoutX="497.0" layoutY="102.0" onMouseClicked="#foodMULE" text="Buy" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe81f" height="29.0" layoutX="484.0" layoutY="263.0" onMouseClicked="#crystaliteMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Label layoutX="497.0" layoutY="267.0" onMouseClicked="#crystaliteMULE" text="Buy" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe81f" height="29.0" layoutX="484.0" layoutY="209.0" onMouseClicked="#smithoreMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Label layoutX="497.0" layoutY="213.0" onMouseClicked="#smithoreMULE" text="Buy" />
+      <Label layoutX="235.0" layoutY="32.0" text="MULEs Available:" />
+      <Label layoutX="356.0" layoutY="31.0" text="Label" />
+      <Label layoutX="347.0" layoutY="102.0" text="Food MULE" />
+      <Label layoutX="347.0" layoutY="267.0" text="Crystite MULE" />
+      <Label layoutX="347.0" layoutY="213.0" text="Smithore MULE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff4d" height="43.0" layoutX="14.0" layoutY="343.0" onMouseClicked="#returnToStore" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+      <Label layoutX="29.0" layoutY="354.0" onMouseClicked="#returnToStore" text="Return to Store" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe81f" height="29.0" layoutX="484.0" layoutY="154.0" onMouseClicked="#energyMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+      <Label layoutX="497.0" layoutY="158.0" onMouseClicked="#energyMULE" text="Buy" />
+      <Label layoutX="347.0" layoutY="158.0" text="Energy MULE" />
+   </children>
+</Pane>
