@@ -149,7 +149,7 @@ public class ScreenNavigator {
 
     public void loadMain() {
         loadScreen(MAIN_SCREEN);
-        Game.changeState(Game.State.MAIN);
+        Game.instance.changeState(Game.State.MAIN);
     }
     public void loadTown() {
         loadScreen(TOWN);

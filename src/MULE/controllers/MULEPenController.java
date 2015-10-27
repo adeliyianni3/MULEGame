@@ -10,22 +10,22 @@ public class MULEPenController {
 
     @FXML
     void foodMULE(MouseEvent event) {
-        Game.buyMULE(new Food());
+        Game.instance.buyMULE(new Food());
     }
 
     @FXML
     void energyMULE(MouseEvent event) {
-        Game.buyMULE(new Energy());
+        Game.instance.buyMULE(new Energy());
     }
 
     @FXML
      void crystaliteMULE(MouseEvent event) {
-        Game.buyMULE(new Crystite());
+        Game.instance.buyMULE(new Crystite());
     }
 
     @FXML
     void smithoreMULE(MouseEvent event) {
-        Game.buyMULE(new SmithOre());
+        Game.instance.buyMULE(new SmithOre());
     }
 
     @FXML

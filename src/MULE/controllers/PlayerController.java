@@ -57,8 +57,6 @@ public class PlayerController implements Initializable{
         String name = nameBox.getText();
         if (!nameBox.getText().isEmpty() && Game.isColorAvailable(c)) {
             Game.addPlayer(race, c, name);
-        } else {
-            ScreenNavigator.instance.loadErrorMessage();
         }
     }
     @FXML
