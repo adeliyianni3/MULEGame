@@ -79,9 +79,9 @@ public class Main extends Application {
         URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
-        Game.setMediaPlayer(mediaPlayer);
+        Game.instance.setMediaPlayer(mediaPlayer);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        Game.playMusic();
+        Game.instance.playMusic();
 
         debugStage.show();
 
