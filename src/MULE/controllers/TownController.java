@@ -1,5 +1,6 @@
 package MULE.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
@@ -38,5 +39,14 @@ public class TownController {
     @FXML
     void enterStore(MouseEvent event) {
         Game.enterStore();
+    }
+
+    @FXML
+    private void handleLoadGame(ActionEvent e) {
+        Game.getInstance().loadGame();
+    }
+    @FXML
+    private void handleSaveGame(ActionEvent e) {
+        Game.getInstance().saveGame();
     }
 }

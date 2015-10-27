@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.DebugController">
-   <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Turn:" />
-      <Label layoutX="14.0" layoutY="35.0" text="Total Turns:" />
-      <Label layoutX="14.0" layoutY="56.0" text="Round:" />
-      <Label layoutX="13.0" layoutY="77.0" text="Phase:" />
-      <Label layoutX="13.0" layoutY="365.0" text="Mouse Location:" />
-      <Label layoutX="257.0" layoutY="14.0" text="Player" />
-      <Label layoutX="340.0" layoutY="14.0" text="Money" />
-      <Label layoutX="392.0" layoutY="14.0" text="Land" />
-      <Label layoutX="431.0" layoutY="14.0" text="Food" />
-      <Label layoutX="472.0" layoutY="14.0" text="Smithore" />
-      <Label layoutX="540.0" layoutY="14.0" text="Energy" />
-      <Label layoutX="13.0" layoutY="113.0" text="Rank" />
-      <Label layoutX="55.0" layoutY="113.0" text="Player" />
-      <Label layoutX="154.0" layoutY="113.0" text="Score" />
-      <Label fx:id="turn" layoutX="57.0" layoutY="14.0" text="Label" />
-      <Label fx:id="totalTurn" layoutX="104.0" layoutY="35.0" text="Label" />
-      <Label fx:id="round" layoutX="67.0" layoutY="56.0" text="Label" />
-      <Label fx:id="phase" layoutX="67.0" layoutY="77.0" text="Label" />
-      <Label layoutX="13.0" layoutY="134.0" text="1" />
-      <Label layoutX="13.0" layoutY="155.0" text="2" />
-      <Label layoutX="13.0" layoutY="176.0" text="3" />
-      <Label layoutX="13.0" layoutY="197.0" text="4" />
-      <Label fx:id="firstPlace" layoutX="57.0" layoutY="134.0" text="---" />
-      <Label fx:id="secondPlace" layoutX="57.0" layoutY="155.0" text="---" />
-      <Label fx:id="thirdPlace" layoutX="57.0" layoutY="176.0" text="---" />
-      <Label fx:id="fourthPlace" layoutX="57.0" layoutY="197.0" text="---" />
-      <Label fx:id="player1" layoutX="257.0" layoutY="35.0" text="---" />
-      <Label fx:id="player2" layoutX="257.0" layoutY="56.0" text="---" />
-      <Label fx:id="player3" layoutX="257.0" layoutY="77.0" text="---" />
-      <Label fx:id="player4" layoutX="257.0" layoutY="98.0" text="---" />
-      <Label fx:id="firstScore" layoutX="154.0" layoutY="134.0" text="---" />
-      <Label fx:id="secondScore" layoutX="154.0" layoutY="155.0" text="---" />
-      <Label fx:id="thirdScore" layoutX="154.0" layoutY="176.0" text="---" />
-      <Label fx:id="fourthScore" layoutX="154.0" layoutY="197.0" text="---" />
-      <Label fx:id="money1" layoutX="340.0" layoutY="35.0" text="---" />
-      <Label fx:id="money2" layoutX="340.0" layoutY="56.0" text="---" />
-      <Label fx:id="money3" layoutX="340.0" layoutY="77.0" text="---" />
-      <Label fx:id="money4" layoutX="340.0" layoutY="98.0" text="---" />
-      <Label fx:id="land1" layoutX="391.0" layoutY="35.0" text="---" />
-      <Label fx:id="land2" layoutX="391.0" layoutY="56.0" text="---" />
-      <Label fx:id="land3" layoutX="391.0" layoutY="77.0" text="---" />
-      <Label fx:id="land4" layoutX="391.0" layoutY="98.0" text="---" />
-      <Label fx:id="food1" layoutX="430.0" layoutY="35.0" text="---" />
-      <Label fx:id="food2" layoutX="430.0" layoutY="56.0" text="---" />
-      <Label fx:id="food3" layoutX="430.0" layoutY="77.0" text="---" />
-      <Label fx:id="food4" layoutX="430.0" layoutY="98.0" text="---" />
-      <Label fx:id="smithore1" layoutX="472.0" layoutY="35.0" text="---" />
-      <Label fx:id="smithore2" layoutX="472.0" layoutY="56.0" text="---" />
-      <Label fx:id="smithore3" layoutX="472.0" layoutY="77.0" text="---" />
-      <Label fx:id="smithore4" layoutX="472.0" layoutY="98.0" text="---" />
-      <Label fx:id="energy1" layoutX="540.0" layoutY="35.0" text="---" />
-      <Label fx:id="energy2" layoutX="540.0" layoutY="56.0" text="---" />
-      <Label fx:id="energy3" layoutX="540.0" layoutY="77.0" text="---" />
-      <Label fx:id="energy4" layoutX="540.0" layoutY="98.0" text="---" />
-      <Label layoutX="489.0" layoutY="344.0" text="Timer:" />
-      <Label fx:id="timer" layoutX="540.0" layoutY="344.0" text="---" />
-      <Label layoutX="77.0" layoutY="264.0" text="Current Player: " />
-      <Label fx:id="currentPlayer" layoutX="182.0" layoutY="264.0" text="---" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.DebugController">
+  <children>
+    <Label layoutX="14.0" layoutY="14.0" text="Turn:" />
+    <Label layoutX="14.0" layoutY="35.0" text="Total Turns:" />
+    <Label layoutX="14.0" layoutY="56.0" text="Round:" />
+    <Label layoutX="13.0" layoutY="77.0" text="Phase:" />
+    <Label layoutX="13.0" layoutY="365.0" text="Mouse Location:" />
+    <Label layoutX="257.0" layoutY="14.0" text="Player" />
+    <Label layoutX="340.0" layoutY="14.0" text="Money" />
+    <Label layoutX="392.0" layoutY="14.0" text="Land" />
+    <Label layoutX="431.0" layoutY="14.0" text="Food" />
+    <Label layoutX="472.0" layoutY="14.0" text="Smithore" />
+    <Label layoutX="540.0" layoutY="14.0" text="Energy" />
+    <Label layoutX="13.0" layoutY="113.0" text="Rank" />
+    <Label layoutX="55.0" layoutY="113.0" text="Player" />
+    <Label layoutX="154.0" layoutY="113.0" text="Score" />
+    <Label fx:id="turn" layoutX="57.0" layoutY="14.0" text="Label" />
+    <Label fx:id="totalTurn" layoutX="104.0" layoutY="35.0" text="Label" />
+    <Label fx:id="round" layoutX="67.0" layoutY="56.0" text="Label" />
+    <Label fx:id="phase" layoutX="67.0" layoutY="77.0" text="Label" />
+    <Label layoutX="13.0" layoutY="134.0" text="1" />
+    <Label layoutX="13.0" layoutY="155.0" text="2" />
+    <Label layoutX="13.0" layoutY="176.0" text="3" />
+    <Label layoutX="13.0" layoutY="197.0" text="4" />
+    <Label fx:id="firstPlace" layoutX="57.0" layoutY="134.0" text="---" />
+    <Label fx:id="secondPlace" layoutX="57.0" layoutY="155.0" text="---" />
+    <Label fx:id="thirdPlace" layoutX="57.0" layoutY="176.0" text="---" />
+    <Label fx:id="fourthPlace" layoutX="57.0" layoutY="197.0" text="---" />
+    <Label fx:id="player1" layoutX="257.0" layoutY="35.0" text="---" />
+    <Label fx:id="player2" layoutX="257.0" layoutY="56.0" text="---" />
+    <Label fx:id="player3" layoutX="257.0" layoutY="77.0" text="---" />
+    <Label fx:id="player4" layoutX="257.0" layoutY="98.0" text="---" />
+    <Label fx:id="firstScore" layoutX="154.0" layoutY="134.0" text="---" />
+    <Label fx:id="secondScore" layoutX="154.0" layoutY="155.0" text="---" />
+    <Label fx:id="thirdScore" layoutX="154.0" layoutY="176.0" text="---" />
+    <Label fx:id="fourthScore" layoutX="154.0" layoutY="197.0" text="---" />
+    <Label fx:id="money1" layoutX="340.0" layoutY="35.0" text="---" />
+    <Label fx:id="money2" layoutX="340.0" layoutY="56.0" text="---" />
+    <Label fx:id="money3" layoutX="340.0" layoutY="77.0" text="---" />
+    <Label fx:id="money4" layoutX="340.0" layoutY="98.0" text="---" />
+    <Label fx:id="land1" layoutX="391.0" layoutY="35.0" text="---" />
+    <Label fx:id="land2" layoutX="391.0" layoutY="56.0" text="---" />
+    <Label fx:id="land3" layoutX="391.0" layoutY="77.0" text="---" />
+    <Label fx:id="land4" layoutX="391.0" layoutY="98.0" text="---" />
+    <Label fx:id="food1" layoutX="430.0" layoutY="35.0" text="---" />
+    <Label fx:id="food2" layoutX="430.0" layoutY="56.0" text="---" />
+    <Label fx:id="food3" layoutX="430.0" layoutY="77.0" text="---" />
+    <Label fx:id="food4" layoutX="430.0" layoutY="98.0" text="---" />
+    <Label fx:id="smithore1" layoutX="472.0" layoutY="35.0" text="---" />
+    <Label fx:id="smithore2" layoutX="472.0" layoutY="56.0" text="---" />
+    <Label fx:id="smithore3" layoutX="472.0" layoutY="77.0" text="---" />
+    <Label fx:id="smithore4" layoutX="472.0" layoutY="98.0" text="---" />
+    <Label fx:id="energy1" layoutX="540.0" layoutY="35.0" text="---" />
+    <Label fx:id="energy2" layoutX="540.0" layoutY="56.0" text="---" />
+    <Label fx:id="energy3" layoutX="540.0" layoutY="77.0" text="---" />
+    <Label fx:id="energy4" layoutX="540.0" layoutY="98.0" text="---" />
+    <Label layoutX="489.0" layoutY="344.0" text="Timer:" />
+    <Label fx:id="timer" layoutX="540.0" layoutY="344.0" text="---" />
+    <Label layoutX="77.0" layoutY="264.0" text="Current Player: " />
+    <Label fx:id="currentPlayer" layoutX="182.0" layoutY="264.0" text="---" />
+    <Label layoutX="14.0" layoutY="288.0" prefWidth="62.0" text="Last Event:" />
+    <Label fx:id="lastEvent" layoutX="77.0" layoutY="288.0" text="---" />
+  </children>
 </Pane>

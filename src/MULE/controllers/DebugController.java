@@ -93,6 +93,8 @@ public class DebugController implements Initializable {
     private Label timer;
     @FXML
     private Label currentPlayer;
+    @FXML
+    private Label lastEvent;
     private Player[] p;
     private Player[] op;
 
@@ -109,6 +111,7 @@ public class DebugController implements Initializable {
                                     currentPlayer.setText(p[Game.getTurn() - 1].getName());
                                 }
                                 totalTurn.setText("" + Game.getTotalTurns());
+                                lastEvent.setText(Game.getLastEvent());
                                 round.setText("" + Game.getRound());
                                 phase.setText("" + Game.getPhase().name());
                                 Player[] p = Game.getPlayers();
