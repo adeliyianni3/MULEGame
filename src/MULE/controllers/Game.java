@@ -3,6 +3,8 @@ package MULE.controllers;
 
 import MULE.models.*;
 import com.google.gson.GsonBuilder;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -20,7 +22,6 @@ import java.util.logging.Logger;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
-    public ScreenNavigator screenInstance = ScreenNavigator.instance;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
     private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
@@ -38,8 +39,9 @@ public class Game {
     public PlayerTimer timer = new PlayerTimer();
     public ResourceStore store = new ResourceStore();
     public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
-    private RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
-
+    private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
+    //private transient Scene savedMap = null;
+    //private Parent savedRoot = null;
     private transient MediaPlayer mediaPlayer = null;
 
     private Map theMap = new Map();
@@ -52,6 +54,8 @@ public class Game {
     }
 
     public void saveGame() {
+        //savedMap = ScreenNavigator.instance.getMapScene();
+        //savedRoot = ScreenNavigator.instance.getMapScene().getRoot();
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
                 Gson gs = new Gson();
@@ -71,14 +75,16 @@ public class Game {
                 System.out.println(json);
                 Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).create();
                 instance = gs.fromJson(json, Game.class);
-                ScreenNavigator.instance = instance.screenInstance;
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        //ScreenNavigator.instance.setMapScene(instance.savedMap);
+        //ScreenNavigator.instance.setMapRoot(savedRoot);
+        //ScreenNavigator.instance.loadMap();
+        //Game.instance.currentState = Game.State.MAP;
     }
 
 
