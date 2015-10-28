@@ -55,8 +55,10 @@ public class PlayerController implements Initializable{
         String race = (String) raceBox.getValue();
         Color c = colorBox.getValue();
         String name = nameBox.getText();
-        if (!nameBox.getText().isEmpty() && Game.isColorAvailable(c)) {
-            Game.addPlayer(race, c, name);
+        if (!nameBox.getText().isEmpty() && Game.instance.isColorAvailable(c)) {
+            Game.instance.addPlayer(race, c, name);
+        } else {
+            ScreenNavigator.instance.loadErrorMessage();
         }
     }
     @FXML
@@ -66,6 +68,6 @@ public class PlayerController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setName("Player " + Game.getTurn());
+        setName("Player " + Game.instance.getTurn());
     }
 }
