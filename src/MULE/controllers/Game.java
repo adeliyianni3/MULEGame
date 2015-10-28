@@ -2,6 +2,7 @@ package MULE.controllers;
 
 
 import MULE.models.*;
+import com.google.gson.GsonBuilder;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -22,7 +23,7 @@ public class Game {
     public ScreenNavigator screenInstance = ScreenNavigator.instance;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
-    private transient ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
+    private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public int numOfPlayers = 1;
     public final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     public int round = 0;
@@ -68,7 +69,7 @@ public class Game {
             try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
                 String json = br.readLine();
                 System.out.println(json);
-                Gson gs = new Gson();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).create();
                 instance = gs.fromJson(json, Game.class);
                 ScreenNavigator.instance = instance.screenInstance;
             }
