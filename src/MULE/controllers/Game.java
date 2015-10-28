@@ -22,7 +22,7 @@ public class Game {
     public ScreenNavigator screenInstance = ScreenNavigator.instance;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
-    private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
+    private transient ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public int numOfPlayers = 1;
     public final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     public int round = 0;
@@ -55,6 +55,7 @@ public class Game {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
                 Gson gs = new Gson();
                 String gson = gs.toJson(this);
+                out.print(gson);
                 System.out.println(gson);
             }
         } catch (FileNotFoundException ex) {
