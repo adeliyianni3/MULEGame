@@ -1,13 +1,19 @@
 package MULE.controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXMLLoader;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -178,5 +184,40 @@ public class ScreenNavigator {
         showPass.setValue(!showPass.getValue());
     }
 
+    public ArrayList<Scene> getScenes() {
+        ArrayList<Scene> arr = new ArrayList<Scene>();
+        arr.add(mainScreen);
+        arr.add(playerScreen);
+        arr.add(congratulations);
+        arr.add(main);
+        arr.add(map);
+        arr.add(town);
+        arr.add(store);
+        arr.add(mulePen);
+        return arr;
+    }
+
+    public void setScenes(ArrayList<Scene> arr) {
+        mainScreen = arr.get(0);
+        playerScreen = arr.get(1);
+        congratulations = arr.get(2);
+        main = arr.get(3);
+        map = arr.get(4);
+        town = arr.get(5);
+        store = arr.get(6);
+        mulePen = arr.get(7);
+    }
+
+    public Scene getMapScene() {
+        return map;
+    }
+
+    public void setMapScene(Scene newMap) {
+        map = newMap;
+    }
+
+    public void setMapRoot(Parent newRoot) {
+        map.setRoot(newRoot);
+    }
 
 }

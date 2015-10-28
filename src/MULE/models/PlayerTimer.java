@@ -13,6 +13,7 @@ import java.util.TimerTask;
 
 
 public class PlayerTimer {
+    public PlayerTimer(){}
     static int secs;
     static Timer timer;
     static int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};

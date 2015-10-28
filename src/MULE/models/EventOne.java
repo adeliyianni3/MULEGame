@@ -4,7 +4,7 @@ package MULE.models;
  * Created by Antonia on 10/23/2015.
  */
 public class EventOne implements RandomEvent {
-
+    public EventOne(){}
     @Override
     public String apply(Player p) {
             p.addResource(new Food());
