@@ -9,6 +9,7 @@ public class Land {
     private LandType type;
     private Mule mule;
 
+    public Land(){}
     public Land(LandType type) {
         this.type = type;
     }
