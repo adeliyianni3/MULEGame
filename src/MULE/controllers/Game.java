@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
+    public ScreenNavigator screenInstance = ScreenNavigator.instance;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
     private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
@@ -67,7 +68,8 @@ public class Game {
                 String json = br.readLine();
                 System.out.println(json);
                 Gson gs = new Gson();
-                //instance = gs.fromJson(json, Game.class);
+                instance = gs.fromJson(json, Game.class);
+                ScreenNavigator.instance = instance.screenInstance;
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);

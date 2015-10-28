@@ -40,29 +40,9 @@ public class Main extends Application {
         stage.setTitle("M.U.L.E.");
         ScreenNavigator.instance.setStage(stage);
         ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.mainScreen);
-        //MouseEvent stuff
-        //http://stackoverflow.com/questions/16635514/how-to-get-location-of-mouse-in-javafx
-        //https://blog.idrsolutions.com/2013/01/mouseevents-in-javafx/
-
-//        stage.setScene(
-//                createScene(
-//                        loadMainPane()
-//                )
-//        );
 
         Stage debugStage = new Stage();
         debugStage.setTitle("Game Information");
-//        String OUTSIDE_TEXT = "Outside Label";
-//        final Label reporter = new Label(OUTSIDE_TEXT);
-//        Label monitored = createMonitoredLabel(reporter);
-//
-//        VBox layout = new VBox(10);
-//        layout.setStyle("-fx-background-color: cornsilk; -fx-padding: 10px;");
-//        layout.getChildren().setAll(
-//                monitored,
-//                reporter
-//        );
-//        layout.setPrefWidth(500);
 
         Scene debugScene = null;
         try {
@@ -79,9 +59,9 @@ public class Main extends Application {
         URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
-        Game.setMediaPlayer(mediaPlayer);
+        Game.instance.setMediaPlayer(mediaPlayer);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        Game.playMusic();
+        Game.instance.playMusic();
 
         debugStage.show();
 
