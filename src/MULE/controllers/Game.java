@@ -38,7 +38,7 @@ public class Game {
     public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
 
-    private MediaPlayer mediaPlayer = null;
+    private transient MediaPlayer mediaPlayer = null;
 
     private Map theMap = new Map();
     private int buyPhaseSkipped = 0;
@@ -67,7 +67,7 @@ public class Game {
                 String json = br.readLine();
                 System.out.println(json);
                 Gson gs = new Gson();
-                //instance = gs.fromJson(json, Game.class);
+                instance = gs.fromJson(json, Game.class);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
