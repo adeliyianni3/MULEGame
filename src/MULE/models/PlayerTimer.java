@@ -14,9 +14,9 @@ import java.util.TimerTask;
 
 public class PlayerTimer {
     public PlayerTimer(){}
-    static int secs;
-    static Timer timer;
-    static int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
+    public int secs;
+    public static Timer timer;
+    public int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
 
     private int computeTime(){
         Player p = Game.instance.players[Game.instance.getTurn() - 1];
@@ -45,6 +45,9 @@ public class PlayerTimer {
         }, delay, period);
     }
     public void stopTime() {
+        if (timer == null) {
+            timer = new Timer();
+        }
         timer.cancel();
         System.out.println("TurnEnds");
         Game.instance.endTurn();
@@ -69,6 +72,9 @@ public class PlayerTimer {
                     }
                 });
                 Game.instance.changeState(Game.State.MAP);
+            }
+            if (timer == null) {
+                timer = new Timer();
             }
             timer.cancel();
             System.out.println("TurnEnds");

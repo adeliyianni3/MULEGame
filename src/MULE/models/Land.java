@@ -9,9 +9,20 @@ public class Land {
     private LandType type;
     private Mule mule;
 
+    public int i;
+    public int j;
     public Land(){}
     public Land(LandType type) {
         this.type = type;
+    }
+    public Land(int i, int j) {
+        this.i = i;
+        this.j = j;
+    }
+    public Land(LandType type, int i, int j) {
+        this.type = type;
+        this.i = i;
+        this.j = j;
     }
     public boolean isOwned() {
         return owned;
@@ -38,12 +49,16 @@ public class Land {
         Player p = null;
         for (int i = 0; i < Game.instance.numOfPlayers; i++) {
             for (Land l : Game.instance.players[i].getLand()) {
-                if (l.equals(this)) {
+                if (l.isSame(this)) {
                     p = Game.instance.players[i];
                 }
             }
         }
         return p;
+    }
+
+    public boolean isSame(Land l) {
+        return l.i == i && l.j == j;
     }
 
     public void produce() {

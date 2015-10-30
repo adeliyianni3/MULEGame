@@ -3,6 +3,8 @@ package MULE.controllers;
 
 import MULE.models.*;
 import com.google.gson.GsonBuilder;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -12,13 +14,22 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import com.google.gson.*;
+import com.google.gson.FieldAttributes;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
@@ -40,8 +51,8 @@ public class Game {
     public ResourceStore store = new ResourceStore();
     public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
-    //private transient Scene savedMap = null;
-    //private Parent savedRoot = null;
+    private boolean[][] muleArray = new boolean[5][9];
+    private Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
 
     private Map theMap = new Map();
@@ -53,12 +64,18 @@ public class Game {
         return instance;
     }
 
+    public Color[][] getColorArray() {
+        return colorArray;
+    }
+
+    public boolean[][] getMuleArray() {
+        return muleArray;
+    }
+
     public void saveGame() {
-        //savedMap = ScreenNavigator.instance.getMapScene();
-        //savedRoot = ScreenNavigator.instance.getMapScene().getRoot();
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
-                Gson gs = new Gson();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).create();;
                 String gson = gs.toJson(this);
                 out.print(gson);
                 System.out.println(gson);
@@ -75,16 +92,39 @@ public class Game {
                 System.out.println(json);
                 Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).create();
                 instance = gs.fromJson(json, Game.class);
+
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //ScreenNavigator.instance.setMapScene(instance.savedMap);
-        //ScreenNavigator.instance.setMapRoot(savedRoot);
-        //ScreenNavigator.instance.loadMap();
-        //Game.instance.currentState = Game.State.MAP;
+        ScreenNavigator.instance.loadLoadedMap();
+        switch (instance.currentState) {
+            case MAP:
+            case MULE_PLACING:
+            case BUYPHASE: ScreenNavigator.instance.loadMap();
+                break;
+            case STORE: ScreenNavigator.instance.loadStore();
+                break;
+            case IN_TOWN: ScreenNavigator.instance.loadTown();
+                break;
+            case MAIN: ScreenNavigator.instance.loadMain();
+                break;
+            case CONFIG: ScreenNavigator.instance.loadNewPlayer();
+                break;
+        }
+        if (instance.colorArray[0][0] == null) {
+            System.out.println("Null");
+        } else {
+            System.out.println(instance.colorArray[0][0].getClass());
+        }
+        if (instance.players[0] == null) {
+            System.out.println("Null Players");
+        }
+        if (instance.theMap.whatLand(0,0) == null) {
+            System.out.println("Null Map");
+        }
     }
 
 
@@ -240,6 +280,7 @@ public class Game {
                     plot.setOwner(p);
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
+                    colorArray[i][j] = p.getColor();
                     rec.setStrokeWidth(4.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
@@ -249,6 +290,7 @@ public class Game {
                         plot.setOwner(p);
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
+                        colorArray[i][j] = p.getColor();
                         rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
@@ -269,9 +311,11 @@ public class Game {
             System.out.println(i + ", " + j);
             Land plot = theMap.whatLand(i, j);
             Player p = players[turn - 1];
+            System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
             if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
+            //if (plot.isOwned() & doesPlayerOwn(p, plot) & !plot.hasMule()) {
                 plot.setMule(p.getMule());
-
+                muleArray[i][j] = true;
 
                 Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
                 ImagePattern imagePattern = new ImagePattern(muleImage);
@@ -286,6 +330,16 @@ public class Game {
             }
             currentState = State.MAP;
         }
+    }
+
+    public boolean doesPlayerOwn(Player p, Land l) {
+        boolean returnValue = false;
+        for (Land pl : p.getLand()) {
+            if (pl.i == l.i && pl.j == l.j) {
+                returnValue = true;
+            }
+        }
+        return returnValue;
     }
 
     public int buyPhaseEndTurn() {
@@ -472,3 +526,6 @@ public class Game {
     }
 
 }
+
+
+
