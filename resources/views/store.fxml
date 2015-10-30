@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULE.controllers.StoreController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.StoreController">
   <children>
     <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0">
       <fill>
@@ -16,7 +17,12 @@
     </Rectangle>
     <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc66" height="50.0" layoutX="441.0" layoutY="47.0" onMouseClicked="#addCartFood" stroke="BLACK" strokeType="INSIDE" width="61.0" />
     <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="441.0" layoutY="301.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="61.0" />
-    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="#8fff91" height="50.0" layoutX="441.0" layoutY="114.0" onMouseClicked="#addCartEnergy" stroke="BLACK" strokeType="INSIDE" width="61.0" />
+    <ImageView fitHeight="60.0" fitWidth="61.0" layoutX="441.0" layoutY="107.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@B.A.T..png" />
+      </image>
+    </ImageView>
+    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="#8fff9100" height="60.000099999997474" layoutX="441.0" layoutY="107.0" onMouseClicked="#addCartEnergy" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
     <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae" height="50.0" layoutX="441.0" layoutY="175.0" onMouseClicked="#addCartSmithore" stroke="BLACK" strokeType="INSIDE" width="61.0" />
     <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" fill="#71d0ff" height="50.0" layoutX="441.0" layoutY="236.0" onMouseClicked="#addCartCrystite" stroke="BLACK" strokeType="INSIDE" width="61.0" />
     <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="#fffb7b" height="321.9999084472656" layoutX="508.0" layoutY="39.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0" />
@@ -24,19 +30,18 @@
     <ListView fx:id="cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="377.0" />
     <Button fx:id="removeItem" layoutX="354.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#removeItem" text="Remove" />
     <Button fx:id="sellItems" layoutX="209.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#sellItems" text="Sell" />
-      <Label layoutX="455.0" layoutY="62.0" text="Food" onMouseClicked="#addCartFood"/>
-      <Label layoutX="449.0" layoutY="129.0" text="Energy" onMouseClicked="#addCartEnergy"/>
-      <Label layoutX="448.0" layoutY="191.0" text="Smithore" onMouseClicked="#addCartSmithore">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="447.0" layoutY="251.0" text="Crystite" onMouseClicked="#addCartCrystite"/>
-      <Label layoutX="452.0" layoutY="305.0" text="MULE" onMouseClicked="#toMULEPen"/>
-      <Label layoutX="459.0" layoutY="326.0" text="Pen" onMouseClicked="#toMULEPen"/>
-      <Label layoutX="517.0" layoutY="190.0" text="TOWN" onMouseClicked="#leaveStore"/>
-      <Label layoutX="516.0" layoutY="141.0" text="BACK" onMouseClicked="#leaveStore"/>
-      <Label layoutX="516.0" layoutY="165.0" text="TO" onMouseClicked="#leaveStore"/>
+    <Label layoutX="455.0" layoutY="62.0" onMouseClicked="#addCartFood" text="Food" />
+    <Label layoutX="448.0" layoutY="191.0" onMouseClicked="#addCartSmithore" text="Smithore">
+      <font>
+        <Font size="12.0" />
+      </font>
+    </Label>
+    <Label layoutX="447.0" layoutY="251.0" onMouseClicked="#addCartCrystite" text="Crystite" />
+    <Label layoutX="452.0" layoutY="305.0" onMouseClicked="#toMULEPen" text="MULE" />
+    <Label layoutX="459.0" layoutY="326.0" onMouseClicked="#toMULEPen" text="Pen" />
+    <Label layoutX="517.0" layoutY="190.0" onMouseClicked="#leaveStore" text="TOWN" />
+    <Label layoutX="516.0" layoutY="141.0" onMouseClicked="#leaveStore" text="BACK" />
+    <Label layoutX="516.0" layoutY="165.0" onMouseClicked="#leaveStore" text="TO" />
     <MenuBar layoutX="0.0" layoutY="0.0">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
