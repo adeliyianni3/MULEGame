@@ -29,7 +29,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.google.gson.*;
-import com.google.gson.FieldAttributes;
+//import com.google.gson.FieldAttributes;
 
 //Created by Aaron on 9/17/2015.
 public class Game {
