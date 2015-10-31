@@ -70,4 +70,8 @@ public class PlayerController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         setName("Player " + Game.instance.getTurn());
     }
+    @FXML
+    private void closeGame(ActionEvent e) {
+        System.exit(0);
+    }
 }

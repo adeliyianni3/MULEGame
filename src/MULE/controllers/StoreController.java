@@ -75,6 +75,12 @@ public class StoreController implements Initializable {
     }
 
     @FXML
+    private void closeGame(ActionEvent e) {
+        Game.instance.timer.stopTime();
+        System.exit(0);
+    }
+
+    @FXML
     public void sellItems() {
         Player p = Game.instance.getPlayers()[Game.instance.getTurn() - 1];
         Object[] cartStuff = items.toArray();
