@@ -12,20 +12,29 @@
   <children>
     <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#1fff52" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
     <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="92.0" layoutY="39.0" onMouseClicked="#usePub" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-    <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="350.0" layoutY="243.0" onMouseClicked="#useAssay" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+    <ImageView fitHeight="147.30294758364218" fitWidth="169.37081909179688" layoutX="326.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@O.F.F..png" />
+      </image>
+    </ImageView>
+    <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" height="147.302978515625" layoutX="331.0" layoutY="204.0" onMouseClicked="#useAssay" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="164.3707733154297">
+      <fill>
+        <Color blue="1.000" green="0.565" opacity="0.000" red="0.118" fx:id="x3" />
+      </fill>
+    </Rectangle>
     <Rectangle fx:id="resourceStore" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="136.0" layoutX="350.0" layoutY="39.0" onMouseClicked="#enterStore" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-    <ImageView fitHeight="156.0" fitWidth="235.00001525878906" layoutX="92.0" layoutY="191.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="147.4242422865576" fitWidth="206.2897491455078" layoutX="92.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@A.S.S.A..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="#1e90ff00" height="156.0" layoutX="92.0" layoutY="189.0" onMouseClicked="#useLand" stroke="TRANSPARENT" strokeType="INSIDE" width="234.99998474121094" />
-    <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" height="322.0" layoutX="24.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0">
+    <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="$x3" height="147.42425537109375" layoutX="92.0" layoutY="203.0" onMouseClicked="#useLand" stroke="TRANSPARENT" strokeType="INSIDE" width="206.2897186279297" />
+    <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" height="82.0" layoutX="24.0" layoutY="161.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0">
       <fill>
         <Color blue="0.176" green="0.894" red="0.871" fx:id="x1" />
       </fill>
     </Rectangle>
-    <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="322.0" layoutX="500.0" layoutY="39.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="76.0" />
+    <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="82.0" layoutX="500.0" layoutY="161.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="76.0" />
     <Label layoutX="128.0" layoutY="79.0" onMouseClicked="#usePub" text="PUB">
       <font>
         <Font name="System Bold" size="39.0" fx:id="x2" />
