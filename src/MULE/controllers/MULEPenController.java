@@ -41,7 +41,10 @@ public class MULEPenController {
     private void handleSaveGame(ActionEvent e) {
         Game.instance.saveGame();
     }
-
-
+    @FXML
+    private void closeGame(ActionEvent e) {
+        Game.instance.timer.stopTime();
+        System.exit(0);
+    }
 
 }

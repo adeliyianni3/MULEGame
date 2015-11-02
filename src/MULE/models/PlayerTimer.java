@@ -18,11 +18,9 @@ public class PlayerTimer {
     public static Timer timer;
     public int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
 
-    private int computeTime(){
-        Player p = Game.instance.players[Game.instance.getTurn() - 1];
+    public int computeTime(Player p, int round){
         int food = p.foodCounter();
-        System.out.println(food);
-        if (food > 0 && food < foodNeeded[Game.instance.getRound() - 3]) {
+        if (food > 0 && food < foodNeeded[round - 3]) {
             return 30;
         } else if (food == 0) {
             return 5;
@@ -30,8 +28,10 @@ public class PlayerTimer {
             return 50;
         }
     }
+
     public void startTime() {
-        secs = computeTime();
+        secs = computeTime(Game.instance.players[Game.instance.getTurn() - 1],
+                Game.instance.getRound());
         int delay = 1000;
         int period = 1000;
         timer = new Timer();

@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -215,12 +216,20 @@ public class MapController implements Initializable {
     private Label continueLabel;
 
     @FXML
+    private MenuItem close;
+
+    @FXML
     private void handleLoadGame(ActionEvent e) {
         Game.instance.loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
         Game.instance.saveGame();
+    }
+    @FXML
+    private void closeGame(ActionEvent e) {
+        Game.instance.timer.stopTime();
+        System.exit(0);
     }
 
 
