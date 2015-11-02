@@ -125,6 +125,13 @@ public class Game {
         if (instance.theMap.whatLand(0,0) == null) {
             System.out.println("Null Map");
         }
+        for (int i = 0; i < instance.numOfPlayers; i++) {
+            for (int j = 0; j < instance.numOfPlayers; j++) {
+                if (instance.players[i].getName().equals(instance.originalPlayers[j].getName())) {
+                    instance.originalPlayers[j] = instance.players[i];
+                }
+            }
+        }
     }
 
 
@@ -382,6 +389,9 @@ public class Game {
         System.out.println(round + " " + (round > 14));
         if (round <= 14) {
             timer.startTime();
+        } else {
+            currentState = State.MAIN; //swap out with display scores later
+            ScreenNavigator.instance.loadMain();
         }
         return turn;
     }
