@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 // Created by Ethan on 9/18/2015.
 public class MapController implements Initializable {
     //http://stackoverflow.com/questions/27031365/how-to-bind-visibility-to-controller-in-javafx
-    BooleanProperty showPass = new SimpleBooleanProperty(false);
+    private BooleanProperty showPass = new SimpleBooleanProperty(false);
 
     @FXML
     private Rectangle map00;

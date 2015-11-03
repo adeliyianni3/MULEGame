@@ -18,7 +18,6 @@ public class StoreController implements Initializable {
     private ObservableList<Resource> items = FXCollections.observableArrayList();
     @FXML
     private ListView<Resource> cartList;
-    private int selected;
 
     public void leaveStore(MouseEvent event) {
         String side = ((Node)event.getSource()).getId();
@@ -99,7 +98,7 @@ public class StoreController implements Initializable {
     }
     @FXML
     public void removeItem() {
-        selected = cartList.getSelectionModel().getSelectedIndex();
+        int selected = cartList.getSelectionModel().getSelectedIndex();
         if (selected != -1) {
             cartList.getItems().remove(selected);
         }

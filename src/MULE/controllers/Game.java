@@ -35,12 +35,12 @@ import com.google.gson.*;
 public class Game {
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
-    private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
+    private ArrayList<Color> notAllowed = new ArrayList<>(Arrays.asList(Color.WHITE));
     public int numOfPlayers = 1;
-    public final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
-    public int round = 0;
+    private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
+    private int round = 0;
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
-    public Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
+    private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private int difficulty;
     private int mapType;
     private int[] playerTurn; //unused?
@@ -48,8 +48,8 @@ public class Game {
     private int turn = 1;
     public State currentState = State.MAIN;
     public PlayerTimer timer = new PlayerTimer();
-    public ResourceStore store = new ResourceStore();
-    public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    private ResourceStore store = new ResourceStore();
+    private int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
     private boolean[][] muleArray = new boolean[5][9];
     private Color[][] colorArray = new Color[5][9];
@@ -58,7 +58,7 @@ public class Game {
     private Map theMap = new Map();
     private int buyPhaseSkipped = 0;
     
-    public int LAND_PRICE = 300;
+    private int LAND_PRICE = 300;
 
     public Game getInstance(){
         return instance;
@@ -75,7 +75,7 @@ public class Game {
     public void saveGame() {
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
-                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();;
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
                 String gson = gs.toJson(this);
                 out.print(gson);
                 System.out.println(gson);
@@ -90,7 +90,7 @@ public class Game {
             try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
                 String json = br.readLine();
                 System.out.println(json);
-                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();;
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
                 instance = gs.fromJson(json, Game.class);
 
             }
@@ -403,7 +403,7 @@ public class Game {
         //use this only for player config
     }
 
-    public void reorderPlayers() {
+    private void reorderPlayers() {
         System.out.println("Reordered");
         for(int i = 0; i < numOfPlayers - 1; i++) {
             System.out.println("i: " + i);
