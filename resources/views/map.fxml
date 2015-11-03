@@ -40,7 +40,7 @@
     <Rectangle fx:id="map21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="225.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#74ff33" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe299" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="75.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />

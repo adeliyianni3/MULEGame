@@ -10,11 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.StoreController">
   <children>
-    <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" height="322.0" layoutX="26.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="552.0">
-      <fill>
-        <Color blue="0.757" green="0.690" red="1.000" fx:id="x2" />
-      </fill>
-    </Rectangle>
+    <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" fill="#ffca99" height="322.0" layoutX="26.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
     <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc66" height="81.96085357666016" layoutX="287.0" layoutY="103.0" onMouseClicked="#addCartFood" stroke="BLACK" strokeType="INSIDE" width="60.9998779296875" />
     <Label layoutX="303.0" layoutY="169.0" onMouseClicked="#addCartFood" text="Food" />
     <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="36.0" layoutX="395.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
