@@ -8,6 +8,7 @@ public class ResourceStore {
     private int smithoreInventory = 0;
     private int muleInventory = 25;
 
+    public ResourceStore(){}
     public int getEnergyInventory() {
         return energyInventory;
     }

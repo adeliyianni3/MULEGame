@@ -7,16 +7,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 // Created by Ethan on 9/18/2015.
 public class MapController implements Initializable {
     //http://stackoverflow.com/questions/27031365/how-to-bind-visibility-to-controller-in-javafx
-    BooleanProperty showPass = new SimpleBooleanProperty(false);
+    private BooleanProperty showPass = new SimpleBooleanProperty(false);
 
     @FXML
     private Rectangle map00;
@@ -212,12 +216,20 @@ public class MapController implements Initializable {
     private Label continueLabel;
 
     @FXML
+    private MenuItem close;
+
+    @FXML
     private void handleLoadGame(ActionEvent e) {
         Game.instance.loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
         Game.instance.saveGame();
+    }
+    @FXML
+    private void closeGame(ActionEvent e) {
+        Game.instance.timer.stopTime();
+        System.exit(0);
     }
 
 
@@ -262,5 +274,24 @@ public class MapController implements Initializable {
         continueRect.visibleProperty().bind(showPass);
         continueLabel.visibleProperty().bind(showPass);
         setArrs();
+        if (ScreenNavigator.instance != null && ScreenNavigator.instance.loaded) { //need to do something for pass button too
+            Color[][] ca = Game.instance.getColorArray();
+            boolean[][] ma = Game.instance.getMuleArray();
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (ca[i][j] != null && ca[i][j] instanceof Color) {
+                        //mapArr[i][j].setStroke(ca[i][j]);
+                        String color = ca[i][j].toString();
+                        mapArr[i][j].setStroke(Color.web(color));
+                        mapArr[i][j].setStrokeWidth(4.0);
+                    }
+                    if (ma[i][j]) {
+                        Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
+                        ImagePattern imagePattern = new ImagePattern(muleImage);
+                        mulArr[i][j].setFill(imagePattern);
+                    }
+                }
+            }
+        }
     }
 }

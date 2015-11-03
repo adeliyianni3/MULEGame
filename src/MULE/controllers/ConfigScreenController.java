@@ -46,4 +46,8 @@ public class ConfigScreenController {
         }
         return difficulty;
     }
+    @FXML
+    private void closeGame(ActionEvent e) {
+        System.exit(0);
+    }
 }

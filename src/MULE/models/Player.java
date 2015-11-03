@@ -66,6 +66,9 @@ public class Player {
         //TODO
     }
 
+    public Player() {
+
+    }
     public Player(String name, String sRace, Color color) {
         this.name = name;
         this.race = Race.valueOf(sRace.toUpperCase());

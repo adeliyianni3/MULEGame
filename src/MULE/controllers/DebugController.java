@@ -95,8 +95,8 @@ public class DebugController implements Initializable {
     private Label currentPlayer;
     @FXML
     private Label lastEvent;
-    private Player[] p;
-    private Player[] op;
+    //private Player[] p;
+    //private Player[] op;
 
 
     private void bindToTime() {
@@ -104,8 +104,10 @@ public class DebugController implements Initializable {
                 new KeyFrame(Duration.seconds(0),
                         new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent actionEvent) {
-                                p = Game.instance.getPlayers();
-                                op = Game.instance.getOriginalPlayers();
+                                Player[] p = Game.instance.getPlayers();
+                                Player[] op = Game.instance.getOriginalPlayers();
+                                //p = Game.instance.getPlayers();
+                                //op = Game.instance.getOriginalPlayers();
                                 turn.setText("" + Game.instance.getTurn());
                                 if (p.length > 0 && p[Game.instance.getTurn() - 1] != null) {
                                     currentPlayer.setText(p[Game.instance.getTurn() - 1].getName());
@@ -114,8 +116,8 @@ public class DebugController implements Initializable {
                                 lastEvent.setText(Game.instance.getLastEvent());
                                 round.setText("" + Game.instance.getRound());
                                 phase.setText("" + Game.instance.getPhase().name());
-                                Player[] p = Game.instance.getPlayers();
-                                Player[] op = Game.instance.getOriginalPlayers();
+                                //Player[] p = Game.instance.getPlayers();
+                                //Player[] op = Game.instance.getOriginalPlayers();
                                 if (p.length > 0 && p[0] != null) {
                                     firstPlace.setText("" + p[0].getName());
                                     firstScore.setText("" + p[0].getScore());

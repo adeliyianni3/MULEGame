@@ -13,7 +13,7 @@ public enum LandType {
     private double smithOreFactor;
     private double crystiteFactor;
 
-
+    LandType(){}
     LandType(double foodFactor, double energyFactor, double smithOreFactor, double crystiteFactor) {
         this.foodFactor = foodFactor;
         this.smithOreFactor = smithOreFactor;

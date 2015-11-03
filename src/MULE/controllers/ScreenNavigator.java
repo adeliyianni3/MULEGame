@@ -1,13 +1,22 @@
 package MULE.controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -19,6 +28,7 @@ import javafx.stage.Stage;
 public class ScreenNavigator {
 
     public BooleanProperty showPass = new SimpleBooleanProperty(false);
+    public boolean loaded = false;
 
     /**
      * Convenience constants for fxml layouts managed by the navigator.
@@ -31,6 +41,7 @@ public class ScreenNavigator {
     public final String TOWN = "/views/town.fxml";
     public final String STORE = "/views/store.fxml";
     public final String MULE_PEN = "/views/mulePen.fxml";
+    public final String ERROR = "/views/Error_Screen.fxml";
 
     public Scene mainScreen;
     public Scene playerScreen;
@@ -40,6 +51,7 @@ public class ScreenNavigator {
     public Scene town;
     public Scene store;
     public Scene mulePen;
+    public Scene errorMessage;
 
     public static ScreenNavigator instance = new ScreenNavigator();
     private Stage stage;
@@ -66,6 +78,8 @@ public class ScreenNavigator {
             store = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(MULE_PEN));
             mulePen = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(ERROR));
+            errorMessage = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -116,6 +130,8 @@ public class ScreenNavigator {
                 break;
             case MULE_PEN: loadScreen(mulePen);
                 break;
+            case ERROR: loadScreen(errorMessage);
+                break;
             default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
                 break;
         }
@@ -143,6 +159,14 @@ public class ScreenNavigator {
     public void loadMULEPen() {
         loadScreen(MULE_PEN);
     }
+
+    public void loadErrorMessage() {
+        loadScreen(ERROR);
+    }
+
+    public void loadPlayer() {
+        loadScreen(PLAYER);
+    }
     public void loadStore() {
         loadScreen(STORE);
     }
@@ -164,5 +188,17 @@ public class ScreenNavigator {
         showPass.setValue(!showPass.getValue());
     }
 
+    public void loadLoadedMap() {
+        loaded = true;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = fxmlLoader.load(getClass().getResource(MAP));
+            MapController mapController = (MapController) fxmlLoader.getController();
+            map = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loaded = false;
+    }
 
 }
