@@ -16,7 +16,6 @@ public class Player {
     private Color color;
     private Mule mule;
     private int money;
-    private int score;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
     private ArrayList<Land> landOwned = new ArrayList<Land>();
@@ -86,7 +85,7 @@ public class Player {
         }
         this.color = color;
         this.money = race.startMoney();
-        int id = playerNumber;
+
         numOfLands = 0;
         numOfResources = new int[4];
 

@@ -237,7 +237,7 @@ public class MapController implements Initializable {
     void landClick(MouseEvent event) {
         //System.out.println("Ran the landClick method");
         String landName = ((Node)event.getSource()).getId();
-        Rectangle rec = (Rectangle)event.getSource();
+
         int i = Integer.parseInt(landName.substring(3, 5)) / 10;
         int j = Integer.parseInt(landName.substring(3, 5)) % 10;
         if (mapArr[i][j] == null) {
@@ -279,7 +279,7 @@ public class MapController implements Initializable {
             boolean[][] ma = Game.instance.getMuleArray();
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 9; j++) {
-                    if (ca[i][j] != null && ca[i][j] instanceof Color) {
+                    if (ca[i][j] != null) {
                         //mapArr[i][j].setStroke(ca[i][j]);
                         String color = ca[i][j].toString();
                         mapArr[i][j].setStroke(Color.web(color));

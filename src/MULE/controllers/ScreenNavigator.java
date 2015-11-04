@@ -193,7 +193,7 @@ public class ScreenNavigator {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = fxmlLoader.load(getClass().getResource(MAP));
-            MapController mapController = (MapController) fxmlLoader.getController();
+            MapController mapController = fxmlLoader.getController(); //can't close game without
             map = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();

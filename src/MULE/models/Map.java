@@ -31,11 +31,8 @@ public class Map {
         return landArray[row][col];
     }
 
-    public boolean isTown(int row, int col){
-        if (row == 2 && col == 4){
-            return true;
-        }
-        return false;
+    public boolean isTown(int row, int col) {
+        return (row == 2 && col == 4);
     }
 
 }

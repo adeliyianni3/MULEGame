@@ -3,10 +3,7 @@ package MULE.controllers;
 
 import MULE.models.*;
 import com.google.gson.GsonBuilder;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -14,28 +11,20 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+
 import java.io.*;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.google.gson.*;
-//import com.google.gson.FieldAttributes;
 
-//Created by Aaron on 9/17/2015.
+
 public class Game {
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
-    private ArrayList<Color> notAllowed = new ArrayList<>(Arrays.asList(Color.WHITE));
+    private ArrayList<Color> notAllowed = new ArrayList<>();
     public int numOfPlayers = 1;
     private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     private int round = 0;

@@ -9,25 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-//trying to set up debug
-import java.io.IOException;
 import java.net.URL;
-import javafx.animation.*;
-import javafx.event.*;
-import javafx.scene.control.Label;
-import javafx.util.Duration;
-
-import java.util.Calendar;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  * Main application class.
