@@ -32,10 +32,7 @@ public class Map {
     }
 
     public boolean isTown(int row, int col){
-        if (row == 2 && col == 4){
-            return true;
-        }
-        return false;
+        return (row == 2 && col == 4);
     }
 
 }

@@ -10,7 +10,7 @@ public class Land {
     private Mule mule;
 
     public int i;
-    public int j;
+    public int j; //clarity
     public Land(){}
     public Land(LandType type) {
         this.type = type;
@@ -35,7 +35,7 @@ public class Land {
     }
     public void setMule(Mule newMule) {
         this.mule = newMule;
-    }
+    } //mule vs newMule
     public void setLandType(LandType type) {
         this.type = type;
     }
@@ -57,12 +57,36 @@ public class Land {
         return p;
     }
 
+    //for testing purposes
+    public Player getOwner(Player[] players, int numOfPlayers) {
+        Player p = null;
+        for (int i = 0; i < numOfPlayers; i++) {
+            for (Land l : players[i].getLand()) {
+                if (l.isSame(this)) {
+                    p = players[i];
+                }
+            }
+        }
+        return p;
+    }
+
     public boolean isSame(Land l) {
         return l.i == i && l.j == j;
     }
 
     public void produce() {
         Player owner = getOwner();
+        if (hasMule()) {
+            if (owner.hasEnergy()) {
+                owner.removeEnergy();
+                owner.addResource(mule.getResource(), mule.produce(type));
+            }
+        }
+    }
+
+    //for testing purposes
+    public void produce(Player[] players, int numOfPlayers) {
+        Player owner = getOwner(players, numOfPlayers);
         if (hasMule()) {
             if (owner.hasEnergy()) {
                 owner.removeEnergy();
