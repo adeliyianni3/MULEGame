@@ -3,7 +3,10 @@ package MULE.controllers;
 
 import MULE.models.*;
 import com.google.gson.GsonBuilder;
-
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -11,25 +14,33 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
-
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
-
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.ArrayList;
-
+import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.google.gson.*;
+import com.google.gson.FieldAttributes;
 
-
-public class Game {
-    public static Game instance = new Game();
+//Created by Aaron on 9/17/2015.
+public class GameDummy extends Game{
+    public static GameDummy instance = new GameDummy();
     private String lastEvent = "---"; //ONLY DEBUG
-    private ArrayList<Color> notAllowed = new ArrayList<>();
+    private ArrayList<Color> notAllowed = new ArrayList<Color>(Arrays.asList(Color.WHITE));
     public int numOfPlayers = 1;
-    private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
-    private int round = 0;
+    public final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
+    public int round = 0;
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
-    private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
+    public Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private int difficulty;
     private int mapType;
     private int[] playerTurn; //unused?
@@ -37,8 +48,8 @@ public class Game {
     private int turn = 1;
     public State currentState = State.MAIN;
     public PlayerTimer timer = new PlayerTimer();
-    private ResourceStore store = new ResourceStore();
-    private int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    public ResourceStore store = new ResourceStore();
+    public int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
     private boolean[][] muleArray = new boolean[5][9];
     private Color[][] colorArray = new Color[5][9];
@@ -46,11 +57,10 @@ public class Game {
 
     private Map theMap = new Map();
     private int buyPhaseSkipped = 0;
-    
-    private int LAND_PRICE = 300;
 
+    public int LAND_PRICE = 300;
 
-    public Game getInstance(){
+    public GameDummy getInstance(){
         return instance;
     }
 
@@ -65,13 +75,13 @@ public class Game {
     public void saveGame() {
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
-                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();;
                 String gson = gs.toJson(this);
                 out.print(gson);
                 System.out.println(gson);
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GameDummy.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -80,28 +90,27 @@ public class Game {
             try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
                 String json = br.readLine();
                 System.out.println(json);
-                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
-                instance = gs.fromJson(json, Game.class);
+                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();;
+                instance = gs.fromJson(json, GameDummy.class);
 
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GameDummy.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GameDummy.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ScreenNavigator.instance.loadLoadedMap();
         switch (instance.currentState) {
             case MAP:
             case MULE_PLACING:
-            case BUYPHASE: ScreenNavigator.instance.loadMap();
+            case BUYPHASE:
                 break;
-            case STORE: ScreenNavigator.instance.loadStore();
+            case STORE:
                 break;
-            case IN_TOWN: ScreenNavigator.instance.loadTown();
+            case IN_TOWN:
                 break;
-            case MAIN: ScreenNavigator.instance.loadMain();
+            case MAIN:
                 break;
-            case CONFIG: ScreenNavigator.instance.loadNewPlayer();
+            case CONFIG:
                 break;
         }
         if (instance.colorArray[0][0] == null) {
@@ -114,13 +123,6 @@ public class Game {
         }
         if (instance.theMap.whatLand(0,0) == null) {
             System.out.println("Null Map");
-        }
-        for (int i = 0; i < instance.numOfPlayers; i++) {
-            for (int j = 0; j < instance.numOfPlayers; j++) {
-                if (instance.players[i].getName().equals(instance.originalPlayers[j].getName())) {
-                    instance.originalPlayers[j] = instance.players[i];
-                }
-            }
         }
     }
 
@@ -136,6 +138,7 @@ public class Game {
 
 
     public void randomEvent(){
+        instance = this;
         Random random = new Random();
         int chance = random.nextInt(101);
         if (chance <= 27) {
@@ -152,13 +155,9 @@ public class Game {
         return lastEvent;
     }
 
-    public Map getTheMap() {
-        return theMap;
-    }
-
-    public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
-    }
+//    public enum State{
+//        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
+//    }
 
     public void setMediaPlayer(MediaPlayer mp) {
         mediaPlayer = mp;
@@ -190,6 +189,7 @@ public class Game {
     }
 
     public void setNumOfPlayers(int num) {
+        instance = this;
         numOfPlayers = num;
         players = new Player[num];
         originalPlayers = new Player[num];
@@ -256,6 +256,7 @@ public class Game {
     }
 
     public void buyPhaseSkip() {
+        instance = this;
         System.out.println("buyPhaseSkip() called.");
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("buyPhaseSkip() executed.");
@@ -268,6 +269,7 @@ public class Game {
         return players[getTurn() - 1];
     }
     public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
+        instance = this;
         if (currentState.equals(State.BUYPHASE)) {
             System.out.println("Round:" + round);
             int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
@@ -300,9 +302,7 @@ public class Game {
                     }
                 }
             }
-            if (round == 3 && turn == 1) {
-                ScreenNavigator.instance.togglePassButton();
-            }
+
 
 
             System.out.println(playersToString()); //debug statement
@@ -312,15 +312,15 @@ public class Game {
             System.out.println(i + ", " + j);
             Land plot = theMap.whatLand(i, j);
             Player p = players[turn - 1];
-            System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
-            if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
-            //if (plot.isOwned() & doesPlayerOwn(p, plot) & !plot.hasMule()) {
+            //System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
+            if (plot.isOwned() & p.equals(plot.getOwner(players, numOfPlayers)) & !plot.hasMule()) {
+                //if (plot.isOwned() & doesPlayerOwn(p, plot) & !plot.hasMule()) {
                 plot.setMule(p.getMule());
                 muleArray[i][j] = true;
 
-                Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
-                ImagePattern imagePattern = new ImagePattern(muleImage);
-                mul.setFill(imagePattern); //check to make sure this doesn't override color
+                //Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
+                //ImagePattern imagePattern = new ImagePattern(muleImage);
+                //mul.setFill(imagePattern); //check to make sure this doesn't override color
 
 
                 currentState = State.MAP; //is this where we want the screen to go to?
@@ -344,6 +344,7 @@ public class Game {
     }
 
     public int buyPhaseEndTurn() {
+        instance = this;
         boolean noMoney = true; //make prettier later
         while (noMoney && buyPhaseSkipped < numOfPlayers) {
             turn = turn % numOfPlayers + 1;
@@ -358,21 +359,22 @@ public class Game {
 
         if (buyPhaseSkipped >= numOfPlayers) {
             currentState = State.MAP;
-            ScreenNavigator.instance.togglePassButton();
+
             if (turn != 1) {
                 totalTurns = totalTurns + numOfPlayers - turn + 1;
                 round++;
                 turn = 1;
             }
             reorderPlayers();
-            timer.startTime();
+            //timer.startTime();
         }
         return turn;
     }
     public int endTurn() {
+        instance = this;
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
-            plot.produce();
+            plot.produce(players, numOfPlayers);
         }
         turn = turn % numOfPlayers + 1;
         totalTurns++;
@@ -382,10 +384,11 @@ public class Game {
         }
         System.out.println(round + " " + (round > 14));
         if (round <= 14) {
-            timer.startTime();
+            //timer.startTime();
+            currentState = State.MAP;
         } else {
             currentState = State.MAIN; //swap out with display scores later
-            ScreenNavigator.instance.loadMain();
+
         }
         return turn;
     }
@@ -397,7 +400,7 @@ public class Game {
         //use this only for player config
     }
 
-    private void reorderPlayers() {
+    public void reorderPlayers() {
         System.out.println("Reordered");
         for(int i = 0; i < numOfPlayers - 1; i++) {
             System.out.println("i: " + i);
@@ -419,7 +422,7 @@ public class Game {
 
     public void townClicked() {
         if (currentState == State.MAP || currentState == State.STORE) {
-            ScreenNavigator.instance.loadTown();
+
             currentState = State.IN_TOWN;
         }
     }
@@ -440,25 +443,26 @@ public class Game {
         this.difficulty = difficulty;
         setNumOfPlayers(numOfPlayers);
         currentState = State.CONFIG;
-        ScreenNavigator.instance.loadNewPlayer();
+
     }
 
     public void addPlayer(String race, Color c, String name) {
+        instance = this;
         notAllowed.add(c);
         players[turn-1] = new Player(name, race, c);
         originalPlayers[turn-1] = players[turn-1];
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
-            ScreenNavigator.instance.loadNewPlayer();
+
         } else {
-            ScreenNavigator.instance.loadMap();
+
             currentState = State.BUYPHASE;
         }
     }
 
     public void enterStore() {
         if (currentState == State.IN_TOWN) {
-            ScreenNavigator.instance.loadStore();
+
             currentState = State.STORE;
         }
     }
@@ -483,6 +487,7 @@ public class Game {
     }
 
     public void buyMULE(Resource resource) {
+        instance = this;
         Player p = players[turn - 1];
         int price = 100;
         price += resource.getStorePriceExtra();
@@ -491,7 +496,7 @@ public class Game {
             p.subtractMoney(price);
             currentState = State.MULE_PLACING;
             p.giveMule(newMule); //TODO remove mule when player's turn ends
-            ScreenNavigator.instance.loadMap();
+
         } else {
             System.out.println("Not enough money"); //TODO proper error message
         }
