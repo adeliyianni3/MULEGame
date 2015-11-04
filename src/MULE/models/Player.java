@@ -3,8 +3,6 @@ package MULE.models;
 import MULE.controllers.Game;
 import javafx.scene.paint.Color;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 // Created by Ethan on 9/17/2015.

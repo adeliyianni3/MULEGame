@@ -1,22 +1,17 @@
 package MULE.controllers;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.collections.ObservableList;
+
 import javafx.fxml.FXMLLoader;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import javafx.scene.Group;
-import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
+
 import javafx.stage.Stage;
 
 /**
