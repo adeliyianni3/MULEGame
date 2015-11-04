@@ -31,6 +31,7 @@ public class ConfigScreenController {
         Game.instance.saveGame();
     }
 
+
     private int difficulty() {
         int difficulty;
         switch ((String) difficultyChoiceBox.getValue()) {

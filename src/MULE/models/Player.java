@@ -3,6 +3,8 @@ package MULE.models;
 import MULE.controllers.Game;
 import javafx.scene.paint.Color;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 // Created by Ethan on 9/17/2015.
@@ -71,7 +73,17 @@ public class Player {
     }
     public Player(String name, String sRace, Color color) {
         this.name = name;
-        this.race = Race.valueOf(sRace.toUpperCase());
+        try {
+            String newsRace = sRace.substring(0, 1).toUpperCase() + sRace.substring(1);
+            Class<?> c = Class.forName("MULE.models." + newsRace);
+            this.race = (Race) c.newInstance();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
         this.color = color;
         this.money = race.startMoney();
         int id = playerNumber;
