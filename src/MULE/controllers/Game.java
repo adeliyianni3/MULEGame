@@ -75,7 +75,7 @@ public class Game {
     public void saveGame() {
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
-                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
                 String gson = gs.toJson(this);
                 out.print(gson);
                 System.out.println(gson);
@@ -90,7 +90,7 @@ public class Game {
             try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
                 String json = br.readLine();
                 System.out.println(json);
-                Gson gs = new GsonBuilder().registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
                 instance = gs.fromJson(json, Game.class);
 
             }
