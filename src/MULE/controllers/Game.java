@@ -60,6 +60,7 @@ public class Game {
     
     private int LAND_PRICE = 300;
 
+
     public Game getInstance(){
         return instance;
     }
@@ -161,7 +162,11 @@ public class Game {
     public String getLastEvent() {
         return lastEvent;
     }
-    
+
+    public Map getTheMap() {
+        return theMap;
+    }
+
     public enum State{
         MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
     }
