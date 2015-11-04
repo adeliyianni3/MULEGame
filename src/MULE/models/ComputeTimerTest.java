@@ -3,9 +3,7 @@ package MULE.models;
 import javafx.scene.paint.Color;
 import org.junit.Test;
 
-/**
- * Created by Antonia on 11/1/2015.
- */
+//Created by Antonia on 11/1/2015.
 public class ComputeTimerTest {
     @Test
     public void computeTimerTest(){

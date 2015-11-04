@@ -3,9 +3,8 @@ package MULE.models;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-/**
- * Created by Lauren on 11/1/2015.
- */
+//Created by Lauren on 11/1/2015.
+
 public class MapTest {
 
     @Test

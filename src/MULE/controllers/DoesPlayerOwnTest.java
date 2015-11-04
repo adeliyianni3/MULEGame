@@ -8,9 +8,7 @@ import MULE.models.Land;
 import MULE.models.Player;
 import javafx.scene.paint.Color;
 
-/**
- * Created by Aaron on 11/4/2015.
- */
+// Created by Aaron on 11/4/2015.
 public class DoesPlayerOwnTest {
     @Test
     public void doesPlayerOwnTest() {

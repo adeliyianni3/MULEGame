@@ -1,8 +1,6 @@
 package MULE.models;
 
-/**
- * Created by Antonia on 11/4/2015.
- */
+//Created by Antonia on 11/4/2015.
 public class Buzzite implements Race {
     private int startMoney;
     public Buzzite() {

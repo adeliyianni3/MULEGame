@@ -34,9 +34,7 @@ import org.junit.Test;
  }
  */
 
-/**
- * Created by Ethan on 11/1/2015.
- */
+//Created by Ethan on 11/1/2015.
 public class EndTurnTest {
     /**
      * The test fixture
