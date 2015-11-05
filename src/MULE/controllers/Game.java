@@ -384,7 +384,7 @@ public class Game {
             reorderPlayers();
         }
         System.out.println(round + " " + (round > MAX_ROUND));
-        if (round <= MAX_ROUND) {
+        if (round <= MAX_ROUND && getPhase() != State.BUYPHASE) {
             timer.startTime();
         } else {
             currentState = State.MAIN; //swap out with display scores later
