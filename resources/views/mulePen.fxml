@@ -36,6 +36,8 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
                   <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#pauseMusic" text="Pause Music" />
+                  <MenuItem mnemonicParsing="false" onAction="#playMusic" text="Play Music" />
                </items>
             </Menu>
          </menus>

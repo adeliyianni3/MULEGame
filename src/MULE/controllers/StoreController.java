@@ -72,7 +72,14 @@ public class StoreController implements Initializable {
         }
         System.out.println(p.getMoney());
     }
-
+    @FXML
+    private void pauseMusic(ActionEvent e) {
+        Game.instance.pauseMusic();
+    }
+    @FXML
+    private void playMusic(ActionEvent e) {
+        Game.instance.playMusic();
+    }
     @FXML
     private void closeGame(ActionEvent e) {
         Game.instance.timer.stopTime();

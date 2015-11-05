@@ -160,7 +160,7 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUY_PHASE, MAP, STORE, MULE_PLACING
+        MAIN, CONFIG, IN_TOWN, /*AUCTION,*/ BUY_PHASE, MAP, STORE, MULE_PLACING
     }
 
     public void setMediaPlayer(MediaPlayer mp) {

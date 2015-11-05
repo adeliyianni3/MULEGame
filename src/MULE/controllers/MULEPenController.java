@@ -46,5 +46,13 @@ public class MULEPenController {
         Game.instance.timer.stopTime();
         System.exit(0);
     }
+    @FXML
+    private void pauseMusic(ActionEvent e) {
+        Game.instance.pauseMusic();
+    }
+    @FXML
+    private void playMusic(ActionEvent e) {
+        Game.instance.playMusic();
+    }
 
 }

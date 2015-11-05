@@ -98,4 +98,12 @@ public class PlayerController implements Initializable{
         chosen.setStroke(Color.GREENYELLOW);
         previousColor = chosen;
     }
+    @FXML
+    private void pauseMusic(ActionEvent e) {
+        Game.instance.pauseMusic();
+    }
+    @FXML
+    private void playMusic(ActionEvent e) {
+        Game.instance.playMusic();
+    }
 }

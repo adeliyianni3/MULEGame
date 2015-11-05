@@ -25,7 +25,14 @@ public class TownController {
         Game.instance.useLandOffice();
 
     }
-
+    @FXML
+    private void pauseMusic(ActionEvent e) {
+        Game.instance.pauseMusic();
+    }
+    @FXML
+    private void playMusic(ActionEvent e) {
+        Game.instance.playMusic();
+    }
     public void showMap() {
         ScreenNavigator.instance.loadMain();
     }
