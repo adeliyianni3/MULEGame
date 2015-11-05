@@ -8,6 +8,7 @@ import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.util.ResourceBundle;
@@ -17,6 +18,8 @@ import java.util.ResourceBundle;
 //http://stackoverflow.com/questions/13227809/displaying-changing-values-in-javafx-label
 public class DebugController implements Initializable {
 
+    @FXML
+    private Rectangle currentColor;
     @FXML
     private Label turn;
     @FXML
@@ -111,6 +114,7 @@ public class DebugController implements Initializable {
                                 turn.setText("" + Game.instance.getTurn());
                                 if (p.length > 0 && p[Game.instance.getTurn() - 1] != null) {
                                     currentPlayer.setText(p[Game.instance.getTurn() - 1].getName());
+                                    currentColor.setFill(Game.instance.currentPlayer().getColor());
                                 }
                                 totalTurn.setText("" + Game.instance.getTotalTurns());
                                 lastEvent.setText(Game.instance.getLastEvent());

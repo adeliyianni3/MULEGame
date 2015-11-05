@@ -22,6 +22,11 @@ import java.util.logging.Logger;
 
 
 public class Game {
+    private static final int MAX_ROUND = 14;
+    private static final int BONUS = 250;
+    private static final int RANDOM_EVENT_PROBABILITY = 27;
+    private static final int MAX_PROBABILITY = 101;
+    private static final int NUMBER_GOOD_EVENTS = 4;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
     private ArrayList<Color> notAllowed = new ArrayList<>();
@@ -135,11 +140,11 @@ public class Game {
 
     public void randomEvent(){
         Random random = new Random();
-        int chance = random.nextInt(101);
-        if (chance <= 27) {
+        int chance = random.nextInt(MAX_PROBABILITY);
+        if (chance <= RANDOM_EVENT_PROBABILITY) {
             int x = chance % possibleEvents.length;
             if (currentPlayer() == getPlayers()[0] && x > 3) {
-                x = chance % 4;
+                x = chance % NUMBER_GOOD_EVENTS;
             }
             RandomEvent event = possibleEvents[x];
             lastEvent = event.apply(currentPlayer());
@@ -229,24 +234,24 @@ public class Game {
     }
 
     public void gamble() {
-        int[] roundBonus = {50,50,50,100,100,100,100,150,150,150,150,200};
+        int[] roundBonus = {50, 50 ,50, 100, 100, 100, 100, 150, 150, 150, 150, 200};
         int timeBonus;
         int bonus;
         Random rand = new Random();
         int time = timer.getTime();
         System.out.println(time);
-        if (time<=12){
-            timeBonus=50;
-        } else if (time<=25){
-            timeBonus=100;
-        } else if (time<=37){
-            timeBonus=150;
+        if (time <= 12){
+            timeBonus = 50;
+        } else if (time <= 25){
+            timeBonus = 100;
+        } else if (time <= 37){
+            timeBonus = 150;
         } else{
-            timeBonus=200;
+            timeBonus = 200;
         }
         bonus = roundBonus[round - 3]+rand.nextInt(timeBonus + 1);
-        if (bonus>250){
-            bonus=250;
+        if (bonus > BONUS){
+            bonus = BONUS;
         }
         players[turn-1].addMoney(bonus);
         System.out.println("Gambled and won " + bonus + ".");
@@ -378,8 +383,8 @@ public class Game {
         if (turn == 1) {
             reorderPlayers();
         }
-        System.out.println(round + " " + (round > 14));
-        if (round <= 14) {
+        System.out.println(round + " " + (round > MAX_ROUND));
+        if (round <= MAX_ROUND) {
             timer.startTime();
         } else {
             currentState = State.MAIN; //swap out with display scores later
