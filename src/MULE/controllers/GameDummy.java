@@ -3,33 +3,17 @@ package MULE.controllers;
 
 import MULE.models.*;
 import com.google.gson.GsonBuilder;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
 import java.io.*;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.google.gson.*;
-import com.google.gson.FieldAttributes;
 
 //Created by Aaron on 9/17/2015.
 @SuppressWarnings("ALL")
@@ -103,7 +87,7 @@ public class GameDummy extends Game{
         switch (instance.currentState) {
             case MAP:
             case MULE_PLACING:
-            case BUYPHASE:
+            case BUY_PHASE:
                 break;
             case STORE:
                 break;
@@ -259,7 +243,7 @@ public class GameDummy extends Game{
     public void buyPhaseSkip() {
         instance = this;
         System.out.println("buyPhaseSkip() called.");
-        if (currentState.equals(State.BUYPHASE)) {
+        if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("buyPhaseSkip() executed.");
             buyPhaseSkipped++;
             buyPhaseEndTurn();
@@ -271,7 +255,7 @@ public class GameDummy extends Game{
     }
     public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         instance = this;
-        if (currentState.equals(State.BUYPHASE)) {
+        if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("Round:" + round);
             int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
             int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
@@ -457,7 +441,7 @@ public class GameDummy extends Game{
 
         } else {
 
-            currentState = State.BUYPHASE;
+            currentState = State.BUY_PHASE;
         }
     }
 

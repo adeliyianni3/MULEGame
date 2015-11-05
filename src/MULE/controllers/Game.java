@@ -96,7 +96,7 @@ public class Game {
         switch (instance.currentState) {
             case MAP:
             case MULE_PLACING:
-            case BUYPHASE: ScreenNavigator.instance.loadMap();
+            case BUY_PHASE: ScreenNavigator.instance.loadMap();
                 break;
             case STORE: ScreenNavigator.instance.loadStore();
                 break;
@@ -160,7 +160,7 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, AUCTION, BUYPHASE, MAP, STORE, MULE_PLACING
+        MAIN, CONFIG, IN_TOWN, AUCTION, BUY_PHASE, MAP, STORE, MULE_PLACING
     }
 
     public void setMediaPlayer(MediaPlayer mp) {
@@ -260,7 +260,7 @@ public class Game {
 
     public void buyPhaseSkip() {
         System.out.println("buyPhaseSkip() called.");
-        if (currentState.equals(State.BUYPHASE)) {
+        if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("buyPhaseSkip() executed.");
             buyPhaseSkipped++;
             buyPhaseEndTurn();
@@ -271,7 +271,7 @@ public class Game {
         return players[getTurn() - 1];
     }
     public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
-        if (currentState.equals(State.BUYPHASE)) {
+        if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("Round:" + round);
             int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
             int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
@@ -384,7 +384,7 @@ public class Game {
             reorderPlayers();
         }
         System.out.println(round + " " + (round > MAX_ROUND));
-        if (round <= MAX_ROUND && getPhase() != State.BUYPHASE) {
+        if (round <= MAX_ROUND && getPhase() != State.BUY_PHASE) {
             timer.startTime();
         } else {
             currentState = State.MAIN; //swap out with display scores later
@@ -455,7 +455,7 @@ public class Game {
             ScreenNavigator.instance.loadNewPlayer();
         } else {
             ScreenNavigator.instance.loadMap();
-            currentState = State.BUYPHASE;
+            currentState = State.BUY_PHASE;
         }
     }
 

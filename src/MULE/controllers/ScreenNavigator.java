@@ -186,9 +186,9 @@ public class ScreenNavigator {
     public void loadLoadedMap() {
         loaded = true;
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(getClass().getResource(MAP));
-            MapController mapController = fxmlLoader.getController(); //can't close game without
+            //FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = FXMLLoader.load(getClass().getResource(MAP));
+            //MapController mapController = fxmlLoader.getController(); //can't close game without
             map = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();

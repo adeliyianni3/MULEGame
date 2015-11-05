@@ -1,10 +1,8 @@
 package MULE.models;
 
-import MULE.Main;
 import MULE.controllers.Game;
 
 import MULE.controllers.GameDummy;
-import MULE.controllers.ScreenNavigator;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import org.junit.Assert;

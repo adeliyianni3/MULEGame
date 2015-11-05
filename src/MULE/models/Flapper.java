@@ -3,9 +3,9 @@ package MULE.models;
 //Created by Antonia on 11/4/2015.
 
 public class Flapper implements Race {
-    private int startMoney = 1600;
+    private int startMoney;
 
-    public Flapper() {}
+    public Flapper() {startMoney = 1600;}
 
     @Override
     public int startMoney() {

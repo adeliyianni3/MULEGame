@@ -2,12 +2,9 @@ package MULE;
 
 import MULE.controllers.*;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -81,14 +78,14 @@ public class Main extends Application {
         return mainPane;
     }
 
-    /**
+    /*/**
      * Creates the main application scene.
      *
      * @param mainPane the main application layout.
      *
      * @return the created scene.
      */
-    private Scene createScene(Pane mainPane) {
+    /*private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
                 mainPane
         );
@@ -98,7 +95,7 @@ public class Main extends Application {
         );
 
         return scene;
-    }
+    }*/
 
 
     public static void main(String[] args) {
@@ -106,31 +103,5 @@ public class Main extends Application {
     }
 
 
-    private Label createMonitoredLabel(final Label reporter) {
-        final Label monitored = new Label("Mouse Location Monitor");
-
-        monitored.setStyle("-fx-background-color: forestgreen; -fx-text-fill: white; -fx-font-size: 20px;");
-
-        monitored.setOnMouseMoved(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent event) {
-                String msg =
-                        "(x: "       + event.getX()      + ", y: "       + event.getY()       + ") -- " +
-                                "(sceneX: "  + event.getSceneX() + ", sceneY: "  + event.getSceneY()  + ") -- " +
-                                "(screenX: " + event.getScreenX()+ ", screenY: " + event.getScreenY() + ")";
-
-                reporter.setText(msg);
-            }
-        });
-
-        monitored.setOnMouseExited(new EventHandler<MouseEvent>() {
-            String OUTSIDE_TEXT = "Outside Label";
-            @Override
-            public void handle(MouseEvent event) {
-                reporter.setText(OUTSIDE_TEXT);
-            }
-        });
-
-        return monitored;
-    }
 
 }

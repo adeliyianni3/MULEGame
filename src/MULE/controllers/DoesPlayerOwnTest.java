@@ -1,10 +1,8 @@
 package MULE.controllers;
 
 import org.junit.Test;
-import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-import MULE.models.Land;
 import MULE.models.Player;
 import javafx.scene.paint.Color;
 

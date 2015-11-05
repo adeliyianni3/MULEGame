@@ -12,6 +12,6 @@ public class EventSeven implements RandomEvent {
             int m = roundsM[Game.instance.getRound() - 3];
             int lose = 6*m;
             p.subtractMoney(lose);
-            return p.getName() + " YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU " + lose + " TO CLEAN IT UP.";
+            return p.getName() + " YOUR SPACE GYPSY IN-LAWS MADE A MESS OF THE TOWN. IT COST YOU " + lose + " TO CLEAN IT UP.";
     }
 }
