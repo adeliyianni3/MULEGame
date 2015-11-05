@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 // Created by Aaron on 9/17/2015.
 public class PlayerController implements Initializable{
 
-    private StringProperty name = new SimpleStringProperty();
+    private final StringProperty name = new SimpleStringProperty();
 
     public String getName() {
         return name.get();
@@ -29,7 +29,7 @@ public class PlayerController implements Initializable{
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name.set(name);
     }
 

@@ -29,7 +29,7 @@ public class Game {
     private static final int NUMBER_GOOD_EVENTS = 4;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
-    private ArrayList<Color> notAllowed = new ArrayList<>();
+    private final ArrayList<Color> notAllowed = new ArrayList<>();
     public int numOfPlayers = 1;
     private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     private int round = 0;
@@ -41,18 +41,18 @@ public class Game {
     private int totalTurns = 1;
     private int turn = 1;
     public State currentState = State.MAIN;
-    public PlayerTimer timer = new PlayerTimer();
-    private ResourceStore store = new ResourceStore();
-    private int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
-    private static RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
-    private boolean[][] muleArray = new boolean[5][9];
-    private Color[][] colorArray = new Color[5][9];
+    public final PlayerTimer timer = new PlayerTimer();
+    private final ResourceStore store = new ResourceStore();
+    private final int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
+    private static final RandomEvent[] possibleEvents = {new EventOne(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven()};
+    private final boolean[][] muleArray = new boolean[5][9];
+    private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
 
-    private Map theMap = new Map();
+    private final Map theMap = new Map();
     private int buyPhaseSkipped = 0;
     
-    private int LAND_PRICE = 300;
+    private final int LAND_PRICE = 300;
 
 
     public Game getInstance(){
@@ -192,7 +192,7 @@ public class Game {
         this.mapType = mapType;
     }
 
-    public void setNumOfPlayers(int num) {
+    void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
         originalPlayers = new Player[num];
@@ -211,11 +211,11 @@ public class Game {
     }
 
     public void useAssay() {
-
+        System.out.println("Not yet implemented");
     }
 
     public void useLandOffice() {
-
+        System.out.println("Not yet implemented");
     }
 
     public int getRound() {
@@ -267,7 +267,7 @@ public class Game {
         }
     }
 
-    public Player currentPlayer() {
+    Player currentPlayer() {
         return players[getTurn() - 1];
     }
     public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
@@ -346,7 +346,7 @@ public class Game {
         return returnValue;
     }
 
-    public int buyPhaseEndTurn() {
+    void buyPhaseEndTurn() {
         boolean noMoney = true; //make prettier later
         while (noMoney && buyPhaseSkipped < numOfPlayers) {
             turn = turn % numOfPlayers + 1;
@@ -370,9 +370,8 @@ public class Game {
             reorderPlayers();
             timer.startTime();
         }
-        return turn;
     }
-    public int endTurn() {
+    public void endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
             plot.produce();
@@ -390,10 +389,9 @@ public class Game {
             currentState = State.MAIN; //swap out with display scores later
             ScreenNavigator.instance.loadMain();
         }
-        return turn;
     }
 
-    public void incrementTurn() {
+    void incrementTurn() {
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-1) / numOfPlayers;
@@ -435,7 +433,7 @@ public class Game {
         return turn;
     }
 
-    public int getNumOfPlayers() {
+    int getNumOfPlayers() {
         return numOfPlayers;
     }
 
@@ -500,7 +498,7 @@ public class Game {
         }
     }
 
-    public String playersToString() {
+    String playersToString() {
         String returnString = "";
         for(Player p : players) {
             if (p != null) {

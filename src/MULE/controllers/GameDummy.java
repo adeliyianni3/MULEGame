@@ -328,7 +328,7 @@ public class GameDummy extends Game{
         return returnValue;
     }
 
-    public int buyPhaseEndTurn() {
+    public void buyPhaseEndTurn() {
         instance = this;
         boolean noMoney = true; //make prettier later
         while (noMoney && buyPhaseSkipped < numOfPlayers) {
@@ -353,9 +353,8 @@ public class GameDummy extends Game{
             reorderPlayers();
             //timer.startTime();
         }
-        return turn;
     }
-    public int endTurn() {
+    public void endTurn() {
         instance = this;
         ArrayList<Land> plots = currentPlayer().getLand();
         for (Land plot: plots) {
@@ -375,7 +374,6 @@ public class GameDummy extends Game{
             currentState = State.MAIN; //swap out with display scores later
 
         }
-        return turn;
     }
 
     public void incrementTurn() {

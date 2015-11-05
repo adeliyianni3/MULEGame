@@ -30,7 +30,7 @@ public abstract class Resource {
 
     public abstract int buyInventory(ResourceStore store);
 
-    public abstract int sellInventory(ResourceStore store);
+    public abstract void sellInventory(ResourceStore store);
 
     public abstract int produce(LandType type);
 }

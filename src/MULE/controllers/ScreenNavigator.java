@@ -22,33 +22,33 @@ import javafx.stage.Stage;
  */
 public class ScreenNavigator {
 
-    public BooleanProperty showPass = new SimpleBooleanProperty(false);
+    public final BooleanProperty showPass = new SimpleBooleanProperty(false);
     public boolean loaded = false;
 
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
     public final String MAIN_SCREEN = "/views/mainScreen.fxml";
-    public final String PLAYER = "/views/player.fxml";
-    public final String CONGRATULATIONS = "/views/congratulations.fxml";
+    private final String PLAYER = "/views/player.fxml";
+    private final String CONGRATULATIONS = "/views/congratulations.fxml";
     public final String MAIN = "/views/main.fxml";
-    public final String MAP = "/views/map.fxml";
-    public final String TOWN = "/views/town.fxml";
-    public final String STORE = "/views/store.fxml";
-    public final String MULE_PEN = "/views/mulePen.fxml";
-    public final String ERROR = "/views/Error_Screen.fxml";
+    private final String MAP = "/views/map.fxml";
+    private final String TOWN = "/views/town.fxml";
+    private final String STORE = "/views/store.fxml";
+    private final String MULE_PEN = "/views/mulePen.fxml";
+    private final String ERROR = "/views/Error_Screen.fxml";
 
     public Scene mainScreen;
-    public Scene playerScreen;
-    public Scene congratulations;
+    private Scene playerScreen;
+    private Scene congratulations;
     public Scene main;
-    public Scene map;
-    public Scene town;
-    public Scene store;
-    public Scene mulePen;
-    public Scene errorMessage;
+    private Scene map;
+    private Scene town;
+    private Scene store;
+    private Scene mulePen;
+    private Scene errorMessage;
 
-    public static ScreenNavigator instance = new ScreenNavigator();
+    public static final ScreenNavigator instance = new ScreenNavigator();
     private Stage stage;
 
     /** The main application layout controller. */
@@ -106,7 +106,7 @@ public class ScreenNavigator {
      *
      * @param fxml the fxml file to be loaded.
      */
-    public void loadScreen(String fxml) {
+    private void loadScreen(String fxml) {
 
         switch (fxml) {
             case MAIN_SCREEN: loadScreen(mainScreen);

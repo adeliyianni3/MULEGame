@@ -10,9 +10,9 @@ public class SmithOre extends Resource {
     }
 
     @Override
-    public int sellInventory(ResourceStore store) {
+    public void sellInventory(ResourceStore store) {
         store.addSmithOre();
-        return store.getSmithOreInventory();
+        //return store.getSmithOreInventory();
     }
 
     @Override

@@ -48,7 +48,7 @@ public class ResourceStore {
         crystiteInventory = crystiteInventory + 1;
     }
 
-    public int getMuleInventory() {
+    private int getMuleInventory() {
         return muleInventory;
     }
     public void buyMule() {

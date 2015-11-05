@@ -15,7 +15,7 @@ public class Player {
     private int money;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
-    private ArrayList<Land> landOwned = new ArrayList<>();
+    private final ArrayList<Land> landOwned = new ArrayList<>();
 
     public Mule getMule() {
         Mule temp = mule;
@@ -60,9 +60,9 @@ public class Player {
         this.mule = mule;
     }
 
-    public void sellLand() {
-        //TODO
-    }
+//    public void sellLand() {
+//        //TODO
+//    }
 
     public Player() {
 

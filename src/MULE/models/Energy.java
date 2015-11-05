@@ -11,9 +11,9 @@ public class Energy extends Resource {
     }
 
     @Override
-    public int sellInventory(ResourceStore store) {
+    public void sellInventory(ResourceStore store) {
         store.addEnergy();
-        return store.getEnergyInventory();
+        //return store.getEnergyInventory();
     }
 
     @Override

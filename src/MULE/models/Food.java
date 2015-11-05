@@ -11,9 +11,9 @@ public class Food extends Resource {
     }
 
     @Override
-    public int sellInventory(ResourceStore store) {
+    public void sellInventory(ResourceStore store) {
         store.addFood();
-        return store.getFoodInventory();
+        //return store.getFoodInventory();
     }
 
     @Override

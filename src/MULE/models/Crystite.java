@@ -10,9 +10,9 @@ public class Crystite extends Resource {
     }
 
     @Override
-    public int sellInventory(ResourceStore store) {
+    public void sellInventory(ResourceStore store) {
         store.addCrystite();
-        return store.getCrystiteInventory();
+        //return store.getCrystiteInventory();
     }
 
     @Override

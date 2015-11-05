@@ -4,7 +4,7 @@ package MULE.models;
 
 public class Map {
 
-    private Land[][] landArray = new Land[5][9];
+    private final Land[][] landArray = new Land[5][9];
     public Map() {
         for (int row=0; row<5; row++) {
             landArray[row][4] = new Land(LandType.RIVER, row, 4);

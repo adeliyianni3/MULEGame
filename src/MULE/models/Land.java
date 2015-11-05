@@ -70,7 +70,7 @@ public class Land {
         return p;
     }
 
-    public boolean isSame(Land l) {
+    private boolean isSame(Land l) {
         return l.i == i && l.j == j;
     }
 
