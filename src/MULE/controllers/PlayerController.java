@@ -85,7 +85,7 @@ public class PlayerController implements Initializable{
         }
         Rectangle chosen = (Rectangle) e.getSource();
         race = chosen.getId();
-        chosen.setStroke(Color.BLACK);
+        chosen.setStroke(Color.GREENYELLOW);
         previousRace = chosen;
     }
 
@@ -95,7 +95,7 @@ public class PlayerController implements Initializable{
         }
         Rectangle chosen = (Rectangle) e.getSource();
         color = (Color) chosen.getFill();
-        chosen.setStroke(Color.BLACK);
+        chosen.setStroke(Color.GREENYELLOW);
         previousColor = chosen;
     }
 }

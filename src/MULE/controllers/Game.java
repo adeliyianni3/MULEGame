@@ -84,9 +84,7 @@ public class Game {
                 instance = gs.fromJson(json, Game.class);
 
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
         ScreenNavigator.instance.loadLoadedMap();

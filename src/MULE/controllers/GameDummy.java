@@ -32,6 +32,7 @@ import com.google.gson.*;
 import com.google.gson.FieldAttributes;
 
 //Created by Aaron on 9/17/2015.
+@SuppressWarnings("ALL")
 public class GameDummy extends Game{
     public static GameDummy instance = new GameDummy();
     private String lastEvent = "---"; //ONLY DEBUG

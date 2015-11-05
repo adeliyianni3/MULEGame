@@ -35,6 +35,7 @@ import org.junit.Test;
  */
 
 //Created by Ethan on 11/1/2015.
+@SuppressWarnings("ALL")
 public class EndTurnTest {
     /**
      * The test fixture

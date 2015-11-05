@@ -15,7 +15,7 @@ public class Player {
     private int money;
     private int[] numOfResources; //energy, food, smithore, and crystite
     private int numOfLands;
-    private ArrayList<Land> landOwned = new ArrayList<Land>();
+    private ArrayList<Land> landOwned = new ArrayList<>();
 
     public Mule getMule() {
         Mule temp = mule;
@@ -73,11 +73,7 @@ public class Player {
             String newsRace = sRace.substring(0, 1).toUpperCase() + sRace.substring(1);
             Class<?> c = Class.forName("MULE.models." + newsRace);
             this.race = (Race) c.newInstance();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         this.color = color;
