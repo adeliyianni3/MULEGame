@@ -114,7 +114,7 @@ public class DebugController implements Initializable {
                                 turn.setText("" + Game.instance.getTurn());
                                 if (p.length > 0 && p[Game.instance.getTurn() - 1] != null) {
                                     currentPlayer.setText(p[Game.instance.getTurn() - 1].getName());
-                                    currentColor.setFill(Game.instance.currentPlayer().getColor());
+                                    //errors or code when loading not sure why currentColor.setFill(p[Game.instance.getTurn() - 1].getColor());
                                 }
                                 totalTurn.setText("" + Game.instance.getTotalTurns());
                                 lastEvent.setText(Game.instance.getLastEvent());
