@@ -27,7 +27,7 @@ public class Land {
     public boolean isOwned() {
         return owned;
     }
-    public void setOwner(Player p) {
+    public void setOwner() {
         owned = true;
     }
     public boolean hasMule() {
@@ -36,15 +36,15 @@ public class Land {
     public void setMule(Mule newMule) {
         this.mule = newMule;
     } //mule vs newMule
-    public void setLandType(LandType type) {
-        this.type = type;
-    }
+//    public void setLandType(LandType type) {
+//        this.type = type;
+//    }
     public Mule getMule() { return this.mule; }
-    public Mule removeMule() {
-        Mule temp = mule;
-        mule = null;
-        return temp;
-    }
+//    public Mule removeMule() {
+//        Mule temp = mule;
+//        mule = null;
+//        return temp;
+//    }
     public Player getOwner() {
         Player p = null;
         for (int i = 0; i < Game.instance.numOfPlayers; i++) {

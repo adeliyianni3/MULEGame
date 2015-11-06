@@ -6,7 +6,7 @@ public class ResourceStore {
     private int crystiteInventory = 0;
     private int foodInventory = 16;
     private int smithoreInventory = 0;
-    private int muleInventory = 25;
+//    private int muleInventory = 25;
 
     public ResourceStore(){}
     public int getEnergyInventory() {
@@ -48,18 +48,20 @@ public class ResourceStore {
         crystiteInventory = crystiteInventory + 1;
     }
 
-    private int getMuleInventory() {
-        return muleInventory;
-    }
-    public void buyMule() {
-        int total = getMuleInventory();
-        if (total > 0) {
-            muleInventory = total - 1;
-        }
-    }
-   public void addMule() {
-       muleInventory = muleInventory + 1;
-   }
+
+    //implement this when mules are made to be limited
+//    private int getMuleInventory() {
+//        return muleInventory;
+//    }
+//    public void buyMule() {
+//        int total = getMuleInventory();
+//        if (total > 0) {
+//            muleInventory = total - 1;
+//        }
+//    }
+//   public void addMule() {
+//       muleInventory = muleInventory + 1;
+//   }
 
     public int getSmithOreInventory() {
         return smithoreInventory;

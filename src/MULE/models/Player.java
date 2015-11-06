@@ -109,21 +109,21 @@ public class Player {
         numOfResources[source.getID()] = numOfResources[source.getID()] + amount;
     }
 
-    public void addFood(int amount) {
-        addResource(new Food(), amount);
-    }
-
-    public void addEnergy(int amount) {
-        addResource(new Energy(), amount);
-    }
-
-    public void addSmithOre(int amount) {
-        addResource(new SmithOre(), amount);
-    }
-
-    public void addCrystite(int amount) {
-        addResource(new Crystite(), amount);
-    }
+//    public void addFood(int amount) {
+//        addResource(new Food(), amount);
+//    }
+//
+//    public void addEnergy(int amount) {
+//        addResource(new Energy(), amount);
+//    }
+//
+//    public void addSmithOre(int amount) {
+//        addResource(new SmithOre(), amount);
+//    }
+//
+//    public void addCrystite(int amount) {
+//        addResource(new Crystite(), amount);
+//    }
 
     public int foodCounter() {
         return numOfResources[1];
@@ -153,9 +153,9 @@ public class Player {
         removeResource(new Crystite());
     }
 
-    public Race getRace() {
-        return race;
-    }
+//    public Race getRace() {
+//        return race;
+//    }
 
     public Color getColor() {
         return color;
@@ -189,7 +189,7 @@ public class Player {
         return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
     }
 
-    public boolean hasMule() {
-        return this.mule != null;
-    }
+//    public boolean hasMule() {
+//        return this.mule != null;
+//    }
 }

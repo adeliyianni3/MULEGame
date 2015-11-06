@@ -28,7 +28,7 @@ public class GameDummy extends Game{
     public Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private int difficulty;
     private int mapType;
-    private int[] playerTurn; //unused?
+//    private int[] playerTurn; //unused?
     private int totalTurns = 1;
     private int turn = 1;
     public State currentState = State.MAIN;
@@ -178,10 +178,10 @@ public class GameDummy extends Game{
         numOfPlayers = num;
         players = new Player[num];
         originalPlayers = new Player[num];
-        playerTurn = new int[num];
-        for (int i = 0; i < num; i++) {
-            playerTurn[i] = i + 1;
-        }
+//        playerTurn = new int[num];
+//        for (int i = 0; i < num; i++) {
+//            playerTurn[i] = i + 1;
+//        }
     }
 
     public ArrayList<Color> getColors() {
@@ -265,7 +265,7 @@ public class GameDummy extends Game{
             if (!plot.isOwned()) {
                 Player p = players[turn - 1];
                 if (round < 3) {
-                    plot.setOwner(p);
+                    plot.setOwner();
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
                     colorArray[i][j] = p.getColor();
@@ -275,7 +275,7 @@ public class GameDummy extends Game{
                     buyPhaseEndTurn();
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
-                        plot.setOwner(p);
+                        plot.setOwner();
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
                         colorArray[i][j] = p.getColor();
@@ -455,19 +455,19 @@ public class GameDummy extends Game{
     }
 
     //replaced
-    public void getTurnOrder() {
-        int temp;
-        for(int i = 0; i < players.length; i++) {
-            for (int j = i; j < players.length; j++) {
-                if (players[j].getMoney() > players[i].getMoney()) {
-                    temp = playerTurn[i];
-                    playerTurn[i] = j;
-                    playerTurn[j] = temp;
-                }
-            }
-
-        }
-    }
+//    public void getTurnOrder() {
+//        int temp;
+//        for(int i = 0; i < players.length; i++) {
+//            for (int j = i; j < players.length; j++) {
+//                if (players[j].getMoney() > players[i].getMoney()) {
+//                    temp = playerTurn[i];
+//                    playerTurn[i] = j;
+//                    playerTurn[j] = temp;
+//                }
+//            }
+//
+//        }
+//    }
 
     public void buyMULE(Resource resource) {
         instance = this;

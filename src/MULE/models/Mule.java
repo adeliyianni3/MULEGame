@@ -3,7 +3,7 @@ package MULE.models;
 // Created by Antonia on 9/17/2015.
 public class Mule {
     //Started Mule class
-    private Resource resource;
+    private final Resource resource;
     public Mule() {
         this.resource = null;
     }
@@ -13,12 +13,12 @@ public class Mule {
     public Resource getResource(){
         return resource;
     }
-    public boolean hasResource() {
-        return resource != null;
-    }
-    public void setResource(Resource resource){
-        this.resource = resource;
-    }
+//    public boolean hasResource() {
+//        return resource != null;
+//    }
+//    public void setResource(Resource resource){
+//        this.resource = resource;
+//    }
 
     public int produce(LandType type) {
         return resource.produce(type);
