@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 
 import java.io.*;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import java.util.Random;
@@ -49,13 +50,16 @@ public class Game {
     private final boolean[][] muleArray = new boolean[5][9];
     private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
+    private URL songFile = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
 
     private final Map theMap = new Map();
     private int buyPhaseSkipped = 0;
     
     private final int LAND_PRICE = 300;
 
-
+    public URL getSongFile() {
+        return songFile;
+    }
     public Game getInstance(){
         return instance;
     }
@@ -83,12 +87,13 @@ public class Game {
 
     public void loadGame() {
         try {
+            Game.instance.pauseMusic();
             try (BufferedReader br = new BufferedReader(new FileReader("data.json"))) {
                 String json = br.readLine();
                 System.out.println(json);
                 Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
                 instance = gs.fromJson(json, Game.class);
-
+                Main.makeMusic(getSongFile());
             }
         } catch (Exception ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);

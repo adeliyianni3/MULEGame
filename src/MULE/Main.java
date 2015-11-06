@@ -43,19 +43,21 @@ public class Main extends Application {
                 debugScene
         );
 
-        URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
-        Media media = new Media(resource.toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        Game.instance.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        Game.instance.playMusic();
+        URL resource = Game.instance.getSongFile();
+        makeMusic(resource);
 
         debugStage.show();
 
         stage.show();
     }
 
-
+    public static void makeMusic(URL resource) {
+        Media media = new Media(resource.toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        Game.instance.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        Game.instance.playMusic();
+    }
     /**
      * Loads the main fxml layout.
      * Sets up the vista switching VistaNavigator.
