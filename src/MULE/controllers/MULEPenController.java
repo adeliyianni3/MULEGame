@@ -30,7 +30,7 @@ public class MULEPenController {
 
     @FXML
     void returnToStore(MouseEvent event) {
-        ScreenNavigator.instance.loadStore();
+        ScreenNavigator.getInstance().loadStore();
     }
 
     @FXML

@@ -124,19 +124,19 @@ public class Game {
         } catch (Exception ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ScreenNavigator.instance.loadLoadedMap();
+        ScreenNavigator.getInstance().loadLoadedMap();
         switch (instance.currentState) {
             case MAP:
             case MULE_PLACING:
-            case BUY_PHASE: ScreenNavigator.instance.loadMap();
+            case BUY_PHASE: ScreenNavigator.getInstance().loadMap();
                 break;
-            case STORE: ScreenNavigator.instance.loadStore();
+            case STORE: ScreenNavigator.getInstance().loadStore();
                 break;
-            case IN_TOWN: ScreenNavigator.instance.loadTown();
+            case IN_TOWN: ScreenNavigator.getInstance().loadTown();
                 break;
-            case MAIN: ScreenNavigator.instance.loadMain();
+            case MAIN: ScreenNavigator.getInstance().loadMain();
                 break;
-            case CONFIG: ScreenNavigator.instance.loadNewPlayer();
+            case CONFIG: ScreenNavigator.getInstance().loadNewPlayer();
                 break;
             default: System.out.println("Something went wrong in loadGame().");
                 break;
@@ -339,7 +339,7 @@ public class Game {
                 }
             }
             if (round == 3 && turn == 1) {
-                ScreenNavigator.instance.togglePassButton();
+                ScreenNavigator.getInstance().togglePassButton();
             }
 
 
@@ -396,7 +396,7 @@ public class Game {
 
         if (buyPhaseSkipped >= numOfPlayers) {
             currentState = State.MAP;
-            ScreenNavigator.instance.togglePassButton();
+            ScreenNavigator.getInstance().togglePassButton();
             if (turn != 1) {
                 totalTurns = totalTurns + numOfPlayers - turn + 1;
                 round++;
@@ -422,7 +422,7 @@ public class Game {
             timer.startTime();
         } else {
             currentState = State.MAIN; //swap out with display scores later
-            ScreenNavigator.instance.loadMain();
+            ScreenNavigator.getInstance().loadMain();
         }
     }
 
@@ -455,7 +455,7 @@ public class Game {
 
     public void townClicked() {
         if (currentState == State.MAP || currentState == State.STORE) {
-            ScreenNavigator.instance.loadTown();
+            ScreenNavigator.getInstance().loadTown();
             currentState = State.IN_TOWN;
         }
     }
@@ -476,7 +476,7 @@ public class Game {
         this.difficulty = difficulty;
         setNumOfPlayers(numOfPlayers);
         currentState = State.CONFIG;
-        ScreenNavigator.instance.loadNewPlayer();
+        ScreenNavigator.getInstance().loadNewPlayer();
         System.out.println(Game.instance.getDifficulty());
     }
 
@@ -486,16 +486,16 @@ public class Game {
         originalPlayers[turn-1] = players[turn-1];
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
-            ScreenNavigator.instance.loadNewPlayer();
+            ScreenNavigator.getInstance().loadNewPlayer();
         } else {
-            ScreenNavigator.instance.loadMap();
+            ScreenNavigator.getInstance().loadMap();
             currentState = State.BUY_PHASE;
         }
     }
 
     public void enterStore() {
         if (currentState == State.IN_TOWN) {
-            ScreenNavigator.instance.loadStore();
+            ScreenNavigator.getInstance().loadStore();
             currentState = State.STORE;
         }
     }
@@ -528,7 +528,7 @@ public class Game {
             p.subtractMoney(price);
             currentState = State.MULE_PLACING;
             p.giveMule(newMule); //TODO remove mule when player's turn ends
-            ScreenNavigator.instance.loadMap();
+            ScreenNavigator.getInstance().loadMap();
         } else {
             System.out.println("Not enough money"); //TODO proper error message
         }

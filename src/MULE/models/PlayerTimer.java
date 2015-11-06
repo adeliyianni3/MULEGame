@@ -83,10 +83,10 @@ public class PlayerTimer {
         Game.instance.endTurn();
         if (Game.instance.getCurrentState() != Game.State.MAP) {
             Game.instance.changeState(Game.State.MAP);
-            ScreenNavigator.instance.loadMap();
+            ScreenNavigator.getInstance().loadMap();
         }
         if (Game.instance.getRound() > 14) {
-            ScreenNavigator.instance.loadEndGame();
+            ScreenNavigator.getInstance().loadEndGame();
         }
     }
 
@@ -107,7 +107,7 @@ public class PlayerTimer {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        ScreenNavigator.instance.loadMap();
+                        ScreenNavigator.getInstance().loadMap();
                     }
                 });
                 Game.instance.changeState(Game.State.MAP);

@@ -21,7 +21,7 @@ public class StoreController implements Initializable {
     public void leaveStore(MouseEvent event) {
         Game.instance.leaveStore();
         cartList.getItems().clear();
-        ScreenNavigator.instance.loadTown();
+        ScreenNavigator.getInstance().loadTown();
     }
 
     @FXML
@@ -110,11 +110,11 @@ public class StoreController implements Initializable {
     }
 
     public void showMap() {
-        ScreenNavigator.instance.loadMain();
+        ScreenNavigator.getInstance().loadMain();
     }
 
     @FXML void toMULEPen() {
-        ScreenNavigator.instance.loadMULEPen();
+        ScreenNavigator.getInstance().loadMULEPen();
     }
 
     @Override

@@ -24,8 +24,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("M.U.L.E.");
-        ScreenNavigator.instance.setStage(stage);
-        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.mainScreen);
+        ScreenNavigator.getInstance().setStage(stage);
+        ScreenNavigator.getInstance().loadScreen(ScreenNavigator.getInstance().getMainScreen());
 
         Stage debugStage = new Stage();
         debugStage.setTitle("Game Information");

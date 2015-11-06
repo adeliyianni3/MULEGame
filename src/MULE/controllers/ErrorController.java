@@ -7,6 +7,6 @@ import javafx.fxml.FXML;
 public class ErrorController {
     @FXML
     public void back(ActionEvent event) {
-        ScreenNavigator.instance.loadPlayer();
+        ScreenNavigator.getInstance().loadPlayer();
     }
 }

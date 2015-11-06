@@ -257,7 +257,7 @@ public class MapController implements Initializable {
         //add in interaction with main here
         //landName will contain a string "RC" containing land's row and column in the set 5x5 array
         Game.instance.landClicked(landName, mapArr[i][j], mulArr[i][j]);
-        showPass.setValue(ScreenNavigator.instance.showPass.getValue());
+        showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }
 
     @FXML
@@ -268,7 +268,7 @@ public class MapController implements Initializable {
     @FXML
     void passClick(MouseEvent event) {
         Game.instance.buyPhaseSkip();
-        showPass.setValue(ScreenNavigator.instance.showPass.getValue());
+        showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }
 
     private void setArrays() {
@@ -282,7 +282,7 @@ public class MapController implements Initializable {
         continueRect.visibleProperty().bind(showPass);
         continueLabel.visibleProperty().bind(showPass);
         setArrays();
-        if (ScreenNavigator.instance != null && ScreenNavigator.instance.loaded) { //need to do something for pass button too
+        if (ScreenNavigator.getInstance() != null && ScreenNavigator.getInstance().getLoaded()) { //need to do something for pass button too
             Color[][] ca = Game.instance.getColorArray();
             boolean[][] ma = Game.instance.getMuleArray();
             for (int i = 0; i < 5; i++) {

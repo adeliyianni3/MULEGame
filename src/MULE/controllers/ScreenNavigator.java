@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 
 import javafx.fxml.FXMLLoader;
 
-import java.io.*;
+import java.io.IOException;
 
 
 import javafx.scene.Parent;
@@ -20,40 +20,113 @@ import javafx.stage.Stage;
  * All methods on the navigator are static to facilitate
  * simple access from anywhere in the application.
  */
-public class ScreenNavigator {
-
-    public final BooleanProperty showPass = new SimpleBooleanProperty(false);
-    public boolean loaded = false;
+public final class ScreenNavigator {
 
     /**
-     * Convenience constants for fxml layouts managed by the navigator.
+     * Boolean property representing whether or not the pass button is showing.
      */
-    private final String MAIN_SCREEN = "/views/mainScreen.fxml";
-    private final String PLAYER = "/views/player.fxml";
-    private final String CONGRATULATIONS = "/views/congratulations.fxml";
-    private final String MAIN = "/views/main.fxml";
-    private final String MAP = "/views/map.fxml";
-    private final String TOWN = "/views/town.fxml";
-    private final String STORE = "/views/store.fxml";
-    private final String MULE_PEN = "/views/mulePen.fxml";
-    private final String ERROR = "/views/Error_Screen.fxml";
+    private final BooleanProperty showPass = new SimpleBooleanProperty(false);
 
-    public Scene mainScreen;
+    /**
+     * Determines whether or not the saved instance is being loaded.
+     */
+    private boolean loaded = false;
+
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String MAIN_SCREEN = "/views/mainScreen.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String PLAYER = "/views/player.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String CONGRATULATIONS = "/views/congratulations.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String MAIN = "/views/main.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String MAP = "/views/map.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String TOWN = "/views/town.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String STORE = "/views/store.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String MULE_PEN = "/views/mulePen.fxml";
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String ERROR = "/views/Error_Screen.fxml";
+
+    /**
+     * Saved Scene for screen.
+     */
+    private Scene mainScreen;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene playerScreen;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene congratulations;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene main;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene map;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene town;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene store;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene mulePen;
+    /**
+     * Saved Scene for screen.
+     */
     private Scene errorMessage;
 
-    public static final ScreenNavigator instance = new ScreenNavigator();
+    /**
+     * Current instance of the ScreenNavigator.
+     */
+    private static ScreenNavigator instance = new ScreenNavigator();
+    /**
+     * Stage being used to set Scenes on.
+     */
     private Stage stage;
-
+    /**
+     * Gets the instance.
+     * @return The instance
+     */
+    public static ScreenNavigator getInstance() {
+        return instance;
+    }
     /** The main application layout controller. */
 //    private static MainController mainController;
 
+    /**
+     * No-args constructor.
+     */
     private ScreenNavigator() {
         Parent root;
         try {
@@ -78,6 +151,29 @@ public class ScreenNavigator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Gets whether or not the ScreenNavigator is being loaded.
+     * @return Whether or not the ScreenNavigator is being loaded
+     */
+    public boolean getLoaded() {
+        return loaded;
+    }
+    /**
+     * Gets the BooleanProperty showPass.
+     * @return The boolean property showPass
+     */
+    public BooleanProperty getShowPass() {
+        return showPass;
+    }
+
+    /**
+     * Gets the scene of the main screen.
+     * @return The scene of the main screen
+     */
+    public Scene getMainScreen() {
+        return mainScreen;
     }
 
     /**
@@ -106,7 +202,7 @@ public class ScreenNavigator {
      *
      * @param fxml the fxml file to be loaded.
      */
-    private void loadScreen(String fxml) {
+    private void loadScreen(final String fxml) {
 
         switch (fxml) {
             case MAIN_SCREEN: loadScreen(mainScreen);
@@ -127,48 +223,84 @@ public class ScreenNavigator {
                 break;
             case ERROR: loadScreen(errorMessage);
                 break;
-            default: System.out.println("Something went horribly wrong: ScreenNavigator.loadScreen(String)");
+            default: System.out.println("Something went horribly wrong: "
+                    + "ScreenNavigator.loadScreen(String)");
                 break;
         }
     }
 
-    public void loadScreen(Scene scene) {
+    /**
+     * Loads the given scene to the stage.
+     * @param scene Scene to be set to stage
+     */
+    public void loadScreen(final Scene scene) {
         stage.setScene(scene);
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    /**
+     * Sets the held stage.
+     * @param newStage Stage to be set
+     */
+    public void setStage(final Stage newStage) {
+        stage = newStage;
     }
 
+    /**
+     * Loads the main screen.
+     */
     public void loadMain() {
         loadScreen(MAIN_SCREEN);
         Game.instance.changeState(Game.State.MAIN);
     }
+    /**
+     * Loads the town.
+     */
     public void loadTown() {
         loadScreen(TOWN);
     }
 
+    /**
+     * Loads the map.
+     */
     public void loadMap() {
         loadScreen(MAP);
     }
+    /**
+     * Loads the mule pen.
+     */
     public void loadMULEPen() {
         loadScreen(MULE_PEN);
     }
 
+    /**
+     * Loads an error message.
+     */
     public void loadErrorMessage() {
         loadScreen(ERROR);
     }
 
+    /**
+     * Loads the player configuration screen.
+     */
     public void loadPlayer() {
         loadScreen(PLAYER);
     }
+    /**
+     * Loads the store.
+     */
     public void loadStore() {
         loadScreen(STORE);
     }
+    /**
+     * Loads the congratulations screen.
+     */
     public void loadEndGame() {
         loadScreen(CONGRATULATIONS);
     }
 
+    /**
+     * Loads a new player configuration screen.
+     */
     public void loadNewPlayer() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(PLAYER));
@@ -179,16 +311,20 @@ public class ScreenNavigator {
         loadScreen(PLAYER);
     }
 
+    /**
+     * Toggles the showPass value.
+     */
     public void togglePassButton() {
         showPass.setValue(!showPass.getValue());
     }
 
+    /**
+     * Loads a saved map when loading a game.
+     */
     public void loadLoadedMap() {
         loaded = true;
         try {
-            //FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = FXMLLoader.load(getClass().getResource(MAP));
-            //MapController mapController = fxmlLoader.getController(); //can't close game without
             map = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();

@@ -33,12 +33,12 @@ public class TownController {
         Game.instance.playMusic();
     }
     public void showMap() {
-        ScreenNavigator.instance.loadMain();
+        ScreenNavigator.getInstance().loadMain();
     }
 
     public void leaveTown(MouseEvent event) {
         Game.instance.leaveTown();
-        ScreenNavigator.instance.loadMap();
+        ScreenNavigator.getInstance().loadMap();
     }
 
     @FXML
