@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -8,7 +9,6 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.StoreController">
   <children>
     <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" fill="#ffca99" height="322.0" layoutX="26.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
-    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc66" height="81.96085357666016" layoutX="287.0" layoutY="103.0" onMouseClicked="#addCartFood" stroke="BLACK" strokeType="INSIDE" width="60.9998779296875" />
     <Label layoutX="303.0" layoutY="169.0" onMouseClicked="#addCartFood" text="Food" />
     <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="36.0" layoutX="395.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
     <ImageView fitHeight="65.9609375" fitWidth="61.0" layoutX="406.0" layoutY="103.0" pickOnBounds="true" preserveRatio="false">
@@ -56,5 +56,11 @@
         </Menu>
       </menus>
     </MenuBar>
+    <ImageView fitHeight="76.69999094742997" fitWidth="58.99999237060547" layoutX="288.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@F.O.O.D..png" />
+      </image>
+    </ImageView>
+    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc6600" height="91.00031280517578" layoutX="287.0" layoutY="94.0" onMouseClicked="#addCartFood" stroke="TRANSPARENT" strokeType="INSIDE" width="60.9998779296875" />
   </children>
 </Pane>

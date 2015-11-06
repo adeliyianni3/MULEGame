@@ -55,6 +55,7 @@ public class Main extends Application {
         stage.show();
     }
 
+
     /**
      * Loads the main fxml layout.
      * Sets up the vista switching VistaNavigator.
