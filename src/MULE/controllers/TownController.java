@@ -2,7 +2,6 @@ package MULE.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 
 // Created by Ethan on 9/18/2015.
@@ -38,8 +37,7 @@ public class TownController {
     }
 
     public void leaveTown(MouseEvent event) {
-        String side = ((Node)event.getSource()).getId();
-        Game.instance.leaveTown(side);
+        Game.instance.leaveTown();
         ScreenNavigator.instance.loadMap();
     }
 

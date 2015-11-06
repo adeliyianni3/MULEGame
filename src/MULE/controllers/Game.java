@@ -39,7 +39,7 @@ public class Game {
     private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private int difficulty;
     private int mapType;
-    private int[] playerTurn; //unused?
+//    private int[] playerTurn; //unused?
     private int totalTurns = 1;
     private int turn = 1;
     public State currentState = State.MAIN;
@@ -50,7 +50,8 @@ public class Game {
     private final boolean[][] muleArray = new boolean[5][9];
     private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
-    private URL songFile = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
+    //if making music selectable, change from final
+    private final URL songFile = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
 
     private final Map theMap = new Map();
     private int buyPhaseSkipped = 0;
@@ -134,12 +135,13 @@ public class Game {
     }
 
 
-    public void leaveTown(String side) {
+    // public void leaveTown(String side) use this if implementing moving sprites
+    public void leaveTown() {
         currentState = State.MAP;
     }
 
-    //TODO for animations later
-    public void leaveStore(String side) {
+
+    public void leaveStore() {
         currentState = State.IN_TOWN;
     }
 
@@ -190,27 +192,27 @@ public class Game {
     }
 
 
-    public int getMapType() {
-        return mapType;
-    }
+//    public int getMapType() {
+//        return mapType;
+//    }
 
-    public void setMapType(int mapType) {
-        this.mapType = mapType;
-    }
+//    public void setMapType(int mapType) {
+//        this.mapType = mapType;
+//    }
 
     void setNumOfPlayers(int num) {
         numOfPlayers = num;
         players = new Player[num];
         originalPlayers = new Player[num];
-        playerTurn = new int[num];
-        for (int i = 0; i < num; i++) {
-            playerTurn[i] = i + 1;
-        }
+//        playerTurn = new int[num];
+//        for (int i = 0; i < num; i++) {
+//            playerTurn[i] = i + 1;
+//        }
     }
 
-    public ArrayList<Color> getColors() {
-        return notAllowed;
-    }
+//    public ArrayList<Color> getColors() {
+//        return notAllowed;
+//    }
 
     public boolean isColorAvailable(Color c) {
         return !notAllowed.contains(c);
@@ -287,7 +289,7 @@ public class Game {
             if (!plot.isOwned()) {
                 Player p = players[turn - 1];
                 if (round < 3) {
-                    plot.setOwner(p);
+                    plot.setOwner();
                     p.addLand(plot);
                     rec.setStroke(p.getColor());
                     colorArray[i][j] = p.getColor();
@@ -297,7 +299,7 @@ public class Game {
                     buyPhaseEndTurn();
                 } else {
                     if (p.getMoney() >= LAND_PRICE) {
-                        plot.setOwner(p);
+                        plot.setOwner();
                         p.addLand(plot);
                         rec.setStroke(p.getColor());
                         colorArray[i][j] = p.getColor();
@@ -475,19 +477,19 @@ public class Game {
     }
 
     //replaced
-    public void getTurnOrder() {
-        int temp;
-        for(int i = 0; i < players.length; i++) {
-            for (int j = i; j < players.length; j++) {
-                if (players[j].getMoney() > players[i].getMoney()) {
-                    temp = playerTurn[i];
-                    playerTurn[i] = j;
-                    playerTurn[j] = temp;
-                }
-            }
-
-        }
-    }
+//    public void getTurnOrder() {
+//        int temp;
+//        for(int i = 0; i < players.length; i++) {
+//            for (int j = i; j < players.length; j++) {
+//                if (players[j].getMoney() > players[i].getMoney()) {
+//                    temp = playerTurn[i];
+//                    playerTurn[i] = j;
+//                    playerTurn[j] = temp;
+//                }
+//            }
+//
+//        }
+//    }
 
     public void buyMULE(Resource resource) {
         Player p = players[turn - 1];

@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -58,7 +57,7 @@ public class Main extends Application {
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         Game.instance.playMusic();
     }
-    /**
+    /*/**
      * Loads the main fxml layout.
      * Sets up the vista switching VistaNavigator.
      * Loads the first vista into the fxml layout.
@@ -66,22 +65,22 @@ public class Main extends Application {
      * @return the loaded pane.
      * @throws IOException if the pane could not be loaded.
      */
-    private Pane loadMainPane() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-
-        Pane mainPane = loader.load(
-                getClass().getResourceAsStream(
-                        ScreenNavigator.instance.MAIN
-                )
-        );
-
-        MainController mainController = loader.getController();
-
-        ScreenNavigator.instance.setMainController(mainController);
-        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.main);
-
-        return mainPane;
-    }
+//    private Pane loadMainPane() throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//
+//        Pane mainPane = loader.load(
+//                getClass().getResourceAsStream(
+//                        ScreenNavigator.instance.MAIN
+//                )
+//        );
+//
+//        MainController mainController = loader.getController();
+//
+//        ScreenNavigator.instance.setMainController(mainController);
+//        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.main);
+//
+//        return mainPane;
+//    }
 
     /*/**
      * Creates the main application scene.

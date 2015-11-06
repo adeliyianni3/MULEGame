@@ -31,7 +31,7 @@ public class ScreenNavigator {
     private final String MAIN_SCREEN = "/views/mainScreen.fxml";
     private final String PLAYER = "/views/player.fxml";
     private final String CONGRATULATIONS = "/views/congratulations.fxml";
-    public final String MAIN = "/views/main.fxml";
+    private final String MAIN = "/views/main.fxml";
     private final String MAP = "/views/map.fxml";
     private final String TOWN = "/views/town.fxml";
     private final String STORE = "/views/store.fxml";
@@ -41,7 +41,7 @@ public class ScreenNavigator {
     public Scene mainScreen;
     private Scene playerScreen;
     private Scene congratulations;
-    public Scene main;
+    private Scene main;
     private Scene map;
     private Scene town;
     private Scene store;

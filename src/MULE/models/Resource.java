@@ -14,9 +14,9 @@ public abstract class Resource {
         return price;
     }
 
-    public void setPrice(int p) {
-        price = p;
-    }
+//    public void setPrice(int p) {
+//        price = p;
+//    }
 
     public int getStorePriceExtra() {
         return storePriceExtra;
