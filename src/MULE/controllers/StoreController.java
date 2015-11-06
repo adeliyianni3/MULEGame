@@ -19,18 +19,18 @@ public class StoreController implements Initializable {
     private ListView<Resource> cartList;
 
     public void leaveStore(MouseEvent event) {
-        Game.instance.leaveStore();
+        Game.getInstance().leaveStore();
         cartList.getItems().clear();
         ScreenNavigator.getInstance().loadTown();
     }
 
     @FXML
     private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+        Game.getInstance().loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+        Game.getInstance().saveGame();
     }
 
 
@@ -52,7 +52,7 @@ public class StoreController implements Initializable {
     }
     @FXML
     public void purchaseCart() {
-        Player p = Game.instance.getPlayers()[Game.instance.getTurn() - 1];
+        Player p = Game.getInstance().getPlayers()[Game.getInstance().getTurn() - 1];
         Object[] stuff = items.toArray();
         for (Object thing: stuff) {
             Resource item = (Resource) thing;
@@ -60,10 +60,10 @@ public class StoreController implements Initializable {
             if (p.getMoney() < price){
                 System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
             } else {
-                if (item.getInventory(Game.instance.getStore()) > 0) {
+                if (item.getInventory(Game.getInstance().getStore()) > 0) {
                     p.subtractMoney(price);
                     p.addResource(item);
-                    System.out.println(item.buyInventory(Game.instance.getStore()) + " " + thing.toString() + " left");
+                    System.out.println(item.buyInventory(Game.getInstance().getStore()) + " " + thing.toString() + " left");
                     cartList.getItems().remove(thing);
                 }
             }
@@ -72,27 +72,27 @@ public class StoreController implements Initializable {
     }
     @FXML
     private void pauseMusic(ActionEvent e) {
-        Game.instance.pauseMusic();
+        Game.getInstance().pauseMusic();
     }
     @FXML
     private void playMusic(ActionEvent e) {
-        Game.instance.playMusic();
+        Game.getInstance().playMusic();
     }
     @FXML
     private void closeGame(ActionEvent e) {
-        Game.instance.timer.stopTime();
+        Game.getInstance().timer.stopTime();
         System.exit(0);
     }
 
     @FXML
     public void sellItems() {
-        Player p = Game.instance.getPlayers()[Game.instance.getTurn() - 1];
+        Player p = Game.getInstance().getPlayers()[Game.getInstance().getTurn() - 1];
         Object[] cartStuff = items.toArray();
         for (Object item: cartStuff) {
             Resource item2 = (Resource) item;
             if (p.contains(item2)){
                 p.removeResource(item2);
-                item2.sellInventory(Game.instance.getStore());
+                item2.sellInventory(Game.getInstance().getStore());
                 p.addMoney(item2.getPrice());
                 cartList.getItems().remove(item);
                 System.out.println("Congratz Y'all! Just sold " + item);

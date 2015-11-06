@@ -42,7 +42,7 @@ public class Main extends Application {
                 debugScene
         );
 
-        URL resource = Game.instance.getSongFile();
+        URL resource = Game.getInstance().getSongFile();
         makeMusic(resource);
 
         debugStage.show();
@@ -53,9 +53,9 @@ public class Main extends Application {
     public static void makeMusic(URL resource) {
         Media media = new Media(resource.toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
-        Game.instance.setMediaPlayer(mediaPlayer);
+        Game.getInstance().setMediaPlayer(mediaPlayer);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        Game.instance.playMusic();
+        Game.getInstance().playMusic();
     }
     /*/**
      * Loads the main fxml layout.

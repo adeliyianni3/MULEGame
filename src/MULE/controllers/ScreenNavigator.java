@@ -250,7 +250,7 @@ public final class ScreenNavigator {
      */
     public void loadMain() {
         loadScreen(MAIN_SCREEN);
-        Game.instance.changeState(Game.State.MAIN);
+        Game.getInstance().changeState(Game.State.MAIN);
     }
     /**
      * Loads the town.

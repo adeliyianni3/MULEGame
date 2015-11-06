@@ -308,13 +308,13 @@ public class Player {
      */
     public final int getScore() {
         int totalScore = 0;
-        totalScore += Game.instance.moneyValue() * getMoney();
+        totalScore += Game.getInstance().moneyValue() * getMoney();
         totalScore += numOfLands
-                * Game.instance.landValue(); //getSumLand() * getLandPrice()
-        totalScore += numOfResources[0] * Game.instance.energyValue(); //energy
-        totalScore += numOfResources[1] * Game.instance.foodValue(); //food
+                * Game.getInstance().landValue(); //getSumLand() * getLandPrice()
+        totalScore += numOfResources[0] * Game.getInstance().energyValue(); //energy
+        totalScore += numOfResources[1] * Game.getInstance().foodValue(); //food
         totalScore += numOfResources[2]
-                * Game.instance.smithoreValue(); //smithore
+                * Game.getInstance().smithoreValue(); //smithore
         return totalScore;
     }
 

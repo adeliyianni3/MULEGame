@@ -19,16 +19,16 @@ public class ConfigScreenController {
 
     @FXML
     void playerConfiguration(ActionEvent event) {
-        Game.instance.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+        Game.getInstance().setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
     }
 
     @FXML
     private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+        Game.getInstance().loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+        Game.getInstance().saveGame();
     }
 
 
@@ -53,11 +53,11 @@ public class ConfigScreenController {
     }
     @FXML
     private void pauseMusic(ActionEvent e) {
-        Game.instance.pauseMusic();
+        Game.getInstance().pauseMusic();
     }
     @FXML
     private void playMusic(ActionEvent e) {
-        Game.instance.playMusic();
+        Game.getInstance().playMusic();
     }
 
 }

@@ -10,22 +10,22 @@ public class MULEPenController {
 
     @FXML
     void foodMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Food());
+        Game.getInstance().buyMULE(new Food());
     }
 
     @FXML
     void energyMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Energy());
+        Game.getInstance().buyMULE(new Energy());
     }
 
     @FXML
      void crystaliteMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Crystite());
+        Game.getInstance().buyMULE(new Crystite());
     }
 
     @FXML
     void smithoreMULE(MouseEvent event) {
-        Game.instance.buyMULE(new SmithOre());
+        Game.getInstance().buyMULE(new SmithOre());
     }
 
     @FXML
@@ -35,24 +35,24 @@ public class MULEPenController {
 
     @FXML
     private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+        Game.getInstance().loadGame();
     }
     @FXML
     private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+        Game.getInstance().saveGame();
     }
     @FXML
     private void closeGame(ActionEvent e) {
-        Game.instance.timer.stopTime();
+        Game.getInstance().timer.stopTime();
         System.exit(0);
     }
     @FXML
     private void pauseMusic(ActionEvent e) {
-        Game.instance.pauseMusic();
+        Game.getInstance().pauseMusic();
     }
     @FXML
     private void playMusic(ActionEvent e) {
-        Game.instance.playMusic();
+        Game.getInstance().playMusic();
     }
 
 }

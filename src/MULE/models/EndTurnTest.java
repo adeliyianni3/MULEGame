@@ -48,24 +48,24 @@ public class EndTurnTest {
      */
     @Before
     public void setUp() throws Exception {
-        Game.instance = game1;
+        Game.setInstance(game1);
         game1 = new GameDummy();
-        Game.instance = game2;
+        Game.setInstance(game2);
         game2 = new GameDummy();
-        Game.instance = game2;
+        Game.setInstance(game2);
         game3 = new GameDummy();
-        Game.instance = game1;
+        Game.setInstance(game1);
         game1.setNumOfPlayers(1);
-        Game.instance = game2;
+        Game.setInstance(game2);
         game2.setNumOfPlayers(2);
-        Game.instance = game3;
+        Game.setInstance(game3);
         game3.setNumOfPlayers(4);
-        Game.instance = game1;
+        Game.setInstance(game1);
         game1.addPlayer("Buzzite", Color.RED, "Player 1");
-        Game.instance = game2;
+        Game.setInstance(game2);
         game2.addPlayer("Humanoid", Color.BLUE, "Pigeon 1");
         game2.addPlayer("Humanoid", Color.MAGENTA, "Pigeon 2");
-        Game.instance = game3;
+        Game.setInstance(game3);
         game3.addPlayer("Flapper", Color.CYAN, "A");
         game3.addPlayer("Bonzoid", Color.BROWN, "B");
         game3.addPlayer("Ugaite", Color.PINK, "C");
@@ -76,9 +76,9 @@ public class EndTurnTest {
         Assert.assertEquals("game3 initialization incorrect", game3.getPlayers().length, 4);
         Player p = game1.players[game1.getTurn() - 1];
         Assert.assertNotNull("game1 not properly initialized", p);
-        Game.instance = game1;
-        //p = Game.instance.players[Game.instance.getTurn() - 1];
-        //Assert.assertNotNull("game1 not properly set to Game.instance", p);
+        Game.setInstance(game1);
+        //p = Game.getInstance().players[Game.getInstance().getTurn() - 1];
+        //Assert.assertNotNull("game1 not properly set to Game.getInstance()", p);
     }
 
     /**
@@ -86,7 +86,7 @@ public class EndTurnTest {
      */
     @Test
     public void testTurnIncrement() {
-        Game.instance = game1;
+        Game.setInstance(game1);
         Assert.assertEquals("Starting turn wrong", 1, game1.getTurn());
         game1.endTurn();
         Assert.assertEquals("Turn wrong after 1 endTurn()", 1, game1.getTurn());
@@ -97,7 +97,7 @@ public class EndTurnTest {
         game1.endTurn();
         Assert.assertEquals("Turn wrong after 4 endTurn()", 1, game1.getTurn());
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         Assert.assertEquals("Starting turn wrong", 1, game2.getTurn());
         game2.endTurn();
         Assert.assertEquals("Turn wrong after 1 endTurn()", 2, game2.getTurn());
@@ -108,7 +108,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertEquals("Turn wrong after 4 endTurn()", 1, game2.getTurn());
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         Assert.assertEquals("Starting turn wrong", 1, game3.getTurn());
         game3.endTurn();
         Assert.assertEquals("Turn wrong after 1 endTurn()", 2, game3.getTurn());
@@ -125,7 +125,7 @@ public class EndTurnTest {
      */
     @Test
     public void testRoundIncrement() {
-        Game.instance = game1;
+        Game.setInstance(game1);
         Assert.assertEquals("Starting round wrong", 1, game1.getRound());
         game1.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 2, game1.getRound());
@@ -136,7 +136,7 @@ public class EndTurnTest {
         game1.endTurn();
         Assert.assertEquals("Round wrong after 4 endTurn()", 5, game1.getRound());
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         Assert.assertEquals("Starting round wrong", 1, game2.getRound());
         game2.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 1, game2.getRound());
@@ -147,7 +147,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertEquals("Round wrong after 4 endTurn()", 3, game2.getRound());
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         Assert.assertEquals("Starting round wrong", 1, game3.getRound());
         game3.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 1, game3.getRound());
@@ -164,7 +164,7 @@ public class EndTurnTest {
      */
     @Test
     public void testTotalTurnsIncrement() {
-        Game.instance = game1;
+        Game.setInstance(game1);
         Assert.assertEquals("Starting totalTurns wrong", 1, game1.getRound());
         game1.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 2, game1.getRound());
@@ -175,7 +175,7 @@ public class EndTurnTest {
         game1.endTurn();
         Assert.assertEquals("Round wrong after 4 endTurn()", 5, game1.getRound());
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         Assert.assertEquals("Starting totalTurns wrong", 1, game2.getRound());
         game2.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 1, game2.getRound());
@@ -186,7 +186,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertEquals("Round wrong after 4 endTurn()", 3, game2.getRound());
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         Assert.assertEquals("Starting totalTurns wrong", 1, game3.getRound());
         game3.endTurn();
         Assert.assertEquals("Round wrong after 1 endTurn()", 1, game3.getRound());
@@ -203,12 +203,12 @@ public class EndTurnTest {
      */
     @Test
     public void testPlayerReordering() {
-        Game.instance = game1;
+        Game.setInstance(game1);
         Assert.assertEquals("game1 Player ordering incorrect", "Player 1", game1.getPlayers()[0].getName());
         game1.endTurn();
         Assert.assertEquals("game1 Player ordering incorrect", "Player 1", game1.getPlayers()[0].getName());
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         game2.endTurn();
         game2.endTurn();
         Assert.assertTrue("game2 Player ordering incorrect", game2.getPlayers()[0].getScore() <= game2.getPlayers()[1].getScore());
@@ -216,7 +216,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertTrue("game2 Player ordering incorrect", game2.getPlayers()[0].getScore() <= game2.getPlayers()[1].getScore());
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         game3.endTurn();
         game3.endTurn();
         game3.endTurn();
@@ -245,7 +245,7 @@ public class EndTurnTest {
      */
     @Test
     public void testGameEnd() {
-        Game.instance = game1;
+        Game.setInstance(game1);
         for (int i = 0; i < 13; i++) {
             game1.endTurn();
         }
@@ -253,7 +253,7 @@ public class EndTurnTest {
         game1.endTurn();
         Assert.assertTrue("game1 post-end State incorrect", game1.currentState.equals(Game.State.MAIN));
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         for (int i = 0; i < 13; i++) {
             game2.endTurn();
             game2.endTurn();
@@ -263,7 +263,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertTrue("game2 post-end State incorrect", game2.currentState.equals(Game.State.MAIN));
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         for (int i = 0; i < 13; i++) {
             game3.endTurn();
             game3.endTurn();
@@ -285,7 +285,7 @@ public class EndTurnTest {
     public void testLandProduction() {
         Mule smithoreMule = new Mule(new SmithOre());
 
-        Game.instance = game1;
+        Game.setInstance(game1);
         game1.landClicked("etc00", new Rectangle(), new Rectangle());
         game1.landClicked("etc01", new Rectangle(), new Rectangle());
         game1.buyPhaseSkip();
@@ -296,7 +296,7 @@ public class EndTurnTest {
         game1.endTurn();
         Assert.assertNotEquals("game1 production incorrect", game11Smithore, game1.getPlayers()[0].getSmithore());
 
-        Game.instance = game2;
+        Game.setInstance(game2);
         game2.landClicked("etc00", new Rectangle(), new Rectangle());
         game2.landClicked("etc01", new Rectangle(), new Rectangle());
         game2.landClicked("etc10", new Rectangle(), new Rectangle());
@@ -316,7 +316,7 @@ public class EndTurnTest {
         game2.endTurn();
         Assert.assertNotEquals("game2 production incorrect", game22Smithore, game2.getPlayers()[1].getSmithore());
 
-        Game.instance = game3;
+        Game.setInstance(game3);
         game3.landClicked("etc00", new Rectangle(), new Rectangle());
         game3.landClicked("etc01", new Rectangle(), new Rectangle());
         game3.landClicked("etc10", new Rectangle(), new Rectangle());

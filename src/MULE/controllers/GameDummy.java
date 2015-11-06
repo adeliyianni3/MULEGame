@@ -45,7 +45,7 @@ public class GameDummy extends Game{
 
     public int LAND_PRICE = 300;
 
-    public GameDummy getInstance(){
+    public static GameDummy getInstance(){
         return instance;
     }
 

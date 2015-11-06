@@ -26,7 +26,7 @@ public class EventThree implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            int m = ROUNDSM[Game.instance.getRound() - 3];
+            int m = ROUNDSM[Game.getInstance().getRound() - 3];
             int gain = 8 * m;
             p.addMoney(gain);
             return p.getName()

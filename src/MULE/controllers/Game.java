@@ -79,6 +79,14 @@ public class Game {
     
     private final int LAND_PRICE = 300;
 
+    public static Game getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(GameDummy instance) {
+        Game.instance = instance;
+    }
+
     public State getCurrentState() {
         return currentState;
     }
@@ -86,9 +94,6 @@ public class Game {
     public URL getSongFile() {
         return songFile;
     }
-//    public Game getInstance(){
-//        return instance;
-//    }
 
     public Color[][] getColorArray() {
         return colorArray;

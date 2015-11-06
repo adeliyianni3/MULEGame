@@ -107,21 +107,21 @@ public class DebugController implements Initializable {
                 new KeyFrame(Duration.seconds(0),
                         new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent actionEvent) {
-                                Player[] p = Game.instance.getPlayers();
-                                Player[] op = Game.instance.getOriginalPlayers();
-                                //p = Game.instance.getPlayers();
-                                //op = Game.instance.getOriginalPlayers();
-                                turn.setText("" + Game.instance.getTurn());
-                                if (p.length > 0 && p[Game.instance.getTurn() - 1] != null) {
-                                    currentPlayer.setText(p[Game.instance.getTurn() - 1].getName());
-                                    //errors or code when loading not sure why currentColor.setFill(p[Game.instance.getTurn() - 1].getColor());
+                                Player[] p = Game.getInstance().getPlayers();
+                                Player[] op = Game.getInstance().getOriginalPlayers();
+                                //p = Game.getInstance().getPlayers();
+                                //op = Game.getInstance().getOriginalPlayers();
+                                turn.setText("" + Game.getInstance().getTurn());
+                                if (p.length > 0 && p[Game.getInstance().getTurn() - 1] != null) {
+                                    currentPlayer.setText(p[Game.getInstance().getTurn() - 1].getName());
+                                    //errors or code when loading not sure why currentColor.setFill(p[Game.getInstance().getTurn() - 1].getColor());
                                 }
-                                totalTurn.setText("" + Game.instance.getTotalTurns());
-                                lastEvent.setText(Game.instance.getLastEvent());
-                                round.setText("" + Game.instance.getRound());
-                                phase.setText("" + Game.instance.getPhase().name());
-                                //Player[] p = Game.instance.getPlayers();
-                                //Player[] op = Game.instance.getOriginalPlayers();
+                                totalTurn.setText("" + Game.getInstance().getTotalTurns());
+                                lastEvent.setText(Game.getInstance().getLastEvent());
+                                round.setText("" + Game.getInstance().getRound());
+                                phase.setText("" + Game.getInstance().getPhase().name());
+                                //Player[] p = Game.getInstance().getPlayers();
+                                //Player[] op = Game.getInstance().getOriginalPlayers();
                                 if (p.length > 0 && p[0] != null) {
                                     firstPlace.setText("" + p[0].getName());
                                     firstScore.setText("" + p[0].getScore());
@@ -186,7 +186,7 @@ public class DebugController implements Initializable {
 
 
 
-                                timer.setText("" + Game.instance.timer.getTime()); //TODO
+                                timer.setText("" + Game.getInstance().timer.getTime()); //TODO
 
 
 

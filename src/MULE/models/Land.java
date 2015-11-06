@@ -107,10 +107,10 @@ public class Land {
      */
     public final Player getOwner() {
         Player p = null;
-        for (int i = 0; i < Game.instance.getNumOfPlayers(); i++) {
-            for (Land l : Game.instance.players[i].getLand()) {
+        for (int i = 0; i < Game.getInstance().getNumOfPlayers(); i++) {
+            for (Land l : Game.getInstance().players[i].getLand()) {
                 if (l.isSame(this)) {
-                    p = Game.instance.players[i];
+                    p = Game.getInstance().players[i];
                 }
             }
         }
