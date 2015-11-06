@@ -321,7 +321,7 @@ public class GameDummy extends Game{
     public boolean doesPlayerOwn(Player p, Land l) {
         boolean returnValue = false;
         for (Land pl : p.getLand()) {
-            if (pl.i == l.i && pl.j == l.j) {
+            if (pl.getRow() == l.getRow() && pl.getCol() == l.getCol()) {
                 returnValue = true;
             }
         }

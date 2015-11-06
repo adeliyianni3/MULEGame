@@ -51,7 +51,7 @@ public class PlayerTimer {
         timer.cancel();
         System.out.println("TurnEnds");
         Game.instance.endTurn();
-        if (Game.instance.currentState != Game.State.MAP) {
+        if (Game.instance.getCurrentState() != Game.State.MAP) {
             Game.instance.changeState(Game.State.MAP);
             ScreenNavigator.instance.loadMap();
         }
@@ -64,7 +64,7 @@ public class PlayerTimer {
     }
     private void setInterval() {
         if (secs == 1) {
-            if (Game.instance.currentState != Game.State.MAP) {
+            if (Game.instance.getCurrentState() != Game.State.MAP) {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {

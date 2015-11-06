@@ -6,78 +6,153 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 // Created by Ethan on 9/17/2015.
-//Just using this as a placeholder so other things compile
+
+/**
+ * Class holding information about a Player playing MULE.
+ */
 public class Player {
+    /**
+     * Name of the Player.
+     */
     private String name;
+    /**
+     * Race of the Player.
+     */
     private Race race;
+    /**
+     * Color of the Player.
+     */
     private Color color;
+    /**
+     * Mule that the Player is holding, null if not holding one.
+     */
     private Mule mule;
+    /**
+     * Amount of money the Player has.
+     */
     private int money;
+    /**
+     * Array of amounts of Resources that the Player owns.
+     */
     private int[] numOfResources; //energy, food, smithore, and crystite
+    /**
+     * Number of Lands that the Player owns.
+     */
     private int numOfLands;
+    /**
+     * ArrayList of Land owned by the Player.
+     */
     private final ArrayList<Land> landOwned = new ArrayList<>();
 
-    public Mule getMule() {
+    /**
+     * Gets and takes away the Mule that the Player is holding.
+     * @return Mule that the Player was holding
+     */
+    public final Mule getMule() {
         Mule temp = mule;
         mule = null;
         return temp;
     }
 
-    public void addLand(Land land) {
+    /**
+     * Gives the Player a Land.
+     * @param land Land to be given to the Player
+     */
+    public final void addLand(final Land land) {
         System.out.println("HERE");
         landOwned.add(land);
     }
 
-    public ArrayList<Land> getLand() {
+    /**
+     * Gets a list of Land owned by the Player.
+     * @return A list of Land owned by the Player
+     */
+    public final ArrayList<Land> getLand() {
         return landOwned;
     }
 
-    public int getEnergy() {
+    /**
+     * Gets the number of Energy that the Player has.
+     * @return The number of Energy that the Player has.
+     */
+    public final int getEnergy() {
         return numOfResources[0];
     }
 
-    public boolean hasEnergy() {
+    /**
+     * Checks to see if the Player has any energy.
+     * @return true if the Player has at least one energy, false otherwise
+     */
+    public final boolean hasEnergy() {
         return numOfResources[0] > 0;
     }
 
-    public int getFood() {
+    /**
+     * Gets the number of Food that the Player has.
+     * @return The number of Food that the Player has.
+     */
+    public final int getFood() {
         return numOfResources[1];
     }
 
-    public int getNumOfLands() {
+    /**
+     * Gets the number of Lands that the Player has.
+     * @return The number of Land that the Player has.
+     */
+    public final int getNumOfLands() {
         return numOfLands;
     }
 
-    public int getSmithore() {
+    /**
+     * Gets the number of Smithore that the Player has.
+     * @return The number of Smithore that the Player has.
+     */
+    public final int getSmithore() {
         return numOfResources[2];
     }
 
-    public int getCrystite() {
-        return numOfResources[3];
-    }
+//    public int getCrystite() {
+//        return numOfResources[3];
+//    }
 
-    public void giveMule(Mule mule) {
-        this.mule = mule;
+    /**
+     * Gives the player a Mule to hold.
+     * @param newMule Mule to be held
+     */
+    public final void giveMule(final Mule newMule) {
+        mule = newMule;
     }
 
 //    public void sellLand() {
 //        //TODO
 //    }
 
+    /**
+     * No-args constructor.
+     */
     public Player() {
 
     }
-    public Player(String name, String sRace, Color color) {
-        this.name = name;
+
+    /**
+     * Constructor.
+     * @param newName Name of the player
+     * @param sRace Race of the player
+     * @param newColor Color of the player
+     */
+    public Player(final String newName, final String sRace,
+                  final Color newColor) {
+        name = newName;
         try {
-            String newsRace = sRace.substring(0, 1).toUpperCase() + sRace.substring(1);
+            String newsRace = sRace.substring(0, 1).toUpperCase()
+                    + sRace.substring(1);
             Class<?> c = Class.forName("MULE.models." + newsRace);
             this.race = (Race) c.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.color = color;
-        this.money = race.startMoney();
+        color = newColor;
+        money = race.startMoney();
 
         numOfLands = 0;
         numOfResources = new int[4];
@@ -93,20 +168,38 @@ public class Player {
 
     }
 
-    public void incrementLand() {
+    /**
+     * Increases the amount of lands owned by the Player by one.
+     */
+    public final void incrementLand() {
         numOfLands++;
     }
 
-    public String getName() {
+    /**
+     * Gets the name of the Player.
+     * @return The name of the Player
+     */
+    public final String getName() {
         return name;
     }
 
-    public void addResource(Resource source) {
+    /**
+     * Adds a Resource to the Player's inventory.
+     * @param source Resource to be added
+     */
+    public final void addResource(final Resource source) {
         numOfResources[source.getID()] = numOfResources[source.getID()] + 1;
     }
 
-    public void addResource(Resource source, int amount) {
-        numOfResources[source.getID()] = numOfResources[source.getID()] + amount;
+    /**
+     * Adds a given amount of a certain Resource to the Player's inventory.
+     * @param source Resource to be added
+     * @param amount Amount of the Resource to be added
+     */
+    public final void addResource(final Resource source,
+                                  final int amount) {
+        numOfResources[source.getID()] =
+                numOfResources[source.getID()] + amount;
     }
 
 //    public void addFood(int amount) {
@@ -125,71 +218,112 @@ public class Player {
 //        addResource(new Crystite(), amount);
 //    }
 
-    public int foodCounter() {
+    /**
+     * Gets the amount of Food that the Player has.
+     * @return The amount of Food that the Player has
+     */
+    public final int foodCounter() {
         return numOfResources[1];
     }
 
-    public boolean contains(Resource source) {
+    /**
+     * Checks to see if the Player has at least one of a given Resource.
+     * @param source Resource to be checked
+     * @return true if the Player owns at least one of the given Resource,
+     *  false otherwise
+     */
+    public final boolean contains(final Resource source) {
         return numOfResources[source.getID()] > 0;
     }
 
-    public void removeResource(Resource source) {
+    /**
+     * Removes one of the given Resource from the Player's inventory.
+     * @param source Resource to be removed
+     */
+    public final void removeResource(final Resource source) {
         numOfResources[source.getID()] = numOfResources[source.getID()] - 1;
     }
 
-    public void removeEnergy() {
+    /**
+     * Removes one energy from the Player's inventory.
+     */
+    public final void removeEnergy() {
         removeResource(new Energy());
     }
 
-    public void removeFood() {
+    /**
+     * Removes one food from the Player's inventory.
+     */
+    public final void removeFood() {
         removeResource(new Food());
     }
 
-    public void removeSmithOre() {
-        removeResource(new SmithOre());
-    }
-
-    public void removeCrystite() {
-        removeResource(new Crystite());
-    }
+//    public void removeSmithOre() {
+//        removeResource(new SmithOre());
+//    }
+//
+//    public void removeCrystite() {
+//        removeResource(new Crystite());
+//    }
 
 //    public Race getRace() {
 //        return race;
 //    }
 
-    public Color getColor() {
+    /**
+     * Gets the Player's Color.
+     * @return The Player's Color
+     */
+    public final Color getColor() {
         return color;
     }
 
-    public void addMoney(int amount) {
+    /**
+     * Gives a certain amount of money to the Player.
+     * @param amount Amount of money to be added
+     */
+    public final void addMoney(final int amount) {
         money = money + amount;
     }
 
-    public void subtractMoney(int amount) {
+    /**
+     * Takes away a certain amount of money from the Player.
+     * @param amount Amount of money to be removed
+     */
+    public final void subtractMoney(final int amount) {
         money = money - amount;
     }
 
-    public int getMoney() {
+    /**
+     * Gets the current amount of money.
+     * @return Current amount of money
+     */
+    public final int getMoney() {
         return money;
     }
 
-    public int getScore() {
+    /**
+     * Calculates the Player's current score.
+     * @return The Player's current score
+     */
+    public final int getScore() {
         int totalScore = 0;
-
         totalScore += Game.instance.moneyValue() * getMoney();
-        totalScore += numOfLands * Game.instance.landValue(); //getSumLand() * getLandPrice()
+        totalScore += numOfLands
+                * Game.instance.landValue(); //getSumLand() * getLandPrice()
         totalScore += numOfResources[0] * Game.instance.energyValue(); //energy
-        totalScore += numOfResources[1] * Game.instance.foodValue();//food
-        totalScore += numOfResources[2] * Game.instance.smithoreValue();//smithore
-
-
-        return totalScore; }
-
-    public String toString() {
-        return "Player name: " + name + ", race: " + race + ", color: " + color + ", money: " + money + ", score: " + getScore();
+        totalScore += numOfResources[1] * Game.instance.foodValue(); //food
+        totalScore += numOfResources[2]
+                * Game.instance.smithoreValue(); //smithore
+        return totalScore;
     }
 
-//    public boolean hasMule() {
-//        return this.mule != null;
-//    }
+    /**
+     * Gets the String representation of the Player's info.
+     * @return String representation of the Player's info
+     */
+    public final String toString() {
+        return "Player name: " + name + ", race: " + race + ", color: "
+                + color + ", money: " + money + ", score: " + getScore();
+    }
 }

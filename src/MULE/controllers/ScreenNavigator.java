@@ -52,7 +52,7 @@ public class ScreenNavigator {
     private Stage stage;
 
     /** The main application layout controller. */
-    private static MainController mainController;
+//    private static MainController mainController;
 
     private ScreenNavigator() {
         Parent root;
@@ -85,9 +85,9 @@ public class ScreenNavigator {
      *
      * @param mainController the main application layout controller.
      */
-    public void setMainController(MainController mainController) {
-        ScreenNavigator.mainController = mainController;
-    }
+//    public void setMainController(MainController mainController) {
+//        ScreenNavigator.mainController = mainController;
+//    }
 
     /**
      * Loads the vista specified by the fxml file into the

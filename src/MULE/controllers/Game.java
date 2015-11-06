@@ -2,7 +2,24 @@ package MULE.controllers;
 
 
 import MULE.Main;
-import MULE.models.*;
+import MULE.models.Player;
+import MULE.models.Map;
+import MULE.models.RandomEvent;
+import MULE.models.Race;
+import MULE.models.InterfaceAdapter;
+import MULE.models.EventOne;
+import MULE.models.EventTwo;
+import MULE.models.EventThree;
+import MULE.models.EventFour;
+import MULE.models.EventFive;
+import MULE.models.EventSix;
+import MULE.models.EventSeven;
+import MULE.models.PlayerTimer;
+import MULE.models.ResourceStore;
+import MULE.models.Resource;
+import MULE.models.Land;
+import MULE.models.Mule;
+
 import com.google.gson.GsonBuilder;
 
 import javafx.scene.image.Image;
@@ -13,7 +30,11 @@ import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
 
-import java.io.*;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.File;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -32,17 +53,17 @@ public class Game {
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
     private final ArrayList<Color> notAllowed = new ArrayList<>();
-    public int numOfPlayers = 1;
+    private int numOfPlayers = 1;
     private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
     private int round = 0;
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private int difficulty;
-    private int mapType;
+//    private int mapType;
 //    private int[] playerTurn; //unused?
     private int totalTurns = 1;
     private int turn = 1;
-    public State currentState = State.MAIN;
+    private State currentState = State.MAIN;
     public final PlayerTimer timer = new PlayerTimer();
     private final ResourceStore store = new ResourceStore();
     private final int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
@@ -58,12 +79,16 @@ public class Game {
     
     private final int LAND_PRICE = 300;
 
+    public State getCurrentState() {
+        return currentState;
+    }
+
     public URL getSongFile() {
         return songFile;
     }
-    public Game getInstance(){
-        return instance;
-    }
+//    public Game getInstance(){
+//        return instance;
+//    }
 
     public Color[][] getColorArray() {
         return colorArray;
@@ -112,6 +137,8 @@ public class Game {
             case MAIN: ScreenNavigator.instance.loadMain();
                 break;
             case CONFIG: ScreenNavigator.instance.loadNewPlayer();
+                break;
+            default: System.out.println("Something went wrong in loadGame().");
                 break;
         }
         if (instance.colorArray[0][0] == null) {
@@ -347,7 +374,7 @@ public class Game {
     public boolean doesPlayerOwn(Player p, Land l) {
         boolean returnValue = false;
         for (Land pl : p.getLand()) {
-            if (pl.i == l.i && pl.j == l.j) {
+            if (pl.getRow() == l.getRow() && pl.getCol() == l.getCol()) {
                 returnValue = true;
             }
         }
@@ -441,7 +468,7 @@ public class Game {
         return turn;
     }
 
-    int getNumOfPlayers() {
+    public int getNumOfPlayers() {
         return numOfPlayers;
     }
 
@@ -450,6 +477,7 @@ public class Game {
         setNumOfPlayers(numOfPlayers);
         currentState = State.CONFIG;
         ScreenNavigator.instance.loadNewPlayer();
+        System.out.println(Game.instance.getDifficulty());
     }
 
     public void addPlayer(String race, Color c, String name) {

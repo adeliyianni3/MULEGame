@@ -12,8 +12,8 @@ public class ConfigScreenController {
     private Label playerNumber;
     @FXML
     private ChoiceBox difficultyChoiceBox;
-    @FXML
-    private ChoiceBox mapChoiceBox;
+//    @FXML
+//    private ChoiceBox mapChoiceBox;
     @FXML
     private ChoiceBox playerChoiceBox;
 

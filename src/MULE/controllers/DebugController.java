@@ -18,8 +18,8 @@ import java.util.ResourceBundle;
 //http://stackoverflow.com/questions/13227809/displaying-changing-values-in-javafx-label
 public class DebugController implements Initializable {
 
-    @FXML
-    private Rectangle currentColor;
+//    @FXML
+//    private Rectangle currentColor;
     @FXML
     private Label turn;
     @FXML

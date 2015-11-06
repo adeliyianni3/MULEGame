@@ -1,26 +1,45 @@
 package MULE.models;
 
 // Created by Antonia on 9/17/2015.
+
+/**
+ * Mule class holding information about it's production.
+ */
 public class Mule {
-    //Started Mule class
+    /**
+     * Resource that this Mule can harvest.
+     */
     private final Resource resource;
-    public Mule() {
+
+    /**
+     * No-args constructor.
+     */
+    public Mule() { //need a no-args constructor for gson to save
         this.resource = null;
     }
-    public Mule(Resource resource) {
-        this.resource = resource;
+
+    /**
+     * Constructor setting the Mule's harvesting Resource.
+     * @param newResource Resource that this Mule can harvest
+     */
+    public Mule(final Resource newResource) {
+        resource = newResource;
     }
-    public Resource getResource(){
+
+    /**
+     * Gets the Resource type that this Mule can harvest.
+     * @return Resource type that this Mule can harvest
+     */
+    public final Resource getResource() {
         return resource;
     }
-//    public boolean hasResource() {
-//        return resource != null;
-//    }
-//    public void setResource(Resource resource){
-//        this.resource = resource;
-//    }
 
-    public int produce(LandType type) {
+    /**
+     * Produces its resource based on the given landtype.
+     * @param type LandType that this Mule is harvesting on
+     * @return Amount of this Mule's resource that was harvested
+     */
+    public final int produce(final LandType type) {
         return resource.produce(type);
     }
 }
