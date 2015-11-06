@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ErrorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ErrorController">
   <children>
     <HBox prefHeight="57.0" prefWidth="127.0" spacing="10.0" styleClass="-fx-background-color:black" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="459.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="329.0" />
-    <TextArea layoutX="87.0" layoutY="48.0" prefHeight="200.0" prefWidth="426.0" text="You have not input a valid Player name or color. &#10;Or you have not selected a race.&#10;In order to move on with the game, please check&#10;to make sure....&#10;1. The color is not already taken&#10;2. The name is not either blank or already taken&#10;3. A race is selected&#10;&#10;&#10;" />
+    <TextArea layoutX="87.0" layoutY="48.0" prefHeight="200.0" prefWidth="426.0" text="&#10;You have not input a valid Player name or color. &#10;Or you have not selected a race.&#10;In order to move on with the game, please check&#10;to make sure....&#10;1. The color is not already taken&#10;2. The name is not either blank or already taken&#10;3. A race is selected&#10;&#10;&#10;" />
     <Button layoutX="214.0" layoutY="308.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="157.0" text="Okay" />
   </children>
+  <stylesheets>
+    <URL value="@../vista.css" />
+  </stylesheets>
 </AnchorPane>

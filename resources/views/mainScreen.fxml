@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ConfigScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ConfigScreenController">
   <children>
     <ChoiceBox fx:id="difficultyChoiceBox" layoutX="387.0" layoutY="91.0" prefWidth="150.0" value="Beginner">
       <items>
@@ -54,21 +55,27 @@
       <font>
         <Font name="System Bold" size="24.0" />
       </font>
+      <stylesheets>
+        <URL value="@../vista.css" />
+      </stylesheets>
     </Button>
-    <MenuBar layoutX="0.0" layoutY="0.0">
+    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
-           <items>
-             <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
-             <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
-             <SeparatorMenuItem mnemonicParsing="false" />
-             <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Close" />
-             <SeparatorMenuItem mnemonicParsing="false" />
-             <MenuItem mnemonicParsing="false" onAction="#pauseMusic" text="Pause Music" />
-             <MenuItem mnemonicParsing="false" onAction="#playMusic" text="Play Music" />
-           </items>
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" styleClass="label2" text="Load Game" />
+            <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" styleClass="label2" text="Save Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#closeGame" styleClass="label2" text="Close" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#pauseMusic" styleClass="label2" text="Pause Music" />
+            <MenuItem mnemonicParsing="false" onAction="#playMusic" styleClass="label2" text="Play Music" />
+          </items>
         </Menu>
       </menus>
     </MenuBar>
   </children>
+  <stylesheets>
+    <URL value="@../vista.css" />
+  </stylesheets>
 </Pane>
