@@ -17,16 +17,16 @@
         <Font name="System Bold" size="52.0" />
       </font>
     </Label>
-    <Label layoutX="404.0" layoutY="135.0" text="Race" />
-    <Button layoutX="146.0" layoutY="321.0" mnemonicParsing="false" onAction="#toNext" text="Confirm">
+    <Label layoutX="394.0" layoutY="115.0" text="Race" />
+    <Button layoutX="119.0" layoutY="327.0" mnemonicParsing="false" onAction="#toNext" text="Confirm">
       <font>
         <Font name="System Bold" size="15.0" fx:id="x1" />
       </font>
     </Button>
-    <Button font="$x1" layoutX="61.0" layoutY="321.0" mnemonicParsing="false" onAction="#toMain" text="Back" />
-    <Label layoutX="404.0" layoutY="254.0" text="Color" />
-    <TextField fx:id="nameBox" layoutX="356.0" layoutY="91.0" styleClass="button" />
-    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+    <Button font="$x1" layoutX="34.0" layoutY="327.0" mnemonicParsing="false" onAction="#toMain" text="Back" />
+    <Label layoutX="397.0" layoutY="254.0" text="Color" />
+    <TextField fx:id="nameBox" layoutX="339.0" layoutY="68.0" styleClass="button" />
+    <ImageView fitHeight="119.46153259277344" fitWidth="172.5555543923083" layoutX="25.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@M.U.L.E..png" />
       </image>
@@ -46,57 +46,57 @@
         </Menu>
       </menus>
     </MenuBar>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="253.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x2" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="246.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x2" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
       <fill>
         <Color blue="0.944" green="0.800" red="1.000" fx:id="x2" />
       </fill>
     </Rectangle>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="318.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x3" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="311.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x3" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
       <fill>
         <Color blue="0.400" green="0.400" red="1.000" fx:id="x3" />
       </fill>
     </Rectangle>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="384.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x4" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="377.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x4" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
       <fill>
         <Color blue="0.600" green="0.984" red="1.000" fx:id="x4" />
       </fill>
     </Rectangle>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="450.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x6" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="443.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x6" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
       <fill>
         <Color blue="0.953" green="1.000" red="0.600" fx:id="x6" />
       </fill>
     </Rectangle>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="516.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x5" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.1640625" layoutX="509.0" layoutY="271.0" onMouseClicked="#selectColor" stroke="$x5" strokeType="INSIDE" strokeWidth="5.0" width="66.0">
       <fill>
         <Color blue="1.000" green="0.600" red="0.728" fx:id="x5" />
       </fill>
     </Rectangle>
-    <Label layoutX="257.0" layoutY="219.0" text="Humanoid" />
-    <Label layoutX="335.0" layoutY="219.0" text="Ugaite" />
-    <Label layoutX="398.0" layoutY="219.0" text="Buzzite" />
-    <Label layoutX="456.0" layoutY="184.0" text="Bonzoid" />
-    <Label layoutX="520.0" layoutY="183.0" text="Flapper" />
-    <Label layoutX="403.0" layoutY="62.0" text="Name" />
-    <ImageView fitHeight="63.38627624511719" fitWidth="66.00003051757812" layoutX="318.0" layoutY="158.0" pickOnBounds="true" preserveRatio="false">
+    <Label layoutX="233.0" layoutY="213.0" text="Humanoid" />
+    <Label layoutX="319.0" layoutY="213.0" text="Ugaite" />
+    <Label layoutX="388.0" layoutY="213.0" text="Buzzite" />
+    <Label layoutX="456.0" layoutY="178.0" text="Bonzoid" />
+    <Label layoutX="520.0" layoutY="177.0" text="Flapper" />
+    <Label layoutX="391.0" layoutY="39.0" text="Name" />
+    <ImageView fitHeight="67.03905487060547" fitWidth="74.24418862141879" layoutX="299.0" layoutY="146.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@U.G.A.H.E.A.D..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="63.3861424104731" fitWidth="66.00000762939453" layoutX="384.0" layoutY="158.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="71.30384218168459" fitWidth="74.24420928955078" layoutX="374.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@B.U.Z.Z.H.E.A.D..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="Humanoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="78.0" layoutX="384.0" layoutY="157.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
-    <Rectangle fx:id="Ugaite" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="80.4615478515625" layoutX="318.0" layoutY="155.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
-    <ImageView fitHeight="64.71428481261712" fitWidth="65.99999618530273" layoutX="251.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="79.42206628512807" fitWidth="80.99999237060547" layoutX="219.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@H.U.M.A.N.H.E.A.D..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="Buzzite" arcHeight="5.0" arcWidth="5.0" fill="#00000002" height="80.4615478515625" layoutX="252.0" layoutY="155.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
-    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="69.1640625" layoutX="450.0" layoutY="157.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
-    <Rectangle fx:id="Flapper" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="69.1640625" layoutX="516.0" layoutY="158.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
+    <Rectangle fx:id="Ugaite" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="299.0" layoutY="136.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="74.24420166015625" />
+    <Rectangle fx:id="Humanoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="220.0" layoutY="135.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="80.0" />
+    <Rectangle fx:id="Buzzite" arcHeight="5.0" arcWidth="5.0" fill="#00000002" height="97.4615478515625" layoutX="374.0" layoutY="136.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="74.24420166015625" />
+    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="446.0" layoutY="133.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
+    <Rectangle fx:id="Flapper" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="510.0" layoutY="135.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />
