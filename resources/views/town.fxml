@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -10,6 +11,96 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.TownController">
   <children>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="12.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="376.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="7.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="577.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="387.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="582.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="69.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="123.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="502.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
     <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#ffca99" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
     <ImageView fitHeight="175.96092224121094" fitWidth="240.81288146972656" layoutX="64.0" layoutY="40.0" pickOnBounds="true" preserveRatio="false">
       <image>
