@@ -3,6 +3,7 @@
  *   Place in the same source directory as Main.java
  *   Ensure that your build system copies this file to your build output directory.
  */
+
 .background {
     -fx-background-color: #903352;
 }

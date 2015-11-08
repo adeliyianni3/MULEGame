@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ConfigScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background, font" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.ConfigScreenController">
   <children>
-    <ChoiceBox fx:id="difficultyChoiceBox" layoutX="387.0" layoutY="91.0" prefWidth="150.0" value="Beginner">
+    <ChoiceBox fx:id="difficultyChoiceBox" layoutX="387.0" layoutY="91.0" prefWidth="150.0" styleClass="size3" value="Beginner">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Beginner" />
@@ -19,7 +19,7 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <ChoiceBox fx:id="mapChoiceBox" layoutX="387.0" layoutY="185.0" prefWidth="150.0" value="Map 1">
+    <ChoiceBox fx:id="mapChoiceBox" layoutX="387.0" layoutY="185.0" prefWidth="150.0" styleClass="size3" value="Map 1">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Map 1" />
@@ -28,7 +28,7 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <ChoiceBox fx:id="playerChoiceBox" layoutX="387.0" layoutY="278.0" prefWidth="150.0" value="1">
+    <ChoiceBox fx:id="playerChoiceBox" layoutX="387.0" layoutY="278.0" prefWidth="150.0" styleClass="size3" value="1">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="1" />
@@ -38,20 +38,20 @@
         </FXCollections>
       </items>
     </ChoiceBox>
-    <Label layoutX="432.0" layoutY="63.0" text="Difficulty" />
-    <Label layoutX="429.0" layoutY="157.0" text="Map Type" />
-    <Label layoutX="401.0" layoutY="247.0" text="Number of Players" />
+    <Label layoutX="431.0" layoutY="66.0" styleClass="size3" text="Difficulty" />
+    <Label layoutX="427.0" layoutY="157.0" styleClass="size3" text="Map Type" />
+    <Label layoutX="395.0" layoutY="247.0" styleClass="size3" text="Number of Players" />
     <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@M.U.L.E..png" />
       </image>
     </ImageView>
-    <Label layoutX="78.0" layoutY="54.0" text="M.U.L.E">
+    <Label layoutX="78.0" layoutY="54.0" styleClass="size1" text="M.U.L.E">
       <font>
-        <Font name="System Bold" size="52.0" />
+        <Font size="52.0" />
       </font>
     </Label>
-    <Button fx:id="startButton" layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#playerConfiguration" text="PLAY">
+    <Button fx:id="startButton" layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#playerConfiguration" styleClass="font, size2" text="PLAY">
       <font>
         <Font name="System Bold" size="24.0" />
       </font>
@@ -59,7 +59,7 @@
         <URL value="@../vista.css" />
       </stylesheets>
     </Button>
-    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
+    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button, size3">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>

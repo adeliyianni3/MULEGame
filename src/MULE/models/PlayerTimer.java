@@ -119,6 +119,6 @@ public class PlayerTimer {
             System.out.println("TurnEnds");
             Game.instance.endTurn();
         }
-        //return --secs;
+        --secs;
     }
 }
