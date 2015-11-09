@@ -9,13 +9,11 @@ public class Humanoid implements Race {
     /**
      * Starting amount of money.
      */
-    private final int startMoney;
+    private final int startMoney = 600;
     /**
      * No-args constructor.
      */
-    public Humanoid() {
-        startMoney = 600;
-    }
+    public Humanoid() {}
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

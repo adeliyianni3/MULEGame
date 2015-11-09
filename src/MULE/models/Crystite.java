@@ -5,13 +5,16 @@ package MULE.models;
  * Resource implementation holding information for a resource.
  */
 public class Crystite extends Resource {
+    private static final int PRICE = 100;
+    private static final int EXTRAPRICE = 100;
+    private static final int ID = 3;
     /**
      * No-args constructor.
      */
     public Crystite() {
-        this.setPrice(100);
-        this.setStorePriceExtra(100);
-        this.setID(3);
+        this.setPrice(PRICE);
+        this.setStorePriceExtra(EXTRAPRICE);
+        this.setID(ID);
     }
     /**
      * Sells one of this Resource from the store, if possible.

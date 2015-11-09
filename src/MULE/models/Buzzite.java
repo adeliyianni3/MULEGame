@@ -8,13 +8,11 @@ public class Buzzite implements Race {
     /**
      * Starting amount of money.
      */
-    private final int startMoney;
+    private final int startMoney = 1000;
     /**
      * No-args constructor.
      */
-    public Buzzite() {
-        startMoney = 1000;
-    }
+    public Buzzite() {}
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

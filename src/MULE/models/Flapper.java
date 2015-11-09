@@ -9,13 +9,11 @@ public class Flapper implements Race {
     /**
      * Starting amount of money.
      */
-    private final int startMoney;
+    private final int startMoney = 1600;
     /**
      * No-args constructor.
      */
-    public Flapper() {
-        startMoney = 1600;
-    }
+    public Flapper() {}
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

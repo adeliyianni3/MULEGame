@@ -5,13 +5,16 @@ package MULE.models;
  * Resource implementation holding information for a resource.
  */
 public class Food extends Resource {
+    private static final int PRICE = 30;
+    private static final int EXTRAPRICE = 25;
+    private static final int ID = 1;
     /**
      * No-args constructor.
      */
     public Food() {
-        this.setPrice(30);
-        this.setStorePriceExtra(25);
-        this.setID(1);
+        this.setPrice(PRICE);
+        this.setStorePriceExtra(EXTRAPRICE);
+        this.setID(ID);
     }
     /**
      * Sells one of this Resource from the store, if possible.

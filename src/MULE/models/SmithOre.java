@@ -5,13 +5,16 @@ package MULE.models;
  * Resource implementation holding information for a resource.
  */
 public class SmithOre extends Resource {
+    private static final int PRICE = 50;
+    private static final int EXTRAPRICE = 75;
+    private static final int ID = 2;
     /**
      * No-args constructor.
      */
     public SmithOre() {
-        this.setPrice(50);
-        this.setStorePriceExtra(75);
-        this.setID(2);
+        this.setPrice(PRICE);
+        this.setStorePriceExtra(EXTRAPRICE);
+        this.setID(ID);
     }
     /**
      * Sells one of this Resource from the store, if possible.

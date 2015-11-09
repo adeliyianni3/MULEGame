@@ -9,13 +9,11 @@ public class Ugaite implements Race {
     /**
      * Starting amount of money.
      */
-    private final int startMoney;
+    private final int startMoney = 600;
     /**
      * No-args constructor.
      */
-    public Ugaite() {
-        startMoney = 1000;
-    }
+    public Ugaite() {}
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money
