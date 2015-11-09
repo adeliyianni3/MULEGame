@@ -6,14 +6,6 @@ package MULE.models;
  * Map that creates, holds, and finds the Land tile information.
  */
 public class Map {
-    /**
-     * Row index of the town tile.
-     */
-    private final int townRow = 2; //not local so as to avoid magic numbers
-    /**
-     * Column index of the town tile.
-     */
-    private final int townCol = 4; //not local so as to avoid magic numbers
 
     /**
      * Array of Land objects.
@@ -64,6 +56,8 @@ public class Map {
      *  false otherwise
      */
     public final boolean isTown(final int row, final int col) {
+        int townRow = 2;
+        int townCol = 4;
         return (row == townRow && col == townCol);
     }
 

@@ -1,8 +1,6 @@
 package MULE.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
 
 // Created by Ethan on 9/18/2015.
 public class TownController {

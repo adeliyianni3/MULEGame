@@ -104,12 +104,7 @@ public class PlayerTimer {
     private void setInterval() {
         if (secs == 1) {
             if (Game.instance.getCurrentState() != Game.State.MAP) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        ScreenNavigator.getInstance().loadMap();
-                    }
-                });
+                Platform.runLater(() -> ScreenNavigator.getInstance().loadMap());
                 Game.instance.changeState(Game.State.MAP);
             }
             if (timer == null) {

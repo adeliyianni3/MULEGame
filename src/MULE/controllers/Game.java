@@ -30,7 +30,6 @@ import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
 
 
-import java.awt.*;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
@@ -43,7 +42,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.text.Font;
 
 
 public class Game {
@@ -415,9 +413,7 @@ public class Game {
     }
     public void endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
-        for (Land plot: plots) {
-            plot.produce();
-        }
+        plots.forEach(MULE.models.Land::produce);
         turn = turn % numOfPlayers + 1;
         totalTurns++;
         round = (totalTurns-1) / numOfPlayers;

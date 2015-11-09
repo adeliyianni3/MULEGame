@@ -1,6 +1,5 @@
 package MULE.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 // Created by David on 10/16/2015.
