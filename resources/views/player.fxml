@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.PlayerController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="mule.controllers.PlayerController">
   <children>
     <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="337.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
       <image>
@@ -76,7 +76,7 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <!--<Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="MULE.models.Player 1"> -->
+    <!--<Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="mule.models.Player 1"> -->
     <Label fx:id="playerNumber" layoutX="78.0" layoutY="40.0" text="${controller.name}">
       <font>
         <Font name="System Bold" size="52.0" />

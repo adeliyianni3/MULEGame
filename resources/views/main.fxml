@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?scenebuilder-stylesheet vista.css?>
 
-<VBox prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml" fx:controller="MULE.controllers.MainController">
+<VBox prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml" fx:controller="mule.controllers.MainController">
   <children>
-    <Label maxWidth="1.7976931348623157E308" text="Group 50: MULE++" VBox.vgrow="NEVER" />
+    <Label maxWidth="1.7976931348623157E308" text="Group 50: mule++" VBox.vgrow="NEVER" />
     <StackPane fx:id="vistaHolder" VBox.vgrow="ALWAYS" />
   </children>
 </VBox>
