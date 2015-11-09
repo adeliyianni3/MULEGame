@@ -109,7 +109,7 @@ public final class ScreenNavigator {
     /**
      * Current instance of the ScreenNavigator.
      */
-    private static final ScreenNavigator instance = new ScreenNavigator();
+    private static final ScreenNavigator INSTANCE = new ScreenNavigator();
     /**
      * Stage being used to set Scenes on.
      */
@@ -119,7 +119,7 @@ public final class ScreenNavigator {
      * @return The instance
      */
     public static ScreenNavigator getInstance() {
-        return instance;
+        return INSTANCE;
     }
     /** The main application layout controller. */
 //    private static MainController mainController;
@@ -266,7 +266,7 @@ public final class ScreenNavigator {
         loadScreen(MAP);
     }
     /**
-     * Loads the mule pen.
+     * Loads the MULE pen.
      */
     public void loadMULEPen() {
         loadScreen(MULE_PEN);

@@ -77,7 +77,7 @@ public class Land {
     }
 
     /**
-     * Checks if this Land has a mule or not.
+     * Checks if this Land has a MULE or not.
      * @return true if this Land has a Mule
      */
     public final boolean hasMule() {
@@ -90,14 +90,14 @@ public class Land {
      */
     public final void setMule(final Mule newMule) {
         this.mule = newMule;
-    } //mule vs newMule
+    } //MULE vs newMule
 //    public void setLandType(LandType type) {
 //        this.type = type;
 //    }
-//    public Mule getMule() { return this.mule; }
+//    public Mule getMule() { return this.MULE; }
 //    public Mule removeMule() {
-//        Mule temp = mule;
-//        mule = null;
+//        Mule temp = MULE;
+//        MULE = null;
 //        return temp;
 //    }
 
@@ -146,7 +146,7 @@ public class Land {
     }
 
     /**
-     * Produces product based on provided energy, mule, and land type.
+     * Produces product based on provided energy, MULE, and land type.
      */
     public final void produce() {
         Player owner = getOwner();

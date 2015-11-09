@@ -478,7 +478,7 @@ public class GameDummy extends Game{
             Mule newMule = new Mule(resource);
             p.subtractMoney(price);
             currentState = State.MULE_PLACING;
-            p.giveMule(newMule); //TODO remove mule when player's turn ends
+            p.giveMule(newMule); //TODO remove MULE when player's turn ends
 
         } else {
             System.out.println("Not enough money"); //TODO proper error message
