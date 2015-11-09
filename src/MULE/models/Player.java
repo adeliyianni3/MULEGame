@@ -310,8 +310,8 @@ public class Player {
         int totalScore = 0;
         totalScore += Game.getInstance().moneyValue() * getMoney();
         totalScore += numOfLands
-                * Game.getInstance().landValue(); //getSumLand() * getLandPrice()
-        totalScore += numOfResources[0] * Game.getInstance().energyValue(); //energy
+                * Game.getInstance().landValue();
+        totalScore += numOfResources[0] * Game.getInstance().energyValue();
         totalScore += numOfResources[1] * Game.getInstance().foodValue(); //food
         totalScore += numOfResources[2]
                 * Game.getInstance().smithoreValue(); //smithore

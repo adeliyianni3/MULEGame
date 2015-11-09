@@ -25,11 +25,10 @@ public class EventFour implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            int m = ROUNDSM[Game.getInstance().getRound() - 3];
-            int gain = 2 * m;
-            p.addMoney(gain);
-            return p.getName() + " YOU FOUND A DEAD MOOSE "
-                    + "RAT AND SOLD THE HIDE FOR $" + gain;
-
+        int m = ROUNDSM[Game.getInstance().getRound() - 3];
+        int gain = 2 * m;
+        p.addMoney(gain);
+        return p.getName() + " YOU FOUND A DEAD MOOSE "
+                + "RAT AND SOLD THE HIDE FOR $" + gain;
     }
 }

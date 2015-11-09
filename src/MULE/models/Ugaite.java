@@ -13,7 +13,7 @@ public class Ugaite implements Race {
     /**
      * No-args constructor.
      */
-    public Ugaite() {}
+    public Ugaite() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

@@ -12,7 +12,7 @@ public class Bonzoid implements Race {
     /**
      * No-args constructor.
      */
-    public Bonzoid() {}
+    public Bonzoid() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

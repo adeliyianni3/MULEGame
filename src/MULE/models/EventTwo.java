@@ -18,9 +18,9 @@ public class EventTwo implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            p.addResource(new SmithOre());
-            p.addResource(new SmithOre());
-            return p.getName() + " A WANDERING TECH STUDENT REPAID YOUR "
-                    + "HOSPITALITY BY LEAVING TWO BARS OF ORE.";
+        p.addResource(new SmithOre());
+        p.addResource(new SmithOre());
+        return p.getName() + " A WANDERING TECH STUDENT REPAID YOUR "
+                + "HOSPITALITY BY LEAVING TWO BARS OF ORE.";
     }
 }

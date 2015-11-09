@@ -12,7 +12,7 @@ public class Buzzite implements Race {
     /**
      * No-args constructor.
      */
-    public Buzzite() {}
+    public Buzzite() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

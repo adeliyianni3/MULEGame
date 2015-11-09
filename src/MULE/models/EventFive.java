@@ -25,10 +25,10 @@ public class EventFive implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            int m = ROUNDSM[Game.getInstance().getRound() - 3];
-            int lose = 4 * m;
-            p.subtractMoney(lose);
-            return p.getName() + " FLYING CAT-BUGS ATE THE "
-                    + "ROOF OFF YOUR HOUSE. REPAIRS COST $" + lose;
+        int m = ROUNDSM[Game.getInstance().getRound() - 3];
+        int lose = 4 * m;
+        p.subtractMoney(lose);
+        return p.getName() + " FLYING CAT-BUGS ATE THE "
+                + "ROOF OFF YOUR HOUSE. REPAIRS COST $" + lose;
     }
 }

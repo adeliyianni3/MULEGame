@@ -26,10 +26,10 @@ public class EventSeven implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            int m = ROUNDSM[Game.getInstance().getRound() - 3];
-            int lose = 6 * m;
-            p.subtractMoney(lose);
-            return p.getName() + " YOUR SPACE GYPSY IN-LAWS MADE A MESS"
-                    + " OF THE TOWN. IT COST YOU " + lose + " TO CLEAN IT UP.";
+        int m = ROUNDSM[Game.getInstance().getRound() - 3];
+        int lose = 6 * m;
+        p.subtractMoney(lose);
+        return p.getName() + " YOUR SPACE GYPSY IN-LAWS MADE A MESS"
+                + " OF THE TOWN. IT COST YOU " + lose + " TO CLEAN IT UP.";
     }
 }

@@ -18,12 +18,12 @@ public class EventOne implements RandomEvent {
      */
     @Override
     public final String apply(final Player p) {
-            p.addResource(new Food());
-            p.addResource(new Food());
-            p.addResource(new Food());
-            p.addResource(new Energy());
-            p.addResource(new Energy());
-            return p.getName() + " YOU JUST RECEIVED A PACKAGE FROM THE "
-                    + "GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS.";
+        p.addResource(new Food());
+        p.addResource(new Food());
+        p.addResource(new Food());
+        p.addResource(new Energy());
+        p.addResource(new Energy());
+        return p.getName() + " YOU JUST RECEIVED A PACKAGE FROM THE "
+                + "GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS.";
     }
 }

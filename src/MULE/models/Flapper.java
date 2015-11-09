@@ -13,7 +13,7 @@ public class Flapper implements Race {
     /**
      * No-args constructor.
      */
-    public Flapper() {}
+    public Flapper() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money

@@ -13,7 +13,7 @@ public class Humanoid implements Race {
     /**
      * No-args constructor.
      */
-    public Humanoid() {}
+    public Humanoid() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money
