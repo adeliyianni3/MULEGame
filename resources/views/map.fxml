@@ -21,6 +21,11 @@
         <Image url="@R.I.V.E.R..png" />
       </image>
     </ImageView>
+    <ImageView fitHeight="49.99998092651367" fitWidth="49.99999237060547" layoutX="275.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@T.O.W.N..png" />
+      </image>
+    </ImageView>
     <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="41.0" layoutX="456.0" layoutY="336.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
     <Label fx:id="continueLabel" layoutX="471.0" layoutY="341.0" onMouseClicked="#passClick" text="Pass">
       <font>
@@ -41,7 +46,7 @@
     <Rectangle fx:id="map21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="225.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe299" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe29900" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="75.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />

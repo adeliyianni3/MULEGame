@@ -34,11 +34,11 @@ public class PlayerController implements Initializable{
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.getInstance().saveGame();
     }
 
@@ -57,7 +57,7 @@ public class PlayerController implements Initializable{
 
 
     @FXML
-    void toNext(ActionEvent event) {
+    void toNext() {
         String name = nameBox.getText();
         if (!nameBox.getText().isEmpty() && Game.getInstance().isColorAvailable(color) && race != null) {
             Game.getInstance().addPlayer(race, color, name);
@@ -66,7 +66,7 @@ public class PlayerController implements Initializable{
         }
     }
     @FXML
-    void toMain(ActionEvent event) {
+    void toMain() {
         ScreenNavigator.getInstance().loadMain();
     }
 
@@ -75,7 +75,7 @@ public class PlayerController implements Initializable{
         setName("Player " + Game.getInstance().getTurn());
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         System.exit(0);
     }
 
@@ -99,11 +99,11 @@ public class PlayerController implements Initializable{
         previousColor = chosen;
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.getInstance().pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.getInstance().playMusic();
     }
 }

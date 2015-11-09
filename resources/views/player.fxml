@@ -121,7 +121,7 @@
         <Image url="@M.U.L.E..png" />
       </image>
     </ImageView>
-    <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="59.999908447265625" styleClass="button">
+    <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="66.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>

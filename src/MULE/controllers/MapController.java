@@ -219,24 +219,24 @@ public class MapController implements Initializable {
     private MenuItem close;
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.instance.loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.instance.saveGame();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         Game.instance.timer.stopTime();
         System.exit(0);
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.instance.pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.instance.playMusic();
     }
 
@@ -261,12 +261,12 @@ public class MapController implements Initializable {
     }
 
     @FXML
-    void townClick(MouseEvent event) {
+    void townClick() {
         Game.instance.townClicked();
     }
 
     @FXML
-    void passClick(MouseEvent event) {
+    void passClick() {
         Game.instance.buyPhaseSkip();
         showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }

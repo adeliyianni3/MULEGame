@@ -9,11 +9,11 @@ public class Map {
     /**
      * Row index of the town tile.
      */
-    private final int townRow = 2;
+    private final int townRow = 2; //not local so as to avoid magic numbers
     /**
      * Column index of the town tile.
      */
-    private final int townCol = 4;
+    private final int townCol = 4; //not local so as to avoid magic numbers
 
     /**
      * Array of Land objects.

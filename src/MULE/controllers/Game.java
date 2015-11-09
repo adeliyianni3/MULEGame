@@ -221,7 +221,7 @@ public class Game {
         currentState = s;
     }
 
-    public int getDifficulty() {
+    int getDifficulty() {
         return difficulty;
     }
 

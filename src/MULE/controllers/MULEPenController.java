@@ -9,49 +9,49 @@ import javafx.scene.input.MouseEvent;
 public class MULEPenController {
 
     @FXML
-    void foodMULE(MouseEvent event) {
+    void foodMULE() {
         Game.getInstance().buyMULE(new Food());
     }
 
     @FXML
-    void energyMULE(MouseEvent event) {
+    void energyMULE() {
         Game.getInstance().buyMULE(new Energy());
     }
 
     @FXML
-     void crystaliteMULE(MouseEvent event) {
+     void crystaliteMULE() {
         Game.getInstance().buyMULE(new Crystite());
     }
 
     @FXML
-    void smithoreMULE(MouseEvent event) {
+    void smithoreMULE() {
         Game.getInstance().buyMULE(new SmithOre());
     }
 
     @FXML
-    void returnToStore(MouseEvent event) {
+    void returnToStore() {
         ScreenNavigator.getInstance().loadStore();
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.getInstance().saveGame();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         Game.getInstance().timer.stopTime();
         System.exit(0);
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.getInstance().pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.getInstance().playMusic();
     }
 

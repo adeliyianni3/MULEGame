@@ -18,36 +18,36 @@ public class StoreController implements Initializable {
     @FXML
     private ListView<Resource> cartList;
 
-    public void leaveStore(MouseEvent event) {
+    public void leaveStore() {
         Game.getInstance().leaveStore();
         cartList.getItems().clear();
         ScreenNavigator.getInstance().loadTown();
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.getInstance().saveGame();
     }
 
 
     @FXML
-    public void addCartFood(MouseEvent event) {
+    public void addCartFood() {
         items.add(new Food());
     }
     @FXML
-    public void addCartEnergy(MouseEvent event) {
+    public void addCartEnergy() {
         items.add(new Energy());
     }
     @FXML
-    public void addCartSmithore(MouseEvent event) {
+    public void addCartSmithore() {
         items.add(new SmithOre());
     }
     @FXML
-    public void addCartCrystite(MouseEvent event) {
+    public void addCartCrystite() {
         items.add(new Crystite());
     }
     @FXML
@@ -71,15 +71,15 @@ public class StoreController implements Initializable {
         System.out.println(p.getMoney());
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.getInstance().pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.getInstance().playMusic();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         Game.getInstance().timer.stopTime();
         System.exit(0);
     }

@@ -18,16 +18,16 @@ public class ConfigScreenController {
     private ChoiceBox playerChoiceBox;
 
     @FXML
-    void playerConfiguration(ActionEvent event) {
+    void playerConfiguration() {
         Game.getInstance().setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.getInstance().saveGame();
     }
 
@@ -48,15 +48,15 @@ public class ConfigScreenController {
         return difficulty;
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         System.exit(0);
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.getInstance().pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.getInstance().playMusic();
     }
 

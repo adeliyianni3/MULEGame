@@ -29,7 +29,7 @@ public abstract class Resource {
      * Setter for price.
      * @param newPrice Price value to be set
      */
-    public final void setPrice(int newPrice) {
+    final void setPrice(int newPrice) {
         price = newPrice;
     }
 
@@ -37,7 +37,7 @@ public abstract class Resource {
      * Setter for storePriceExtra.
      * @param newStorePriceExtra StorePriceExtra to be set
      */
-    public final void setStorePriceExtra(int newStorePriceExtra) {
+    final void setStorePriceExtra(int newStorePriceExtra) {
         storePriceExtra = newStorePriceExtra;
     }
 
@@ -45,7 +45,7 @@ public abstract class Resource {
      * Setter for ID.
      * @param newID ID to be set
      */
-    public final void setID(int newID) {
+    final void setID(int newID) {
         id = newID;
     }
     /**

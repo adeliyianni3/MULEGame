@@ -8,54 +8,54 @@ import javafx.scene.input.MouseEvent;
 public class TownController {
 
     @FXML
-    void usePub(MouseEvent event) {
+    void usePub() {
         Game.instance.gamble();
 
     }
 
     @FXML
-    void useAssay(MouseEvent event) {
+    void useAssay() {
         Game.instance.useAssay();
 
     }
 
     @FXML
-    void useLand(MouseEvent event) {
+    void useLand() {
         Game.instance.useLandOffice();
 
     }
     @FXML
-    private void pauseMusic(ActionEvent e) {
+    private void pauseMusic() {
         Game.instance.pauseMusic();
     }
     @FXML
-    private void playMusic(ActionEvent e) {
+    private void playMusic() {
         Game.instance.playMusic();
     }
     public void showMap() {
         ScreenNavigator.getInstance().loadMain();
     }
 
-    public void leaveTown(MouseEvent event) {
+    public void leaveTown() {
         Game.instance.leaveTown();
         ScreenNavigator.getInstance().loadMap();
     }
 
     @FXML
-    void enterStore(MouseEvent event) {
+    void enterStore() {
         Game.instance.enterStore();
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.instance.loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.instance.saveGame();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         Game.instance.timer.stopTime();
         System.exit(0);
     }

@@ -109,7 +109,7 @@ public final class ScreenNavigator {
     /**
      * Current instance of the ScreenNavigator.
      */
-    private static ScreenNavigator instance = new ScreenNavigator();
+    private static final ScreenNavigator instance = new ScreenNavigator();
     /**
      * Stage being used to set Scenes on.
      */
