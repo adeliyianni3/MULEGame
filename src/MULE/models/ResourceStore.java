@@ -5,7 +5,7 @@ public class ResourceStore {
     private int energyInventory = 16;
     private int crystiteInventory = 0;
     private int foodInventory = 16;
-    private int smithoreInventory = 0;
+    private int smithOreInventory = 0;
     private int muleInventory = 25;
 
     public ResourceStore(){}
@@ -62,15 +62,15 @@ public class ResourceStore {
    }
 
     public int getSmithOreInventory() {
-        return smithoreInventory;
+        return smithOreInventory;
     }
     public void buySmithOre() {
         int total = getSmithOreInventory();
         if (total > 0) {
-            smithoreInventory = total - 1;
+            smithOreInventory = total - 1;
         }
     }
     public void addSmithOre() {
-        smithoreInventory = smithoreInventory + 1;
+        smithOreInventory = smithOreInventory + 1;
     }
 }
