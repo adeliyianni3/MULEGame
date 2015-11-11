@@ -1,6 +1,7 @@
-package MULE.models;
+package MULE.tests;
 
 //import org.junit.Before;
+import MULE.models.ResourceStore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
