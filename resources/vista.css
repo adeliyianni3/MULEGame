@@ -4,6 +4,41 @@
  *   Ensure that your build system copies this file to your build output directory.
  */
 
+.background {
+    -fx-background-color: #903352;
+}
+.label {
+    -fx-text-fill: #fbe3be;
+}
+.label2 {
+    -fx-text-fill: #da5066;
+}
+.button {
+     -fx-base: #549495;
+     -fx-text-fill: #fbe3be;
+ }
+.choice-box {
+    -fx-base: #549495;
+}
+.choice-box .context-menu .label {
+    -fx-text-fill: #da5066;
+}
+.button .context-menu .label {
+    -fx-text-fill: #da5066;
+}
+
+.text-field {
+    -fx-base: #549495;
+}
+
+.text-field. text-input {
+    -fx-text-fill: #da5066;
+}
+
+.text-area. text-input {
+    -fx-text-fill: #da5066;
+}
+/* #F8949C
 #headerLabel {
     -fx-background-color: steelblue;
     -fx-text-fill: white;
@@ -25,4 +60,4 @@
 .button {
     -fx-base: lightblue;
     -fx-font-size: 20px;
-}
+}*/

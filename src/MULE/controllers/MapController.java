@@ -2,7 +2,6 @@ package MULE.controllers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -20,7 +19,7 @@ import java.util.ResourceBundle;
 // Created by Ethan on 9/18/2015.
 public class MapController implements Initializable {
     //http://stackoverflow.com/questions/27031365/how-to-bind-visibility-to-controller-in-javafx
-    private BooleanProperty showPass = new SimpleBooleanProperty(false);
+    private final BooleanProperty showPass = new SimpleBooleanProperty(false);
 
     @FXML
     private Rectangle map00;
@@ -219,17 +218,25 @@ public class MapController implements Initializable {
     private MenuItem close;
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
+    private void handleLoadGame() {
         Game.instance.loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
+    private void handleSaveGame() {
         Game.instance.saveGame();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         Game.instance.timer.stopTime();
         System.exit(0);
+    }
+    @FXML
+    private void pauseMusic() {
+        Game.instance.pauseMusic();
+    }
+    @FXML
+    private void playMusic() {
+        Game.instance.playMusic();
     }
 
 
@@ -237,7 +244,7 @@ public class MapController implements Initializable {
     void landClick(MouseEvent event) {
         //System.out.println("Ran the landClick method");
         String landName = ((Node)event.getSource()).getId();
-        Rectangle rec = (Rectangle)event.getSource();
+
         int i = Integer.parseInt(landName.substring(3, 5)) / 10;
         int j = Integer.parseInt(landName.substring(3, 5)) % 10;
         if (mapArr[i][j] == null) {
@@ -249,21 +256,21 @@ public class MapController implements Initializable {
         //add in interaction with main here
         //landName will contain a string "RC" containing land's row and column in the set 5x5 array
         Game.instance.landClicked(landName, mapArr[i][j], mulArr[i][j]);
-        showPass.setValue(ScreenNavigator.instance.showPass.getValue());
+        showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }
 
     @FXML
-    void townClick(MouseEvent event) {
+    void townClick() {
         Game.instance.townClicked();
     }
 
     @FXML
-    void passClick(MouseEvent event) {
+    void passClick() {
         Game.instance.buyPhaseSkip();
-        showPass.setValue(ScreenNavigator.instance.showPass.getValue());
+        showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }
 
-    public void setArrs() {
+    private void setArrays() {
         mapArr = new Rectangle[][]{{map00, map01, map02, map03, map04, map05, map06, map07, map08}, {map10, map11, map12, map13, map14, map15, map16, map17, map18}, {map20, map21, map22, map23, map24, map25, map26, map27, map28}, {map30, map31, map32, map33, map34, map35, map36, map37, map38}, {map40, map41, map42, map43, map44, map45, map46, map47, map48}};
         mulArr = new Rectangle[][]{{mul00, mul01, mul02, mul03, mul04, mul05, mul06, mul07, mul08}, {mul10, mul11, mul12, mul13, mul14, mul15, mul16, mul17, mul18}, {mul20, mul21, mul22, mul23, mul24, mul25, mul26, mul27, mul28}, {mul30, mul31, mul32, mul33, mul34, mul35, mul36, mul37, mul38}, {mul40, mul41, mul42, mul43, mul44, mul45, mul46, mul47, mul48}};
     }
@@ -273,13 +280,13 @@ public class MapController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         continueRect.visibleProperty().bind(showPass);
         continueLabel.visibleProperty().bind(showPass);
-        setArrs();
-        if (ScreenNavigator.instance != null && ScreenNavigator.instance.loaded) { //need to do something for pass button too
+        setArrays();
+        if (ScreenNavigator.getInstance() != null && ScreenNavigator.getInstance().getLoaded()) { //need to do something for pass button too
             Color[][] ca = Game.instance.getColorArray();
             boolean[][] ma = Game.instance.getMuleArray();
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 9; j++) {
-                    if (ca[i][j] != null && ca[i][j] instanceof Color) {
+                    if (ca[i][j] != null) {
                         //mapArr[i][j].setStroke(ca[i][j]);
                         String color = ca[i][j].toString();
                         mapArr[i][j].setStroke(Color.web(color));

@@ -4,7 +4,6 @@ import java.net.URL;
 
 import MULE.models.Player;
 import javafx.animation.*;
-import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -17,6 +16,8 @@ import java.util.ResourceBundle;
 //http://stackoverflow.com/questions/13227809/displaying-changing-values-in-javafx-label
 public class DebugController implements Initializable {
 
+//    @FXML
+//    private Rectangle currentColor;
     @FXML
     private Label turn;
     @FXML
@@ -102,91 +103,90 @@ public class DebugController implements Initializable {
     private void bindToTime() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
-                        new EventHandler<ActionEvent>() {
-                            @Override public void handle(ActionEvent actionEvent) {
-                                Player[] p = Game.instance.getPlayers();
-                                Player[] op = Game.instance.getOriginalPlayers();
-                                //p = Game.instance.getPlayers();
-                                //op = Game.instance.getOriginalPlayers();
-                                turn.setText("" + Game.instance.getTurn());
-                                if (p.length > 0 && p[Game.instance.getTurn() - 1] != null) {
-                                    currentPlayer.setText(p[Game.instance.getTurn() - 1].getName());
-                                }
-                                totalTurn.setText("" + Game.instance.getTotalTurns());
-                                lastEvent.setText(Game.instance.getLastEvent());
-                                round.setText("" + Game.instance.getRound());
-                                phase.setText("" + Game.instance.getPhase().name());
-                                //Player[] p = Game.instance.getPlayers();
-                                //Player[] op = Game.instance.getOriginalPlayers();
-                                if (p.length > 0 && p[0] != null) {
-                                    firstPlace.setText("" + p[0].getName());
-                                    firstScore.setText("" + p[0].getScore());
-
-                                }
-                                if (p.length > 1 && p[1] != null) {
-                                    secondPlace.setText("" + p[1].getName());
-                                    secondScore.setText("" + p[1].getScore());
-
-                                }
-                                if (p.length > 2 && p[2] != null) {
-                                    thirdPlace.setText("" + p[2].getName());
-                                    thirdScore.setText("" + p[2].getScore());
-
-                                }
-                                if (p.length > 3 && p[3] != null) {
-                                    fourthPlace.setText("" + p[3].getName());
-                                    fourthScore.setText("" + p[3].getScore());
-
-                                }
-
-
-                                if (op.length > 0 && op[0] != null) {
-                                    player1.setText("" + op[0].getName());
-                                    money1.setText("" + op[0].getMoney());
-                                    land1.setText("" + op[0].getNumOfLands());
-                                    food1.setText("" + op[0].getFood());
-                                    smithore1.setText("" + op[0].getSmithore());
-                                    energy1.setText("" + op[0].getEnergy());
-
-                                }
-                                if (op.length > 1 && op[1] != null) {
-                                    player2.setText("" + op[1].getName());
-                                    money2.setText("" + op[1].getMoney());
-                                    land2.setText("" + op[1].getNumOfLands());
-                                    food2.setText("" + op[1].getFood());
-                                    smithore2.setText("" + op[1].getSmithore());
-                                    energy2.setText("" + op[1].getEnergy());
-
-                                }
-                                if (op.length > 2 && op[2] != null) {
-                                    player3.setText("" + op[2].getName());
-                                    money3.setText("" + op[2].getMoney());
-                                    land3.setText("" + op[2].getNumOfLands());
-                                    food3.setText("" + op[2].getFood());
-                                    smithore3.setText("" + op[2].getSmithore());
-                                    energy3.setText("" + op[2].getEnergy());
-
-                                }
-                                if (op.length > 3 && op[3] != null) {
-                                    player4.setText("" + op[3].getName());
-                                    money4.setText("" + op[3].getMoney());
-                                    land4.setText("" + op[3].getNumOfLands());
-                                    food4.setText("" + op[3].getFood());
-                                    smithore4.setText("" + op[3].getSmithore());
-                                    energy4.setText("" + op[3].getEnergy());
-
-                                }
-
-
-
-
-
-
-                                timer.setText("" + Game.instance.timer.getTime()); //TODO
-
-
+                        actionEvent -> {
+                            Player[] p = Game.getInstance().getPlayers();
+                            Player[] op = Game.getInstance().getOriginalPlayers();
+                            //p = Game.getInstance().getPlayers();
+                            //op = Game.getInstance().getOriginalPlayers();
+                            turn.setText("" + Game.getInstance().getTurn());
+                            if (p.length > 0 && p[Game.getInstance().getTurn() - 1] != null) {
+                                currentPlayer.setText(p[Game.getInstance().getTurn() - 1].getName());
+                                //errors or code when loading not sure why currentColor.setFill(p[Game.getInstance().getTurn() - 1].getColor());
+                            }
+                            totalTurn.setText("" + Game.getInstance().getTotalTurns());
+                            lastEvent.setText(Game.getInstance().getLastEvent());
+                            round.setText("" + Game.getInstance().getRound());
+                            phase.setText("" + Game.getInstance().getPhase().name());
+                            //Player[] p = Game.getInstance().getPlayers();
+                            //Player[] op = Game.getInstance().getOriginalPlayers();
+                            if (p.length > 0 && p[0] != null) {
+                                firstPlace.setText("" + p[0].getName());
+                                firstScore.setText("" + p[0].getScore());
 
                             }
+                            if (p.length > 1 && p[1] != null) {
+                                secondPlace.setText("" + p[1].getName());
+                                secondScore.setText("" + p[1].getScore());
+
+                            }
+                            if (p.length > 2 && p[2] != null) {
+                                thirdPlace.setText("" + p[2].getName());
+                                thirdScore.setText("" + p[2].getScore());
+
+                            }
+                            if (p.length > 3 && p[3] != null) {
+                                fourthPlace.setText("" + p[3].getName());
+                                fourthScore.setText("" + p[3].getScore());
+
+                            }
+
+
+                            if (op.length > 0 && op[0] != null) {
+                                player1.setText("" + op[0].getName());
+                                money1.setText("" + op[0].getMoney());
+                                land1.setText("" + op[0].getNumOfLands());
+                                food1.setText("" + op[0].getFood());
+                                smithore1.setText("" + op[0].getSmithore());
+                                energy1.setText("" + op[0].getEnergy());
+
+                            }
+                            if (op.length > 1 && op[1] != null) {
+                                player2.setText("" + op[1].getName());
+                                money2.setText("" + op[1].getMoney());
+                                land2.setText("" + op[1].getNumOfLands());
+                                food2.setText("" + op[1].getFood());
+                                smithore2.setText("" + op[1].getSmithore());
+                                energy2.setText("" + op[1].getEnergy());
+
+                            }
+                            if (op.length > 2 && op[2] != null) {
+                                player3.setText("" + op[2].getName());
+                                money3.setText("" + op[2].getMoney());
+                                land3.setText("" + op[2].getNumOfLands());
+                                food3.setText("" + op[2].getFood());
+                                smithore3.setText("" + op[2].getSmithore());
+                                energy3.setText("" + op[2].getEnergy());
+
+                            }
+                            if (op.length > 3 && op[3] != null) {
+                                player4.setText("" + op[3].getName());
+                                money4.setText("" + op[3].getMoney());
+                                land4.setText("" + op[3].getNumOfLands());
+                                food4.setText("" + op[3].getFood());
+                                smithore4.setText("" + op[3].getSmithore());
+                                energy4.setText("" + op[3].getEnergy());
+
+                            }
+
+
+
+
+
+
+                            timer.setText("" + Game.getInstance().timer.getTime()); //TODO
+
+
+
                         }
                 ),
                 new KeyFrame(Duration.seconds(1))

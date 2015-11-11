@@ -2,32 +2,18 @@ package MULE;
 
 import MULE.controllers.*;
 import javafx.application.Application;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-//trying to set up debug
-import java.io.IOException;
 import java.net.URL;
-import javafx.animation.*;
-import javafx.event.*;
-import javafx.scene.control.Label;
-import javafx.util.Duration;
-
-import java.util.Calendar;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  * Main application class.
@@ -38,8 +24,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("M.U.L.E.");
-        ScreenNavigator.instance.setStage(stage);
-        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.mainScreen);
+        ScreenNavigator.getInstance().setStage(stage);
+        ScreenNavigator.getInstance().loadScreen(ScreenNavigator.getInstance().getMainScreen());
 
         Stage debugStage = new Stage();
         debugStage.setTitle("Game Information");
@@ -56,19 +42,22 @@ public class Main extends Application {
                 debugScene
         );
 
-        URL resource = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
-        Media media = new Media(resource.toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        Game.instance.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        Game.instance.playMusic();
+        URL resource = Game.getInstance().getSongFile();
+        makeMusic(resource);
 
         debugStage.show();
 
         stage.show();
     }
 
-    /**
+    public static void makeMusic(URL resource) {
+        Media media = new Media(resource.toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        Game.getInstance().setMediaPlayer(mediaPlayer);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        Game.getInstance().playMusic();
+    }
+    /*/**
      * Loads the main fxml layout.
      * Sets up the vista switching VistaNavigator.
      * Loads the first vista into the fxml layout.
@@ -76,31 +65,31 @@ public class Main extends Application {
      * @return the loaded pane.
      * @throws IOException if the pane could not be loaded.
      */
-    private Pane loadMainPane() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
+//    private Pane loadMainPane() throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//
+//        Pane mainPane = loader.load(
+//                getClass().getResourceAsStream(
+//                        ScreenNavigator.instance.MAIN
+//                )
+//        );
+//
+//        MainController mainController = loader.getController();
+//
+//        ScreenNavigator.instance.setMainController(mainController);
+//        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.main);
+//
+//        return mainPane;
+//    }
 
-        Pane mainPane = loader.load(
-                getClass().getResourceAsStream(
-                        ScreenNavigator.instance.MAIN
-                )
-        );
-
-        MainController mainController = loader.getController();
-
-        ScreenNavigator.instance.setMainController(mainController);
-        ScreenNavigator.instance.loadScreen(ScreenNavigator.instance.main);
-
-        return mainPane;
-    }
-
-    /**
+    /*/**
      * Creates the main application scene.
      *
      * @param mainPane the main application layout.
      *
      * @return the created scene.
      */
-    private Scene createScene(Pane mainPane) {
+    /*private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
                 mainPane
         );
@@ -110,7 +99,7 @@ public class Main extends Application {
         );
 
         return scene;
-    }
+    }*/
 
 
     public static void main(String[] args) {
@@ -118,7 +107,7 @@ public class Main extends Application {
     }
 
 
-    private Label createMonitoredLabel(final Label reporter) {
+    /*private Label createMonitoredLabel(final Label reporter) {
         final Label monitored = new Label("Mouse Location Monitor");
 
         monitored.setStyle("-fx-background-color: forestgreen; -fx-text-fill: white; -fx-font-size: 20px;");
@@ -143,6 +132,6 @@ public class Main extends Application {
         });
 
         return monitored;
-    }
+    }*/
 
 }

@@ -1,7 +1,6 @@
 package MULE.controllers;
 
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -12,24 +11,25 @@ public class ConfigScreenController {
     private Label playerNumber;
     @FXML
     private ChoiceBox difficultyChoiceBox;
-    @FXML
-    private ChoiceBox mapChoiceBox;
+//    @FXML
+//    private ChoiceBox mapChoiceBox;
     @FXML
     private ChoiceBox playerChoiceBox;
 
     @FXML
-    void playerConfiguration(ActionEvent event) {
-        Game.instance.setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+    void playerConfiguration() {
+        Game.getInstance().setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+    private void handleLoadGame() {
+        Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+    private void handleSaveGame() {
+        Game.getInstance().saveGame();
     }
+
 
     private int difficulty() {
         int difficulty;
@@ -47,7 +47,16 @@ public class ConfigScreenController {
         return difficulty;
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         System.exit(0);
     }
+    @FXML
+    private void pauseMusic() {
+        Game.getInstance().pauseMusic();
+    }
+    @FXML
+    private void playMusic() {
+        Game.getInstance().playMusic();
+    }
+
 }

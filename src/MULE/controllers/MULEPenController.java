@@ -1,50 +1,56 @@
 package MULE.controllers;
 
 import MULE.models.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
 
 // Created by Ethan on 10/1/2015.
 public class MULEPenController {
 
     @FXML
-    void foodMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Food());
+    void foodMULE() {
+        Game.getInstance().buyMULE(new Food());
     }
 
     @FXML
-    void energyMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Energy());
+    void energyMULE() {
+        Game.getInstance().buyMULE(new Energy());
     }
 
     @FXML
-     void crystaliteMULE(MouseEvent event) {
-        Game.instance.buyMULE(new Crystite());
+     void crystaliteMULE() {
+        Game.getInstance().buyMULE(new Crystite());
     }
 
     @FXML
-    void smithoreMULE(MouseEvent event) {
-        Game.instance.buyMULE(new SmithOre());
+    void smithoreMULE() {
+        Game.getInstance().buyMULE(new SmithOre());
     }
 
     @FXML
-    void returnToStore(MouseEvent event) {
-        ScreenNavigator.instance.loadStore();
+    void returnToStore() {
+        ScreenNavigator.getInstance().loadStore();
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+    private void handleLoadGame() {
+        Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+    private void handleSaveGame() {
+        Game.getInstance().saveGame();
     }
     @FXML
-    private void closeGame(ActionEvent e) {
-        Game.instance.timer.stopTime();
+    private void closeGame() {
+        Game.getInstance().timer.stopTime();
         System.exit(0);
+    }
+    @FXML
+    private void pauseMusic() {
+        Game.getInstance().pauseMusic();
+    }
+    @FXML
+    private void playMusic() {
+        Game.getInstance().playMusic();
     }
 
 }

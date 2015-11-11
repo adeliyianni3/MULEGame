@@ -2,15 +2,26 @@ package MULE.models;
 
 // Created by Lauren on 9/16/2015.
 
+/**
+ * Map that creates, holds, and finds the Land tile information.
+ */
 public class Map {
 
-    private Land[][] landArray = new Land[5][9];
+    /**
+     * Array of Land objects.
+     */
+    private final Land[][] landArray = new Land[5][9];
+
+    /**
+     * No-args constructor.
+     */
     public Map() {
-        for (int row=0; row<5; row++) {
+        for (int row = 0; row < 5; row++) {
             landArray[row][4] = new Land(LandType.RIVER, row, 4);
             for (int col = 0; col < 4; col++) {
                 landArray[row][col] = new Land(LandType.PLAIN, row, col);
-                landArray[row][8-col] = new Land(LandType.PLAIN, row, 8-col);
+                landArray[row][8 - col] =
+                        new Land(LandType.PLAIN, row, 8 - col);
             }
         }
         landArray[0][2] = new Land(LandType.MOUNTAIN, 0, 2);
@@ -27,15 +38,27 @@ public class Map {
         landArray[1][8] = new Land(LandType.T_MOUNTAIN, 1, 8);
     }
 
-    public Land whatLand(int row, int col){
+    /**
+     * Finds the Land object of the associated position.
+     * @param row Row index to be checked
+     * @param col Column index to be checked
+     * @return Land at the given location
+     */
+    public final Land whatLand(final int row, final int col) {
         return landArray[row][col];
     }
 
-    public boolean isTown(int row, int col){
-        if (row == 2 && col == 4){
-            return true;
-        }
-        return false;
+    /**
+     * Checks if the given position is the town tile.
+     * @param row Row index to be checked
+     * @param col Column index to be checked
+     * @return true if the town is located at the given position,
+     *  false otherwise
+     */
+    public final boolean isTown(final int row, final int col) {
+        int townRow = 2;
+        int townCol = 4;
+        return (row == townRow && col == townCol);
     }
 
 }

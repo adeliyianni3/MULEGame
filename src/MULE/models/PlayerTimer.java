@@ -11,14 +11,37 @@ import javafx.application.Platform;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+/**
+ * Helper class wrapping a timer to keep track of game flow.
+ */
 public class PlayerTimer {
-    public PlayerTimer(){}
-    public int sec;
-    public static Timer timer;
-    public int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
+    /**
+     * No-args constructor.
+     */
+    public PlayerTimer() {
+    }
 
-    public int computeTime(Player p, int round){
+    /**
+     * Seconds remaining in timer.
+     */
+    private int secs;
+    /**
+     * Java Timer performing the back-end stuff.
+     */
+    private static Timer timer;
+    /**
+     * Array indicating the amount of food needed to survive each round.
+     */
+    private final int[] foodNeeded = {3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5};
+
+    /**
+     * Determines the amount of time remaining for
+     *  the player based on their food.
+     * @param p Player who is taking their turn
+     * @param round Current round number
+     * @return Time the Player has to take their turn
+     */
+    public final int computeTime(final Player p, final int round) {
         int food = p.foodCounter();
         if (food > 0 && food < foodNeeded[round - 3]) {
             return 30;
@@ -29,8 +52,11 @@ public class PlayerTimer {
         }
     }
 
-    public void startTime() {
-        sec = computeTime(Game.instance.players[Game.instance.getTurn() - 1],
+    /**
+     * Starts the timer over for the next player.
+     */
+    public final void startTime() {
+        secs = computeTime(Game.instance.players[Game.instance.getTurn() - 1],
                 Game.instance.getRound());
         int delay = 1000;
         int period = 1000;
@@ -44,33 +70,42 @@ public class PlayerTimer {
             }
         }, delay, period);
     }
-    public void stopTime() {
+
+    /**
+     * Stops the timer.
+     */
+    public final void stopTime() {
         if (timer == null) {
             timer = new Timer();
         }
         timer.cancel();
         System.out.println("TurnEnds");
         Game.instance.endTurn();
-        if (Game.instance.currentState != Game.State.MAP) {
+        if (Game.instance.getCurrentState() != Game.State.MAP) {
             Game.instance.changeState(Game.State.MAP);
-            ScreenNavigator.instance.loadMap();
+            ScreenNavigator.getInstance().loadMap();
         }
         if (Game.instance.getRound() > 14) {
-            ScreenNavigator.instance.loadEndGame();
+            ScreenNavigator.getInstance().loadEndGame();
         }
     }
-    public int getTime() {
-        return sec;
+
+    /**
+     * Gets the amount of time remaining in the timer.
+     * @return Amount of time remaining in the timer
+     */
+    public final int getTime() {
+        return secs;
     }
-    private int setInterval() {
-        if (sec == 1) {
-            if (Game.instance.currentState != Game.State.MAP) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        ScreenNavigator.instance.loadMap();
-                    }
-                });
+
+    /**
+     * Sets the interval of the timer.
+     */
+    private void setInterval() {
+        if (secs == 1) {
+            if (Game.instance.getCurrentState() != Game.State.MAP) {
+                Platform.runLater(() -> ScreenNavigator.getInstance()
+                        .loadMap());
                 Game.instance.changeState(Game.State.MAP);
             }
             if (timer == null) {
@@ -80,6 +115,6 @@ public class PlayerTimer {
             System.out.println("TurnEnds");
             Game.instance.endTurn();
         }
-        return --sec;
+        --secs;
     }
 }

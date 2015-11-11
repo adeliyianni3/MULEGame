@@ -1,27 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.TownController">
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.TownController">
   <children>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="12.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="376.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="7.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="577.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="387.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="582.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="69.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="123.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="502.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
     <Rectangle fx:id="town" arcHeight="5.0" arcWidth="5.0" fill="#ffca99" height="322.0" layoutX="24.0" layoutY="39.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
     <ImageView fitHeight="175.96092224121094" fitWidth="240.81288146972656" layoutX="64.0" layoutY="40.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@P.U.B..png" />
       </image>
     </ImageView>
-    <Label layoutX="140.0" layoutY="55.0" text="Pub">
+    <Label layoutX="140.0" layoutY="55.0" styleClass="label2" text="Pub">
       <font>
         <Font name="AR JULIAN" size="15.0" fx:id="x3" />
       </font>
     </Label>
-    <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" height="166.9609375" layoutX="72.0" layoutY="40.0" onMouseClicked="#usePub" stroke="TRANSPARENT" strokeType="INSIDE" width="217.0">
+    <Rectangle fx:id="pub" arcHeight="5.0" arcWidth="5.0" height="166.9609375" layoutX="72.0" layoutY="38.0" onMouseClicked="#usePub" stroke="TRANSPARENT" strokeType="INSIDE" width="217.0">
       <fill>
         <Color blue="1.000" green="0.565" opacity="0.000" red="0.118" fx:id="x2" />
       </fill>
@@ -31,25 +120,25 @@
         <Image url="@S.T.O.R.E..png" />
       </image>
     </ImageView>
-    <Label font="$x3" layoutX="356.0" layoutY="59.0" text="Store" />
+    <Label font="$x3" layoutX="356.0" layoutY="59.0" styleClass="label2" text="Store" />
     <Rectangle fx:id="resourceStore" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="147.03411865234375" layoutX="303.0" layoutY="48.0" onMouseClicked="#enterStore" stroke="TRANSPARENT" strokeType="INSIDE" width="226.755859375" />
     <ImageView fitHeight="171.6547397508443" fitWidth="197.3708038330078" layoutX="323.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@O.F.F..png" />
       </image>
     </ImageView>
-    <Label font="$x3" layoutX="324.0" layoutY="335.0" text="Land Office" />
+    <Label font="$x3" layoutX="324.0" layoutY="335.0" styleClass="label2" text="Land Office" />
     <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.30308532714844" layoutX="323.0" layoutY="192.0" onMouseClicked="#useAssay" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="197.3707733154297" />
     <ImageView fitHeight="166.3030632568334" fitWidth="232.70675919201997" layoutX="78.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@A.S.S.A..png" />
       </image>
     </ImageView>
-    <Label font="$x3" layoutX="81.0" layoutY="337.0" text="Assay Office" />
+    <Label font="$x3" layoutX="81.0" layoutY="337.0" styleClass="label2" text="Assay Office" />
     <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.302978515625" layoutX="76.0" layoutY="191.0" onMouseClicked="#useLand" stroke="TRANSPARENT" strokeType="INSIDE" width="232.70677185058594" />
     <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" height="56.9609375" layoutX="24.0" layoutY="173.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0">
       <fill>
-        <Color blue="0.176" green="0.894" red="0.871" fx:id="x1" />
+        <Color blue="0.584" green="0.580" red="0.329" fx:id="x1" />
       </fill>
     </Rectangle>
     <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="56.9609375" layoutX="528.0" layoutY="173.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
@@ -59,17 +148,23 @@
     <Label layoutX="30.0" layoutY="175.0" onMouseClicked="#leaveTown" text="Back" />
     <Label layoutX="30.0" layoutY="192.0" onMouseClicked="#leaveTown" text="To" />
     <Label layoutX="30.0" layoutY="208.0" onMouseClicked="#leaveTown" text="Town" />
-    <MenuBar layoutX="0.0" layoutY="0.0">
+    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
-            <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Close" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#pauseMusic" text="Pause Music" />
+            <MenuItem mnemonicParsing="false" onAction="#playMusic" text="Play Music" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
   </children>
+  <stylesheets>
+    <URL value="@../vista.css" />
+  </stylesheets>
 </Pane>

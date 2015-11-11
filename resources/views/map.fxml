@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MapController">
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MapController">
   <children>
     <ImageView fitHeight="249.0" fitWidth="450.0" layoutX="75.0" layoutY="76.0" pickOnBounds="true" preserveRatio="false">
       <image>
@@ -20,7 +19,12 @@
         <Image url="@R.I.V.E.R..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#ffff1f" height="41.0" layoutX="456.0" layoutY="336.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
+    <ImageView fitHeight="49.99998092651367" fitWidth="49.99999237060547" layoutX="275.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@T.O.W.N..png" />
+      </image>
+    </ImageView>
+    <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="41.0" layoutX="456.0" layoutY="336.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
     <Label fx:id="continueLabel" layoutX="471.0" layoutY="341.0" onMouseClicked="#passClick" text="Pass">
       <font>
         <Font size="22.0" />
@@ -40,7 +44,7 @@
     <Rectangle fx:id="map21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="225.0" layoutY="175.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe299" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe29900" height="50.0" layoutX="275.0" layoutY="175.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="75.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="125.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
     <Rectangle fx:id="map32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="175.0" layoutY="225.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
@@ -119,17 +123,113 @@
     <Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="189.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="239.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
     <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="22.0" layoutX="488.0" layoutY="289.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-    <MenuBar layoutX="0.0" layoutY="0.0">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="320.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="358.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="388.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="531.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="556.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="526.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="14.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="48.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="17.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="36.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="8.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="229.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="123.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="543.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
-            <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Close" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#pauseMusic" text="Pause Music" />
+            <MenuItem mnemonicParsing="false" onAction="#playMusic" text="Play Music" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
   </children>
+  <stylesheets>
+    <URL value="@../vista.css" />
+  </stylesheets>
 </Pane>

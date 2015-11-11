@@ -2,13 +2,15 @@ package MULE.controllers;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
+
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +18,7 @@ import java.util.ResourceBundle;
 // Created by Aaron on 9/17/2015.
 public class PlayerController implements Initializable{
 
-    private StringProperty name = new SimpleStringProperty();
+    private final StringProperty name = new SimpleStringProperty();
 
     public String getName() {
         return name.get();
@@ -26,23 +28,22 @@ public class PlayerController implements Initializable{
         return name;
     }
 
-    public void setName(String name) {
-        this.name.set(name);
+    private void setName(String givenName) {
+        this.name.set(givenName);
     }
 
     @FXML
-    private void handleLoadGame(ActionEvent e) {
-        Game.instance.loadGame();
+    private void handleLoadGame() {
+        Game.getInstance().loadGame();
     }
     @FXML
-    private void handleSaveGame(ActionEvent e) {
-        Game.instance.saveGame();
+    private void handleSaveGame() {
+        Game.getInstance().saveGame();
     }
 
 
-    @FXML
-
-    private ChoiceBox raceBox;
+    private String race;
+    private Color color;
 
     @FXML
     private ColorPicker colorBox;
@@ -50,28 +51,58 @@ public class PlayerController implements Initializable{
     @FXML
     private TextField nameBox;
 
+    private Rectangle previousRace;
+    private Rectangle previousColor;
+
+
     @FXML
-    void toNext(ActionEvent event) {
-        String race = (String) raceBox.getValue();
-        Color c = colorBox.getValue();
-        String name = nameBox.getText();
-        if (!nameBox.getText().isEmpty() && Game.instance.isColorAvailable(c)) {
-            Game.instance.addPlayer(race, c, name);
+    void toNext() {
+        String playerName = nameBox.getText();
+        if (!nameBox.getText().isEmpty() && Game.getInstance().isColorAvailable(color) && race != null) {
+            Game.getInstance().addPlayer(race, color, playerName);
         } else {
-            ScreenNavigator.instance.loadErrorMessage();
+            ScreenNavigator.getInstance().loadErrorMessage();
         }
     }
     @FXML
-    void toMain(ActionEvent event) {
-        ScreenNavigator.instance.loadMain();
+    void toMain() {
+        ScreenNavigator.getInstance().loadMain();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setName("Player " + Game.instance.getTurn());
+        setName("Player " + Game.getInstance().getTurn());
     }
     @FXML
-    private void closeGame(ActionEvent e) {
+    private void closeGame() {
         System.exit(0);
+    }
+
+    public void selectRace(Event e) {
+        if (previousRace != null) {
+            previousRace.setStroke(Color.TRANSPARENT);
+        }
+        Rectangle chosen = (Rectangle) e.getSource();
+        race = chosen.getId();
+        chosen.setStroke(Color.GREENYELLOW);
+        previousRace = chosen;
+    }
+
+    public void selectColor(Event e) {
+        if (previousColor != null) {
+            previousColor.setStroke(Color.TRANSPARENT);
+        }
+        Rectangle chosen = (Rectangle) e.getSource();
+        color = (Color) chosen.getFill();
+        chosen.setStroke(Color.GREENYELLOW);
+        previousColor = chosen;
+    }
+    @FXML
+    private void pauseMusic() {
+        Game.getInstance().pauseMusic();
+    }
+    @FXML
+    private void playMusic() {
+        Game.getInstance().playMusic();
     }
 }
