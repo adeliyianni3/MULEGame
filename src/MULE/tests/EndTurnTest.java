@@ -338,12 +338,13 @@ public class EndTurnTest {
         game3.getPlayers()[3].giveMule(smithoreMule);
         int game31Smithore = game3.getPlayers()[0].getSmithore();
         game3.currentState = GameDummy.State.MULE_PLACING;
-        game3.landClicked("etc01", new Rectangle(), new Rectangle());
+        game3.landClicked("etc10", new Rectangle(), new Rectangle());
         game3.endTurn();
+
         Assert.assertNotEquals("game3 production incorrect", game31Smithore, game3.getPlayers()[0].getSmithore());
         int game32Smithore = game3.getPlayers()[1].getSmithore();
         game3.currentState = GameDummy.State.MULE_PLACING;
-        game3.landClicked("etc10", new Rectangle(), new Rectangle());
+        game3.landClicked("etc01", new Rectangle(), new Rectangle());
         game3.endTurn();
         Assert.assertNotEquals("game3 production incorrect", game32Smithore, game3.getPlayers()[1].getSmithore());
         int game33Smithore = game3.getPlayers()[2].getSmithore();
@@ -354,8 +355,9 @@ public class EndTurnTest {
         int game34Smithore = game3.getPlayers()[3].getSmithore();
         game3.currentState = GameDummy.State.MULE_PLACING;
         game3.landClicked("etc00", new Rectangle(), new Rectangle());
+        Player playerBeforeReordering = game3.getPlayers()[3];
         game3.endTurn();
-        Assert.assertNotEquals("game3 production incorrect", game34Smithore, game3.getPlayers()[3].getSmithore());
+        Assert.assertNotEquals("game3 production incorrect", game34Smithore, playerBeforeReordering.getSmithore());
 
     }
 
