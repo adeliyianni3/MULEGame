@@ -1,5 +1,6 @@
-package MULE.models;
+package MULE.tests;
 
+import MULE.models.Map;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;

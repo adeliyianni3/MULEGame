@@ -1,5 +1,6 @@
-package MULE.controllers;
+package MULE.tests;
 
+import MULE.controllers.Game;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;

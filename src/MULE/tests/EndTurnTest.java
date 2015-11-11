@@ -1,8 +1,11 @@
-package MULE.models;
+package MULE.tests;
 
 import MULE.controllers.Game;
 
 import MULE.controllers.GameDummy;
+import MULE.models.Mule;
+import MULE.models.Player;
+import MULE.models.SmithOre;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import org.junit.Assert;

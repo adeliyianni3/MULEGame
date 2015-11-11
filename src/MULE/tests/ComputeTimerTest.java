@@ -1,5 +1,7 @@
-package MULE.models;
+package MULE.tests;
 
+import MULE.models.Player;
+import MULE.models.PlayerTimer;
 import javafx.scene.paint.Color;
 import org.junit.Test;
 
