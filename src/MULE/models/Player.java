@@ -189,7 +189,22 @@ public class Player {
             decrementLand();
         }
     }
-
+    public final boolean loseMule() {
+        if(numOfLands > 0) {
+            ArrayList<Land> land = landOwned;
+            int count = 0;
+            while (count < numOfLands) {
+                if (land.get(count).hasMule()) {
+                    land.get(count).removeMule();
+                    return true;
+                }
+                else {
+                    count++;
+                }
+            }
+        }
+        return false;
+    }
     /**
      * Gets the name of the Player.
      * @return The name of the Player
