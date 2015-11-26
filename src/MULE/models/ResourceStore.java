@@ -144,4 +144,8 @@ public class ResourceStore {
     public final void addSmithOre() {
         smithoreInventory = smithoreInventory + 1;
     }
+
+    public void clearFoodStock() {
+        foodInventory = 0;
+    }
 }

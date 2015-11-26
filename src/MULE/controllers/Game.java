@@ -52,6 +52,7 @@ public class Game {
     private final ResourceStore store = new ResourceStore();
     private final int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private static final RandomEvent[] possibleEvents = {new EventOne(), new EventTen(), new EventEight(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven(), new EventNine(), new EventEleven(), new EventTwelve()};
+    private static final RandomEvent[] planetEvents = {new PlanetaryEventTwo()};
     private final boolean[][] muleArray = new boolean[5][9];
     private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
@@ -402,6 +403,7 @@ public class Game {
         totalTurns++;
         round = (totalTurns-1) / numOfPlayers;
         if (turn == 1) {
+            planetaryEvent();
             reorderPlayers();
         }
         System.out.println(round + " " + (round > MAX_ROUND));
@@ -410,6 +412,14 @@ public class Game {
         } else {
             currentState = State.MAIN; //swap out with display scores later
             ScreenNavigator.getInstance().loadMain();
+        }
+    }
+
+    private void planetaryEvent() {
+        int rand = new Random().nextInt(100);
+        if (rand < 10) {
+            int x = rand % possibleEvents.length;
+            planetEvents[x].apply(null);
         }
     }
 
