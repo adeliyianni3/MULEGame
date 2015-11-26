@@ -33,7 +33,7 @@ public class Game {
     private static final int BONUS = 250;
     private static final int RANDOM_EVENT_PROBABILITY = 27;
     private static final int MAX_PROBABILITY = 101;
-    private static final int NUMBER_GOOD_EVENTS = 5;
+    private static final int NUMBER_GOOD_EVENTS = 6;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
     private final ArrayList<Color> notAllowed = new ArrayList<>();
@@ -51,7 +51,7 @@ public class Game {
     public final PlayerTimer timer = new PlayerTimer();
     private final ResourceStore store = new ResourceStore();
     private final int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
-    private static final RandomEvent[] possibleEvents = {new EventOne(), new EventEight(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven(), new EventNine()};
+    private static final RandomEvent[] possibleEvents = {new EventOne(), new EventTen(), new EventEight(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven(), new EventNine()};
     private final boolean[][] muleArray = new boolean[5][9];
     private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;

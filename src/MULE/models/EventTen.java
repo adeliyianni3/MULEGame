@@ -21,6 +21,6 @@ public class EventTen implements RandomEvent {
     public final String apply(final Player p) {
         p.addResource(new Crystite(), 3);
         return p.getName() + " YOU DISCOVERED AN ABANDONED SPACE CRAFT "
-                + " AND INSIDE HAD 3 CRUSTITES.";
+                + " AND INSIDE HAD 3 CRYSTITES.";
     }
 }
