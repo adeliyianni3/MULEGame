@@ -1,25 +1,23 @@
 package MULE.models;
 
-//Created by Antonia on 11/4/2015.
-
 /**
- * Interface containing information based of a Race's characteristics.
+ * Created by Antonia on 11/26/2015.
  */
-public class Ugaite implements Race {
+public class MoonMen implements Race {
     /**
      * Starting amount of money.
      */
-    private final int startMoney = 1000;
+    private final int startMoney = 800;
     /**
      * No-args constructor.
      */
-    public Ugaite() { }
+    public MoonMen() { }
     /**
      * Gets the starting amount of money.
      * @return The starting amount of money
      */
     @Override
-    public final int startMoney() {
+    public int startMoney() {
         return startMoney;
     }
 }
