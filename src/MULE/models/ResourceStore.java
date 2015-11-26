@@ -148,4 +148,8 @@ public class ResourceStore {
     public void clearFoodStock() {
         foodInventory = 0;
     }
+
+    public void clearSmithOreStock() {
+        smithoreInventory = 0;
+    }
 }

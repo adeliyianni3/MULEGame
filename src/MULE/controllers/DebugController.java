@@ -96,6 +96,8 @@ public class DebugController implements Initializable {
     private Label currentPlayer;
     @FXML
     private Label lastEvent;
+    @FXML
+    private Label lastPlanetEvent;
     //private Player[] p;
     //private Player[] op;
 
@@ -115,6 +117,7 @@ public class DebugController implements Initializable {
                             }
                             totalTurn.setText("" + Game.getInstance().getTotalTurns());
                             lastEvent.setText(Game.getInstance().getLastEvent());
+                            lastPlanetEvent.setText(Game.getInstance().getLastPlanetEvent());
                             round.setText("" + Game.getInstance().getRound());
                             phase.setText("" + Game.getInstance().getPhase().name());
                             //Player[] p = Game.getInstance().getPlayers();

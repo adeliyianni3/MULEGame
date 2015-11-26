@@ -36,6 +36,7 @@ public class Game {
     private static final int NUMBER_GOOD_EVENTS = 6;
     public static Game instance = new Game();
     private String lastEvent = "---"; //ONLY DEBUG
+    private String lastPlanetEvent = "---"; //ONLY DEBUG
     private final ArrayList<Color> notAllowed = new ArrayList<>();
     private int numOfPlayers = 1;
     private final int DEFAULT_PLAYER_AMOUNT = 0; //why is this 0?
@@ -52,7 +53,7 @@ public class Game {
     private final ResourceStore store = new ResourceStore();
     private final int[] resourcePoints = {1, 500, 1, 1, 1}; //holds point values of money, land, energy, smithore, food
     private static final RandomEvent[] possibleEvents = {new EventOne(), new EventTen(), new EventEight(), new EventTwo(), new EventThree(), new EventFour(), new EventFive(), new EventSix(), new EventSeven(), new EventNine(), new EventEleven(), new EventTwelve()};
-    private static final RandomEvent[] planetEvents = {new PlanetaryEventTwo()};
+    private static final RandomEvent[] planetEvents = {new PlanetaryEventTwo(), new PlanetaryEventOne(), new PlanetaryEventThree()};
     private final boolean[][] muleArray = new boolean[5][9];
     private final Color[][] colorArray = new Color[5][9];
     private transient MediaPlayer mediaPlayer = null;
@@ -182,6 +183,10 @@ public class Game {
 
     public Map getTheMap() {
         return theMap;
+    }
+
+    public String getLastPlanetEvent() {
+        return lastPlanetEvent;
     }
 
     public enum State{
@@ -418,8 +423,8 @@ public class Game {
     private void planetaryEvent() {
         int rand = new Random().nextInt(100);
         if (rand < 10) {
-            int x = rand % possibleEvents.length;
-            planetEvents[x].apply(null);
+            int x = rand % planetEvents.length;
+            lastPlanetEvent = planetEvents[x].apply(null);
         }
     }
 
