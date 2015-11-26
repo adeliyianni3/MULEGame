@@ -4,6 +4,7 @@ import MULE.controllers.Game;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 // Created by Ethan on 9/17/2015.
 
@@ -173,6 +174,20 @@ public class Player {
      */
     public final void incrementLand() {
         numOfLands++;
+    }
+    public final void decrementLand() {
+        Random rand = new Random();
+        int index = rand.nextInt(numOfLands);
+        numOfLands--;
+        Land lostland = landOwned.get(index);
+        landOwned.remove(lostland);
+        lostland.uncolor();
+        lostland.removeMule();
+    }
+    public final void loseLand() {
+        if(numOfLands > 0) {
+            decrementLand();
+        }
     }
 
     /**

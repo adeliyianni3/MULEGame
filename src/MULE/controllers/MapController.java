@@ -203,7 +203,7 @@ public class MapController implements Initializable {
     @FXML
     private Rectangle mul48;
 
-    private Rectangle[][] mapArr;
+    private static Rectangle[][] mapArr;
 
 
     private Rectangle[][] mulArr;
@@ -258,10 +258,13 @@ public class MapController implements Initializable {
         Game.instance.landClicked(landName, mapArr[i][j], mulArr[i][j]);
         showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
     }
-
     @FXML
     void townClick() {
         Game.instance.townClicked();
+    }
+
+    public static void landLost(int col, int row) {
+        mapArr[row][col].setStroke(null);
     }
 
     @FXML

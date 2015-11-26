@@ -1,6 +1,7 @@
 package MULE.models;
 
 import MULE.controllers.Game;
+import MULE.controllers.MapController;
 
 //Created by Antonia on 9/16/2015.
 
@@ -68,7 +69,9 @@ public class Land {
     public final boolean isOwned() {
         return owned;
     }
-
+    public final void removeMule() {
+        setMule(null);
+    }
     /**
      * Sets this land to owned.
      */
@@ -171,5 +174,8 @@ public class Land {
                 owner.addResource(mule.getResource(), mule.produce(type));
             }
         }
+    }
+    public void uncolor() {
+        MapController.landLost(col, row);
     }
 }
