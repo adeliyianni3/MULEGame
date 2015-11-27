@@ -19,11 +19,11 @@ public class Map {
      */
     public Map() {
         for (int row = 0; row < 5; row++) {
-            landArray[row][4] = new Land(new River(), row, 4);
-            for (int col = 0; col < 4; col++) {
+            for (int col = 0; col < 9; col++) {
                 landArray[row][col] = new Land(new Plain(), row, col);
-                landArray[row][8 - col] =
-                        new Land(new Plain(), row, 8 - col);
+            }
+            if (row != 2) {
+                landArray[row][4] = new Land(new River(), row, 4);
             }
         }
         landArray[0][2] = new Land(new Mountain(), 0, 2);
@@ -38,6 +38,8 @@ public class Map {
         landArray[2][0] = new Land(new T_Mountain(), 2, 0);
         landArray[0][6] = new Land(new T_Mountain(), 0, 6);
         landArray[1][8] = new Land(new T_Mountain(), 1, 8);
+        landArray[1][6] = new Land(new Woods(), 1, 6);
+        landArray[2][3] = new Land(new Woods(), 2, 3);
     }
 
     /**
