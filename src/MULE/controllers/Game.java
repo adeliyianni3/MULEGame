@@ -332,9 +332,10 @@ public class Game {
                         buyPhaseEndTurn();
                     }
                 }
-            }
-            if (round == 3 && turn == 1) {
-                ScreenNavigator.getInstance().togglePassButton();
+                if (round == 3 && turn == 1) {
+                    System.out.println("HERE");
+                    ScreenNavigator.getInstance().togglePassButton();
+                }
             }
 
 
