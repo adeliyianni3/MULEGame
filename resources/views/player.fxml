@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.PlayerController">
   <children>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="337.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="140.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
@@ -29,7 +34,7 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="525.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="525.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
@@ -114,11 +119,6 @@
     <Button font="$x1" layoutX="34.0" layoutY="327.0" mnemonicParsing="false" onAction="#toMain" text="Back" />
     <Label layoutX="397.0" layoutY="254.0" text="Color" />
     <TextField fx:id="nameBox" layoutX="339.0" layoutY="68.0" styleClass="button" />
-    <ImageView fitHeight="119.46153259277344" fitWidth="172.5555543923083" layoutX="25.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@M.U.L.E..png" />
-      </image>
-    </ImageView>
     <MenuBar layoutX="0.0" layoutY="0.0" prefWidth="66.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
@@ -159,32 +159,39 @@
         <Color blue="1.000" green="0.600" red="0.728" fx:id="x5" />
       </fill>
     </Rectangle>
-    <Label layoutX="233.0" layoutY="213.0" text="Humanoid" />
-    <Label layoutX="319.0" layoutY="213.0" text="Ugaite" />
-    <Label layoutX="388.0" layoutY="213.0" text="Buzzite" />
-    <Label layoutX="456.0" layoutY="178.0" text="Bonzoid" />
-    <Label layoutX="520.0" layoutY="177.0" text="Flapper" />
+    <Label layoutX="48.0" layoutY="216.0" text="Humanoid" />
+    <Label layoutX="139.0" layoutY="215.0" text="Ugaite" />
+    <Label layoutX="220.0" layoutY="215.0" text="Buzzite" />
+    <Label layoutX="458.0" layoutY="183.0" text="Bonzoid" />
+    <Label layoutX="522.0" layoutY="182.0" text="Flapper" />
     <Label layoutX="391.0" layoutY="39.0" text="Name" />
-    <ImageView fitHeight="67.03905487060547" fitWidth="74.24418862141879" layoutX="299.0" layoutY="146.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="81.26612854003906" fitWidth="79.99998474121094" layoutX="119.0" layoutY="134.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@U.G.A.H.E.A.D..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="71.30384218168459" fitWidth="74.24420928955078" layoutX="374.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="81.26612091064453" fitWidth="84.61730298552267" layoutX="199.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@B.U.Z.Z.H.E.A.D..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="79.42206628512807" fitWidth="80.99999237060547" layoutX="219.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="87.26622185302661" fitWidth="88.99998474121094" layoutX="34.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@H.U.M.A.N.H.E.A.D..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="Ugaite" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="299.0" layoutY="136.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="74.24420166015625" />
-    <Rectangle fx:id="Humanoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="220.0" layoutY="135.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="80.0" />
-    <Rectangle fx:id="Buzzite" arcHeight="5.0" arcWidth="5.0" fill="#00000002" height="97.4615478515625" layoutX="374.0" layoutY="136.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="74.24420166015625" />
-    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="446.0" layoutY="133.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
-    <Rectangle fx:id="Flapper" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="510.0" layoutY="135.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
+    <Rectangle fx:id="Ugaite" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="119.0" layoutY="129.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="79.99999237060547" />
+    <Rectangle fx:id="Humanoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="34.0" layoutY="129.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="89.0" />
+    <Rectangle fx:id="Buzzite" arcHeight="5.0" arcWidth="5.0" fill="#00000002" height="106.4615478515625" layoutX="199.0" layoutY="129.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="84.0" />
+    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="448.0" layoutY="138.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
+    <Rectangle fx:id="Flapper" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="97.4615478515625" layoutX="512.0" layoutY="140.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="66.0" />
+    <Label layoutX="302.0" layoutY="216.0" text="Moon Men" />
+    <ImageView fitHeight="83.68291675753707" fitWidth="93.99999237060547" layoutX="283.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@M.O.O.N.png" />
+      </image>
+    </ImageView>
+    <Rectangle id="MoonMen" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="284.0" layoutY="129.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="93.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />
