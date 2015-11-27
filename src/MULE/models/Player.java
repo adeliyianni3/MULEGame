@@ -1,6 +1,7 @@
 package MULE.models;
 
 import MULE.controllers.Game;
+import MULE.controllers.MapController;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
@@ -196,6 +197,7 @@ public class Player {
             while (count < numOfLands) {
                 if (land.get(count).hasMule()) {
                     land.get(count).removeMule();
+                    MapController.loseMule(land.get(count).getRow(), land.get(count).getCol());
                     return true;
                 }
                 else {

@@ -176,6 +176,6 @@ public class Land {
         }
     }
     public void uncolor() {
-        MapController.landLost(col, row);
+        MapController.landLost(col, row, this);
     }
 }

@@ -21,11 +21,11 @@ public class EventEleven implements RandomEvent {
     public final String apply(final Player p) {
         boolean check = p.loseMule();
         if (check) {
-            return p.getName() + " WILD QI'ZOZIVUNS SCARED ONE OF YOUR"
-                    + "MULES AWAY.";
+            return p.getName() + " WILD QI'ZOZIVUNS SCARED ONE OF YOUR "
+                    + " MULES AWAY.";
         } else {
-            return p.getName() + " WILD QI'ZOZIVUNS ATTACKED"
-                    + "HOWEVER YOU HAD NO MULE TO SCARE AWAY.";
+            return p.getName() + " WILD QI'ZOZIVUNS ATTACKED "
+                    + " HOWEVER YOU HAD NO MULE TO SCARE AWAY.";
         }
     }
 }

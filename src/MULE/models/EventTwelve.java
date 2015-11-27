@@ -30,7 +30,7 @@ public class EventTwelve implements RandomEvent {
             return p.getName() + " WILD T'VOAS STOLE"
                     + x + "PIECES OF ENERGY.";
         } else {
-            return p.getName() + " WILD T'VOAS CAME TO STEAL"
+            return p.getName() + " WILD T'VOAS CAME TO STEAL "
                     + " ENERGY, BUT FOUND NONE.";
         }
     }

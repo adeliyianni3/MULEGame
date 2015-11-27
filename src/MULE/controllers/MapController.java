@@ -1,5 +1,6 @@
 package MULE.controllers;
 
+import MULE.models.Land;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
@@ -206,7 +207,7 @@ public class MapController implements Initializable {
     private static Rectangle[][] mapArr;
 
 
-    private Rectangle[][] mulArr;
+    private static Rectangle[][] mulArr;
 
     @FXML
     private Rectangle continueRect;
@@ -263,8 +264,12 @@ public class MapController implements Initializable {
         Game.instance.townClicked();
     }
 
-    public static void landLost(int col, int row) {
+    public static void landLost(int col, int row, Land landlost) {
         mapArr[row][col].setStroke(null);
+        if (landlost.hasMule()) {
+            landlost.setMule(null);
+            mulArr[row][col].setFill(null);
+        }
     }
 
     @FXML
@@ -303,5 +308,9 @@ public class MapController implements Initializable {
                 }
             }
         }
+    }
+
+    public static void loseMule(int row, int col) {
+        mulArr[row][col].setFill(null);
     }
 }
