@@ -1,31 +1,9 @@
 package MULE.models;
 
-// Created by Antonia on 9/17/2015.
-
 /**
- * Enumeration containing Resource production multipliers.
+ * Created by Antonia on 11/27/2015.
  */
-public enum LandType {
-    /**
-     * Plains multipliers.
-     */
-    PLAIN(2.0, 3.0, 1.0, 1.0),
-    /**
-     * River multipliers.
-     */
-    RIVER(4.0, 2.0, 0.0, 0.0),
-    /**
-     * Mountain multipliers.
-     */
-    MOUNTAIN(1.0, 1.0, 2.0, 1.0),
-    /**
-     * D-Mountain multipliers.
-     */
-    D_MOUNTAIN(1.0, 1.0, 3.0, 1.0),
-    /**
-     * T-Mountain multipliers.
-     */
-    T_MOUNTAIN(1.0, 1.0, 4.0, 1.0);
+public abstract class LandType {
     /**
      * Food production multiplier.
      */
@@ -42,6 +20,13 @@ public enum LandType {
      * Crystite production multiplier.
      */
     private double crystiteFactor;
+    /**
+     * Gets the Food production multiplier.
+     * @return the Food production multiplier
+     */
+    public double getFoodFactor() {
+        return foodFactor;
+    }
 
     /**
      * No-args constructor.
@@ -64,13 +49,6 @@ public enum LandType {
         crystiteFactor = nCrystiteFactor;
     }
 
-    /**
-     * Gets the Food production multiplier.
-     * @return the Food production multiplier
-     */
-    public double getFoodFactor() {
-        return foodFactor;
-    }
 
     /**
      * Gets the Energy production multiplier.
@@ -95,5 +73,4 @@ public enum LandType {
     public double getCrystiteFactor() {
         return crystiteFactor;
     }
-
 }
