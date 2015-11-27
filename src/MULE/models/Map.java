@@ -11,7 +11,9 @@ public class Map {
      * Array of Land objects.
      */
     private final Land[][] landArray = new Land[5][9];
-
+    public Land[][] getLandArray() {
+        return landArray;
+    }
     /**
      * No-args constructor.
      */

@@ -3,6 +3,8 @@ package MULE.models;
 import MULE.controllers.Game;
 import MULE.controllers.MapController;
 
+import java.util.Random;
+
 //Created by Antonia on 9/16/2015.
 
 /**
@@ -177,5 +179,9 @@ public class Land {
     }
     public void uncolor() {
         MapController.landLost(col, row, this);
+    }
+
+    public LandType getType() {
+        return type;
     }
 }

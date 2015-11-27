@@ -1,5 +1,8 @@
 package MULE.models;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 /**
  * Created by Antonia on 11/27/2015.
  */
@@ -20,6 +23,7 @@ public abstract class LandType {
      * Crystite production multiplier.
      */
     private double crystiteFactor;
+    private Image image;
     /**
      * Gets the Food production multiplier.
      * @return the Food production multiplier
@@ -47,6 +51,12 @@ public abstract class LandType {
         smithOreFactor = nSmithOreFactor;
         energyFactor = nEnergyFactor;
         crystiteFactor = nCrystiteFactor;
+    }
+    public void setImage(Image im) {
+        image = im;
+    }
+    public Image getImage() {
+        return image;
     }
 
 

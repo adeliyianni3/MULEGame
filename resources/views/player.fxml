@@ -195,13 +195,13 @@
         <Image url="@B.O.N.Z.O.I.D.H.E.A.D..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="374.0" layoutY="131.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="93.0" />
     <ImageView fitHeight="83.68292236328125" fitWidth="86.9498200920038" layoutX="464.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@F.L.A.P.P.E.R.H.E.A.D..png" />
       </image>
     </ImageView>
     <Rectangle fx:id="Flapper" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="464.0" layoutY="131.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="87.5194091796875" />
+    <Rectangle fx:id="Bonzoid" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.4615478515625" layoutX="374.0" layoutY="131.0" onMouseClicked="#selectRace" strokeType="INSIDE" strokeWidth="5.0" width="93.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />
