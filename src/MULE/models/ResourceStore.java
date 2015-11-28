@@ -2,6 +2,8 @@ package MULE.models;
 
 //Created by Antonia on 9/26/2015.
 
+import MULE.controllers.Game;
+
 /**
  * Store class that stores information on Resource stock.
  */
@@ -10,7 +12,7 @@ public class ResourceStore {
     /**
      * Amount of energy in stock.
      */
-    private int energyInventory = 16;
+    private int energyInventory;
     /**
      * Amount of lumber in stock.
      */
@@ -18,23 +20,29 @@ public class ResourceStore {
     /**
      * Amount of crystite in stock.
      */
-    private int crystiteInventory = 0;
+    private int crystiteInventory;
     /**
      * Amount of food in stock.
      */
-    private int foodInventory = 16;
+    private int foodInventory;
     /**
      * Amount of smithore in stock.
      */
-    private int smithoreInventory = 0;
-//    private int muleInventory = 25;
+    private int smithoreInventory;
+    private int muleInventory;
 
     /**
      * No-args constructor.
      */
     public ResourceStore() {
     }
-
+    public void setStore() {
+        foodInventory = Game.getInstance().getDifficulty().getStoreFood();
+        energyInventory = Game.getInstance().getDifficulty().getStoreEnergy();
+        smithoreInventory = Game.getInstance().getDifficulty().getStoreSmithOre();
+        crystiteInventory = Game.getInstance().getDifficulty().getStoreCrystite();
+        muleInventory = Game.getInstance().getDifficulty().getStoreMule();
+    }
     /**
      * Gets the amount of energy in stock.
      * @return Amount of energy in stock

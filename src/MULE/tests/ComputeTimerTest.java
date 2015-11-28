@@ -1,5 +1,6 @@
 package MULE.tests;
 
+import MULE.controllers.Diffuculty;
 import MULE.models.Player;
 import MULE.models.PlayerTimer;
 import javafx.scene.paint.Color;
@@ -10,7 +11,7 @@ public class ComputeTimerTest {
     @Test
     public void computeTimerTest() {
         PlayerTimer test = new PlayerTimer();
-        Player p = new Player("name", "humanoid", Color.AZURE);
+        Player p = new Player("name", "humanoid", Color.AZURE, Diffuculty.BEGGINER.getPlayerFood(), Diffuculty.BEGGINER.getPlayerEnergy());
         assert (p.getFood() == 8);
         for (int i = 3; i < 15; i++) {
             assert (test.computeTime(p, i) == 50);

@@ -159,7 +159,7 @@ public class Player {
      * @param newColor Color of the player
      */
     public Player(final String newName, final String sRace,
-                  final Color newColor) {
+                  final Color newColor, int diffFood, int diffEnergy) {
         name = newName;
         try {
             String newsRace = sRace.substring(0, 1).toUpperCase()
@@ -175,11 +175,11 @@ public class Player {
         numOfLands = 0;
         numOfResources = new int[5];
 
-        for (int i = 0; i < 4; i = i + 1) {
+        for (int i = 0; i < diffEnergy; i = i + 1) {
             Energy resource = new Energy();
             addResource(resource);
         }
-        for (int i = 0; i < 8; i = i + 1) {
+        for (int i = 0; i < diffFood; i = i + 1) {
             Food resource = new Food();
             addResource(resource);
         }

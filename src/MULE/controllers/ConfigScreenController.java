@@ -31,7 +31,7 @@ public class ConfigScreenController {
     }
 
 
-    private int difficulty() {
+    private Diffuculty difficulty() {
         int difficulty;
         switch ((String) difficultyChoiceBox.getValue()) {
             case "Beginner": difficulty = 0;
@@ -44,7 +44,8 @@ public class ConfigScreenController {
                 break;
 
         }
-        return difficulty;
+        Diffuculty[] choices = {Diffuculty.BEGGINER, Diffuculty.STANDARD, Diffuculty.TOURNAMENT};
+        return choices[difficulty];
     }
     @FXML
     private void closeGame() {

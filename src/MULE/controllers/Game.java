@@ -43,7 +43,7 @@ public class Game {
     private int round = 0;
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
-    private int difficulty;
+    private Diffuculty difficulty;
 //    private int mapType;
 //    private int[] playerTurn; //unused?
     private int totalTurns = 1;
@@ -209,7 +209,7 @@ public class Game {
         currentState = s;
     }
 
-    int getDifficulty() {
+    public Diffuculty getDifficulty() {
         return difficulty;
     }
 
@@ -475,9 +475,10 @@ public class Game {
         return numOfPlayers;
     }
 
-    public void setConfigurationSettings(int difficulty, int numOfPlayers) {
+    public void setConfigurationSettings(Diffuculty difficulty, int numOfPlayers) {
         this.difficulty = difficulty;
         setNumOfPlayers(numOfPlayers);
+        store.setStore();
         currentState = State.CONFIG;
         ScreenNavigator.getInstance().loadNewPlayer();
         System.out.println(Game.instance.getDifficulty());
@@ -485,7 +486,7 @@ public class Game {
 
     public void addPlayer(String race, Color c, String name) {
         notAllowed.add(c);
-        players[turn-1] = new Player(name, race, c);
+        players[turn-1] = new Player(name, race, c, getDifficulty().getPlayerFood(), getDifficulty().getPlayerEnergy());
         originalPlayers[turn-1] = players[turn-1];
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {
