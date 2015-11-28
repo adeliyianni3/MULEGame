@@ -63,11 +63,13 @@ public class StoreController implements Initializable {
             if (p.getMoney() < price){
                 System.out.println("You do not have enough money.\nUnit price: " + price + ", Your money: " + p.getMoney());
             } else {
-                if (item.getInventory(Game.getInstance().getStore()) > 0) {
-                    p.subtractMoney(price);
-                    p.addResource(item);
-                    System.out.println(item.buyInventory(Game.getInstance().getStore()) + " " + thing.toString() + " left");
-                    cartList.getItems().remove(thing);
+                if (p.siloHasSpace(item)) {
+                    if (item.getInventory(Game.getInstance().getStore()) > 0) {
+                        p.subtractMoney(price);
+                        p.addResource(item);
+                        System.out.println(item.buyInventory(Game.getInstance().getStore()) + " " + thing.toString() + " left");
+                        cartList.getItems().remove(thing);
+                    }
                 }
             }
         }

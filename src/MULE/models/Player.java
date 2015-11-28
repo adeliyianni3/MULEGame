@@ -45,6 +45,10 @@ public class Player {
      * ArrayList of Land owned by the Player.
      */
     private final ArrayList<Land> landOwned = new ArrayList<>();
+    /**
+     * Number of Silos owned by the Player to hold food.
+     */
+    private int silos = 1;
 
     /**
      * Gets and takes away the Mule that the Player is holding.
@@ -179,7 +183,6 @@ public class Player {
             Food resource = new Food();
             addResource(resource);
         }
-
     }
 
     /**
@@ -232,7 +235,16 @@ public class Player {
      * @param source Resource to be added
      */
     public final void addResource(final Resource source) {
-        numOfResources[source.getID()] = numOfResources[source.getID()] + 1;
+        if (siloHasSpace(source)) {
+                numOfResources[source.getID()] = numOfResources[source.getID()] + 1;
+        }
+    }
+    public boolean siloHasSpace(Resource source) {
+        if (source.getID() == 1) {
+            return numOfResources[source.getID()] / 12 < silos;
+        } else {
+            return true;
+        }
     }
 
     /**
