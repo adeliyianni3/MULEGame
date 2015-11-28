@@ -38,8 +38,13 @@ public class Map {
         landArray[2][0] = new Land(new T_Mountain(), 2, 0);
         landArray[0][6] = new Land(new T_Mountain(), 0, 6);
         landArray[1][8] = new Land(new T_Mountain(), 1, 8);
+
+        landArray[4][5] = new Land(new Woods(), 4, 5);
         landArray[1][6] = new Land(new Woods(), 1, 6);
         landArray[2][3] = new Land(new Woods(), 2, 3);
+
+        landArray[0][0] = new Land(new Desert(), 0, 0);
+        landArray[3][8] = new Land(new Desert(), 3, 8);
     }
 
     /**

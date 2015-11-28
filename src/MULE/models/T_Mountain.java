@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
  */
 public class T_Mountain extends LandType {
     T_Mountain() {
-        super(1.0, 1.0, 4.0, 1.0);
+        super(1.0, 1.0, 4.0, 1.0, 0.0);
         setImage(new Image(getClass().getResource("/views/T.M.O.U.N.T.A.I.N..png").toString()));
     }
 }

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MULEPenController">
   <children>
     <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
@@ -29,7 +35,7 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="329.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="300.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
@@ -110,20 +116,20 @@
       </fill>
     </Rectangle>
     <Label layoutX="497.0" layoutY="102.0" onMouseClicked="#foodMULE" text="Buy" />
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="263.0" onMouseClicked="#crystaliteMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Label layoutX="497.0" layoutY="267.0" onMouseClicked="#crystaliteMULE" text="Buy" />
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="209.0" onMouseClicked="#smithoreMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Label layoutX="497.0" layoutY="213.0" onMouseClicked="#smithoreMULE" text="Buy" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="239.0" onMouseClicked="#crystaliteMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Label layoutX="497.0" layoutY="243.0" onMouseClicked="#crystaliteMULE" text="Buy" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="193.0" onMouseClicked="#smithoreMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Label layoutX="497.0" layoutY="197.0" onMouseClicked="#smithoreMULE" text="Buy" />
     <Label layoutX="235.0" layoutY="32.0" text="MULEs Available:" />
     <Label layoutX="356.0" layoutY="31.0" text="Label" />
     <Label layoutX="347.0" layoutY="102.0" text="Food MULE" />
-    <Label layoutX="347.0" layoutY="267.0" text="Crystite MULE" />
-    <Label layoutX="347.0" layoutY="213.0" text="Smithore MULE" />
+    <Label layoutX="347.0" layoutY="243.0" text="Crystite MULE" />
+    <Label layoutX="347.0" layoutY="197.0" text="Smithore MULE" />
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="43.0" layoutX="14.0" layoutY="343.0" onMouseClicked="#returnToStore" stroke="BLACK" strokeType="INSIDE" width="130.0" />
     <Label layoutX="29.0" layoutY="354.0" onMouseClicked="#returnToStore" text="Return to Store" />
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="154.0" onMouseClicked="#energyMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-    <Label layoutX="497.0" layoutY="158.0" onMouseClicked="#energyMULE" text="Buy" />
-    <Label layoutX="347.0" layoutY="158.0" text="Energy MULE" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="29.0" layoutX="484.0" layoutY="146.0" onMouseClicked="#energyMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Label layoutX="497.0" layoutY="150.0" onMouseClicked="#energyMULE" text="Buy" />
+    <Label layoutX="347.0" layoutY="150.0" text="Energy MULE" />
     <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
@@ -139,6 +145,9 @@
         </Menu>
       </menus>
     </MenuBar>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#549495" height="29.0" layoutX="484.0" layoutY="282.0" onMouseClicked="#crystaliteMULE" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+    <Label layoutX="497.0" layoutY="286.0" onMouseClicked="#LumberMULE" text="Buy" />
+    <Label layoutX="347.0" layoutY="286.0" text="Lumber MULE" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

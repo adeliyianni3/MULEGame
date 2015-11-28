@@ -11,6 +11,10 @@ public class ResourceStore {
      */
     private int energyInventory = 16;
     /**
+     * Amount of lumber in stock.
+     */
+    private int lumberInventory = 0;
+    /**
      * Amount of crystite in stock.
      */
     private int crystiteInventory = 0;
@@ -151,5 +155,20 @@ public class ResourceStore {
 
     public void clearSmithOreStock() {
         smithoreInventory = 0;
+    }
+
+    public void addLumber() {
+        lumberInventory = lumberInventory + 1;
+    }
+
+    public void buyLumber() {
+        int total = getLumberInventory();
+        if (total > 0) {
+            lumberInventory = total - 1;
+        }
+    }
+
+    public int getLumberInventory() {
+        return lumberInventory;
     }
 }

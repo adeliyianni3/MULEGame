@@ -59,6 +59,14 @@ public class DebugController implements Initializable {
     @FXML
     private Label money4;
     @FXML
+    private Label lumber1;
+    @FXML
+    private Label lumber2;
+    @FXML
+    private Label lumber3;
+    @FXML
+    private Label lumber4;
+    @FXML
     private Label land1;
     @FXML
     private Label land2;
@@ -151,6 +159,7 @@ public class DebugController implements Initializable {
                                 food1.setText("" + op[0].getFood());
                                 smithore1.setText("" + op[0].getSmithore());
                                 energy1.setText("" + op[0].getEnergy());
+                                lumber1.setText("" + op[0].getLumber());
 
                             }
                             if (op.length > 1 && op[1] != null) {
@@ -160,6 +169,7 @@ public class DebugController implements Initializable {
                                 food2.setText("" + op[1].getFood());
                                 smithore2.setText("" + op[1].getSmithore());
                                 energy2.setText("" + op[1].getEnergy());
+                                lumber2.setText("" + op[1].getLumber());
 
                             }
                             if (op.length > 2 && op[2] != null) {
@@ -169,6 +179,7 @@ public class DebugController implements Initializable {
                                 food3.setText("" + op[2].getFood());
                                 smithore3.setText("" + op[2].getSmithore());
                                 energy3.setText("" + op[2].getEnergy());
+                                lumber3.setText("" + op[2].getLumber());
 
                             }
                             if (op.length > 3 && op[3] != null) {
@@ -178,6 +189,7 @@ public class DebugController implements Initializable {
                                 food4.setText("" + op[3].getFood());
                                 smithore4.setText("" + op[3].getSmithore());
                                 energy4.setText("" + op[3].getEnergy());
+                                lumber4.setText("" + op[3].getLumber());
 
                             }
 

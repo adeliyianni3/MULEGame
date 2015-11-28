@@ -1,6 +1,7 @@
 package MULE.controllers;
 
 import MULE.models.*;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 
 // Created by Ethan on 10/1/2015.
@@ -53,4 +54,8 @@ public class MULEPenController {
         Game.getInstance().playMusic();
     }
 
+    @FXML
+    public void LumberMULE(Event event) {
+        Game.getInstance().buyMULE(new Lumber());
+    }
 }

@@ -36,7 +36,7 @@ public class Player {
     /**
      * Array of amounts of Resources that the Player owns.
      */
-    private int[] numOfResources; //energy, food, smithore, and crystite
+    private int[] numOfResources; //energy, food, smithore, crystite, and lumber
     /**
      * Number of Lands that the Player owns.
      */
@@ -61,7 +61,6 @@ public class Player {
      * @param land Land to be given to the Player
      */
     public final void addLand(final Land land) {
-        System.out.println("HERE");
         landOwned.add(land);
     }
 
@@ -80,7 +79,20 @@ public class Player {
     public final int getEnergy() {
         return numOfResources[0];
     }
-
+    /**
+     * Gets the number of Lumber that the Player has.
+     * @return The number of Lumber that the Player has.
+     */
+    public final int getLumber() {
+        return numOfResources[4];
+    }
+    /**
+     * Checks to see if the Player has any Lumber.
+     * @return true if the Player has at least one Lumber, false otherwise
+     */
+    public final boolean hasLumber() {
+        return numOfResources[4] > 0;
+    }
     /**
      * Checks to see if the Player has any energy.
      * @return true if the Player has at least one energy, false otherwise
@@ -157,7 +169,7 @@ public class Player {
         money = race.startMoney();
 
         numOfLands = 0;
-        numOfResources = new int[4];
+        numOfResources = new int[5];
 
         for (int i = 0; i < 4; i = i + 1) {
             Energy resource = new Energy();

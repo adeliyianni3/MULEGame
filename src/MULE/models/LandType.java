@@ -25,6 +25,11 @@ public abstract class LandType {
     private double crystiteFactor;
     private Image image;
     /**
+     * lumber production multiplier.
+     */
+    private double lumberFactor;
+
+    /**
      * Gets the Food production multiplier.
      * @return the Food production multiplier
      */
@@ -46,11 +51,12 @@ public abstract class LandType {
      * @param nCrystiteFactor Crystite production multiplier
      */
     LandType(final double nFoodFactor, final double nEnergyFactor,
-             final double nSmithOreFactor, final double nCrystiteFactor) {
+             final double nSmithOreFactor, final double nCrystiteFactor, final double nLumberFactor) {
         foodFactor = nFoodFactor;
         smithOreFactor = nSmithOreFactor;
         energyFactor = nEnergyFactor;
         crystiteFactor = nCrystiteFactor;
+        lumberFactor = nLumberFactor;
     }
     public void setImage(Image im) {
         image = im;
@@ -82,5 +88,9 @@ public abstract class LandType {
      */
     public double getCrystiteFactor() {
         return crystiteFactor;
+    }
+
+    public double getLumberFactor() {
+        return lumberFactor;
     }
 }
