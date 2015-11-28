@@ -5,6 +5,6 @@ package MULE.models;
  */
 public class WasteLands extends LandType {
     WasteLands() {
-        super(0.0, 1.0, 0.0, 0.0, 0.0);
+        super(0.0, 1.0, 0.0, 0.0, 0.0, 0.0);
     }
 }

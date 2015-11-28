@@ -127,14 +127,14 @@
       </image>
     </ImageView>
     <Label layoutX="264.0" layoutY="275.0" onMouseClicked="#addCartSmithore" prefWidth="52.0" styleClass="label2" text="SmithOre" />
-    <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae00" height="72.00030517578125" layoutX="259.0" layoutY="203.0" onMouseClicked="#addCartSmithore" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae00" height="91.00030517578125" layoutX="259.0" layoutY="203.0" onMouseClicked="#addCartSmithore" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
     <ImageView fitHeight="72.00043487548828" fitWidth="60.999977929684974" layoutX="429.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@C.R.Y.S.T..png" />
       </image>
     </ImageView>
     <Label layoutX="437.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
-    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" height="91.00030517578125" layoutX="427.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0">
+    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" height="91.00030517578125" layoutX="427.0" layoutY="200.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0">
       <fill>
         <Color blue="1.000" green="0.816" opacity="0.000" red="0.443" fx:id="x3" />
       </fill>
@@ -181,11 +181,11 @@
         <Image url="@C.R.Y.S.T..png" />
       </image>
     </ImageView>
-    <Label layoutX="354.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
-    <Rectangle id="crystite" arcHeight="5.0" arcWidth="5.0" fill="$x3" height="91.00030517578125" layoutX="344.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
-    <Rectangle id="mule" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
+    <Label layoutX="368.0" layoutY="274.0" onMouseClicked="#addCartOil" prefWidth="17.0411376953125" styleClass="label2" text="Oil" />
+    <Rectangle id="silo" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
     <Label layoutX="306.0" layoutY="326.0" prefWidth="52.0" text="Buy Silo" />
-    <Rectangle id="mule" arcHeight="5.0" arcWidth="5.0" fill="#54949500" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#buySilo" stroke="TRANSPARENT" strokeType="INSIDE" width="107.0" />
+    <Rectangle id="silo" arcHeight="5.0" arcWidth="5.0" fill="#54949500" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#buySilo" stroke="TRANSPARENT" strokeType="INSIDE" width="107.0" />
+    <Rectangle id="oil" arcHeight="5.0" arcWidth="5.0" fill="#71d0ff00" height="91.00030517578125" layoutX="348.0" layoutY="200.0" onMouseClicked="#addCartOil" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

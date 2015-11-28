@@ -132,5 +132,8 @@ public class StoreController implements Initializable {
         cartList.setItems(items);
     }
 
-
+    @FXML
+    public void addCartOil(Event event) {
+        items.add(new Oil());
+    }
 }

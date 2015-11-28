@@ -5,6 +5,6 @@ package MULE.models;
  */
 public class Plain extends LandType {
     Plain() {
-        super(2.0, 3.0, 1.0, 1.0, 0.0);
+        super(2.0, 3.0, 1.0, 1.0, 0.0, 0.0);
     }
 }

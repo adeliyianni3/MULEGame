@@ -544,17 +544,22 @@ public class Game {
 //    }
 
     public void buyMULE(Resource resource) {
-        Player p = players[turn - 1];
-        int price = 100;
-        price += resource.getStorePriceExtra();
-        if (p.getMoney() >= price) {
-            Mule newMule = new Mule(resource);
-            p.subtractMoney(price);
-            currentState = State.MULE_PLACING;
-            p.giveMule(newMule); //TODO remove MULE when player's turn ends
-            ScreenNavigator.getInstance().loadMap();
+        if (getStore().getMuleInventory() > 0) {
+            Player p = players[turn - 1];
+            int price = 100;
+            price += resource.getStorePriceExtra();
+            if (p.getMoney() >= price) {
+                Mule newMule = new Mule(resource);
+                p.subtractMoney(price);
+                currentState = State.MULE_PLACING;
+                p.giveMule(newMule); //TODO remove MULE when player's turn ends
+                getStore().setMuleInventory(getStore().getMuleInventory() - 1);
+                ScreenNavigator.getInstance().loadMap();
+            } else {
+                System.out.println("Not enough money"); //TODO proper error message
+            }
         } else {
-            System.out.println("Not enough money"); //TODO proper error message
+            System.out.println("No more mules");
         }
     }
 

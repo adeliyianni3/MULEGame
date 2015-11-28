@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
  */
 public class Desert extends LandType {
     Desert() {
-        super(0.0, 0.0, 1.0, 0.0, 0.0);
+        super(0.0, 0.0, 1.0, 0.0, 0.0, 3.0);
         setImage(new Image(getClass().getResource("/views/D.E.S.E.R.T..png").toString()));
     }
 }

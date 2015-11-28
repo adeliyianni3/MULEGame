@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
  */
 public class Mountain extends LandType {
     Mountain() {
-        super(1.0, 1.0, 2.0, 1.0, 0.0);
+        super(1.0, 1.0, 2.0, 1.0, 0.0, 0.0);
         setImage(new Image(getClass().getResource("/views/M.O.U.N.T.A.I.N..png").toString()));
     }
 }

@@ -29,6 +29,10 @@ public class ResourceStore {
      * Amount of smithore in stock.
      */
     private int smithoreInventory;
+    /**
+     * Amount of oil in stock.
+     */
+    private int oilInventory = 0;
     private int muleInventory;
 
     /**
@@ -182,5 +186,26 @@ public class ResourceStore {
     }
     public int getSiloPrice() {
         return siloPrice;
+    }
+
+    public void addOil() {
+        oilInventory = oilInventory + 1;
+    }
+    public int getOilInventory() {
+        return oilInventory;
+    }
+    public void buyOil() {
+        int total = getOilInventory();
+        if (total > 0) {
+            oilInventory = total - 1;
+        }
+    }
+
+    public int getMuleInventory() {
+        return muleInventory;
+    }
+
+    public void setMuleInventory(int muleInventory) {
+        this.muleInventory = muleInventory;
     }
 }

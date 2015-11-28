@@ -91,6 +91,20 @@ public class Player {
         return numOfResources[4];
     }
     /**
+     * Gets the number of Oil that the Player has.
+     * @return The number of Oil that the Player has.
+     */
+    public final int getOil() {
+        return numOfResources[5];
+    }
+    /**
+     * Checks to see if the Player has any Oil.
+     * @return true if the Player has at least one Oil, false otherwise
+     */
+    public final boolean hasOil() {
+        return numOfResources[5] > 0;
+    }
+    /**
      * Checks to see if the Player has any Lumber.
      * @return true if the Player has at least one Lumber, false otherwise
      */
@@ -173,7 +187,7 @@ public class Player {
         money = race.startMoney();
 
         numOfLands = 0;
-        numOfResources = new int[5];
+        numOfResources = new int[6];
 
         for (int i = 0; i < diffEnergy; i = i + 1) {
             Energy resource = new Energy();

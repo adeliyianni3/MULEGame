@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
  */
 public class Woods extends LandType {
     Woods() {
-        super(1.0, 0.0, 0.0, 1.0, 3.0);
+        super(1.0, 0.0, 0.0, 1.0, 3.0, 0.0);
         setImage(new Image(getClass().getResource("/views/W.O.O.D.S..png").toString()));
     }
 }

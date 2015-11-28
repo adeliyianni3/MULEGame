@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
  */
 public class River extends LandType {
     River() {
-        super(4.0, 2.0, 0.0, 0.0, 0.0);
+        super(4.0, 2.0, 0.0, 0.0, 0.0, 0.0);
         setImage(new Image(getClass().getResource("/views/R.I.V.E.R..png").toString()));
     }
 }

@@ -99,6 +99,14 @@ public class DebugController implements Initializable {
     @FXML
     private Label silo4;
     @FXML
+    private Label oil1;
+    @FXML
+    private Label oil2;
+    @FXML
+    private Label oil3;
+    @FXML
+    private Label oil4;
+    @FXML
     private Label energy1;
     @FXML
     private Label energy2;
@@ -169,6 +177,7 @@ public class DebugController implements Initializable {
                                 energy1.setText("" + op[0].getEnergy());
                                 lumber1.setText("" + op[0].getLumber());
                                 silo1.setText("" + op[0].getSilo());
+                                oil1.setText("" + op[0].getOil());
 
                             }
                             if (op.length > 1 && op[1] != null) {
@@ -180,6 +189,7 @@ public class DebugController implements Initializable {
                                 energy2.setText("" + op[1].getEnergy());
                                 lumber2.setText("" + op[1].getLumber());
                                 silo2.setText("" + op[1].getSilo());
+                                oil2.setText("" + op[1].getOil());
 
                             }
                             if (op.length > 2 && op[2] != null) {
@@ -191,6 +201,7 @@ public class DebugController implements Initializable {
                                 energy3.setText("" + op[2].getEnergy());
                                 lumber3.setText("" + op[2].getLumber());
                                 silo3.setText("" + op[2].getSilo());
+                                oil3.setText("" + op[2].getOil());
 
                             }
                             if (op.length > 3 && op[3] != null) {
@@ -202,7 +213,7 @@ public class DebugController implements Initializable {
                                 energy4.setText("" + op[3].getEnergy());
                                 lumber4.setText("" + op[3].getLumber());
                                 silo4.setText("" + op[3].getSilo());
-
+                                oil4.setText("" + op[3].getOil());
                             }
 
 
