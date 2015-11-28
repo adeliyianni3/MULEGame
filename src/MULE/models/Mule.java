@@ -2,6 +2,8 @@ package MULE.models;
 
 // Created by Antonia on 9/17/2015.
 
+import MULE.controllers.MapController;
+
 /**
  * Mule class holding information about it's production.
  */
@@ -10,6 +12,7 @@ public class Mule {
      * Resource that this Mule can harvest.
      */
     private final Resource resource;
+    private int oil = 3;
 
     /**
      * No-args constructor.
@@ -40,6 +43,21 @@ public class Mule {
      * @return Amount of this Mule's resource that was harvested
      */
     public final int produce(final LandType type) {
+        useOil();
         return resource.produce(type);
+    }
+
+    public void useOil() {
+        oil = oil - 1;
+    }
+    public boolean muleIsBroken() {
+        if (oil == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public void fixMule() {
+        oil = 3;
     }
 }

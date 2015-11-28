@@ -2,6 +2,7 @@ package MULE.models;
 
 import MULE.controllers.Game;
 import MULE.controllers.MapController;
+import MULE.controllers.ScreenNavigator;
 
 import java.util.Random;
 
@@ -156,9 +157,15 @@ public class Land {
     public final void produce() {
         Player owner = getOwner();
         if (hasMule()) {
-            if (owner.hasEnergy()) {
-                owner.removeEnergy();
-                owner.addResource(mule.getResource(), mule.produce(type));
+            if (!mule.muleIsBroken()) {
+                if (owner.hasEnergy()) {
+                    if (owner.siloHasSpace(mule.getResource())) {
+                        owner.removeEnergy();
+                        owner.addResource(mule.getResource(), mule.produce(type));
+                    }
+                }
+            } else {
+                System.out.println("lol, mule broke");
             }
         }
     }

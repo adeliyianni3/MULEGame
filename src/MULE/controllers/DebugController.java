@@ -213,7 +213,7 @@ public class DebugController implements Initializable {
                                 energy4.setText("" + op[3].getEnergy());
                                 lumber4.setText("" + op[3].getLumber());
                                 silo4.setText("" + op[3].getSilo());
-                                oil4.setText("" + op[3].getOil());
+                                silo4.setText("" + op[3].getOil());
                             }
 
 

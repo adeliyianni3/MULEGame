@@ -1,8 +1,10 @@
 package MULE.controllers;
 
 import MULE.models.Land;
+import MULE.models.Mule;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -15,6 +17,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
+import java.awt.Event;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -322,5 +325,4 @@ public class MapController implements Initializable {
     public static void loseMule(int row, int col) {
         mulArr[row][col].setFill(null);
     }
-
 }

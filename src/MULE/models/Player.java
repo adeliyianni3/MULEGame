@@ -338,6 +338,12 @@ public class Player {
     public final void removeFood() {
         removeResource(new Food());
     }
+    public void fixMule(Mule mule) {
+        if (getOil() > 3) {
+            numOfResources[5] = numOfResources[5] - 3;
+            mule.fixMule();
+        }
+    }
 
 //    public void removeSmithOre() {
 //        removeResource(new SmithOre());
