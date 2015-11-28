@@ -165,7 +165,8 @@ public class Land {
                     }
                 }
             } else {
-                System.out.println("lol, mule broke");
+                System.out.println(mule + " has broken");
+                owner.addMules(mule);
             }
         }
     }

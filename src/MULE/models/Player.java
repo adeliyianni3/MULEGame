@@ -13,6 +13,7 @@ import java.util.Random;
  * Class holding information about a Player playing MULE.
  */
 public class Player {
+    private ArrayList<Mule> brokenMules = new ArrayList<Mule>();
     /**
      * Name of the Player.
      */
@@ -412,5 +413,19 @@ public class Player {
     public final String toString() {
         return "Player name: " + name + ", race: " + race + ", color: "
                 + color + ", money: " + money + ", score: " + getScore();
+    }
+
+    public ArrayList<Mule> brokenMules() {
+        return brokenMules;
+    }
+
+    public boolean anyBroken() {
+        System.out.println("number" + " " + brokenMules.size());
+        return brokenMules.size() > 0;
+    }
+    public void addMules(Mule mule) {
+        if (!brokenMules.contains(mule)) {
+            brokenMules.add(mule);
+        }
     }
 }
