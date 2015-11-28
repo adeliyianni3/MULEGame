@@ -176,16 +176,16 @@
     </ImageView>
     <Label layoutX="361.0" layoutY="169.0" onMouseClicked="#addCartEnergy" prefWidth="52.0" styleClass="label2" text="Lumber" />
     <Rectangle fx:id="lumber" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="81.9609375" layoutX="345.0" layoutY="103.0" onMouseClicked="#addCartLumber" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
-    <ImageView fitHeight="72.00043487548828" fitWidth="60.999977929684974" layoutX="346.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="72.00043487548828" fitWidth="84.0411148071289" layoutX="336.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
       <image>
-        <Image url="@C.R.Y.S.T..png" />
+        <Image url="@O.I.L..png" />
       </image>
     </ImageView>
     <Label layoutX="368.0" layoutY="274.0" onMouseClicked="#addCartOil" prefWidth="17.0411376953125" styleClass="label2" text="Oil" />
     <Rectangle id="silo" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
     <Label layoutX="306.0" layoutY="326.0" prefWidth="52.0" text="Buy Silo" />
     <Rectangle id="silo" arcHeight="5.0" arcWidth="5.0" fill="#54949500" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#buySilo" stroke="TRANSPARENT" strokeType="INSIDE" width="107.0" />
-    <Rectangle id="oil" arcHeight="5.0" arcWidth="5.0" fill="#71d0ff00" height="91.00030517578125" layoutX="348.0" layoutY="200.0" onMouseClicked="#addCartOil" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <Rectangle id="oil" arcHeight="5.0" arcWidth="5.0" fill="#71d0ff00" height="91.00030517578125" layoutX="331.0" layoutY="200.0" onMouseClicked="#addCartOil" stroke="TRANSPARENT" strokeType="INSIDE" width="93.041015625" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />
