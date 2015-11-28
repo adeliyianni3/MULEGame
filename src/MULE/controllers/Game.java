@@ -419,14 +419,8 @@ public class Game {
                 noMoney = check;
             }
         }
-
-            currentState = State.MAP;
-            buyRound++;
-            if (turn != 1) {
-                totalTurns = totalTurns + numOfPlayers - turn + 1;
-                round++;
-                turn = 1;
-        }
+        currentState = State.MAP;
+        buyRound++;
     }
     public void endTurn() {
         ArrayList<Land> plots = currentPlayer().getLand();
