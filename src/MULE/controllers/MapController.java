@@ -322,4 +322,5 @@ public class MapController implements Initializable {
     public static void loseMule(int row, int col) {
         mulArr[row][col].setFill(null);
     }
+
 }

@@ -19,8 +19,8 @@ public class TownController {
 
     @FXML
     void useLand() {
-        Game.instance.useLandOffice();
-
+        ScreenNavigator.getInstance().loadMap();
+        Game.getInstance().changeState(Game.State.BUY_PHASE);
     }
     @FXML
     private void pauseMusic() {

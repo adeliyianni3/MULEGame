@@ -128,14 +128,14 @@
       </image>
     </ImageView>
     <Label font="$x3" layoutX="324.0" layoutY="335.0" styleClass="label2" text="Land Office" />
-    <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.30308532714844" layoutX="323.0" layoutY="192.0" onMouseClicked="#useAssay" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="197.3707733154297" />
+    <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.30308532714844" layoutX="323.0" layoutY="192.0" onMouseClicked="#useLand" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="197.3707733154297" />
     <ImageView fitHeight="166.3030632568334" fitWidth="232.70675919201997" layoutX="78.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@A.S.S.A..png" />
       </image>
     </ImageView>
     <Label font="$x3" layoutX="81.0" layoutY="337.0" styleClass="label2" text="Assay Office" />
-    <Rectangle fx:id="land" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.302978515625" layoutX="76.0" layoutY="191.0" onMouseClicked="#useLand" stroke="TRANSPARENT" strokeType="INSIDE" width="232.70677185058594" />
+    <Rectangle fx:id="assay" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="166.302978515625" layoutX="76.0" layoutY="191.0" onMouseClicked="#useAssay" stroke="TRANSPARENT" strokeType="INSIDE" width="232.70677185058594" />
     <Rectangle fx:id="left" arcHeight="5.0" arcWidth="5.0" height="56.9609375" layoutX="24.0" layoutY="173.0" onMouseClicked="#leaveTown" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0">
       <fill>
         <Color blue="0.584" green="0.580" red="0.329" fx:id="x1" />

@@ -300,6 +300,7 @@ public class Game {
     Player currentPlayer() {
         return players[getTurn() - 1];
     }
+    private int buyRound = 0;
     public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
         if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("Round:" + round);
@@ -328,8 +329,12 @@ public class Game {
                         rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
-                        buyPhaseSkipped = 0;
-                        buyPhaseEndTurn();
+                        if (buyRound ==0) {
+                            buyPhaseSkipped = 0;
+                            buyPhaseEndTurn();
+                        } else {
+                            buyPhaseEndTurn(false);
+                        }
                     }
                 }
                 if (round == 3 && turn == 1) {
@@ -392,6 +397,8 @@ public class Game {
 
         if (buyPhaseSkipped >= numOfPlayers) {
             currentState = State.MAP;
+            round = 4;
+            buyRound++;
             ScreenNavigator.getInstance().togglePassButton();
             if (turn != 1) {
                 totalTurns = totalTurns + numOfPlayers - turn + 1;
@@ -400,6 +407,25 @@ public class Game {
             }
             reorderPlayers();
             timer.startTime();
+        }
+    }
+    void buyPhaseEndTurn(boolean check) {
+        boolean noMoney = true; //make prettier later
+        while (noMoney && buyPhaseSkipped < numOfPlayers) {
+            turn = turn % numOfPlayers + 1;
+            totalTurns++;
+            round = (totalTurns-1) / numOfPlayers;
+            if (players[turn - 1].getMoney() < LAND_PRICE) {
+                noMoney = check;
+            }
+        }
+
+            currentState = State.MAP;
+            buyRound++;
+            if (turn != 1) {
+                totalTurns = totalTurns + numOfPlayers - turn + 1;
+                round++;
+                turn = 1;
         }
     }
     public void endTurn() {
