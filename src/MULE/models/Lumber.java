@@ -31,7 +31,7 @@ public class Lumber extends Resource {
      */
     @Override
     public final int getInventory(final ResourceStore store) {
-        return store.getSmithOreInventory();
+        return store.getLumberInventory();
     }
     /**
      * Purchases one of this Resource from the store, if possible.

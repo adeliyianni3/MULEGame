@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.*?>
-<?import java.net.URL?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.StoreController">
   <children>
     <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
@@ -58,12 +63,12 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="400.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.961051833465556" fitWidth="17.041122436523438" layoutX="400.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.961037499997474" fitWidth="17.04110713312194" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
@@ -99,33 +104,41 @@
       </image>
     </ImageView>
     <Rectangle fx:id="store" arcHeight="5.0" arcWidth="5.0" fill="#ffca99" height="322.0000999999975" layoutX="26.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="552.0" />
-    <Label layoutX="303.0" layoutY="169.0" onMouseClicked="#addCartFood" styleClass="label2" text="Food" />
+    <Label layoutX="275.0" layoutY="169.0" onMouseClicked="#addCartFood" styleClass="label2" text="Food" />
     <Rectangle fx:id="mule" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="395.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0">
       <fill>
         <Color blue="0.584" green="0.580" red="0.329" fx:id="x1" />
       </fill>
     </Rectangle>
-    <ImageView fitHeight="65.9609375" fitWidth="61.0" layoutX="406.0" layoutY="103.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="65.9609375" fitWidth="61.0" layoutX="429.0" layoutY="103.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@B.A.T..png" />
       </image>
     </ImageView>
-    <Label layoutX="417.0" layoutY="169.0" onMouseClicked="#addCartEnergy" prefWidth="39.0" styleClass="label2" text="Energy" />
-    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" fill="#8fff9100" height="81.9609375" layoutX="406.0" layoutY="103.0" onMouseClicked="#addCartEnergy" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
-    <ImageView fitHeight="65.9610595703125" fitWidth="62.999900817871094" layoutX="285.0" layoutY="203.0" pickOnBounds="true" preserveRatio="false">
+    <Label layoutX="440.0" layoutY="169.0" onMouseClicked="#addCartEnergy" prefWidth="39.0" styleClass="label2" text="Energy" />
+    <Rectangle fx:id="energy" arcHeight="5.0" arcWidth="5.0" height="81.9609375" layoutX="429.0" layoutY="103.0" onMouseClicked="#addCartEnergy" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0">
+      <fill>
+        <Color blue="0.569" green="1.000" opacity="0.000" red="0.561" fx:id="x2" />
+      </fill>
+    </Rectangle>
+    <ImageView fitHeight="65.9610595703125" fitWidth="62.999900817871094" layoutX="257.0" layoutY="203.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@O.R.E..png" />
       </image>
     </ImageView>
-    <Label layoutX="292.0" layoutY="275.0" onMouseClicked="#addCartSmithore" prefWidth="52.0" styleClass="label2" text="SmithOre" />
-    <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae00" height="72.00030517578125" layoutX="287.0" layoutY="203.0" onMouseClicked="#addCartSmithore" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
-    <ImageView fitHeight="72.00043487548828" fitWidth="60.999977929684974" layoutX="406.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
+    <Label layoutX="264.0" layoutY="275.0" onMouseClicked="#addCartSmithore" prefWidth="52.0" styleClass="label2" text="SmithOre" />
+    <Rectangle fx:id="smith_ore" arcHeight="5.0" arcWidth="5.0" fill="#aeaeae00" height="72.00030517578125" layoutX="259.0" layoutY="203.0" onMouseClicked="#addCartSmithore" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <ImageView fitHeight="72.00043487548828" fitWidth="60.999977929684974" layoutX="429.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@C.R.Y.S.T..png" />
       </image>
     </ImageView>
-    <Label layoutX="414.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
-    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" fill="#71d0ff00" height="91.00030517578125" layoutX="404.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <Label layoutX="437.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
+    <Rectangle fx:id="crystite" arcHeight="5.0" arcWidth="5.0" height="91.00030517578125" layoutX="427.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0">
+      <fill>
+        <Color blue="1.000" green="0.816" opacity="0.000" red="0.443" fx:id="x3" />
+      </fill>
+    </Rectangle>
     <Rectangle fx:id="right" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="322.0001220703125" layoutX="510.0" layoutY="37.0" onMouseClicked="#leaveStore" stroke="TRANSPARENT" strokeType="INSIDE" width="68.0000991821289" />
     <Button fx:id="purchaseCart" layoutX="40.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#purchaseCart" text="Purchase" />
     <ListView fx:id="cartList" layoutX="40.0" layoutY="83.0" prefHeight="232.0" prefWidth="208.0" />
@@ -150,12 +163,26 @@
         </Menu>
       </menus>
     </MenuBar>
-    <ImageView fitHeight="76.69999094742997" fitWidth="58.99999237060547" layoutX="288.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="76.69999094742997" fitWidth="58.99999237060547" layoutX="260.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@F.O.O.D..png" />
       </image>
     </ImageView>
-    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc6600" height="91.00031280517578" layoutX="287.0" layoutY="94.0" onMouseClicked="#addCartFood" stroke="TRANSPARENT" strokeType="INSIDE" width="60.9998779296875" />
+    <Rectangle fx:id="food" arcHeight="5.0" arcWidth="5.0" fill="#ffcc6600" height="91.00031280517578" layoutX="259.0" layoutY="94.0" onMouseClicked="#addCartFood" stroke="TRANSPARENT" strokeType="INSIDE" width="60.9998779296875" />
+    <ImageView fitHeight="65.9609375" fitWidth="61.0" layoutX="346.0" layoutY="103.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@B.A.T..png" />
+      </image>
+    </ImageView>
+    <Label layoutX="361.0" layoutY="169.0" onMouseClicked="#addCartEnergy" prefWidth="52.0" styleClass="label2" text="Lumber" />
+    <Rectangle fx:id="lumber" arcHeight="5.0" arcWidth="5.0" fill="$x2" height="81.9609375" layoutX="346.0" layoutY="103.0" onMouseClicked="#addCartLumber" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <ImageView fitHeight="72.00043487548828" fitWidth="60.999977929684974" layoutX="346.0" layoutY="202.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@C.R.Y.S.T..png" />
+      </image>
+    </ImageView>
+    <Label layoutX="354.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
+    <Rectangle id="crystite" arcHeight="5.0" arcWidth="5.0" fill="$x3" height="91.00030517578125" layoutX="344.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

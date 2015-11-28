@@ -165,10 +165,10 @@
     </ImageView>
     <Label fx:id="lastPlanetEvent" layoutX="13.0" layoutY="344.0" text="Last Planet Event: ---" />
     <Label layoutX="409.0" layoutY="14.0" text="Lumber" />
-    <Label id="lumber1" layoutX="408.0" layoutY="35.0" text="---" />
-    <Label id="lumber2" layoutX="408.0" layoutY="56.0" text="---" />
-    <Label id="lumber3" layoutX="408.0" layoutY="77.0" text="---" />
-    <Label id="lumber4" layoutX="408.0" layoutY="98.0" text="---" />
+    <Label fx:id="lumber1" layoutX="408.0" layoutY="35.0" text="---" />
+    <Label fx:id="lumber2" layoutX="408.0" layoutY="56.0" text="---" />
+    <Label fx:id="lumber3" layoutX="408.0" layoutY="77.0" text="---" />
+    <Label fx:id="lumber4" layoutX="408.0" layoutY="98.0" text="---" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

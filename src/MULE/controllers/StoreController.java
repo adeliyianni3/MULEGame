@@ -3,6 +3,7 @@ package MULE.controllers;
 import MULE.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -47,6 +48,10 @@ public class StoreController implements Initializable {
     @FXML
     public void addCartCrystite() {
         items.add(new Crystite());
+    }
+    @FXML
+    public void addCartLumber() {
+        items.add(new Lumber());
     }
     @FXML
     public void purchaseCart() {
@@ -119,4 +124,6 @@ public class StoreController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cartList.setItems(items);
     }
+
+
 }
