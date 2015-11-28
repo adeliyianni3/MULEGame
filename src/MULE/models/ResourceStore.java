@@ -6,6 +6,7 @@ package MULE.models;
  * Store class that stores information on Resource stock.
  */
 public class ResourceStore {
+    private int siloPrice = 100;
     /**
      * Amount of energy in stock.
      */
@@ -170,5 +171,8 @@ public class ResourceStore {
 
     public int getLumberInventory() {
         return lumberInventory;
+    }
+    public int getSiloPrice() {
+        return siloPrice;
     }
 }

@@ -183,6 +183,9 @@
     </ImageView>
     <Label layoutX="354.0" layoutY="274.0" onMouseClicked="#addCartCrystite" prefWidth="52.0" styleClass="label2" text="Crystite" />
     <Rectangle id="crystite" arcHeight="5.0" arcWidth="5.0" fill="$x3" height="91.00030517578125" layoutX="344.0" layoutY="190.0" onMouseClicked="#addCartCrystite" stroke="TRANSPARENT" strokeType="INSIDE" width="61.0" />
+    <Rectangle id="mule" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#toMULEPen" stroke="BLACK" strokeType="INSIDE" width="107.0" />
+    <Label layoutX="306.0" layoutY="326.0" prefWidth="52.0" text="Buy Silo" />
+    <Rectangle id="mule" arcHeight="5.0" arcWidth="5.0" fill="#54949500" height="36.0" layoutX="275.0" layoutY="315.0" onMouseClicked="#buySilo" stroke="TRANSPARENT" strokeType="INSIDE" width="107.0" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

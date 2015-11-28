@@ -17,12 +17,12 @@
     <Label layoutX="14.0" layoutY="56.0" text="Round:" />
     <Label layoutX="13.0" layoutY="77.0" text="Phase:" />
     <Label layoutX="13.0" layoutY="365.0" text="Mouse Location:" />
-    <Label layoutX="257.0" layoutY="14.0" text="Player" />
-    <Label layoutX="331.0" layoutY="14.0" text="Money" />
-    <Label layoutX="377.0" layoutY="14.0" text="Land" />
-    <Label layoutX="454.0" layoutY="14.0" text="Food" />
-    <Label layoutX="486.0" layoutY="14.0" text="Smithore" />
-    <Label layoutX="540.0" layoutY="14.0" text="Energy" />
+    <Label layoutX="216.0" layoutY="14.0" text="Player" />
+    <Label layoutX="290.0" layoutY="14.0" text="Money" />
+    <Label layoutX="336.0" layoutY="14.0" text="Land" />
+    <Label layoutX="413.0" layoutY="14.0" text="Food" />
+    <Label layoutX="445.0" layoutY="14.0" text="Smithore" />
+    <Label layoutX="499.0" layoutY="14.0" text="Energy" />
     <Label layoutX="13.0" layoutY="113.0" text="Rank" />
     <Label layoutX="55.0" layoutY="113.0" text="Player" />
     <Label layoutX="154.0" layoutY="113.0" text="Score" />
@@ -38,34 +38,34 @@
     <Label fx:id="secondPlace" layoutX="57.0" layoutY="155.0" text="---" />
     <Label fx:id="thirdPlace" layoutX="57.0" layoutY="176.0" text="---" />
     <Label fx:id="fourthPlace" layoutX="57.0" layoutY="197.0" text="---" />
-    <Label fx:id="player1" layoutX="257.0" layoutY="35.0" text="---" />
-    <Label fx:id="player2" layoutX="257.0" layoutY="56.0" text="---" />
-    <Label fx:id="player3" layoutX="257.0" layoutY="77.0" text="---" />
-    <Label fx:id="player4" layoutX="257.0" layoutY="98.0" text="---" />
+    <Label fx:id="player1" layoutX="216.0" layoutY="35.0" text="---" />
+    <Label fx:id="player2" layoutX="216.0" layoutY="56.0" text="---" />
+    <Label fx:id="player3" layoutX="216.0" layoutY="77.0" text="---" />
+    <Label fx:id="player4" layoutX="216.0" layoutY="98.0" text="---" />
     <Label fx:id="firstScore" layoutX="154.0" layoutY="134.0" text="---" />
     <Label fx:id="secondScore" layoutX="154.0" layoutY="155.0" text="---" />
     <Label fx:id="thirdScore" layoutX="154.0" layoutY="176.0" text="---" />
     <Label fx:id="fourthScore" layoutX="154.0" layoutY="197.0" text="---" />
-    <Label fx:id="money1" layoutX="331.0" layoutY="35.0" text="---" />
-    <Label fx:id="money2" layoutX="331.0" layoutY="56.0" text="---" />
-    <Label fx:id="money3" layoutX="331.0" layoutY="77.0" text="---" />
-    <Label fx:id="money4" layoutX="331.0" layoutY="98.0" text="---" />
-    <Label fx:id="land1" layoutX="376.0" layoutY="35.0" text="---" />
-    <Label fx:id="land2" layoutX="376.0" layoutY="56.0" text="---" />
-    <Label fx:id="land3" layoutX="376.0" layoutY="77.0" text="---" />
-    <Label fx:id="land4" layoutX="376.0" layoutY="98.0" text="---" />
-    <Label fx:id="food1" layoutX="453.0" layoutY="35.0" text="---" />
-    <Label fx:id="food2" layoutX="453.0" layoutY="56.0" text="---" />
-    <Label fx:id="food3" layoutX="453.0" layoutY="77.0" text="---" />
-    <Label fx:id="food4" layoutX="453.0" layoutY="98.0" text="---" />
-    <Label fx:id="smithore1" layoutX="486.0" layoutY="35.0" text="---" />
-    <Label fx:id="smithore2" layoutX="486.0" layoutY="56.0" text="---" />
-    <Label fx:id="smithore3" layoutX="486.0" layoutY="77.0" text="---" />
-    <Label fx:id="smithore4" layoutX="486.0" layoutY="98.0" text="---" />
-    <Label fx:id="energy1" layoutX="540.0" layoutY="35.0" text="---" />
-    <Label fx:id="energy2" layoutX="540.0" layoutY="56.0" text="---" />
-    <Label fx:id="energy3" layoutX="540.0" layoutY="77.0" text="---" />
-    <Label fx:id="energy4" layoutX="540.0" layoutY="98.0" text="---" />
+    <Label fx:id="money1" layoutX="290.0" layoutY="35.0" text="---" />
+    <Label fx:id="money2" layoutX="290.0" layoutY="56.0" text="---" />
+    <Label fx:id="money3" layoutX="290.0" layoutY="77.0" text="---" />
+    <Label fx:id="money4" layoutX="290.0" layoutY="98.0" text="---" />
+    <Label fx:id="land1" layoutX="335.0" layoutY="35.0" text="---" />
+    <Label fx:id="land2" layoutX="335.0" layoutY="56.0" text="---" />
+    <Label fx:id="land3" layoutX="335.0" layoutY="77.0" text="---" />
+    <Label fx:id="land4" layoutX="335.0" layoutY="98.0" text="---" />
+    <Label fx:id="food1" layoutX="412.0" layoutY="35.0" text="---" />
+    <Label fx:id="food2" layoutX="412.0" layoutY="56.0" text="---" />
+    <Label fx:id="food3" layoutX="412.0" layoutY="77.0" text="---" />
+    <Label fx:id="food4" layoutX="412.0" layoutY="98.0" text="---" />
+    <Label fx:id="smithore1" layoutX="445.0" layoutY="35.0" text="---" />
+    <Label fx:id="smithore2" layoutX="445.0" layoutY="56.0" text="---" />
+    <Label fx:id="smithore3" layoutX="445.0" layoutY="77.0" text="---" />
+    <Label fx:id="smithore4" layoutX="445.0" layoutY="98.0" text="---" />
+    <Label fx:id="energy1" layoutX="499.0" layoutY="35.0" text="---" />
+    <Label fx:id="energy2" layoutX="499.0" layoutY="56.0" text="---" />
+    <Label fx:id="energy3" layoutX="499.0" layoutY="77.0" text="---" />
+    <Label fx:id="energy4" layoutX="499.0" layoutY="98.0" text="---" />
     <Label layoutX="489.0" layoutY="344.0" text="Timer:" />
     <Label fx:id="timer" layoutX="540.0" layoutY="344.0" text="---" />
     <Label layoutX="77.0" layoutY="264.0" text="Current Player: " />
@@ -78,7 +78,7 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="301.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="260.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
@@ -158,17 +158,22 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="569.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="528.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
     <Label fx:id="lastPlanetEvent" layoutX="13.0" layoutY="344.0" text="Last Planet Event: ---" />
-    <Label layoutX="409.0" layoutY="14.0" text="Lumber" />
-    <Label fx:id="lumber1" layoutX="408.0" layoutY="35.0" text="---" />
-    <Label fx:id="lumber2" layoutX="408.0" layoutY="56.0" text="---" />
-    <Label fx:id="lumber3" layoutX="408.0" layoutY="77.0" text="---" />
-    <Label fx:id="lumber4" layoutX="408.0" layoutY="98.0" text="---" />
+    <Label layoutX="368.0" layoutY="14.0" text="Lumber" />
+    <Label fx:id="lumber1" layoutX="367.0" layoutY="35.0" text="---" />
+    <Label fx:id="lumber2" layoutX="367.0" layoutY="56.0" text="---" />
+    <Label fx:id="lumber3" layoutX="367.0" layoutY="77.0" text="---" />
+    <Label fx:id="lumber4" layoutX="367.0" layoutY="98.0" text="---" />
+    <Label layoutX="552.0" layoutY="14.0" text="Silo" />
+    <Label fx:id="silo1" layoutX="552.0" layoutY="35.0" text="---" />
+    <Label fx:id="silo2" layoutX="552.0" layoutY="56.0" text="---" />
+    <Label fx:id="silo3" layoutX="552.0" layoutY="77.0" text="---" />
+    <Label fx:id="silo4" layoutX="552.0" layoutY="98.0" text="---" />
   </children>
   <stylesheets>
     <URL value="@../vista.css" />

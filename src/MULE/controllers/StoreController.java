@@ -54,6 +54,11 @@ public class StoreController implements Initializable {
         items.add(new Lumber());
     }
     @FXML
+    public void buySilo() {
+        Player p = Game.getInstance().getPlayers()[Game.getInstance().getTurn() - 1];
+        p.addSilo();
+    }
+    @FXML
     public void purchaseCart() {
         Player p = Game.getInstance().getPlayers()[Game.getInstance().getTurn() - 1];
         Object[] stuff = items.toArray();

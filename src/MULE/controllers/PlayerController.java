@@ -58,7 +58,7 @@ public class PlayerController implements Initializable{
     @FXML
     void toNext() {
         String playerName = nameBox.getText();
-        if (!nameBox.getText().isEmpty() && Game.getInstance().isColorAvailable(color) && race != null) {
+        if (!nameBox.getText().isEmpty() && Game.getInstance().isColorAvailable(color) && race != null && color != null) {
             Game.getInstance().addPlayer(race, color, playerName);
         } else {
             ScreenNavigator.getInstance().loadErrorMessage();

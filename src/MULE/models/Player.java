@@ -246,7 +246,18 @@ public class Player {
             return true;
         }
     }
-
+    public int getSilo() {
+        return silos;
+    }
+    public void addSilo() {
+        if (getLumber() >= 6) {
+            if (getMoney() > Game.getInstance().getStore().getSiloPrice()) {
+                silos = silos + 1;
+                subtractMoney(Game.getInstance().getStore().getSiloPrice());
+                numOfResources[4] = numOfResources[4] - 6;
+            }
+        }
+    }
     /**
      * Adds a given amount of a certain Resource to the Player's inventory.
      * @param source Resource to be added
