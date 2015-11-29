@@ -12,7 +12,7 @@ public class Mule {
      * Resource that this Mule can harvest.
      */
     private final Resource resource;
-    private int oil = 3;
+    private int oil = 4;
 
     /**
      * No-args constructor.
@@ -58,6 +58,6 @@ public class Mule {
         }
     }
     public void fixMule() {
-        oil = 3;
+        oil = 2;
     }
 }

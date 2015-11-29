@@ -340,9 +340,10 @@ public class Player {
         removeResource(new Food());
     }
     public void fixMule(Mule mule) {
-        if (getOil() > 3) {
-            numOfResources[5] = numOfResources[5] - 3;
+        if (getOil() >= 2) {
+            numOfResources[5] = numOfResources[5] - 2;
             mule.fixMule();
+            brokenMules.remove(mule);
         }
     }
 

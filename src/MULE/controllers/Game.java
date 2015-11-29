@@ -190,7 +190,7 @@ public class Game {
     }
 
     public enum State{
-        MAIN, CONFIG, IN_TOWN, /*AUCTION,*/ BUY_PHASE, MAP, STORE, MULE_PLACING
+        MAIN, CONFIG, IN_TOWN, /*AUCTION,*/ BUY_PHASE, MAP, STORE, MULE_PLACING, FIX
     }
 
     public void setMediaPlayer(MediaPlayer mp) {
@@ -369,6 +369,19 @@ public class Game {
                 p.getMule();
             }
             currentState = State.MAP;
+        } else if (currentState.equals(State.FIX)) {
+            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
+            Land plot = theMap.whatLand(i, j);
+            Player p = players[turn - 1];
+            if (plot.isOwned() & p.equals(plot.getOwner()) & plot.hasMule() & p.brokenMules().contains(plot.getMule())) {
+                p.fixMule(plot.getMule());
+                if (p.brokenMules().size() >0) {
+                    ScreenNavigator.getInstance().loadMuleFix();
+                } else {
+                    currentState = State.MAP;
+                }
+            }
         }
     }
 

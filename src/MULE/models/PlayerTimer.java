@@ -88,6 +88,9 @@ public class PlayerTimer {
         if (Game.instance.getRound() > 14) {
             ScreenNavigator.getInstance().loadEndGame();
         }
+        if (Game.instance.players[Game.instance.getTurn() - 1].anyBroken()) {
+            ScreenNavigator.getInstance().loadMuleFix();
+        }
     }
 
     /**

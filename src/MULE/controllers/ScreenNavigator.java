@@ -68,7 +68,10 @@ public final class ScreenNavigator {
      * Convenience constant for fxml layouts managed by the navigator.
      */
     private static final String ERROR = "/views/Error_Screen.fxml";
-
+    /**
+     * Convenience constant for fxml layouts managed by the navigator.
+     */
+    private static final String FIX = "/views/Fix_Mule.fxml";
     /**
      * Saved Scene for screen.
      */
@@ -105,7 +108,10 @@ public final class ScreenNavigator {
      * Saved Scene for screen.
      */
     private Scene errorMessage;
-
+    /**
+     * Saved Scene for screen.
+     */
+    private Scene fixMule;
     /**
      * Current instance of the ScreenNavigator.
      */
@@ -148,6 +154,8 @@ public final class ScreenNavigator {
             mulePen = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(ERROR));
             errorMessage = new Scene(root);
+            root = FXMLLoader.load(getClass().getResource(FIX));
+            fixMule = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -222,6 +230,8 @@ public final class ScreenNavigator {
             case MULE_PEN: loadScreen(mulePen);
                 break;
             case ERROR: loadScreen(errorMessage);
+                break;
+            case FIX: loadScreen(fixMule);
                 break;
             default: System.out.println("Something went horribly wrong: "
                     + "ScreenNavigator.loadScreen(String)");
@@ -332,4 +342,7 @@ public final class ScreenNavigator {
         loaded = false;
     }
 
+    public void loadMuleFix() {
+        loadScreen(fixMule);
+    }
 }

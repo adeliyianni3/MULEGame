@@ -192,4 +192,8 @@ public class Land {
     public LandType getType() {
         return type;
     }
+
+    public Mule getMule() {
+        return mule;
+    }
 }

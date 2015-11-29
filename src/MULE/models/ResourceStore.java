@@ -32,7 +32,7 @@ public class ResourceStore {
     /**
      * Amount of oil in stock.
      */
-    private int oilInventory = 0;
+    private int oilInventory = 6;
     private int muleInventory;
 
     /**

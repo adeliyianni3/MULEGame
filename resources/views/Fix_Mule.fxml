@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MULEMechanicController">
+  <children>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="206.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="292.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="338.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="300.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="433.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="548.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="526.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="130.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="48.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="17.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="36.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="114.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="206.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="345.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="251.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@S.T.A.R.S..png" />
+      </image>
+    </ImageView>
+    <Label layoutX="14.0" layoutY="14.0" text="MULE Mechanic">
+      <font>
+        <Font name="System Bold" size="38.0" />
+      </font>
+    </Label>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="43.0" layoutX="57.0" layoutY="343.0" onMouseClicked="#returnToMap" stroke="BLACK" strokeType="INSIDE" width="130.0">
+      <fill>
+        <Color blue="0.584" green="0.580" red="0.329" fx:id="x1" />
+      </fill>
+    </Rectangle>
+    <Label layoutX="72.0" layoutY="354.0" onMouseClicked="#returnToMap" text="Return to Map" />
+    <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleLoadGame" text="Load Game" />
+            <MenuItem mnemonicParsing="false" onAction="#handleSaveGame" text="Save Game" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Close" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#pauseMusic" text="Pause Music" />
+            <MenuItem mnemonicParsing="false" onAction="#playMusic" text="Play Music" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#549495" height="43.0" layoutX="410.0" layoutY="343.0" onMouseClicked="#fixMules" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+    <Label layoutX="425.0" layoutY="354.0" onMouseClicked="#fixMules" text="Fix Mules" />
+  </children>
+  <stylesheets>
+    <URL value="@../vista.css" />
+  </stylesheets>
+</Pane>
