@@ -353,11 +353,12 @@ public class Game {
             Player p = players[turn - 1];
             System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
             if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
-            //if (plot.isOwned() & doesPlayerOwn(p, plot) & !plot.hasMule()) {
+                Mule muleInHand = p.getMule();
                 plot.setMule(p.getMule());
                 muleArray[i][j] = true;
 
-                Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
+                String s = muleInHand.getResource().toString();
+                Image muleImage = new Image("/views/M.U.L.E." + String.valueOf(s.charAt(0)).toUpperCase() + "..png");
                 ImagePattern imagePattern = new ImagePattern(muleImage);
                 mul.setFill(imagePattern); //check to make sure this doesn't override color
 

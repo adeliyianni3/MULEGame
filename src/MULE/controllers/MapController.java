@@ -313,7 +313,7 @@ public class MapController implements Initializable {
                         mapArr[i][j].setStrokeWidth(4.0);
                     }
                     if (ma[i][j]) {
-                        Image muleImage = new Image("/views/M.U.L.E..png", 20, 20, true, false);
+                        Image muleImage = new Image("/views/M.U.L.E..png");
                         ImagePattern imagePattern = new ImagePattern(muleImage);
                         mulArr[i][j].setFill(imagePattern);
                     }
