@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import com.google.gson.Gson;
+import org.omg.CORBA.StringValueHelper;
 
 
 import java.io.PrintWriter;
@@ -353,12 +354,12 @@ public class Game {
             Player p = players[turn - 1];
             System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
             if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
-                Mule muleInHand = p.getMule();
+            //if (plot.isOwned() & doesPlayerOwn(p, plot) & !plot.hasMule()) {
                 plot.setMule(p.getMule());
+                String s = String.valueOf(plot.getMule().getResource().toString().charAt(0)).toUpperCase();
                 muleArray[i][j] = true;
 
-                String s = muleInHand.getResource().toString();
-                Image muleImage = new Image("/views/M.U.L.E." + String.valueOf(s.charAt(0)).toUpperCase() + "..png");
+                Image muleImage = new Image("/views/M.U.L.E." + s + "..png");
                 ImagePattern imagePattern = new ImagePattern(muleImage);
                 mul.setFill(imagePattern); //check to make sure this doesn't override color
 

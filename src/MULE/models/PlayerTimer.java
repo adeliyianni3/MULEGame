@@ -85,11 +85,11 @@ public class PlayerTimer {
             Game.instance.changeState(Game.State.MAP);
             ScreenNavigator.getInstance().loadMap();
         }
-        if (Game.instance.getRound() > 14) {
-            ScreenNavigator.getInstance().loadEndGame();
-        }
         if (Game.instance.players[Game.instance.getTurn() - 1].anyBroken()) {
             ScreenNavigator.getInstance().loadMuleFix();
+        }
+        if (Game.instance.getRound() > 14) {
+            ScreenNavigator.getInstance().loadEndGame();
         }
     }
 
