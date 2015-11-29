@@ -279,7 +279,10 @@ public class Player {
      * @param amount Amount of the Resource to be added
      */
     public final void addResource(final Resource source,
-                                  final int amount) {
+                                  int amount) {
+        if (amount > ((silos*12) - numOfResources[1])) {
+            amount = ((silos*12) - numOfResources[1]);
+        }
         numOfResources[source.getID()] =
                 numOfResources[source.getID()] + amount;
     }
