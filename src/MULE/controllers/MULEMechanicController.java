@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 public class MULEMechanicController {
     @FXML
     void returnToMap() {
+        Game.getInstance().changeState(Game.State.MAP);
         ScreenNavigator.getInstance().loadMap();
     }
 
