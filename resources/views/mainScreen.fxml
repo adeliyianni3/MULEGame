@@ -46,9 +46,9 @@
     <Label layoutX="431.0" layoutY="66.0" styleClass="size3" text="Difficulty" />
     <Label layoutX="427.0" layoutY="157.0" styleClass="size3" text="Map Type" />
     <Label layoutX="395.0" layoutY="247.0" styleClass="size3" text="Number of Players" />
-    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="252.5316795754914" fitWidth="152.04103088378906" layoutX="78.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@M.U.L.E..png" />
+        <Image url="@M.U.L.E.E..png" />
       </image>
     </ImageView>
     <Label layoutX="78.0" layoutY="54.0" styleClass="size1" text="M.U.L.E">
@@ -139,7 +139,7 @@
         <Image url="@S.T.A.R.S..png" />
       </image>
     </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="113.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="44.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@S.T.A.R.S..png" />
       </image>
