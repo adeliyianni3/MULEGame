@@ -123,102 +123,110 @@
         <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.56471252441406" layoutX="413.0" layoutY="203.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
       </children>
     </Group>
-    <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="41.0" layoutX="456.0" layoutY="350.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
-    <Label fx:id="continueLabel" layoutX="471.0" layoutY="355.0" onMouseClicked="#passClick" text="Pass">
-      <font>
-        <Font size="22.0" />
-      </font>
-    </Label>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="149.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="288.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="320.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="351.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="388.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="531.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="556.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="574.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="473.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="14.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="13.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="5.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="81.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="8.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="231.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="123.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="570.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@S.T.A.R.S..png" />
-      </image>
-    </ImageView>
+    <Group id="Group" layoutX="456.0" layoutY="350.0">
+      <children>
+        <Rectangle fx:id="continueRect" arcHeight="5.0" arcWidth="5.0" fill="#549495" height="41.0" layoutX="0.0" layoutY="0.0" onMouseClicked="#passClick" stroke="BLACK" strokeType="INSIDE" width="73.0" />
+        <Label fx:id="continueLabel" layoutX="15.0" layoutY="5.0" onMouseClicked="#passClick" text="Pass">
+          <font>
+            <Font size="22.0" />
+          </font>
+        </Label>
+      </children>
+    </Group>
+    <Group id="Group" layoutX="5.0" layoutY="15.0">
+      <children>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="144.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="283.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="315.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="346.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="383.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="526.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="569.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="569.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="468.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="9.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="8.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="0.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="76.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="3.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="226.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="118.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="565.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="15.9609375" fitWidth="17.041000972609886" layoutX="560.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@S.T.A.R.S..png" />
+          </image>
+        </ImageView>
+      </children>
+    </Group>
     <MenuBar layoutX="0.0" layoutY="0.0" styleClass="button">
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
