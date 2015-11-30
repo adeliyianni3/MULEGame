@@ -27,7 +27,7 @@ public abstract class LandType {
      * Crystite production multiplier.
      */
     private double crystiteFactor;
-    private Image image;
+    private transient Image image;
     /**
      * lumber production multiplier.
      */
