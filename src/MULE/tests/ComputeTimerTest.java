@@ -11,7 +11,7 @@ public class ComputeTimerTest {
     @Test
     public void computeTimerTest() {
         PlayerTimer test = new PlayerTimer();
-        Player p = new Player("name", "humanoid", Color.AZURE, Diffuculty.BEGGINER.getPlayerFood(), Diffuculty.BEGGINER.getPlayerEnergy());
+        Player p = new Player("name", "humanoid", Color.AZURE, Diffuculty.BEGINNER.getPlayerFood(), Diffuculty.BEGINNER.getPlayerEnergy());
         assert (p.getFood() == 8);
         for (int i = 3; i < 15; i++) {
             assert (test.computeTime(p, i) == 50);

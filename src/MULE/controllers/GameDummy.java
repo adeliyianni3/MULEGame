@@ -27,7 +27,7 @@ public class GameDummy extends Game{
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     public Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private Diffuculty difficulty;
-    private int mapType;
+    private int mapType = 1;
 //    private int[] playerTurn; //unused?
     private int totalTurns = 1;
     private int turn = 1;
@@ -167,10 +167,6 @@ public class GameDummy extends Game{
 
     public int getMapType() {
         return mapType;
-    }
-
-    public void setMapType(int mapType) {
-        this.mapType = mapType;
     }
 
     public void setNumOfPlayers(int num) {
@@ -432,7 +428,7 @@ public class GameDummy extends Game{
     public void addPlayer(String race, Color c, String name) {
         instance = this;
         notAllowed.add(c);
-        players[turn-1] = new Player(name, race, c, Diffuculty.BEGGINER.getPlayerFood(), Diffuculty.BEGGINER.getPlayerEnergy());
+        players[turn-1] = new Player(name, race, c, Diffuculty.BEGINNER.getPlayerFood(), Diffuculty.BEGINNER.getPlayerEnergy());
         originalPlayers[turn-1] = players[turn-1];
         incrementTurn();
         if (getNumOfPlayers() >= getTurn() && getTotalTurns() == getTurn()) {

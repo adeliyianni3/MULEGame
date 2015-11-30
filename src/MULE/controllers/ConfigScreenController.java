@@ -11,14 +11,14 @@ public class ConfigScreenController {
     private Label playerNumber;
     @FXML
     private ChoiceBox difficultyChoiceBox;
-//    @FXML
-//    private ChoiceBox mapChoiceBox;
+    @FXML
+    private ChoiceBox mapChoiceBox;
     @FXML
     private ChoiceBox playerChoiceBox;
 
     @FXML
     void playerConfiguration() {
-        Game.getInstance().setConfigurationSettings(difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
+        Game.getInstance().setConfigurationSettings(map(), difficulty(), Integer.parseInt((String) playerChoiceBox.getValue()));
     }
 
     @FXML
@@ -44,9 +44,25 @@ public class ConfigScreenController {
                 break;
 
         }
-        Diffuculty[] choices = {Diffuculty.BEGGINER, Diffuculty.STANDARD, Diffuculty.TOURNAMENT};
+        Diffuculty[] choices = {Diffuculty.BEGINNER, Diffuculty.STANDARD, Diffuculty.TOURNAMENT};
         return choices[difficulty];
     }
+    private int map() {
+        int map;
+        switch ((String) mapChoiceBox.getValue()) {
+            case "Map 1": map = 1;
+                break;
+            case "Map 2": map = 2;
+                break;
+            case "Map 3": map = 2;
+                break;
+            default: map = 1;
+                break;
+
+        }
+        return map;
+    }
+
     @FXML
     private void closeGame() {
         System.exit(0);

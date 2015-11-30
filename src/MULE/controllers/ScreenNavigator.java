@@ -144,8 +144,6 @@ public final class ScreenNavigator {
             congratulations = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(MAIN));
             main = new Scene(root);
-            root = FXMLLoader.load(getClass().getResource(MAP));
-            map = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(TOWN));
             town = new Scene(root);
             root = FXMLLoader.load(getClass().getResource(STORE));
@@ -160,7 +158,15 @@ public final class ScreenNavigator {
             e.printStackTrace();
         }
     }
-
+    public void setMap() {
+        try {
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource(MAP));
+            map = new Scene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Gets whether or not the ScreenNavigator is being loaded.
      * @return Whether or not the ScreenNavigator is being loaded

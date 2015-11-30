@@ -45,7 +45,7 @@ public class Game {
     public Player[] players = new Player[DEFAULT_PLAYER_AMOUNT];
     private Player[] originalPlayers = new Player[DEFAULT_PLAYER_AMOUNT];
     private Diffuculty difficulty;
-//    private int mapType;
+    private int mapType;
 //    private int[] playerTurn; //unused?
     private int totalTurns = 1;
     private int turn = 1;
@@ -61,7 +61,7 @@ public class Game {
     //if making music selectable, change from final
     private final URL songFile = getClass().getResource("/audio/Edward_Shallow_-_02_-_Merchant.mp3");
 
-    private final Map theMap = new Map();
+    private Map theMap = new Map();
     private int buyPhaseSkipped = 0;
     
     private final int LAND_PRICE = 300;
@@ -190,6 +190,11 @@ public class Game {
         return lastPlanetEvent;
     }
 
+    public int getMapType() {
+        System.out.println(mapType);
+        return mapType;
+    }
+
     public enum State{
         MAIN, CONFIG, IN_TOWN, /*AUCTION,*/ BUY_PHASE, MAP, STORE, MULE_PLACING, FIX
     }
@@ -214,14 +219,6 @@ public class Game {
         return difficulty;
     }
 
-
-//    public int getMapType() {
-//        return mapType;
-//    }
-
-//    public void setMapType(int mapType) {
-//        this.mapType = mapType;
-//    }
 
     void setNumOfPlayers(int num) {
         numOfPlayers = num;
@@ -510,11 +507,16 @@ public class Game {
         return numOfPlayers;
     }
 
-    public void setConfigurationSettings(Diffuculty difficulty, int numOfPlayers) {
+    public void setConfigurationSettings(int map, Diffuculty difficulty, int numOfPlayers) {
+        this.mapType = map;
         this.difficulty = difficulty;
         setNumOfPlayers(numOfPlayers);
         store.setStore();
         currentState = State.CONFIG;
+        if (mapType > 1) {
+            theMap = new Map(mapType);
+        }
+        ScreenNavigator.getInstance().setMap();
         ScreenNavigator.getInstance().loadNewPlayer();
         System.out.println(Game.instance.getDifficulty());
     }

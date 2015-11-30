@@ -2,6 +2,11 @@ package MULE.models;
 
 // Created by Lauren on 9/16/2015.
 
+import MULE.controllers.Game;
+
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Map that creates, holds, and finds the Land tile information.
  */
@@ -45,6 +50,84 @@ public class Map {
 
         landArray[0][0] = new Land(new Desert(), 0, 0);
         landArray[3][8] = new Land(new Desert(), 3, 8);
+    }
+
+    public Map(int type) {
+        ArrayList<String> rowColTaken = new ArrayList<>();
+        for (int row = 0; row < 5; row++) {
+            for (int col = 0; col < 9; col++) {
+                landArray[row][col] = new Land(new Plain(), row, col);
+            }
+            if (row != 2) {
+                landArray[row][4] = new Land(new River(), row, 4);
+                rowColTaken.add(row + "" + 4);
+            }
+        }
+        rowColTaken.add(2 + "" + 4);
+        Random rand = new Random();
+        for (int i = 0; i < 3; i++) {
+            boolean check = true;
+            while (check) {
+                int row = rand.nextInt(5);
+                int col = rand.nextInt(9);
+                if (!rowColTaken.contains(row + "" + col)) {
+                    landArray[row][col] = new Land(new Mountain(), row, col);
+                    rowColTaken.add(row + "" + col);
+                    check = false;
+                }
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            boolean check = true;
+            while (check) {
+                int row = rand.nextInt(5);
+                int col = rand.nextInt(9);
+                if (!rowColTaken.contains(row + "" + col)) {
+                    landArray[row][col] = new Land(new D_Mountain(), row, col);
+                    rowColTaken.add(row + "" + col);
+                    check = false;
+                }
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            boolean check = true;
+            while (check) {
+                int row = rand.nextInt(5);
+                int col = rand.nextInt(9);
+                if (!rowColTaken.contains(row + "" + col)) {
+                    landArray[row][col] = new Land(new T_Mountain(), row, col);
+                    rowColTaken.add(row + "" + col);
+                    check = false;
+                }
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            boolean check = true;
+            while (check) {
+                int row = rand.nextInt(5);
+                int col = rand.nextInt(9);
+                if (!rowColTaken.contains(row + "" + col)) {
+                    landArray[row][col] = new Land(new Woods(), row, col);
+                    rowColTaken.add(row + "" + col);
+                    check = false;
+                }
+            }
+        }
+
+        for (int i = 0; i < 2; i++) {
+            boolean check = true;
+            while (check) {
+                int row = rand.nextInt(5);
+                int col = rand.nextInt(9);
+                if (!rowColTaken.contains(row + "" + col)) {
+                    landArray[row][col] = new Land(new Desert(), row, col);
+                    rowColTaken.add(row + "" + col);
+                    check = false;
+                }
+            }
+        }
     }
 
     /**

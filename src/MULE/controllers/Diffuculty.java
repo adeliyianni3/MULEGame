@@ -4,7 +4,7 @@ package MULE.controllers;
  * Created by Antonia on 11/27/2015.
  */
 public enum Diffuculty {
-    BEGGINER(8, 4, 16, 16, 0, 0, 25),
+    BEGINNER(8, 4, 16, 16, 0, 0, 25),
     STANDARD(4, 2, 8, 8, 8, 0, 14),
     TOURNAMENT(4, 2, 8, 8, 8, 0, 14);
 
