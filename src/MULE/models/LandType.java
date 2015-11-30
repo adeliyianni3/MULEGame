@@ -44,8 +44,7 @@ public abstract class LandType {
     /**
      * No-args constructor.
      */
-    LandType() {
-    }
+    public LandType() {}
 
     /**
      * Constructor.

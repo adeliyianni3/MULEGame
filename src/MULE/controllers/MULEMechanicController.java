@@ -37,7 +37,9 @@ public class MULEMechanicController {
     }
 
     public void fixMules(MouseEvent event) {
-        Game.getInstance().changeState(Game.State.FIX);
-        ScreenNavigator.getInstance().loadMap();
+        if (Game.getInstance().currentPlayer().getOil() >= 2) {
+            Game.getInstance().changeState(Game.State.FIX);
+            ScreenNavigator.getInstance().loadMap();
+        }
     }
 }

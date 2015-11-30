@@ -313,7 +313,8 @@ public class MapController implements Initializable {
                         mapArr[i][j].setStrokeWidth(4.0);
                     }
                     if (ma[i][j]) {
-                        Image muleImage = new Image("/views/M.U.L.E..png");
+                        String s = String.valueOf(Game.getInstance().getTheMap().whatLand(i, j).getMule().getResource().toString().charAt(0)).toUpperCase();
+                        Image muleImage = new Image("/views/M.U.L.E." + s + "..png");
                         ImagePattern imagePattern = new ImagePattern(muleImage);
                         mulArr[i][j].setFill(imagePattern);
                     }
