@@ -325,7 +325,7 @@ public class Game {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner();
                         p.addLand(plot);
-                        rec.setStroke(p.getColor());
+                        rec.setStroke(Color.web(p.getColor().toString()));
                         colorArray[i][j] = p.getColor();
                         rec.setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
@@ -378,7 +378,7 @@ public class Game {
             Player p = players[turn - 1];
             if (plot.isOwned() & p.equals(plot.getOwner()) & plot.hasMule() & p.brokenMules().contains(i + " " + j)) {
                 p.fixMule(plot.getMule(), i, j);
-                if (p.brokenMules().size() >0) {
+                if (p.brokenMules().size() > 0) {
                     ScreenNavigator.getInstance().loadMuleFix();
                 } else {
                     currentState = State.MAP;
