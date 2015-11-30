@@ -166,7 +166,7 @@ public class Land {
                 }
             } else {
                 System.out.println(mule + " has broken");
-                owner.addMules(mule);
+                owner.addMules(mule, row, col);
             }
         }
     }

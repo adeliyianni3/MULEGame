@@ -376,8 +376,8 @@ public class Game {
             int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
             Land plot = theMap.whatLand(i, j);
             Player p = players[turn - 1];
-            if (plot.isOwned() & p.equals(plot.getOwner()) & plot.hasMule() & p.brokenMules().contains(plot.getMule())) {
-                p.fixMule(plot.getMule());
+            if (plot.isOwned() & p.equals(plot.getOwner()) & plot.hasMule() & p.brokenMules().contains(i + " " + j)) {
+                p.fixMule(plot.getMule(), i, j);
                 if (p.brokenMules().size() >0) {
                     ScreenNavigator.getInstance().loadMuleFix();
                 } else {

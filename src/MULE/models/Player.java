@@ -13,7 +13,7 @@ import java.util.Random;
  * Class holding information about a Player playing MULE.
  */
 public class Player {
-    private ArrayList<Mule> brokenMules = new ArrayList<Mule>();
+    private ArrayList<String> brokenMules = new ArrayList<>();
     /**
      * Name of the Player.
      */
@@ -342,11 +342,11 @@ public class Player {
     public final void removeFood() {
         removeResource(new Food());
     }
-    public void fixMule(Mule mule) {
+    public void fixMule(Mule mule, int row, int col) {
         if (getOil() >= 2) {
             numOfResources[5] = numOfResources[5] - 2;
             mule.fixMule();
-            brokenMules.remove(mule);
+            brokenMules.remove(row + " " + col);
         }
     }
 
@@ -419,7 +419,7 @@ public class Player {
                 + color + ", money: " + money + ", score: " + getScore();
     }
 
-    public ArrayList<Mule> brokenMules() {
+    public ArrayList<String> brokenMules() {
         return brokenMules;
     }
 
@@ -427,9 +427,9 @@ public class Player {
         System.out.println("number" + " " + brokenMules.size());
         return brokenMules.size() > 0;
     }
-    public void addMules(Mule mule) {
-        if (!brokenMules.contains(mule)) {
-            brokenMules.add(mule);
+    public void addMules(Mule mule, int row, int col) {
+        if (!brokenMules.contains(row + " " + col)) {
+            brokenMules.add(row + " " + col);
         }
     }
 }
