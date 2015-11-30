@@ -93,7 +93,7 @@ public class Game {
     public void saveGame() {
         try {
             try (PrintWriter out = new PrintWriter(new File("data.json"))) {
-                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).create();
+                Gson gs = new GsonBuilder().registerTypeAdapter(Race.class, new InterfaceAdapter()).registerTypeAdapter(Color.class, new ColorInstanceCreator()).registerTypeAdapter(Resource.class, new InterfaceAdapter()).registerTypeAdapter(LandType.class, new InterfaceAdapter()).create();
                 String gson = gs.toJson(this);
                 out.print(gson);
                 System.out.println(gson);
