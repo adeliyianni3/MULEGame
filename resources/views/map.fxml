@@ -14,7 +14,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MapController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MULE.controllers.MapController">
   <children>
     <Group id="Group" layoutX="75.0" layoutY="75.0" scaleX="1.2" scaleY="1.2">
       <children>
@@ -28,99 +28,99 @@
             <Image url="@T.O.W.N..png" />
           </image>
         </ImageView>
-        <Rectangle fx:id="map00" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map01" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map02" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map03" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map04" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map10" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map11" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map12" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map13" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map14" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map20" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe29900" height="50.0" layoutX="200.0" layoutY="100.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map33" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map34" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map40" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map41" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map42" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map43" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map44" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map05" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map06" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map07" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map08" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map15" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map16" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map17" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map18" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map25" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map26" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map27" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map35" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map36" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map37" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map45" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map46" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map47" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="map48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-        <Rectangle fx:id="mul00" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.464637756347656" layoutX="12.0" layoutY="5.0" onMouseClicked="#landClick" strokeType="INSIDE" width="24.0">
-          <stroke>
-            <Color blue="1.000" green="1.000" opacity="0.000" red="1.000" fx:id="x1" />
-          </stroke>
-        </Rectangle>
-        <Rectangle fx:id="mul10" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.126075744628906" layoutX="13.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul20" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.099571228027344" layoutX="13.0" layoutY="105.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.66465759277344" layoutX="13.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul40" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.89801025390625" layoutX="13.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul01" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.591163635253906" layoutX="62.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul11" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.891761779785156" layoutX="63.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.899505615234375" layoutX="63.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.59800720214844" layoutX="63.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul41" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.41093444824219" layoutX="63.0" layoutY="203.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul02" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.92605209350586" layoutX="113.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul12" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.64429473876953" layoutX="113.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99275207519531" layoutX="113.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99798583984375" layoutX="113.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul42" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.89799499511719" layoutX="113.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul03" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.87088394165039" layoutX="163.0" layoutY="2.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul13" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.36467361450195" layoutX="163.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.39801788330078" layoutX="163.0" layoutY="105.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul33" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.92457580566406" layoutX="163.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul43" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.83128356933594" layoutX="163.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul04" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99796676635742" layoutX="213.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul14" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.96739196777344" layoutX="213.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul34" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.33131408691406" layoutX="213.0" layoutY="155.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul44" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.36466979980469" layoutX="213.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul05" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.57088088989258" layoutX="263.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul15" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.29798889160156" layoutX="263.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul25" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.331321716308594" layoutX="263.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul35" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.40428161621094" layoutX="263.0" layoutY="153.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul45" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.597991943359375" layoutX="263.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul06" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924583435058594" layoutX="313.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul16" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924598693847656" layoutX="313.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul26" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.631317138671875" layoutX="313.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul36" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.49797058105469" layoutX="313.0" layoutY="155.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul46" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.7313232421875" layoutX="313.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul07" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.63407897949219" layoutX="363.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul17" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924591064453125" layoutX="363.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul27" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.031349182128906" layoutX="363.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul37" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26741027832031" layoutX="363.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul47" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.791168212890625" layoutX="363.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul08" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.33131408691406" layoutX="413.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul18" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.95659255981445" layoutX="413.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26739501953125" layoutX="413.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26466369628906" layoutX="413.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
-        <Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.56471252441406" layoutX="413.0" layoutY="203.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />
+        <!--<Rectangle fx:id="map00" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map01" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map02" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map03" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map04" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map10" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map11" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map12" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map13" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map14" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map20" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map24" arcHeight="5.0" arcWidth="5.0" fill="#ffe29900" height="50.0" layoutX="200.0" layoutY="100.0" onMouseClicked="#townClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map33" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map34" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map40" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="0.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map41" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="50.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map42" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="100.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map43" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="150.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map44" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="200.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map05" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map06" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map07" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map08" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="0.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map15" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map16" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map17" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map18" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="50.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map25" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map26" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map27" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="100.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map35" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map36" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map37" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="150.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map45" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="250.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map46" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="300.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map47" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="350.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="map48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="50.0" layoutX="400.0" layoutY="200.0" onMouseClicked="#landClick" stroke="BLACK" strokeType="INSIDE" width="50.0" />-->
+        <!--<Rectangle fx:id="mul00" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.464637756347656" layoutX="12.0" layoutY="5.0" onMouseClicked="#landClick" strokeType="INSIDE" width="24.0">-->
+          <!--<stroke>-->
+            <!--<Color blue="1.000" green="1.000" opacity="0.000" red="1.000" fx:id="x1" />-->
+          <!--</stroke>-->
+        <!--</Rectangle>-->
+        <!--<Rectangle fx:id="mul10" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.126075744628906" layoutX="13.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul20" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.099571228027344" layoutX="13.0" layoutY="105.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul30" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.66465759277344" layoutX="13.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul40" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.89801025390625" layoutX="13.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul01" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.591163635253906" layoutX="62.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul11" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.891761779785156" layoutX="63.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul21" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.899505615234375" layoutX="63.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul31" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.59800720214844" layoutX="63.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul41" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.41093444824219" layoutX="63.0" layoutY="203.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul02" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.92605209350586" layoutX="113.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul12" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.64429473876953" layoutX="113.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul22" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99275207519531" layoutX="113.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul32" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99798583984375" layoutX="113.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul42" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.89799499511719" layoutX="113.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul03" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.87088394165039" layoutX="163.0" layoutY="2.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul13" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.36467361450195" layoutX="163.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul23" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.39801788330078" layoutX="163.0" layoutY="105.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul33" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.92457580566406" layoutX="163.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul43" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.83128356933594" layoutX="163.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul04" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.99796676635742" layoutX="213.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul14" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.96739196777344" layoutX="213.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul34" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.33131408691406" layoutX="213.0" layoutY="155.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul44" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.36466979980469" layoutX="213.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul05" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.57088088989258" layoutX="263.0" layoutY="4.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul15" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.29798889160156" layoutX="263.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul25" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.331321716308594" layoutX="263.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul35" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.40428161621094" layoutX="263.0" layoutY="153.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul45" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.597991943359375" layoutX="263.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul06" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924583435058594" layoutX="313.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul16" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924598693847656" layoutX="313.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul26" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.631317138671875" layoutX="313.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul36" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.49797058105469" layoutX="313.0" layoutY="155.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul46" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.7313232421875" layoutX="313.0" layoutY="205.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul07" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.63407897949219" layoutX="363.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul17" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.924591064453125" layoutX="363.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul27" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="41.031349182128906" layoutX="363.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul37" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26741027832031" layoutX="363.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul47" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.791168212890625" layoutX="363.0" layoutY="204.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul08" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.33131408691406" layoutX="413.0" layoutY="5.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul18" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.95659255981445" layoutX="413.0" layoutY="54.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul28" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26739501953125" layoutX="413.0" layoutY="104.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul38" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.26466369628906" layoutX="413.0" layoutY="154.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
+        <!--<Rectangle fx:id="mul48" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="40.56471252441406" layoutX="413.0" layoutY="203.0" onMouseClicked="#landClick" stroke="$x1" strokeType="INSIDE" width="24.0" />-->
       </children>
     </Group>
     <Group id="Group" layoutX="456.0" layoutY="350.0">

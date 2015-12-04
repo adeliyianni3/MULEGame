@@ -3,6 +3,12 @@ package MULE.models;
 import MULE.controllers.Game;
 import MULE.controllers.MapController;
 import MULE.controllers.ScreenNavigator;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
 
 import java.util.Random;
 
@@ -12,6 +18,16 @@ import java.util.Random;
  * Land class that holds basic information about a piece of Land on the Map.
  */
 public class Land {
+    private final int TILE_WIDTH = 60;
+    private final int TILE_HEIGHT = 60;
+    private final int TILE_STARTING_X = 30;
+    private final int TILE_STARTING_Y = 50;
+    private final int TILE_X_INCREMENT = 60;
+    private final int TILE_Y_INCREMENT = 60;
+    private final int MULE_X_OFFSET = 23;
+    private final int MULE_Y_OFFSET = 14;
+    private final int MULE_WIDTH = 24;
+    private final int MULE_HEIGHT = 40;
     //Just starting MULE.models.Land with basic info
     /**
      * True if Land is owned, false otherwise.
@@ -33,6 +49,9 @@ public class Land {
      * Column of the Land.
      */
     private int col; //clarity
+
+    private Rectangle rect;
+    private Rectangle mulePic;
     /**
      * No-args constructor.
      */
@@ -49,7 +68,71 @@ public class Land {
         type = t;
         row = r;
         col = c;
+        rect = new Rectangle();
+        rect.setX(TILE_STARTING_X + col * TILE_X_INCREMENT);
+        rect.setY(TILE_STARTING_Y + row * TILE_Y_INCREMENT);
+        rect.setWidth(TILE_WIDTH);
+        rect.setHeight(TILE_HEIGHT);
+        rect.setStroke(Color.BLACK);
+        rect.setStrokeWidth(2);
+        rect.setStrokeType(StrokeType.INSIDE);
+        if (t.getImage() != null) {
+            rect.setFill(new ImagePattern(t.getImage()));
+        }
+        else {
+            rect.setFill(Color.TRANSPARENT);
+        }
+        mulePic = new Rectangle();
+        mulePic.setX(TILE_STARTING_X + col * TILE_X_INCREMENT + MULE_X_OFFSET);
+        mulePic.setY(TILE_STARTING_Y + row * TILE_Y_INCREMENT + MULE_Y_OFFSET);
+        mulePic.setWidth(MULE_WIDTH);
+        mulePic.setHeight(MULE_HEIGHT);
+        mulePic.setFill(Color.TRANSPARENT);
+        Land temp = this;
+        if (r == 2 && c == 4) {
+            rect.setOnMouseClicked(new EventHandler<MouseEvent>()
+            {
+                @Override
+                public void handle(MouseEvent t) {
+                    Game.getInstance().townClicked();
+                    Game.getInstance().tweakShowPass();
+                }
+
+            });
+            mulePic.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent t) {
+                    Game.getInstance().townClicked();
+                    Game.getInstance().tweakShowPass();
+                    }
+            });
+        }
+        else {
+            rect.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent t) {
+                    Game.getInstance().landClicked(temp);
+                    Game.getInstance().tweakShowPass();
+                }
+            });
+            mulePic.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent t) {
+                    Game.getInstance().landClicked(temp);
+                    Game.getInstance().tweakShowPass();
+                }
+            });
+        }
     }
+
+    public final Rectangle getRect() {
+        return rect;
+    }
+
+    public final Rectangle getMulePic() {
+        return mulePic;
+    }
+
     /**
      * Gets the Row index of this Land.
      * @return The Row index of this Land
@@ -195,5 +278,15 @@ public class Land {
 
     public Mule getMule() {
         return mule;
+    }
+
+
+    public boolean moveMule(int direction, int xDirection) {
+        mulePic.setY(mulePic.getY() + direction);
+        mulePic.setX(mulePic.getX() + xDirection);
+//        if (mulePic.getY() + direction <= rect.getY() || mulePic.getY() + mulePic.getHeight() + direction >= rect.getY() + rect.getHeight()) {
+//            return false;
+//        }
+        return true;
     }
 }

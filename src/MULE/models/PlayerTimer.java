@@ -56,6 +56,7 @@ public class PlayerTimer {
      * Starts the timer over for the next player.
      */
     public final void startTime() {
+        Game.getInstance().goAheadAndUpdate = false;
         secs = computeTime(Game.instance.players[Game.instance.getTurn() - 1],
                 Game.instance.getRound());
         int delay = 1000;
@@ -69,12 +70,14 @@ public class PlayerTimer {
                 setInterval();
             }
         }, delay, period);
+        Game.getInstance().goAheadAndUpdate = true;
     }
 
     /**
      * Stops the timer.
      */
     public final void stopTime() {
+        Game.getInstance().goAheadAndUpdate = false;
         if (timer == null) {
             timer = new Timer();
         }
@@ -91,6 +94,7 @@ public class PlayerTimer {
         if (Game.instance.getRound() > 14) {
             ScreenNavigator.getInstance().loadEndGame();
         }
+        Game.getInstance().goAheadAndUpdate = true;
     }
 
     /**
@@ -105,6 +109,7 @@ public class PlayerTimer {
      * Sets the interval of the timer.
      */
     private void setInterval() {
+        Game.getInstance().goAheadAndUpdate = false;
         if (secs == 1) {
             if (Game.instance.getCurrentState() != Game.State.MAP) {
                 Platform.runLater(() -> ScreenNavigator.getInstance()
@@ -119,5 +124,6 @@ public class PlayerTimer {
             Game.instance.endTurn();
         }
         --secs;
+        Game.getInstance().goAheadAndUpdate = true;
     }
 }

@@ -4,6 +4,7 @@ package MULE.controllers;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -112,6 +115,8 @@ public final class ScreenNavigator {
      * Saved Scene for screen.
      */
     private Scene fixMule;
+
+    private MapController mapController;
     /**
      * Current instance of the ScreenNavigator.
      */
@@ -161,11 +166,16 @@ public final class ScreenNavigator {
     public void setMap() {
         try {
             Parent root;
-            root = FXMLLoader.load(getClass().getResource(MAP));
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            root = fxmlLoader.load(getClass().getResource(MAP));
+            //mapController = (MapController) fxmlLoader.getController();
             map = new Scene(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void setMapController(MapController mc) {
+        mapController = mc;
     }
     /**
      * Gets whether or not the ScreenNavigator is being loaded.
@@ -190,6 +200,10 @@ public final class ScreenNavigator {
         return mainScreen;
     }
 
+
+    public Scene getMapScene() {
+        return map;
+    }
     /**
      * Stores the main controller for later use in navigation tasks.
      *
@@ -350,5 +364,13 @@ public final class ScreenNavigator {
 
     public void loadMuleFix() {
         loadScreen(fixMule);
+    }
+
+    public MapController getMapController() {
+        return mapController;
+    }
+
+    public void addTiles() {
+        Game.getInstance().addTiles(map);
     }
 }

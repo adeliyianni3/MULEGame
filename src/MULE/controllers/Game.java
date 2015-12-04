@@ -6,7 +6,13 @@ import MULE.models.*;
 
 import com.google.gson.GsonBuilder;
 
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -30,6 +36,9 @@ import java.util.logging.Logger;
 
 
 public class Game {
+    public Rectangle mulePlacer;
+    public boolean goAheadAndUpdate = true;
+
     private static final int MAX_ROUND = 14;
     private static final int BONUS = 250;
     private static final int RANDOM_EVENT_PROBABILITY = 27;
@@ -299,22 +308,24 @@ public class Game {
         return players[getTurn() - 1];
     }
     private int buyRound = 0;
-    public void landClicked(String landLoc, Rectangle rec, Rectangle mul) {
+    public void landClicked(Land plot) {
+        int i = plot.getRow();
+        int j = plot.getCol();
         if (currentState.equals(State.BUY_PHASE)) {
             System.out.println("Round:" + round);
-            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
-            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
+//            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+//            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
             System.out.println(i + ", " + j);
-            Land plot = theMap.whatLand(i, j);
+//            Land plot = theMap.whatLand(i, j);
             System.out.println("Turn: " + turn + ", Total Turns: " + totalTurns);
             if (!plot.isOwned()) {
                 Player p = players[turn - 1];
                 if (round < 3) {
                     plot.setOwner();
                     p.addLand(plot);
-                    rec.setStroke(p.getColor());
+                    plot.getRect().setStroke(p.getColor());
                     colorArray[i][j] = p.getColor();
-                    rec.setStrokeWidth(4.0);
+                    plot.getRect().setStrokeWidth(4.0);
                     p.incrementLand();
                     buyPhaseSkipped = 0;
                     buyPhaseEndTurn();
@@ -322,9 +333,9 @@ public class Game {
                     if (p.getMoney() >= LAND_PRICE) {
                         plot.setOwner();
                         p.addLand(plot);
-                        rec.setStroke(Color.web(p.getColor().toString()));
+                        plot.getRect().setStroke(Color.web(p.getColor().toString()));
                         colorArray[i][j] = p.getColor();
-                        rec.setStrokeWidth(4.0);
+                        plot.getRect().setStrokeWidth(4.0);
                         p.subtractMoney(LAND_PRICE);
                         p.incrementLand();
                         if (buyRound ==0) {
@@ -344,10 +355,10 @@ public class Game {
 
             System.out.println(playersToString()); //debug statement
         } else if (currentState.equals(State.MULE_PLACING)) {
-            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
-            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
+//            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+//            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
             System.out.println(i + ", " + j);
-            Land plot = theMap.whatLand(i, j);
+//            Land plot = theMap.whatLand(i, j);
             Player p = players[turn - 1];
             System.out.println(plot.isOwned() + " " + p.equals(plot.getOwner()) + " " + !plot.hasMule());
             if (plot.isOwned() & p.equals(plot.getOwner()) & !plot.hasMule()) {
@@ -358,7 +369,7 @@ public class Game {
 
                 Image muleImage = new Image("/views/M.U.L.E." + s + "..png");
                 ImagePattern imagePattern = new ImagePattern(muleImage);
-                mul.setFill(imagePattern); //check to make sure this doesn't override color
+                plot.getMulePic().setFill(imagePattern); //check to make sure this doesn't override color
 
 
                 currentState = State.MAP; //is this where we want the screen to go to?
@@ -367,11 +378,12 @@ public class Game {
                 System.out.println("Improper location for your MULE. It has successfully escaped your grasp and ran away.");
                 p.getMule();
             }
+            mulePlacer.setFill(Color.TRANSPARENT);
             currentState = State.MAP;
         } else if (currentState.equals(State.FIX)) {
-            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
-            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
-            Land plot = theMap.whatLand(i, j);
+//            int i = Integer.parseInt(landLoc.substring(3, 5)) / 10;
+//            int j = Integer.parseInt(landLoc.substring(3, 5)) % 10;
+//            Land plot = theMap.whatLand(i, j);
             Player p = players[turn - 1];
             if (plot.isOwned() & p.equals(plot.getOwner()) & plot.hasMule() & p.brokenMules().contains(i + " " + j)) {
                 p.fixMule(plot.getMule(), i, j);
@@ -451,6 +463,7 @@ public class Game {
             currentState = State.MAIN; //swap out with display scores later
             ScreenNavigator.getInstance().loadMain();
         }
+        mulePlacer.setFill(Color.TRANSPARENT);
     }
 
     private void planetaryEvent() {
@@ -519,7 +532,46 @@ public class Game {
         ScreenNavigator.getInstance().setMap();
         ScreenNavigator.getInstance().loadNewPlayer();
         System.out.println(Game.instance.getDifficulty());
+
+        mulePlacer = new Rectangle();
+        mulePlacer.setX(0);
+        mulePlacer.setY(0);
+        mulePlacer.setWidth(24);
+        mulePlacer.setHeight(40);
+        mulePlacer.setFill(Color.TRANSPARENT);
+        mulePlacer.setMouseTransparent(true);
+//        mulePlacer.setOnMouseMoved(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent t) {
+//                mulePlacer.setX(t.getX());
+//                mulePlacer.setY(t.getY());
+//            }
+//        });
+        ScreenNavigator.getInstance().addTiles();
     }
+
+    public void updateMulePlacer(double x, double y) {
+        if (mulePlacer != null) {
+            mulePlacer.setX(x);
+            mulePlacer.setY(y);
+        }
+    }
+
+    public void addTiles(Scene mapScene) {
+        Pane root = (Pane)mapScene.getRoot();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                root.getChildren().add(theMap.whatLand(i,j).getRect());
+                root.getChildren().add(theMap.whatLand(i,j).getMulePic());
+            }
+        }
+        root.getChildren().add(mulePlacer);
+    }
+
+    public void tweakShowPass() {
+        ScreenNavigator.getInstance().getMapController().showPass.setValue(ScreenNavigator.getInstance().getShowPass().getValue());
+    }
+
 
     public void addPlayer(String race, Color c, String name) {
         notAllowed.add(c);
@@ -572,11 +624,21 @@ public class Game {
                 p.giveMule(newMule); //TODO remove MULE when player's turn ends
                 getStore().setMuleInventory(getStore().getMuleInventory() - 1);
                 ScreenNavigator.getInstance().loadMap();
+                String s = String.valueOf(newMule.getResource().toString().charAt(0)).toUpperCase();
+                Image muleImage = new Image("/views/M.U.L.E." + s + "..png");
+                ImagePattern imagePattern = new ImagePattern(muleImage);
+                mulePlacer.setFill(imagePattern);
             } else {
                 System.out.println("Not enough money"); //TODO proper error message
             }
         } else {
             System.out.println("No more mules");
+        }
+    }
+
+    public void moveMules() {
+        if (theMap != null) {
+            theMap.moveMules();
         }
     }
 
@@ -610,6 +672,26 @@ public class Game {
 
     public int energyValue() {
         return resourcePoints[4];
+    }
+
+    public Rectangle[][] getRectArray() {
+        Rectangle[][] rectArr = new Rectangle[5][9];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                rectArr[i][j] = theMap.whatLand(i,j).getRect();
+            }
+        }
+        return rectArr;
+    }
+
+    public Rectangle[][] getMulePicArray() {
+        Rectangle[][] rectArr = new Rectangle[5][9];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                rectArr[i][j] = theMap.whatLand(i,j).getMulePic();
+            }
+        }
+        return rectArr;
     }
 
 }

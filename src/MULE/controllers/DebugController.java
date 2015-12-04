@@ -1,5 +1,6 @@
 package MULE.controllers;
 
+import java.awt.*;
 import java.net.URL;
 
 import MULE.models.Player;
@@ -231,6 +232,26 @@ public class DebugController implements Initializable {
         );
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+
+        Timeline timeline2 = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Game.getInstance().moveMules();
+                            if (Game.getInstance().goAheadAndUpdate && Game.getInstance().getCurrentState() == Game.State.MULE_PLACING && Game.getInstance() != null && ScreenNavigator.getInstance().getMapScene() != null) {
+//                                if (Game.getInstance().getCurrentState() == Game.State.MULE_PLACING)
+//                                {
+//
+//                                }
+                                double x = MouseInfo.getPointerInfo().getLocation().getX() - ScreenNavigator.getInstance().getMapScene().getWindow().getX() - 30;
+                                double y = MouseInfo.getPointerInfo().getLocation().getY() - ScreenNavigator.getInstance().getMapScene().getWindow().getY() - 40;
+                                Game.getInstance().updateMulePlacer(x, y);
+                            }
+                        }
+                ),
+                new KeyFrame(Duration.seconds(.05))
+        );
+        timeline2.setCycleCount(Animation.INDEFINITE);
+        timeline2.play();
     }
 
     @Override
